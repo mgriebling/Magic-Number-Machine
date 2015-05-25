@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
+		47B96FD81B13372E0064FEEB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD71B13372E0064FEEB /* README.md */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -53,6 +54,7 @@
 		32CA4F630368D1EE00C91783 /* Magic Number Machine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine_Prefix.pch"; sourceTree = "<group>"; };
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
+		47B96FD71B13372E0064FEEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Magic Number Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic Number Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C900A87105588DFA00809D76 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputManager.h; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		29B97314FDCFA39411CA2CEA /* Magic Number Machine XCode */ = {
 			isa = PBXGroup;
 			children = (
+				47B96FD71B13372E0064FEEB /* README.md */,
 				C900A87005588DBC00809D76 /* BigFloat Classes */,
 				C900A86D05588DB000809D76 /* Expression Classes */,
 				C900A86A05588DA000809D76 /* View Classes */,
@@ -379,6 +382,7 @@
 				C900A87B05588DFA00809D76 /* DrawerManager.m in Sources */,
 				C900A8BD05588E2E00809D76 /* HistoryCell.m in Sources */,
 				C900A8BF05588E2E00809D76 /* MainWindow.m in Sources */,
+				47B96FD81B13372E0064FEEB /* README.md in Sources */,
 				C900A8C105588E2E00809D76 /* BlankingView.m in Sources */,
 				C900A8C305588E2E00809D76 /* DrawerView.m in Sources */,
 				47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */,

@@ -167,7 +167,7 @@
 		opPath = [ExpressionSymbols xorPath];
 		break;
 	case '.':
-		opPath = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(0.0, 7.0, 4.0, 4.0)];
+		opPath = [ExpressionSymbols dotPath]; 
 		break;
 	case '^':
 		return;

@@ -108,7 +108,7 @@ static NSMutableDictionary *symbols = nil;
 //
 + (NSBezierPath *)minusPath
 {
-	return [ExpressionSymbols getSymbolForString:@"-"];
+	return [ExpressionSymbols getSymbolForString:@"−"];
 }
 
 //
@@ -408,7 +408,7 @@ static NSMutableDictionary *symbols = nil;
 //
 + (NSBezierPath *)dotPath
 {
-	return [ExpressionSymbols getSymbolForString:@"•"];
+	return [ExpressionSymbols getSymbolForString:@"∙"];
 }
 
 //

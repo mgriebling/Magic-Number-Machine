@@ -1,0 +1,6 @@
+﻿/* Localized versions of Info.plist keys */
+
+CFBundleName = "Magic Number Machine";
+CFBundleShortVersionString = "Magic Number Machine";
+CFBundleGetInfoString = "Magic Number Machine version 1.0.30, tous droits réservés 2003-2008 Matt Gallagher.";
+NSHumanReadableCopyright = "Tous droits réservés 2003-2008 Matt Gallagher.";

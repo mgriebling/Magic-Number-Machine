@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IBFramework Version</key>
+	<string>677</string>
+	<key>IBLastKnownRelativeProjectPath</key>
+	<string>../Magic Number Machine.xcodeproj</string>
+	<key>IBOldestOS</key>
+	<integer>5</integer>
+	<key>IBOpenObjects</key>
+	<array>
+		<integer>1322</integer>
+		<integer>1339</integer>
+		<integer>690</integer>
+		<integer>1976</integer>
+		<integer>725</integer>
+		<integer>779</integer>
+		<integer>857</integer>
+		<integer>1762</integer>
+		<integer>705</integer>
+		<integer>890</integer>
+		<integer>884</integer>
+		<integer>1317</integer>
+	</array>
+	<key>IBSystem Version</key>
+	<string>9G55</string>
+	<key>targetFramework</key>
+	<string>IBCocoaFramework</string>
+</dict>
+</plist>

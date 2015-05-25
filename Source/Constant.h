@@ -7,7 +7,9 @@
 // ##############################################################
 
 #import <Foundation/Foundation.h>
+
 #import "Expression.h"
+#import "ExpressionSymbols.h"
 
 //
 // About Constant
@@ -22,20 +24,28 @@
 // expression, it also forms the basis for Value (the user entered value class). 
 //
 
-@interface Constant : Expression
-{
-@protected
-	int					constant;
-	bool				negative;
+
+
+//
+// Constant values were updated from NIST to the known accuracies as of January 2008.
+// A few constant names were changed to make them unique and avoid confusion with
+// other constants since these names are used in the equations.
+//
+// Update by Michael Griebling
+
+@interface Constant : Expression {
+	@protected
+	enum ConstType constant;
+	bool negative;
 }
-- (instancetype)initWithParent:(Expression*)newParent manager:(DataManager*)newManager
-	andConstant:(int)newConstant;
+
+- (instancetype)initWithParent:(Expression*)newParent manager:(DataManager*)newManager andConstant:(enum ConstType)newConstant;
 - (instancetype)initWithCoder:(NSCoder *)coder;
 - (void)encodeWithCoder:(NSCoder *)coder;
 
 - (void)appendDigit:(int)digit;
 - (void)bracketPressed;
-- (void)constantPressed:(int)newConstant;
+- (void)constantPressed:(enum ConstType)newConstant;
 - (void)expressionInserted:(Expression*)newExpression;
 @property (NS_NONATOMIC_IOSONLY, getter=getExpressionString, readonly, copy) NSString *expressionString;
 - (NSBezierPath*)pathAtLevel:(int)level;

@@ -35,31 +35,31 @@
 //
 // Initialises this class with the constant set to either pi or i
 //
-- (instancetype)initWithParent:(Expression*)newParent manager:(DataManager*)newManager
-	andConstant:(int)newConstant
+- (instancetype)initWithParent:(Expression*)newParent manager:(DataManager*)newManager andConstant:(enum ConstType)newConstant
 {
 	self = [super initWithParent:newParent andManager:newManager];
 	if (self)
 	{
 		constant = newConstant;
 		negative = NO;
+		value = [ExpressionSymbols getValueForConstant:constant];
 		
-		switch (constant)
-		{
-		case 'p':
-			value = [BigCFloat piWithRadix:[manager getRadix]];
-			break;
-		case 'i':
-			value =
-				[BigCFloat
-					bigFloatWithReal:[BigFloat bigFloatWithInt:0 radix:[manager getRadix]]
-					imaginary:[BigFloat bigFloatWithInt:1 radix:[manager getRadix]]
-				];
-			break;
-		default:
-			// default behaviour is to remain zero.
-			break;
-		}
+//		switch (constant)
+//		{
+//		case Pi:
+//			value = [BigCFloat piWithRadix:[manager getRadix]];
+//			break;
+//		case RootOfMinusOne:
+//			value =
+//				[BigCFloat
+//					bigFloatWithReal:[BigFloat bigFloatWithInt:0 radix:[manager getRadix]]
+//					imaginary:[BigFloat bigFloatWithInt:1 radix:[manager getRadix]]
+//				];
+//			break;
+//		default:
+//			// default behaviour is to remain zero.
+//			break;
+//		}
 	}
 	return self;
 }
@@ -134,7 +134,7 @@
 //
 // Since this node can't be edited, we need a new node that can be.
 //
-- (void)constantPressed:(int)newConstant
+- (void)constantPressed:(enum ConstType)newConstant
 {
 	// Behave as though we already have a child and spawn off another node
 	[self binaryOpPressed:'.'];
@@ -162,15 +162,17 @@
 {
 	NSString *resultString = negative ? @"-" : @"";
 	
-	switch (constant)
-	{
-	case 'p':
-		resultString = [resultString stringByAppendingString:@"π"];
-		break;
-	case 'i':
-		resultString = [resultString stringByAppendingString:@"i"];
-		break;
-	}
+	resultString = [resultString stringByAppendingString:[ExpressionSymbols getNameForConstant:constant]];
+//	switch (constant)
+//	{
+//		case Pi:
+//			resultString = [resultString stringByAppendingString:@"π"];
+//			break;
+//		case RootOfMinusOne:
+//			resultString = [resultString stringByAppendingString:@"i"];
+//			break;
+//		default: break;
+//	}
 
 	return resultString;
 }
@@ -188,15 +190,18 @@
 	{
 		expressionPath = [NSBezierPath bezierPath];
 		
-		switch (constant)
-		{
-		case 'p':
-			[expressionPath appendBezierPath:[ExpressionSymbols piPath]];
-			break;
-		case 'i':
-			[expressionPath appendBezierPath:[ExpressionSymbols iPath]];
-			break;
-		}
+//		switch (constant)
+//		{
+//			case Pi:
+//				[expressionPath appendBezierPath:[ExpressionSymbols piPath]];
+//				break;
+//			case RootOfMinusOne:
+//				[expressionPath appendBezierPath:[ExpressionSymbols iPath]];
+//				break;
+//			default:
+//				break;
+//		}
+		[expressionPath appendBezierPath:[ExpressionSymbols makeSymbolForConstant:constant]];
 		
 		if (negative)
 		{

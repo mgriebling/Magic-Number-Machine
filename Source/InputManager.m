@@ -698,18 +698,15 @@
 	[dataManager ensureInputWithValue:NO];
 	inputPoint = [dataManager getInputPoint];
 	
-	if ([sender tag] == 0)
-	{
+	if ([sender tag] == 0) {
 		// "π" Pressed
-		[inputPoint constantPressed:'p'];
-		[dataManager valueChanged];
-	}
-	else
-	{
+		[inputPoint constantPressed:Pi];
+	} else {
 		// "i" Pressed
-		[inputPoint constantPressed:'i'];
-		[dataManager valueChanged];
+		[inputPoint constantPressed:RootOfMinusOne];
+
 	}
+	[dataManager valueChanged];
 }
 
 //
@@ -745,6 +742,7 @@
 //
 // Enable only the digits that are valid for the current radix.
 //
+// Simplified and cleaned up to work for any radix 2 - 16
 - (void)setControlsForRadix:(short)radix
 {
 	[twoButton	 setEnabled:radix > 2];

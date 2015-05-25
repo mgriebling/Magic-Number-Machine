@@ -16,6 +16,7 @@
 @implementation ExpressionSymbols
 
 static NSMutableDictionary *symbols = nil;
+static NSArray *constantsDataRows = nil;
 
 //
 // initialize
@@ -28,37 +29,107 @@ static NSMutableDictionary *symbols = nil;
 	
 	// Create the array for holding the symbols
 	symbols = [NSMutableDictionary dictionary];
+
+	//
+	// Constant values were updated from NIST to the known accuracies as of January 2008.
+	// A few constant names were changed to make them unique and avoid confusion with
+	// other constants since these names are used in the equations.
+	//
+	// Update by Michael Griebling
+	constantsDataRows =
+	@[
+	  @[@"a_0",	  @"	Bohr radius (m)",							[BigCFloat bigFloatWithDouble:0.5291772085936e-10 radix:10]],
+	  @[@"α",	  @"	Fine structure constant",					[BigCFloat bigFloatWithDouble:7.297352537650e-3 radix:10]],
+	  @[@"atm",	  @"	Standard atmosphere (Pa)",					[BigCFloat bigFloatWithInt:101325 radix:10]],
+	  @[@"b",	  @"	Wien displacement law constant (m K)",		[BigCFloat bigFloatWithDouble:2.897768551e-3 radix:10]],
+	  @[@"c_1",	  @"	First radiation constant (W m²)",			[BigCFloat bigFloatWithDouble:3.7417711819e-16 radix:10]],
+	  @[@"c_2",	  @"	Second radiation constant (m K)",			[BigCFloat bigFloatWithDouble:1.438775225e-2 radix:10]],
+	  @[@"c",	  @"	Speed of light in vacuum (m s⁻¹)",			[BigCFloat bigFloatWithInt:299792458 radix:10]],
+	  @[@"E_h",	  @"	Hartree energy (J)",						[BigCFloat bigFloatWithDouble:4.3597439422e-18 radix:10]],
+	  @[@"e_c",	  @"	Elementary charge (C)",						[BigCFloat bigFloatWithDouble:1.60217648740e-19 radix:10]],
+	  @[@"ε_0",	  @"	Permittivity of vacuum (F m⁻¹)",			[BigCFloat bigFloatWithDouble:8.854187817620389850536563e-12 radix:10]],
+	  @[@"eV",	  @"	Electron volt (J)",							[BigCFloat bigFloatWithDouble:1.60217648740e-19 radix:10]],
+	  @[@"F",	  @"	Faraday constant (C mol⁻¹)",				[BigCFloat bigFloatWithDouble:96485.339924 radix:10]],
+	  @[@"g_e",	  @"	Electron g-factor",							[BigCFloat bigFloatWithDouble:-2.002319304362215 radix:10]],
+	  @[@"g_µ",	  @"	Muon g-factor",								[BigCFloat bigFloatWithDouble:-2.002331841412 radix:10]],
+	  @[@"g_n",	  @"	Standard acceleration of gravity (m s⁻²)",	[BigCFloat bigFloatWithDouble:9.80665 radix:10]],
+	  @[@"G",	  @"	Gravitational constant (m³ kg⁻¹ s⁻²)",		[BigCFloat bigFloatWithDouble:6.6742867e-11 radix:10]],
+	  @[@"G_0",	  @"	Conductance quantum (s)",					[BigCFloat bigFloatWithDouble:7.748091700453e-5 radix:10]],
+	  @[@"h",	  @"	Planck constant (J s)",						[BigCFloat bigFloatWithDouble:6.6260689633e-34 radix:10]],
+	  @[@"ħ",	  @"	Planck constant/2π (J s)",					[BigCFloat bigFloatWithDouble:1.05457162853e-34 radix:10]],
+	  @[@"i",	  @"	square-root of -1",							[BigCFloat i]],
+	  @[@"k",	  @"	Boltzmann constant (J K⁻¹)",				[BigCFloat bigFloatWithDouble:1.380650424e-23 radix:10]],
+	  @[@"l_p",	  @"	Planck length (m)",							[BigCFloat bigFloatWithDouble:1.61625281e-35 radix:10]],
+	  @[@"ƛ_C",	  @"	Electron Compton wavelength/2π (m)",		[BigCFloat bigFloatWithDouble:3.861592645953e-13 radix:10]],
+	  @[@"λ_C,n", @"	Neutron Compton wavelength (m)",			[BigCFloat bigFloatWithDouble:1.319590895120e-15 radix:10]],
+	  @[@"λ_C,p", @"	Proton Compton wavelength (m)",				[BigCFloat bigFloatWithDouble:1.321409844619e-15 radix:10]],
+	  @[@"λ_C",	  @"	Electron Compton wavelength (m)",			[BigCFloat bigFloatWithDouble:2.426310217533e-12 radix:10]],
+	  @[@"m_d",	  @"	Deuteron mass (kg)",						[BigCFloat bigFloatWithDouble:3.3435832017e-27 radix:10]],
+	  @[@"m_e",	  @"	Electron mass (Kg)",						[BigCFloat bigFloatWithDouble:9.1093821545e-31 radix:10]],
+	  @[@"m_n",	  @"	Neutron mass (kg)",							[BigCFloat bigFloatWithDouble:1.6749286e-27 radix:10]],
+	  @[@"m_P",	  @"	Planck mass (kg)",							[BigCFloat bigFloatWithDouble:2.1764411e-08 radix:10]],
+	  @[@"m_p",	  @"	Proton mass (kg)",							[BigCFloat bigFloatWithDouble:1.67262163783e-27 radix:10]],
+	  @[@"m_u",	  @"	Atomic mass constant (kg)",					[BigCFloat bigFloatWithDouble:1.66053878283e-27 radix:10]],
+	  @[@"µ_0",	  @"	Magnetic Permittivity of vacuum (N A⁻²)",	[BigCFloat bigFloatWithDouble:12.56637061435917295385057e-7 radix:10]],
+	  @[@"µ_B",	  @"	Bohr magneton (J T⁻¹)",						[BigCFloat bigFloatWithDouble:9.2740091523e-24 radix:10]],
+	  @[@"µ_d",	  @"	Deuteron magnetic moment (J T⁻¹)",			[BigCFloat bigFloatWithDouble:4.3307346511e-27 radix:10]],
+	  @[@"µ_N",	  @"	Nuclear magneton (J T⁻¹)",					[BigCFloat bigFloatWithDouble:5.0507832413e-27 radix:10]],
+	  @[@"n_0",	  @"	Loschmidt constant (m⁻³)",					[BigCFloat bigFloatWithDouble:2.686777447e+25 radix:10]],
+	  @[@"N_A",	  @"	Avagadro constant (mol⁻¹)",					[BigCFloat bigFloatWithDouble:6.0221417930e+23 radix:10]],
+	  @[@"φ_0",	  @"	Magnetic flux quantum (Wb)",				[BigCFloat bigFloatWithDouble:2.06783366752e-15 radix:10]],
+	  @[@"π",	  @"	Pi",										[BigCFloat piWithRadix:10]],
+	  @[@"r_e",	  @"	Electron classical radius (m)",				[BigCFloat bigFloatWithDouble:2.817940289458e-15 radix:10]],
+	  @[@"R_H",	  @"	Quantized Hall resistance (Ω)",				[BigCFloat bigFloatWithDouble:25812.8063 radix:10]],
+	  @[@"R",	  @"	Molar gas constant (J mol⁻¹ K⁻¹)",			[BigCFloat bigFloatWithDouble:8.31447215 radix:10]],
+	  @[@"R_∞",	  @"	Rydberg constant (m⁻¹)",					[BigCFloat bigFloatWithDouble:10973731.56852773 radix:10]],
+	  @[@"σ_e",	  @"	Electron Thomson cross section (m²)",		[BigCFloat bigFloatWithDouble:6.65245855827e-29 radix:10]],
+	  @[@"σ",	  @"	Stefan-Boltzmann const. (W m⁻² K⁻⁴)",		[BigCFloat bigFloatWithDouble:5.67040040e-08 radix:10]],
+	  @[@"t_p",	  @"	Planck time (s)",							[BigCFloat bigFloatWithDouble:5.3912427e-44 radix:10]],
+	  @[@"T_P",	  @"	Planck temperature (K)",					[BigCFloat bigFloatWithDouble:1.416785e32 radix:10]],
+	  @[@"V_m",	  @"	Molar vol. (ideal gas at STP) (m³ mol⁻¹)",	[BigCFloat bigFloatWithDouble:22.41399639e-3 radix:10]]
+	];
 }
 
-+ (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(BOOL)superscript {
+//
+// toFormattedString:
+//
+// Translates the constant with an "_" to a subscript -- Mike
+//
++ (NSAttributedString *)toFormattedString: (NSString *)string {
+	NSRange location = [string rangeOfString:@"_"];
+	string = [string stringByReplacingOccurrencesOfString:@"_" withString:@""];
+	NSMutableAttributedString *result = [[NSMutableAttributedString alloc] initWithString:string];
+	[result addAttribute:NSFontAttributeName value:[NSFont systemFontOfSize:9.0] range:location];
+	[result addAttribute:NSSuperscriptAttributeName value:@-1 range:location];
+	return result;
+}
+
++ (NSBezierPath *)makeSymbolForConstant:(enum ConstType)constant {
+	NSBezierPath *path = [NSBezierPath bezierPath];
+	NSAttributedString *symbolName = [ExpressionSymbols toFormattedString:constantsDataRows[constant][0]];
+	return [ExpressionSymbols makeSymbolForAttributedString:symbolName withPath:path];
+}
+
++ (BigCFloat *)getValueForConstant:(enum ConstType)constant {
+	return constantsDataRows[constant][2];
+}
+
++ (NSString *)getNameForConstant:(enum ConstType)constant {
+	return constantsDataRows[constant][0];
+}
+
++ (NSArray *)getConstants {
+	return constantsDataRows;
+}
+
++ (NSBezierPath *)makeSymbolForAttributedString:(NSAttributedString *)symbol withPath:(NSBezierPath*)path {
 	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
 	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
-	NSBezierPath	*path = [NSBezierPath bezierPath];
 	NSGlyph			*glyphs;
 	int				j;
 	int				numGlyphs;
-	
-	// Use a layout manager to get the glyphs for the string
-	// Create a text storage area for the string
 	[text addLayoutManager:layoutManager];
-	
-	if (superscript) {
-		[text setAttributedString:
-		 [[NSAttributedString alloc]
-		  initWithString:symbol
-		  attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:16]}
-				]
-			];
-		[path moveToPoint:NSMakePoint(0, 12)];
-	} else {
-		[text setAttributedString:
-		 [[NSAttributedString alloc]
-		  initWithString:symbol
-		  attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:24]}
-				]
-			];
-		[path moveToPoint:NSMakePoint(0, 0)];
-	}
+	[text setAttributedString:symbol];
 	numGlyphs = [layoutManager numberOfGlyphs];
 	glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
 	for (j = 0; j < numGlyphs; j++) {
@@ -68,15 +139,27 @@ static NSMutableDictionary *symbols = nil;
 		appendBezierPathWithGlyphs:glyphs
 		count:[text length]
 		inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
-	];
+	 ];
 	free(glyphs);
 	return path;
+}
+
++ (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(BOOL)superscript {
+	NSBezierPath *path = [NSBezierPath bezierPath];
+	NSAttributedString *string;
+	if (superscript) {
+		string = [[NSAttributedString alloc] initWithString:symbol attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:16]}];
+		[path moveToPoint:NSMakePoint(0, 12)];
+	} else {
+		string = [[NSAttributedString alloc] initWithString:symbol attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:24]}];
+		[path moveToPoint:NSMakePoint(0, 0)];
+	}
+	return [ExpressionSymbols makeSymbolForAttributedString:string withPath:path];
 }
 
 + (NSBezierPath *)getSymbolForString:(NSString *)string withSuperscript:(BOOL)superscript {
 	NSBezierPath *copy = [NSBezierPath bezierPath];
 	NSBezierPath *symbol;
-	
 	if (![symbols valueForKey:string]) {
 		symbol = [ExpressionSymbols makeSymbolForString:string usingSuperscript:superscript];
 		symbols[string] = symbol;

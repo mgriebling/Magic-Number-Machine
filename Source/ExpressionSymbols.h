@@ -8,14 +8,75 @@
 
 #import <Foundation/Foundation.h>
 
+#import "BigCFloat.h"
+
 //
 // About ExpressionSymbols
 //
 // A single instance class that maintains the bezier paths for most drawable symbols
 //
+
+typedef NS_ENUM(NSInteger, ConstType) {
+	BohrRadius = 0,
+	StructureConstant,
+	StandardAtmosphere,
+	WienDisplacement,
+	RadiationConstant1,
+	RadiationConstant2,
+	SpeedOfLight,
+	HartreeEnergy,
+	ElementaryCharge,
+	VacuumPermittivity,
+	ElectronVolt,
+	FaradayConstant,
+	ElectronGFactor,
+	MuonGFactor,
+	GravitationalAcceleration,
+	GravitationalConstant,
+	QuantumConductance,
+	PlanckConstant,
+	PlanckConstantPi,
+	RootOfMinusOne,
+	BoltmannConstant,
+	PlanckLength,
+	ElectronComptonWavelengthPi,
+	NeutronComptonWavelength,
+	ProtonComptonWavelength,
+	ElectronComptonWavelength,
+	DeuteronMass,
+	ElectronMass,
+	NuetronMass,
+	PlanckMass,
+	ProtonMass,
+	AtomicMassConstant,
+	VacuumMagneticPermittivity,
+	BohrMagneton,
+	DeuteronMagneticMoment,
+	NuclearMagneton,
+	LoschmidtConstant,
+	AvagadroConstant,
+	MagneticFluxQuantum,
+	Pi,
+	ClassicalElectronRadius,
+	QuantizedHallResistance,
+	MolarGasConstant,
+	RydbergConstant,
+	ElectronThomsonCrossSection,
+	StefanBoltzmannConstant,
+	PlanckTime,
+	PlanckTemperature,
+	MolarVolume
+};
+
 @interface ExpressionSymbols : NSObject
 
 + (NSBezierPath *)getSymbolForString:(NSString *)string;
+
++ (NSBezierPath *)makeSymbolForConstant:(enum ConstType)constant;
++ (BigCFloat *)getValueForConstant:(enum ConstType)constant;
++ (NSString *)getNameForConstant:(enum ConstType)constant;
++ (NSAttributedString *)toFormattedString: (NSString *)string;
++ (NSArray *)getConstants;
 
 + (void)initialize;
 + (NSBezierPath *)plusPath;

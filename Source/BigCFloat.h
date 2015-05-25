@@ -42,6 +42,10 @@
 + (BigCFloat*)bigFloatWithDouble:(double)newValue radix:(unsigned short)newRadix;
 + (BigCFloat*)piWithRadix:(unsigned short)newRadix;
 
++ (BigCFloat *)one;
++ (BigCFloat *)zero;
++ (BigCFloat *)i;
+
 // Complex Functions
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) BigFloat *realPartCopy;
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) BigFloat *realPart;
@@ -60,7 +64,7 @@
 - (void)convertToRadix:(unsigned short)newRadix;
 @property (NS_NONATOMIC_IOSONLY, readonly) unsigned short radix;
 @property (NS_NONATOMIC_IOSONLY, getter=isValid, readonly) BOOL valid;
-@property (NS_NONATOMIC_IOSONLY, getter=isZero, readonly) BOOL zero;
+- (BOOL)isZero;
 @property (NS_NONATOMIC_IOSONLY, getter=getUserPoint) int userPoint;
 - (NSComparisonResult)compareWith:(BigFloat*)num;
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) BigFloat *duplicate;

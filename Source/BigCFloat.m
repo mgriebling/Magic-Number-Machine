@@ -40,12 +40,6 @@
 }
 
 //
-// dealloc
-//
-// Frees the imaginary part
-//
-
-//
 // initWithReal
 //
 // Init real and imaginary parts. You can validly pass nil instead of zero.
@@ -270,6 +264,18 @@
 + (BigCFloat*)piWithRadix:(unsigned short)newRadix
 {
 	return [[BigCFloat alloc] initPiWithRadix:newRadix];
+}
+
++ (BigCFloat *)one {
+	return [BigCFloat bigFloatWithInt:1 radix:10];
+}
+
++ (BigCFloat *)zero {
+	return [BigCFloat bigFloatWithInt:0 radix:10];
+}
+
++ (BigCFloat *)i; {
+	return [BigCFloat bigFloatWithReal:[BigCFloat bigFloatWithInt:0 radix:10] imaginary:[BigCFloat bigFloatWithInt:1 radix:10]];
 }
 
 #pragma mark

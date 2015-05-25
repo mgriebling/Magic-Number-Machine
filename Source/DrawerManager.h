@@ -21,7 +21,7 @@
 // is only one instance of the DrawerManager in the application.
 //
 // All the data which statically populates some tables in the drawers is statically
-// defined in the consructor (ugly). This includes all the constants and the
+// defined in the constructor (ugly). This includes all the constants and the
 // Data functions.
 //
 // The actual data kept in the "Data" drawers is owned by the DataManager class.
@@ -49,7 +49,6 @@
 	
 	NSDrawer				*activeDrawer;
 	NSArray					*radixDataRows;
-	NSArray					*constantsDataRows;
 	NSArray					*arrayDataFunctionRows;
 	NSArray					*dataFunctionRows;
 	NSArray					*data2DFunctionRows;

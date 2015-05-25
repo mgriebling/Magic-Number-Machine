@@ -15,7 +15,7 @@
 //
 @implementation ExpressionSymbols
 
-static NSMutableArray *symbols = nil;
+static NSMutableDictionary *symbols = nil;
 
 //
 // initialize
@@ -24,106 +24,71 @@ static NSMutableArray *symbols = nil;
 //
 + (void)initialize
 {
-	NSArray			*stringSymbols;
-	NSLayoutManager	*layoutManager;
-	NSTextStorage	*text;
-	NSBezierPath	*path;
+	if (symbols != nil) return;
+	
+	// Create the array for holding the symbols
+	symbols = [NSMutableDictionary dictionary];
+}
+
++ (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(BOOL)superscript {
+	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
+	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
+	NSBezierPath	*path = [NSBezierPath bezierPath];
 	NSGlyph			*glyphs;
-	int				i;
 	int				j;
 	int				numGlyphs;
 	
-	if (symbols != nil)
-		return;
-	
-	// Create the array of strings that we plan to store in the Mutable array
-	stringSymbols = @[
-		@"+",		// 0
-		@"-",		// 1
-		@"x",		// 2
-		@"=",		// 3
-		@"sin",		// 4	
-		@"cos",		// 5
-		@"tan",		// 6
-		@"h",		// 7
-		@"Re",		// 8
-		@"Im",		// 9
-		@"abs",		// 10
-		@"arg",		// 11
-		@"and",		// 12
-		@"or",		// 13
-		@"xor",		// 14
-		@"not",		// 15
-		@"Rnd",		// 16
-		@"log",		// 17
-		@"ln",		// 18
-		@"√",		// 19
-		@"∑",		// 20
-		@"10",		// 21
-		@"e",		// 22
-		@"!",		// 23
-		@"i",		// 24
-		@"π",		// 25
-		@"%",		// 26
-		@"nPr",		// 27
-		@"nCr",		// 28
-		@"(",		// 29
-		@")",		// 30
-		@"•",		// 31
-		@"2",		// 32
-		@"-1"];
-	
-	// Create the array for holding the symbols
-	symbols = [NSMutableArray arrayWithCapacity:[stringSymbols count]];
-	
 	// Use a layout manager to get the glyphs for the string
-	layoutManager = [[NSLayoutManager alloc] init];
-
 	// Create a text storage area for the string
-	text = [[NSTextStorage alloc] initWithString:@""];
 	[text addLayoutManager:layoutManager];
-
-	// Get the glyph/path representation of all the strings and store them appropriately
-	for (i = 0; i < [stringSymbols count]; i++)
-	{
-		// Create a bezier path to contain the display
-		path = [NSBezierPath bezierPath];
-		
-		if (i >= [stringSymbols count] - 2)
-		{
-			[text setAttributedString:
-				[[NSAttributedString alloc]
-					initWithString:stringSymbols[i]
-					attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:16]}
+	
+	if (superscript) {
+		[text setAttributedString:
+		 [[NSAttributedString alloc]
+		  initWithString:symbol
+		  attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:16]}
 				]
 			];
-			[path moveToPoint:NSMakePoint(0, 12)];
-		}
-		else
-		{
-			[text setAttributedString:
-				[[NSAttributedString alloc]
-					initWithString:stringSymbols[i]
-					attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:24]}
+		[path moveToPoint:NSMakePoint(0, 12)];
+	} else {
+		[text setAttributedString:
+		 [[NSAttributedString alloc]
+		  initWithString:symbol
+		  attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:24]}
 				]
 			];
-			[path moveToPoint:NSMakePoint(0, 0)];
-		}
-		numGlyphs = [layoutManager numberOfGlyphs];
-		glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
-		for (j = 0; j < numGlyphs; j++)
-		{
-			glyphs[j] = [layoutManager glyphAtIndex:j];
-		}
-		[path
-			appendBezierPathWithGlyphs:glyphs
-			count:[text length]
-			inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
-		];
-		free(glyphs);
-		
-		[symbols addObject:path];
+		[path moveToPoint:NSMakePoint(0, 0)];
 	}
+	numGlyphs = [layoutManager numberOfGlyphs];
+	glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
+	for (j = 0; j < numGlyphs; j++) {
+		glyphs[j] = [layoutManager glyphAtIndex:j];
+	}
+	[path
+		appendBezierPathWithGlyphs:glyphs
+		count:[text length]
+		inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
+	];
+	free(glyphs);
+	return path;
+}
+
++ (NSBezierPath *)getSymbolForString:(NSString *)string withSuperscript:(BOOL)superscript {
+	NSBezierPath *copy = [NSBezierPath bezierPath];
+	NSBezierPath *symbol;
+	
+	if (![symbols valueForKey:string]) {
+		symbol = [ExpressionSymbols makeSymbolForString:string usingSuperscript:superscript];
+		symbols[string] = symbol;
+	} else {
+		symbol = symbols[string];
+	}
+	[copy appendBezierPath:symbol];
+	return copy;
+}
+
++ (NSBezierPath *)getSymbolForString:(NSString *)string {
+	return [ExpressionSymbols getSymbolForString:string withSuperscript:NO];
 }
 
 //
@@ -133,12 +98,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)plusPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[0]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"+"];
 }
 
 //
@@ -148,12 +108,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)minusPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[1]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"-"];
 }
 
 //
@@ -163,12 +118,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)multiplyPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[2]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"×"];
 }
 
 //
@@ -178,12 +128,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)equalsPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[3]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"="];
 }
 
 //
@@ -193,12 +138,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)sinPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[4]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"sin"];
 }
 
 //
@@ -208,12 +148,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)cosPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[5]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"cos"];
 }
 
 //
@@ -223,12 +158,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)tanPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[6]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"tan"];
 }
 
 //
@@ -238,12 +168,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)hypPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[7]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"h"];
 }
 
 //
@@ -253,12 +178,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)rePath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[8]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"Re"];
 }
 
 //
@@ -268,12 +188,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)imPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[9]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"Im"];
 }
 
 //
@@ -283,12 +198,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)absPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[10]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"abs"];
 }
 
 //
@@ -298,12 +208,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)argPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[11]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"arg"];
 }
 
 //
@@ -313,12 +218,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)andPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[12]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"and"];
 }
 
 //
@@ -328,12 +228,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)orPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[13]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"or"];
 }
 
 //
@@ -343,12 +238,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)xorPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[14]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"xor"];
 }
 
 //
@@ -358,12 +248,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)notPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[15]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"not"];
 }
 
 //
@@ -373,12 +258,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)rndPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[16]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"Rnd"];
 }
 
 //
@@ -388,12 +268,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)logPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[17]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"log"];
 }
 
 //
@@ -403,12 +278,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)lnPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[18]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"ln"];
 }
 
 //
@@ -418,12 +288,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)sqrtPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[19]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"√"];
 }
 
 //
@@ -433,12 +298,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)sigmaPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[20]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"∑"];
 }
 
 //
@@ -448,12 +308,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)tenPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[21]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"10"];
 }
 
 //
@@ -463,12 +318,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)ePath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[22]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"e"];
 }
 
 //
@@ -478,12 +328,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)factorialPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[23]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"!"];
 }
 
 //
@@ -493,12 +338,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)iPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[24]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"i"];
 }
 
 //
@@ -508,12 +348,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)piPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[25]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"π"];
 }
 
 //
@@ -523,12 +358,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)modPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[26]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"%"];
 }
 
 //
@@ -538,12 +368,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)nprPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[27]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"nPr"];
 }
 
 //
@@ -553,12 +378,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)ncrPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[28]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"nCr"];
 }
 
 //
@@ -568,12 +388,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)leftBracketPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[29]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"("];
 }
 
 //
@@ -583,12 +398,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)rightBracketPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[30]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@")"];
 }
 
 //
@@ -598,12 +408,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)dotPath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[31]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"•"];
 }
 
 //
@@ -613,12 +418,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)squarePath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[32]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"2" withSuperscript:YES];
 }
 
 //
@@ -628,12 +428,7 @@ static NSMutableArray *symbols = nil;
 //
 + (NSBezierPath *)inversePath
 {
-	NSBezierPath		*copy;
-	
-	copy = [NSBezierPath bezierPath];
-	[copy appendBezierPath:symbols[33]];
-	
-	return copy;
+	return [ExpressionSymbols getSymbolForString:@"-1" withSuperscript:YES];
 }
 
 @end

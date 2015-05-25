@@ -35,16 +35,16 @@ enum
 	squaredOp = 25,
 	factorialOp = 26,
 	invOp = 27,
-	modOp = 37,		// '%'
+	modOp = 37,			// '%'
 	multiplyOp = 42,	// '*'
 	plusOp = 43,		// '+'
 	minusOp = 45,		// '-'
-	impMultOp = 46,	// '.' (implicit multiplication)
+	impMultOp = 46,		// '.' (implicit multiplication)
 	divisionOp = 47,	// '/'
 	powerOp = 94,
 	andOp = 97,			// 'a'
 	ncrOp = 99,			// 'c'
 	orOp = 111,			// 'o'
 	nprOp = 112,		// 'p'
-	xorOp = 120		// 'x'
+	xorOp = 120			// 'x'
 };

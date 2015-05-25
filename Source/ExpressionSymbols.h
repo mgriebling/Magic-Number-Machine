@@ -15,8 +15,10 @@
 //
 @interface ExpressionSymbols : NSObject
 {
-
 }
+
++ (NSBezierPath *)getSymbolForString:(NSString *)string;
+
 + (void)initialize;
 + (NSBezierPath *)plusPath;
 + (NSBezierPath *)minusPath;

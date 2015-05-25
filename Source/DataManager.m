@@ -705,7 +705,8 @@
 //
 - (BOOL)getOption
 {
-	return optionButton.isFlipped;
+	BOOL option = [shiftOption isSelectedForSegment:1];
+	return option;
 }
 
 //
@@ -725,7 +726,8 @@
 //
 - (BOOL)getShift
 {
-	return shiftButton.isFlipped;
+	BOOL value = [shiftOption isSelectedForSegment:0];
+	return value;
 }
 
 //
@@ -1062,21 +1064,7 @@
 //
 - (void)trigModePressed
 {
-	if (!self.getShift && !self.getOption)
-	{
-		trigMode = BF_degrees;
-		// dennis: disabled // [trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Trig. Mode: Degrees" value:nil table:nil]];
-	}
-	else if (self.getShift)
-	{
-		trigMode = BF_radians;
-		// dennis: disabled // [trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Trig. Mode: Radians" value:nil table:nil]];
-	}
-	else
-	{
-		trigMode = BF_gradians;
-		// dennis: disabled // [trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Trig. Mode: Gradians" value:nil table:nil]];
-	}
+	trigMode = self.getShift ? BF_radians : (self.getOption ? BF_gradians : BF_degrees);
 	
 	// # dennis # // [[NSUserDefaults standardUserDefaults] setInteger:(int)trigMode forKey:@"defaultTrigMode"];
 	[self setDefaultTrigMode:(int)trigMode];	// dennis
@@ -1093,6 +1081,12 @@
 {
 	[expressionDisplay expressionChanged];
 	
+	if (self.getShift) {
+		[shiftOption setSelected:NO forSegment:0];
+	}
+	if (self.getOption) {
+		[shiftOption setSelected:NO forSegment:1];
+	}
 //	if (shiftEnabledByToggle)
 //		[self shiftIsPressed:NO];
 //	

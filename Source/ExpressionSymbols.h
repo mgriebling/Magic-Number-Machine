@@ -14,8 +14,6 @@
 // A single instance class that maintains the bezier paths for most drawable symbols
 //
 @interface ExpressionSymbols : NSObject
-{
-}
 
 + (NSBezierPath *)getSymbolForString:(NSString *)string;
 

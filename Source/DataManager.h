@@ -34,8 +34,9 @@
 	IBOutlet ExpressionDisplay	*expressionDisplay;	// window's main display
 	IBOutlet DrawerManager		*drawerManager;		// handles all the window drawers
 	IBOutlet id					inputManager;			// routes input from buttons
-	IBOutlet NSButton			*optionButton;			// the option button
-	IBOutlet NSButton			*shiftButton;				// the shift button
+	__weak IBOutlet NSSegmentedControl *shiftOption;
+//	IBOutlet NSButton			*optionButton;			// the option button
+//	IBOutlet NSButton			*shiftButton;				// the shift button
 	IBOutlet NSButton			*exponentLeftShift;		// the "<<" button
 	IBOutlet NSTextField		*precisionDisplay;		// Displays the number of digits
 	IBOutlet NSTextField		*trigModeDisplay;		// Displays degress, radians, gradians

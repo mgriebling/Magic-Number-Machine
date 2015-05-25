@@ -523,8 +523,8 @@
 //
 - (IBAction)precisionPressed:(id)sender
 {
-	BOOL			shift = [dataManager getShift];
-	BOOL 			option = [dataManager getOption];
+	BOOL		shift = [dataManager getShift];
+	BOOL 		option = [dataManager getOption];
 	NSWindow	*sheet;
 	
 	if (option)
@@ -532,7 +532,7 @@
 		sheet = fixSettings;
 		[fixValue setIntValue: [dataManager getDefaultFixedFromPref]]; // dennis
 	}
-	else if(shift)
+	else if (shift)
 	{
 		sheet = sciSettings;
 		[sciValue setIntValue: [dataManager getDefaultSignificantFromPref]]; // dennis
@@ -747,54 +747,20 @@
 //
 - (void)setControlsForRadix:(short)radix
 {
-	if (radix > 2)
-	{
-		[twoButton setEnabled:YES];
-		[threeButton setEnabled:YES];
-		[fourButton setEnabled:YES];
-		[fiveButton setEnabled:YES];
-		[sixButton setEnabled:YES];
-		[sevenButton setEnabled:YES];
-	}
-	else
-	{
-		[twoButton setEnabled:NO];
-		[threeButton setEnabled:NO];
-		[fourButton setEnabled:NO];
-		[fiveButton setEnabled:NO];
-		[sixButton setEnabled:NO];
-		[sevenButton setEnabled:NO];
-	}
-		
-	if (radix > 8)
-	{
-		[eightButton setEnabled:YES];
-		[nineButton setEnabled:YES];
-	}
-	else
-	{
-		[eightButton setEnabled:NO];
-		[nineButton setEnabled:NO];
-	}
-	
-	if (radix > 10)
-	{
-		[aButton setEnabled:YES];
-		[bButton setEnabled:YES];
-		[cButton setEnabled:YES];
-		[dButton setEnabled:YES];
-		[eButton setEnabled:YES];
-		[fButton setEnabled:YES];
-	}
-	else
-	{
-		[aButton setEnabled:NO];
-		[bButton setEnabled:NO];
-		[cButton setEnabled:NO];
-		[dButton setEnabled:NO];
-		[eButton setEnabled:NO];
-		[fButton setEnabled:NO];
-	}
+	[twoButton	 setEnabled:radix > 2];
+	[threeButton setEnabled:radix > 3];
+	[fourButton  setEnabled:radix > 4];
+	[fiveButton  setEnabled:radix > 5];
+	[sixButton   setEnabled:radix > 6];
+	[sevenButton setEnabled:radix > 7];
+	[eightButton setEnabled:radix > 8];
+	[nineButton  setEnabled:radix > 9];
+	[aButton	 setEnabled:radix > 10];
+	[bButton	 setEnabled:radix > 11];
+	[cButton	 setEnabled:radix > 12];
+	[dButton	 setEnabled:radix > 13];
+	[eButton	 setEnabled:radix > 14];
+	[fButton	 setEnabled:radix > 15];
 }
 
 //

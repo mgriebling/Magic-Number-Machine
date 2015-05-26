@@ -39,7 +39,7 @@
 	bool negative;
 }
 
-- (instancetype)initWithParent:(Expression*)newParent manager:(DataManager*)newManager andConstant:(enum ConstType)newConstant;
+- (instancetype)initWithParent:(Expression*)newParent manager:(DataManager*)newManager andConstant:(int)newConstant;
 - (instancetype)initWithCoder:(NSCoder *)coder;
 - (void)encodeWithCoder:(NSCoder *)coder;
 

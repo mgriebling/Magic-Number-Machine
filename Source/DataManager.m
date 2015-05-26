@@ -147,10 +147,6 @@
 	return (BFTrigMode)[[NSUserDefaults standardUserDefaults] integerForKey:@"defaultTrigMode"];
 }
 
-//- (BOOL)shiftIsDown {
-//	return shiftButton.isHighlighted;
-//}
-
 //
 // dennis
 //
@@ -305,103 +301,6 @@
 }
 
 
-/* # dennis #
-//
-// init
-//
-// Constructor
-//
-- (id)init
-{
-	self = [super init];
-	if (self)
-	{
-		// Initialise all the variables to the program defaults. A methodical programmer
-		// would get these values from a file full of constants or better yet, save most of
-		// them in the preference file. Just so you know: I don't care.
-		radix = 10;
-		shiftIsDown = NO;
-		optionIsDown = NO;
-		complement = 0;
-		lengthLimitSave = 0;
-		fixedPlacesSave = 0;
-		fillLimitSave = NO;
-		trigMode = BF_degrees;
-		equalsPressed = NO;
-		shiftEnabledByToggle = NO;
-		optionEnabledByToggle = NO;
-		maximumLength = 25;
-
-		if ([[NSUserDefaults standardUserDefaults] stringForKey:@"defaultDigits"] == nil)
-		{
-			//	lengthLimit = 12;
-			//	fillLimit = NO;
-			//	fixedPlaces = 0;
-			thousandsSeparator = NO;
-			defaultDigits = 12;
-			defaultSignificant = 3;
-			defaultFixed = 3;
-			defaultDisplayType = 0;
-		}
-		else
-		{
-			thousandsSeparator = [[NSUserDefaults standardUserDefaults] boolForKey:@"useThousandsSeparator"];
-			defaultDigits = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultDigits"];
-			defaultSignificant = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultSignificant"];
-			defaultFixed = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultFixed"];
-			defaultDisplayType = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultDisplayType"];
-		}
-		
-		if ([[NSUserDefaults standardUserDefaults] stringForKey:@"defaultRadix"] != nil)
-		{
-			radix = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultRadix"];
-			complement = [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultComplement"];
-		}
-		
-		if ([[NSUserDefaults standardUserDefaults] stringForKey:@"defaultTrigMode"] != nil)
-		{
-			trigMode = (BFTrigMode)[[NSUserDefaults standardUserDefaults] integerForKey:@"defaultTrigMode"];
-		}
-		
-		switch (defaultDisplayType)
-		{
-			case 1:
-				if (defaultSignificant > maximumLength)
-					defaultSignificant = maximumLength;
-				[self lengthLimit:defaultSignificant fillLimit:YES fixedPlaces:0];
-				break;
-			case 2:
-				if (defaultFixed > 10)
-					defaultFixed = 10;
-				[self lengthLimit:20 fillLimit:YES fixedPlaces:defaultFixed];
-				break;
-			default:
-			case 0:
-				if (defaultDigits > maximumLength)
-					defaultDigits = maximumLength;
-				[self lengthLimit:defaultDigits fillLimit:NO fixedPlaces:0];
-				break;
-		}
-		
-		currentExpression = nil;
-		currentInputPoint = nil;
-		
-		// No expression and all empty data sets
-		[TreeHead treeHeadWithValue:nil andManager:self];
-		arrayDataArray = [[NSMutableArray arrayWithCapacity:0] retain];
-		dataArray = [[NSMutableArray arrayWithCapacity:0] retain];
-		data2DArray = [[NSMutableArray arrayWithCapacity:0] retain];
-		historyArray = [[NSMutableArray arrayWithCapacity:0] retain];
-	}
-	return self;
-}
- */
-
-//
-// dealloc
-//
-// Destructor. Clean up the class and leave everything tidy
-//
 
 //
 // exportToPDF:
@@ -413,31 +312,20 @@
 	NSData *pdfData = [expressionDisplay pdfData];
 	
 	NSSavePanel *savePanel = [NSSavePanel savePanel];
-//	[savePanel setRequiredFileType:@"pdf"];
 
 	//
 	// Show the window as a modal sheet
 	//
+	// Updated for new interfaces - Mike
 	[savePanel beginSheetModalForWindow:[expressionDisplay window] completionHandler:^(NSInteger result) {
 		if (result == NSFileHandlingPanelOKButton) {
-			[pdfData writeToURL:[savePanel URL] atomically:YES];
+			NSURL *filename = [savePanel URL];
+			if (filename.pathExtension.length == 0) { filename = [filename URLByAppendingPathExtension:@"pdf"]; }
+			[pdfData writeToURL:filename atomically:YES];
 		} else {
 			[savePanel close];
 		}
 	}];
-//	[NSApp
-//		beginSheet:savePanel
-//		modalForWindow:[expressionDisplay window]
-//		modalDelegate:nil
-//		didEndSelector:nil
-//		contextInfo:(__bridge void *)(pdfData)];
-//	int result = [savePanel runModalForDirectory:NSHomeDirectory() file:nil];
-//	[NSApp endSheet:savePanel];
-//	
-//	if (result == NSFileHandlingPanelOKButton)
-//	{
-//		
-//	}
 }
 
 //
@@ -486,36 +374,6 @@
 //
 - (void)awakeFromNib
 {
-	/* # dennis #
-	switch (radix)
-	{
-		case 2:
-			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Binary" value:nil table:nil]];
-			break;
-		case 8:
-			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Octal" value:nil table:nil]];
-			break;
-		case 10:
-			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Decimal" value:nil table:nil]];
-			break;
-		case 16:
-			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Hexadecimal" value:nil table:nil]];
-			break;
-	}
-
-	switch (trigMode)
-	{
-		case BF_degrees:
-			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Trig. Mode: Degrees" value:nil table:nil]];
-			break;
-		case BF_radians:
-			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Trig. Mode: Radians" value:nil table:nil]];
-			break;
-		case BF_gradians:
-			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Trig. Mode: Gradians" value:nil table:nil]];
-			break;
-	}
-	 */
 	[self updateRadixDisplay];		// dennis
 	[self updatePrecisionDisplay];	// dennis
 	[self updateTrigModeDisplay];	// dennis
@@ -789,28 +647,6 @@
 			fixedPlaces = places;
 	}
 	
-	/* # dennis #
-	 
-	// Display the new precision
-	if (fillLimit == NO)
-		[precisionDisplay setStringValue:[NSString stringWithFormat:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Precision: %d digits" value:nil table:nil], lengthLimit]];
-	else if (fixedPlaces == 0)
-		[precisionDisplay setStringValue:[NSString stringWithFormat:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Precision: %d significant figures" value:nil table:nil], lengthLimit]];
-	else
-		[precisionDisplay setStringValue:[NSString stringWithFormat:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Precision: %d point places" value:nil table:nil], lengthLimit]];
-	
-	// Refresh the entire display (radix change requires exponent reprocessign and digit
-	// re-arranging
-	[currentExpression refresh];
-	[self valueChanged];
-	
-	// Set whether or not the left shift button is enabled.
-	if (fixedPlaces == 0 && complement == 0)
-		[exponentLeftShift setEnabled:YES];
-	else
-		[exponentLeftShift setEnabled:NO];
-	 */
-	
 	[self updatePrecisionDisplay];	// dennis
 	[self updateExponentLeftShift]; // dennis
 	[self updateExpressionDisplay]; // dennis
@@ -823,6 +659,7 @@
 //
 - (void)optionIsPressed:(BOOL)isPressed
 {
+	// No longer needed - Mike
 //	if (optionIsDown != isPressed)
 //	{
 //		optionIsDown = isPressed;
@@ -839,6 +676,7 @@
 //
 - (void)optionToggled
 {
+	// No longer needed - Mike
 //	optionIsDown = !optionIsDown;
 //	[optionButton highlight:optionIsDown];
 //	
@@ -893,13 +731,6 @@
 //
 - (void)setRadix:(short)newRadix useComplement:(int)useComplement
 {
-	/* # dennis #
-	radix = newRadix;
-	complement = useComplement;
-	
-	[[NSUserDefaults standardUserDefaults] setInteger:radix forKey:@"defaultRadix"];
-	[[NSUserDefaults standardUserDefaults] setInteger:useComplement forKey:@"defaultComplement"];
-	*/
 	[self setDefaultRadix: (int)newRadix];		// dennis
 	[self setDefaultComplement: useComplement];	// dennis
 	
@@ -915,10 +746,6 @@
 		
 		fixedPlaces = 0;
 		fillLimit = NO;
-		
-		/* dennis: the below is handled by updatePrecisionDisplay:
-		[precisionDisplay setStringValue:[NSString stringWithFormat:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Precision: %d-bit 2's Complement" value:nil table:nil], useComplement]];
-		 */
 	}
 	else if (lengthLimitSave != 0)
 	{
@@ -928,44 +755,7 @@
 		lengthLimitSave = 0;
 		fixedPlacesSave = 0;
 		fillLimitSave = NO;
-
-		/* dennis: the below is handled by updatePrecisionDisplay:
-		if (fillLimit == NO)
-			[precisionDisplay setStringValue:[NSString stringWithFormat:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Precision: %d digits" value:nil table:nil], lengthLimit]];
-		else if (fixedPlaces == 0)
-			[precisionDisplay setStringValue:[NSString stringWithFormat:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Precision: %d significant figures" value:nil table:nil], lengthLimit]];
-		else
-			[precisionDisplay setStringValue:[NSString stringWithFormat:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Precision: %d point places" value:nil table:nil], lengthLimit]];
-		 */
 	}
-	
-	/* # dennis #
-	switch (newRadix)
-	{
-	case 2:
-		[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Binary" value:nil table:nil]];
-		break;
-	case 8:
-		[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Octal" value:nil table:nil]];
-		break;
-	case 10:
-		[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Decimal" value:nil table:nil]];
-		break;
-	case 16:
-		[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Hexadecimal" value:nil table:nil]];
-		break;
-	}
-
-	 [inputManager setControlsForRadix:radix];
-	 [currentExpression refresh];
-	 [self valueChanged];
-	 
-	 if (fixedPlaces == 0 && complement == 0)
-	 [exponentLeftShift setEnabled:YES];
-	 else
-	 [exponentLeftShift setEnabled:NO];
-	 
-	 */
 	
 	[self updateRadixDisplay]; // dennis
 	[self updatePrecisionDisplay];	// dennis
@@ -1087,11 +877,6 @@
 	if (self.getOption) {
 		[shiftOption setSelected:NO forSegment:1];
 	}
-//	if (shiftEnabledByToggle)
-//		[self shiftIsPressed:NO];
-//	
-//	if (optionEnabledByToggle)
-//		[self optionIsPressed:NO];
 }
 
 

@@ -16,8 +16,13 @@
 // A single instance class that maintains the bezier paths for most drawable symbols
 //
 
+//
+// These have to line up with the internal constant definitions in constantsDataRows
+// or bad things will happen. -- Mike
+//
 typedef NS_ENUM(NSInteger, ConstType) {
-	BohrRadius = 0,
+	DefaultZero = 0,
+	BohrRadius,
 	StructureConstant,
 	StandardAtmosphere,
 	WienDisplacement,
@@ -75,7 +80,7 @@ typedef NS_ENUM(NSInteger, ConstType) {
 + (NSBezierPath *)makeSymbolForConstant:(enum ConstType)constant;
 + (BigCFloat *)getValueForConstant:(enum ConstType)constant;
 + (NSString *)getNameForConstant:(enum ConstType)constant;
-+ (NSAttributedString *)toFormattedString: (NSString *)string withSize:(CGFloat) size;
++ (NSAttributedString *)toFormattedString: (NSString *)string;
 + (NSArray *)getConstants;
 
 + (void)initialize;

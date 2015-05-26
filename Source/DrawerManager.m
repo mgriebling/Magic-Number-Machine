@@ -492,7 +492,7 @@
 	}
 	else if ([aTableView isEqualTo:constantsTableView])
 	{
-		return [[ExpressionSymbols getConstants] count];
+		return [[ExpressionSymbols getConstants] count]; 
 	}
 	else if ([aTableView isEqualTo:dataTableView])
 	{
@@ -644,7 +644,7 @@
 		NSArray *constantsDataRows = [ExpressionSymbols getConstants];
 		if ([constantsDataRows[rowIndex] count] != 0) {
 			NSString *combined = [NSString stringWithFormat:@"%@%@", constantsDataRows[rowIndex][0], constantsDataRows[rowIndex][1]];
-			NSAttributedString *str = [ExpressionSymbols toFormattedString:combined withSize:12];
+			NSAttributedString *str = [ExpressionSymbols toFormattedString:combined];
 			return str;
 		}
 		return @"";

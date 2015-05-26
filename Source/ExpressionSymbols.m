@@ -95,19 +95,31 @@ static NSArray *constantsDataRows = nil;
 //
 // Translates the constant with an "_" to a subscript -- Mike
 //
-+ (NSAttributedString *)toFormattedString: (NSString *)string {
++ (NSAttributedString *)toFormattedString: (NSString *)string withSize:(CGFloat) size {
 	NSRange location = [string rangeOfString:@"_"];
 	string = [string stringByReplacingOccurrencesOfString:@"_" withString:@""];
 	NSMutableAttributedString *result = [[NSMutableAttributedString alloc] initWithString:string];
-	[result addAttribute:NSFontAttributeName value:[NSFont systemFontOfSize:9.0] range:location];
+//	[result addAttribute:NSFontAttributeName value:[NSFont labelFontOfSize:size] range:NSMakeRange(0, string.length)];
+	[result addAttribute:NSFontAttributeName value:[NSFont labelFontOfSize:9] range:location];
 	[result addAttribute:NSSuperscriptAttributeName value:@-1 range:location];
 	return result;
 }
 
 + (NSBezierPath *)makeSymbolForConstant:(enum ConstType)constant {
-	NSBezierPath *path = [NSBezierPath bezierPath];
-	NSAttributedString *symbolName = [ExpressionSymbols toFormattedString:constantsDataRows[constant][0]];
-	return [ExpressionSymbols makeSymbolForAttributedString:symbolName withPath:path];
+	NSArray *constantStrings = [constantsDataRows[constant][0] componentsSeparatedByString:@"_"];
+	NSBezierPath *path;
+	path = [ExpressionSymbols makeSymbolForString:constantStrings[0] usingSuperscript:0 isContinued:NO];
+	if (constantStrings.count > 1) {
+		[path moveToPoint:NSMakePoint(path.bounds.size.width, 0)];
+		[path appendBezierPath:[ExpressionSymbols makeSymbolForString:constantStrings[1] usingSuperscript:-1 isContinued:YES]];
+	}
+	return path;
+//	string = [string stringByReplacingOccurrencesOfString:@"_" withString:@""];
+//	NSMutableAttributedString *result = [[NSMutableAttributedString alloc] initWithString:string];
+//	NSAttributedString *symbolName = [ExpressionSymbols toFormattedString:constantsDataRows[constant][0] withSize:24];
+//	return [ExpressionSymbols makeSymbolForAttributedString:symbolName];
+//	NSString *symbolName = constantsDataRows[constant][0];
+//	return [ExpressionSymbols makeSymbolForString:symbolName usingSuperscript:NO];
 }
 
 + (BigCFloat *)getValueForConstant:(enum ConstType)constant {
@@ -122,14 +134,64 @@ static NSArray *constantsDataRows = nil;
 	return constantsDataRows;
 }
 
-+ (NSBezierPath *)makeSymbolForAttributedString:(NSAttributedString *)symbol withPath:(NSBezierPath*)path {
+//+ (NSBezierPath *)makeSymbolForAttributedString:(NSAttributedString *)symbol {
+//	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
+//	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
+//	NSBezierPath	*path = [NSBezierPath bezierPath];
+//	NSGlyph			*glyphs;
+//	int				j;
+//	int				numGlyphs;
+//	
+//	// Use a layout manager to get the glyphs for the string
+//	// Create a text storage area for the string
+//	[text addLayoutManager:layoutManager];
+//	[text setAttributedString:symbol];
+//	[path moveToPoint:NSMakePoint(0, 0)];
+//	numGlyphs = [layoutManager numberOfGlyphs];
+//	glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
+//	for (j = 0; j < numGlyphs; j++) {
+//		glyphs[j] = [layoutManager glyphAtIndex:j];
+//	}
+//	[path
+//		appendBezierPathWithGlyphs:glyphs
+//		count:[text length]
+//		inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
+//	 ];
+//	free(glyphs);
+//	return path;
+//}
+
++ (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(NSInteger)superscript isContinued:(BOOL)continued {
 	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
 	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
+	NSBezierPath	*path = [NSBezierPath bezierPath];
 	NSGlyph			*glyphs;
 	int				j;
 	int				numGlyphs;
+	CGFloat			offsetx = continued ? 12 : 0;
+	CGFloat			offsety = superscript < 0 ? -8 : 12;
+	
+	// Use a layout manager to get the glyphs for the string
+	// Create a text storage area for the string
 	[text addLayoutManager:layoutManager];
-	[text setAttributedString:symbol];
+	
+	if (superscript != 0) {
+		[text setAttributedString:
+		 [[NSAttributedString alloc]
+		  initWithString:symbol
+		  attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:16]}
+				]
+			];
+		[path moveToPoint:NSMakePoint(offsetx, offsety)];
+	} else {
+		[text setAttributedString:
+		 [[NSAttributedString alloc]
+		  initWithString:symbol
+		  attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:24]}
+				]
+			];
+		[path moveToPoint:NSMakePoint(offsetx, 0)];
+	}
 	numGlyphs = [layoutManager numberOfGlyphs];
 	glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
 	for (j = 0; j < numGlyphs; j++) {
@@ -144,24 +206,11 @@ static NSArray *constantsDataRows = nil;
 	return path;
 }
 
-+ (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(BOOL)superscript {
-	NSBezierPath *path = [NSBezierPath bezierPath];
-	NSAttributedString *string;
-	if (superscript) {
-		string = [[NSAttributedString alloc] initWithString:symbol attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:16]}];
-		[path moveToPoint:NSMakePoint(0, 12)];
-	} else {
-		string = [[NSAttributedString alloc] initWithString:symbol attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:24]}];
-		[path moveToPoint:NSMakePoint(0, 0)];
-	}
-	return [ExpressionSymbols makeSymbolForAttributedString:string withPath:path];
-}
-
 + (NSBezierPath *)getSymbolForString:(NSString *)string withSuperscript:(BOOL)superscript {
 	NSBezierPath *copy = [NSBezierPath bezierPath];
 	NSBezierPath *symbol;
 	if (![symbols valueForKey:string]) {
-		symbol = [ExpressionSymbols makeSymbolForString:string usingSuperscript:superscript];
+		symbol = [ExpressionSymbols makeSymbolForString:string usingSuperscript:superscript isContinued:NO];
 		symbols[string] = symbol;
 	} else {
 		symbol = symbols[string];

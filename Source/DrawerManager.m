@@ -644,7 +644,7 @@
 		NSArray *constantsDataRows = [ExpressionSymbols getConstants];
 		if ([constantsDataRows[rowIndex] count] != 0) {
 			NSString *combined = [NSString stringWithFormat:@"%@%@", constantsDataRows[rowIndex][0], constantsDataRows[rowIndex][1]];
-			NSAttributedString *str = [ExpressionSymbols toFormattedString:combined];
+			NSAttributedString *str = [ExpressionSymbols toFormattedString:combined withSize:12];
 			return str;
 		}
 		return @"";

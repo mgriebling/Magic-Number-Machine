@@ -75,7 +75,7 @@ typedef NS_ENUM(NSInteger, ConstType) {
 + (NSBezierPath *)makeSymbolForConstant:(enum ConstType)constant;
 + (BigCFloat *)getValueForConstant:(enum ConstType)constant;
 + (NSString *)getNameForConstant:(enum ConstType)constant;
-+ (NSAttributedString *)toFormattedString: (NSString *)string;
++ (NSAttributedString *)toFormattedString: (NSString *)string withSize:(CGFloat) size;
 + (NSArray *)getConstants;
 
 + (void)initialize;

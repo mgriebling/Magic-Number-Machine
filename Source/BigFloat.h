@@ -33,7 +33,7 @@
 //
 
 // Basic constants defining the precision used by the class
-#define	BF_num_values					8
+#define	BF_num_values				16   // was 8
 #define	BF_max_mantissa_length		(BF_num_values * 16 + 3)
 #define	BF_max_exponent_length		32
 

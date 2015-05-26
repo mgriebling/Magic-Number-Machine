@@ -40,13 +40,13 @@
 {
 	NSMutableDictionary *factoryDefaults = [NSMutableDictionary dictionary];
 	
-	factoryDefaults[@"defaultRadix"] = @10;
-	factoryDefaults[@"defaultComplement"] = @0;
+	factoryDefaults[@"defaultRadix"]		  = @10;
+	factoryDefaults[@"defaultComplement"]	  = @0;
 	
-	factoryDefaults[@"defaultDisplayType"] = @0;
-	factoryDefaults[@"defaultDigits"] = @12;
-	factoryDefaults[@"defaultSignificant"] = @3;
-	factoryDefaults[@"defaultFixed"] = @3;
+	factoryDefaults[@"defaultDisplayType"]	  = @0;
+	factoryDefaults[@"defaultDigits"]		  = @12;
+	factoryDefaults[@"defaultSignificant"]	  = @3;
+	factoryDefaults[@"defaultFixed"]		  = @3;
 	factoryDefaults[@"useThousandsSeparator"] = @NO;
 
 	factoryDefaults[@"defaultTrigMode"] = @((int)BF_degrees);
@@ -163,7 +163,7 @@
 //		shiftEnabledByToggle  = NO;
 //		optionEnabledByToggle = NO;
 		equalsPressed         = NO;
-		maximumLength         = 25;
+		maximumLength         = 50;
 		lengthLimitSave       = 0;
 		fixedPlacesSave       = 0;
 		fillLimitSave         = NO;

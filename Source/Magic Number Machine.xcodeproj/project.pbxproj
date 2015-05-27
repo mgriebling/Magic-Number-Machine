@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		471FE6EB1B15C7CC00085DFE /* sqrt.png in Resources */ = {isa = PBXBuildFile; fileRef = 471FE6EA1B15C7CC00085DFE /* sqrt.png */; };
+		471FE6ED1B15C88D00085DFE /* cbrt.png in Resources */ = {isa = PBXBuildFile; fileRef = 471FE6EC1B15C88D00085DFE /* cbrt.png */; };
+		471FE6EF1B15C90100085DFE /* nRoot.png in Resources */ = {isa = PBXBuildFile; fileRef = 471FE6EE1B15C90100085DFE /* nRoot.png */; };
+		471FE6F11B15C9A100085DFE /* reciprocal.png in Resources */ = {isa = PBXBuildFile; fileRef = 471FE6F01B15C9A100085DFE /* reciprocal.png */; };
+		471FE6F31B15CA1500085DFE /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 471FE6F21B15CA1500085DFE /* second.png */; };
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -51,6 +56,11 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Magic Number Machine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine_Prefix.pch"; sourceTree = "<group>"; };
+		471FE6EA1B15C7CC00085DFE /* sqrt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sqrt.png; sourceTree = "<group>"; };
+		471FE6EC1B15C88D00085DFE /* cbrt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cbrt.png; sourceTree = "<group>"; };
+		471FE6EE1B15C90100085DFE /* nRoot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nRoot.png; sourceTree = "<group>"; };
+		471FE6F01B15C9A100085DFE /* reciprocal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reciprocal.png; sourceTree = "<group>"; };
+		471FE6F21B15CA1500085DFE /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
 		47B96FD71B13372E0064FEEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -202,6 +212,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				471FE6F21B15CA1500085DFE /* second.png */,
+				471FE6F01B15C9A100085DFE /* reciprocal.png */,
+				471FE6EE1B15C90100085DFE /* nRoot.png */,
+				471FE6EC1B15C88D00085DFE /* cbrt.png */,
+				471FE6EA1B15C7CC00085DFE /* sqrt.png */,
 				C95D1E430F536BC000851908 /* MNMWindow.nib */,
 				C956BF2B05E8C099002D425F /* Localizable.strings */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -355,10 +370,15 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				C900A92205588FB000809D76 /* expression_tree.png in Resources */,
+				471FE6ED1B15C88D00085DFE /* cbrt.png in Resources */,
 				C900A92305588FB000809D76 /* Magic_Number_Machine_Buttons.html in Resources */,
+				471FE6EF1B15C90100085DFE /* nRoot.png in Resources */,
+				471FE6F11B15C9A100085DFE /* reciprocal.png in Resources */,
 				C900A92405588FB000809D76 /* Magic_Number_Machine_Help.html in Resources */,
 				C900A92505588FB000809D76 /* Magic_Number_Machine_Key_Features.html in Resources */,
+				471FE6F31B15CA1500085DFE /* second.png in Resources */,
 				C900A92605588FB000809D76 /* Magic_Number_Machine_RAQ.html in Resources */,
+				471FE6EB1B15C7CC00085DFE /* sqrt.png in Resources */,
 				C900A92705588FB000809D76 /* Magic_Number_Machine_Source_Code.html in Resources */,
 				C900A92805588FB000809D76 /* top_level_design.png in Resources */,
 				C900A92A05588FC400809D76 /* Icon.icns in Resources */,

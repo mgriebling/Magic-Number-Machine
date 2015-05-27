@@ -526,7 +526,7 @@
 											<string key="NSFrameSize">{610, 197}</string>
 											<reference key="NSSuperview" ref="754057512"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="494295468"/>
+											<reference key="NSNextKeyView" ref="358813544"/>
 											<string key="NSClassName">ExpressionDisplay</string>
 											<string key="NSExtension">NSView</string>
 										</object>
@@ -581,7 +581,7 @@
 							<string key="NSFrame">{{0, 238}, {612, 199}}</string>
 							<reference key="NSSuperview" ref="1043376324"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="358813544"/>
+							<reference key="NSNextKeyView" ref="754057512"/>
 							<int key="NSsFlags">133154</int>
 							<reference key="NSVScroller" ref="358813544"/>
 							<reference key="NSHScroller" ref="494295468"/>
@@ -1673,11 +1673,7 @@
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">138412032</int>
 								<string type="base64-UTF8" key="NSContents">UmFkaXg6IERlY2ltYWwKA</string>
-								<object class="NSFont" key="NSSupport" id="22">
-									<bool key="IBIsSystemFont">YES</bool>
-									<double key="NSSize">9</double>
-									<int key="NSfFlags">3614</int>
-								</object>
+								<reference key="NSSupport" ref="26"/>
 								<reference key="NSControlView" ref="922094019"/>
 								<reference key="NSBackgroundColor" ref="426142247"/>
 								<object class="NSColor" key="NSTextColor" id="57521950">
@@ -1702,7 +1698,7 @@
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">4194304</int>
 								<string key="NSContents">Precision: 12 Digits</string>
-								<reference key="NSSupport" ref="22"/>
+								<reference key="NSSupport" ref="26"/>
 								<reference key="NSControlView" ref="768974218"/>
 								<object class="NSColor" key="NSBackgroundColor">
 									<int key="NSColorSpace">1</int>
@@ -1716,7 +1712,7 @@
 						<object class="NSTextField" id="1024119437">
 							<reference key="NSNextResponder" ref="1043376324"/>
 							<int key="NSvFlags">265</int>
-							<string key="NSFrame">{{507, 441}, {99, 12}}</string>
+							<string key="NSFrame">{{507, 439}, {99, 14}}</string>
 							<reference key="NSSuperview" ref="1043376324"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="857256165"/>
@@ -1725,7 +1721,7 @@
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">71303168</int>
 								<string key="NSContents">Trig. Mode: Degrees</string>
-								<reference key="NSSupport" ref="22"/>
+								<reference key="NSSupport" ref="26"/>
 								<reference key="NSControlView" ref="1024119437"/>
 								<reference key="NSBackgroundColor" ref="426142247"/>
 								<reference key="NSTextColor" ref="57521950"/>

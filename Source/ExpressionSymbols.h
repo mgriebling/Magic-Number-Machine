@@ -21,8 +21,7 @@
 // or bad things will happen. -- Mike
 //
 typedef NS_ENUM(NSInteger, ConstType) {
-	DefaultZero = 0,
-	BohrRadius,
+	BohrRadius=0,
 	StructureConstant,
 	StandardAtmosphere,
 	WienDisplacement,

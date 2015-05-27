@@ -35,15 +35,14 @@
 //
 // Initialises this class with the constant set to either pi or i
 //
-- (instancetype)initWithParent:(Expression*)newParent manager:(DataManager*)newManager andConstant:(enum ConstType)newConstant
+- (instancetype)initWithParent:(Expression*)newParent manager:(DataManager*)newManager andConstant:(int)newConstant
 {
 	self = [super initWithParent:newParent andManager:newManager];
 	if (self)
 	{
 		constant = newConstant;
-		negative = NO;
 		value = [ExpressionSymbols getValueForConstant:constant];
-		
+		negative = NO;
 //		switch (constant)
 //		{
 //		case Pi:

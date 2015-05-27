@@ -38,7 +38,6 @@ static NSArray *constantsDataRows = nil;
 	// Update by Michael Griebling
 	constantsDataRows =
 	@[
-	  @[@"0",     @"	Zero",										[BigCFloat zero]],
 	  @[@"a_0",	  @"	Bohr radius (m)",							[BigCFloat bigFloatWithDouble:0.5291772085936e-10 radix:10]],
 	  @[@"α",	  @"	Fine structure constant",					[BigCFloat bigFloatWithDouble:7.297352537650e-3 radix:10]],
 	  @[@"atm",	  @"	Standard atmosphere (Pa)",					[BigCFloat bigFloatWithInt:101325 radix:10]],
@@ -115,9 +114,10 @@ static NSArray *constantsDataRows = nil;
 	NSBezierPath *path;
 	
 	if (!symbols[constantName]) {
-		path = [ExpressionSymbols makeSymbolForString:constantStrings[0] usingSuperscript:0 isContinued:NO];
+		path = [ExpressionSymbols makeSymbolForString:constantStrings[0] usingSuperscript:0 withOffset:0];
 		if (constantStrings.count > 1) {
-			[path appendBezierPath:[ExpressionSymbols makeSymbolForString:constantStrings[1] usingSuperscript:-1 isContinued:YES]];
+			CGFloat offset = path.bounds.size.width;
+			[path appendBezierPath:[ExpressionSymbols makeSymbolForString:constantStrings[1] usingSuperscript:-1 withOffset:offset]];
 		}
 		symbols[constantName] = path;
 	} else {
@@ -138,14 +138,14 @@ static NSArray *constantsDataRows = nil;
 	return constantsDataRows;
 }
 
-+ (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(NSInteger)superscript isContinued:(BOOL)continued {
++ (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(NSInteger)superscript withOffset:(CGFloat)offsetx {
 	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
 	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
 	NSBezierPath	*path = [NSBezierPath bezierPath];
 	NSGlyph			*glyphs;
 	int				j;
 	int				numGlyphs;
-	CGFloat			offsetx = continued ? 12 : 0;
+//	CGFloat			offsetx = continued ? 16 : 0;
 	CGFloat			offsety = superscript < 0 ? -8 : superscript == 0 ? 0 : 12;
 	CGFloat			size = superscript == 0 ? 24 : 16;
 	
@@ -172,7 +172,7 @@ static NSArray *constantsDataRows = nil;
 	NSBezierPath *copy = [NSBezierPath bezierPath];
 	NSBezierPath *symbol;
 	if (![symbols valueForKey:string]) {
-		symbol = [ExpressionSymbols makeSymbolForString:string usingSuperscript:superscript isContinued:NO];
+		symbol = [ExpressionSymbols makeSymbolForString:string usingSuperscript:superscript withOffset:0];
 		symbols[string] = symbol;
 	} else {
 		symbol = symbols[string];

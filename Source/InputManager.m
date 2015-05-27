@@ -45,8 +45,8 @@
 //
 - (IBAction)binaryOpPressed:(id)sender
 {
-	Expression		*inputPoint;
-	int					buttonTag = [sender tag];
+	Expression	*inputPoint;
+	int			buttonTag = [sender tag];
 	
 	[dataManager ensureInputWithValue:YES];
 	inputPoint = [dataManager getInputPoint];
@@ -57,19 +57,9 @@
 		{
 			buttonTag = 'x';
 		}
-		else if (buttonTag == 'p')
-		{
-			buttonTag = 'c';
-		}
 		else if (buttonTag == 'a')
 		{
 			[inputPoint preOpPressed:notOp];
-			[dataManager valueChanged];
-			return;
-		}
-		else if (buttonTag == '%')
-		{
-			[inputPoint preOpPressed:rndOp];
 			[dataManager valueChanged];
 			return;
 		}
@@ -368,10 +358,10 @@
 			pasteExpression = [NSKeyedUnarchiver unarchiveObjectWithData:pasteData];
 			[dataManager ensureInputWithValue:NO];
 			inputPoint = [dataManager getInputPoint];
-			[inputPoint bracketPressed];
-			inputPoint = [dataManager getInputPoint];
+//			[inputPoint bracketPressed];						// Mike: why do we need brackets?
+//			inputPoint = [dataManager getInputPoint];
 			[inputPoint expressionInserted:pasteExpression];
-			[inputPoint closeBracketPressed];
+//			[inputPoint closeBracketPressed];
 			[dataManager valueChanged];
 		}
 	}
@@ -549,8 +539,7 @@
 	[sheet orderOut:self];
 	
 	// The modal sheet can mess with our shift/option key detection. Clear them here.
-	[dataManager shiftIsPressed:NO];
-	[dataManager optionIsPressed:NO];
+//	[dataManager shiftIsPressed:NO];
 }
 
 //
@@ -589,12 +578,12 @@
 	case sinOp:
 	case cosOp:
 	case tanOp:
+	case sinhOp:
+	case coshOp:
+	case tanhOp:
 		if ([dataManager getShift])
 			buttonTag += 3;
-		if ([dataManager getOption])
-			buttonTag += 6;
 		break;
-	case reOp:
 	case absOp:
 		if ([dataManager getShift])
 			buttonTag += 1;
@@ -646,18 +635,9 @@
 //
 - (IBAction)shiftPressed:(id)sender
 {
-	// We use this wierd CallBack class because the button is already highlighted
-	// when this method is called and will be unhighlighted shortly after. By
-	// using the CallBack, shiftToggled will get called after the unhighlight has
-	// occurred, so that we can set the button highlight without it getting mucked
-	// up as the stack unwinds.
+	[dataManager shiftIsPressed];	// toggle the shift flag
 	
-	// Mike -- removed this abomination
-//	[CallBack callBack:dataManager method:^id(id param) {
-//		[dataManager shiftToggled];
-//		return nil;
-//	}];
-//	[CallBack callBack:dataManager method:@selector(shiftToggled)];
+	// TBD: Relabel keys that are double-duty
 }
 
 //

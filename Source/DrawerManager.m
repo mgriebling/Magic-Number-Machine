@@ -380,10 +380,7 @@
 //
 - (IBAction)clearData2DValue:(id)sender
 {
-	if ([data2DTableView selectedRow] == -1)
-	{
-		return;
-	}
+	if ([data2DTableView selectedRow] == -1) { return; }
 	
 	[[dataManager data2D] removeObjectAtIndex:[data2DTableView selectedRow] * 2];
 	if ([data2DTableView selectedRow] * 2 < [[dataManager data2D] count])
@@ -456,12 +453,12 @@
 	
 	pasteExpression = [NSKeyedUnarchiver unarchiveObjectWithData:[dataManager history][[sender clickedRow]][0]];
 	[dataManager ensureInputWithValue:NO];
-	inputPoint = [dataManager getInputPoint];
-	[inputPoint bracketPressed];
+//	inputPoint = [dataManager getInputPoint];
+//	[inputPoint bracketPressed];
 	inputPoint = [dataManager getInputPoint];
 	[inputPoint expressionInserted:pasteExpression];
-	inputPoint = [dataManager getInputPoint];
-	[inputPoint closeBracketPressed];
+//	inputPoint = [dataManager getInputPoint];
+//	[inputPoint closeBracketPressed];
 	[dataManager valueChanged];
 }
 

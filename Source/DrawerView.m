@@ -27,8 +27,10 @@
 {
 	unsigned int newFlags = [theEvent modifierFlags];
 	
-	[dataManager optionIsPressed:(newFlags & NSAlternateKeyMask) != 0];
-	[dataManager shiftIsPressed:(newFlags & NSShiftKeyMask) != 0];
+//	[dataManager optionIsPressed:(newFlags & NSAlternateKeyMask) != 0];
+	if ((newFlags & NSShiftKeyMask) != 0) {
+		[dataManager shiftIsPressed];
+	}	
 
 	[super flagsChanged:theEvent];
 }

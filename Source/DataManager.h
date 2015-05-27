@@ -34,7 +34,7 @@
 	IBOutlet ExpressionDisplay	*expressionDisplay;	// window's main display
 	IBOutlet DrawerManager		*drawerManager;		// handles all the window drawers
 	IBOutlet id					inputManager;			// routes input from buttons
-	__weak IBOutlet NSSegmentedControl *shiftOption;
+//	__weak IBOutlet NSSegmentedControl *shiftOption;
 //	IBOutlet NSButton			*optionButton;			// the option button
 //	IBOutlet NSButton			*shiftButton;				// the shift button
 	IBOutlet NSButton			*exponentLeftShift;		// the "<<" button
@@ -52,7 +52,7 @@
 	unsigned int				maximumLength;
 	BOOL						fillLimit;
 	unsigned int				fixedPlaces;
-//	BOOL						shiftIsDown;			// simplified the whole shift/option highlights - Mike
+	BOOL						shiftIsActive;
 //	BOOL						optionIsDown;
 	BOOL						equalsPressed;
 	int							complement;
@@ -97,13 +97,13 @@
 @property (NS_NONATOMIC_IOSONLY, getter=getTrigMode, readonly) int trigMode;
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) NSMutableArray *history;
 - (void)lengthLimit:(unsigned int)limit fillLimit:(BOOL)fill fixedPlaces:(unsigned int)places;
-- (void)optionIsPressed:(BOOL)isPressed;
-- (void)optionToggled;
+//- (void)optionIsPressed:(BOOL)isPressed;
+//- (void)optionToggled;
 - (void)setInputAtPoint:(NSPoint)point;
 - (void)setRadix:(short)newRadix useComplement:(int)useComplement;
 - (void)setStartupState;
-- (void)shiftIsPressed:(BOOL)isPressed;
-- (void)shiftToggled;
+- (void)shiftIsPressed;
+// - (void)shiftToggled;
 - (void)shiftResult:(BOOL)left;
 - (void)trigModePressed;
 - (void)valueChanged;

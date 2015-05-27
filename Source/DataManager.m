@@ -230,21 +230,24 @@
 
 - (void)updateRadixDisplay
 {
-	switch (radix)
-	{
-		case 2:
-			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Binary" value:nil table:nil]];
-			break;
-		case 8:
-			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Octal" value:nil table:nil]];
-			break;
-		case 10:
-			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Decimal" value:nil table:nil]];
-			break;
-		case 16:
-			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Hexadecimal" value:nil table:nil]];
-			break;
-	}
+	NSString *format = [[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: %d" value:nil table:nil];
+	NSString *radixString = [NSString localizedStringWithFormat:format, radix];
+	[radixDisplay setStringValue:radixString];
+//	switch (radix)
+//	{
+//		case 2:
+//			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Binary" value:nil table:nil]];
+//			break;
+//		case 8:
+//			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Octal" value:nil table:nil]];
+//			break;
+//		case 10:
+//			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Decimal" value:nil table:nil]];
+//			break;
+//		case 16:
+//			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Hexadecimal" value:nil table:nil]];
+//			break;
+//	}
 }
 
 - (void)updatePrecisionDisplay
@@ -563,7 +566,7 @@
 //
 - (BOOL)getOption
 {
-	BOOL option = [shiftOption isSelectedForSegment:1];
+	BOOL option = NO; // [shiftOption isSelectedForSegment:1];
 	return option;
 }
 
@@ -584,8 +587,7 @@
 //
 - (BOOL)getShift
 {
-	BOOL value = [shiftOption isSelectedForSegment:0];
-	return value;
+	return shiftIsActive;
 }
 
 //
@@ -808,8 +810,10 @@
 //
 // Set the current state of the shift button.
 //
-- (void)shiftIsPressed:(BOOL)isPressed
+- (void)shiftIsPressed
 {
+	shiftIsActive = !shiftIsActive;
+
 //	if (shiftIsDown != isPressed)
 //	{
 //		shiftIsDown = isPressed;
@@ -848,15 +852,18 @@
 }
 
 //
-// shiftToggled
+// trigModePressed
 //
-// Toggle the current state of the shift button.
+// Toggle the current state of the trig mode.
 //
 - (void)trigModePressed
 {
-	trigMode = self.getShift ? BF_radians : (self.getOption ? BF_gradians : BF_degrees);
+	switch (trigMode) {
+		case BF_degrees: trigMode = BF_radians; break;
+		case BF_radians: trigMode = BF_gradians; break;
+		case BF_gradians: trigMode = BF_degrees; break;
+	}
 	
-	// # dennis # // [[NSUserDefaults standardUserDefaults] setInteger:(int)trigMode forKey:@"defaultTrigMode"];
 	[self setDefaultTrigMode:(int)trigMode];	// dennis
 	[self updateTrigModeDisplay];				// dennis
 }
@@ -872,10 +879,7 @@
 	[expressionDisplay expressionChanged];
 	
 	if (self.getShift) {
-		[shiftOption setSelected:NO forSegment:0];
-	}
-	if (self.getOption) {
-		[shiftOption setSelected:NO forSegment:1];
+		shiftIsActive = NO;
 	}
 }
 

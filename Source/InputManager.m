@@ -120,20 +120,7 @@
 // User saved the preferences dialog.
 //
 - (IBAction)commitPreferences:(id)sender
-{
-	/* # dennis #
-	 
-	[dataManager setThousandsSeparator:[thousandsSeparator intValue] != 0];
-	[NSApp stopModal];
-
-	[[NSUserDefaults standardUserDefaults] setBool:[thousandsSeparator intValue] != 0 forKey:@"useThousandsSeparator"];
-	[[NSUserDefaults standardUserDefaults] setInteger:[defaultDigits intValue] forKey:@"defaultDigits"];
-	[[NSUserDefaults standardUserDefaults] setInteger:[defaultSignificant intValue] forKey:@"defaultSignificant"];
-	[[NSUserDefaults standardUserDefaults] setInteger:[defaultFixed intValue] forKey:@"defaultFixed"];
-	[[NSUserDefaults standardUserDefaults] setInteger:[[defaultDisplay selectedCell] tag] forKey:@"defaultDisplayType"];
-	 
-	*/
-	
+{	
 	// dennis ---------------------------------
 	
 	BOOL errorFlag = NO;
@@ -291,12 +278,9 @@
 //
 // Shifts the result left or right accordingly.
 //
-- (IBAction)exponentShiftPressed:(id)sender
+- (IBAction)exponentShiftPressed:(NSButton *)sender
 {
-	if ([dataManager getShift] == 0)
-		[dataManager shiftResult:YES];
-	else
-		[dataManager shiftResult:NO];
+	[dataManager shiftResult:sender.tag < 0];
 }
 
 //
@@ -419,10 +403,6 @@
 	{
 		[self preOpPressed:sender];
 		return;
-	}
-	else if (buttonTag == sqrtOp)
-	{
-		buttonTag = invOp;
 	}
 	
 	[inputPoint postOpPressed:buttonTag];

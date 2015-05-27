@@ -47,7 +47,7 @@ static NSArray *constantsDataRows = nil;
 	  @[@"c",	  @"	Speed of light in vacuum (m s⁻¹)",			[BigCFloat bigFloatWithInt:299792458 radix:10]],
 	  @[@"E_h",	  @"	Hartree energy (J)",						[BigCFloat bigFloatWithDouble:4.3597439422e-18 radix:10]],
 	  @[@"e_c",	  @"	Elementary charge (C)",						[BigCFloat bigFloatWithDouble:1.60217648740e-19 radix:10]],
-	  @[@"ε_0",	  @"	Permittivity of vacuum (F m⁻¹)",			[BigCFloat bigFloatWithDouble:8.854187817620389850536563e-12 radix:10]],
+	  @[@"ε_0",	  @"	Permittivity of vacuum (F m⁻¹)",			[BigCFloat bigFloatWithString:@"8.854187817620389850536563e-12" radix:10]],
 	  @[@"eV",	  @"	Electron volt (J)",							[BigCFloat bigFloatWithDouble:1.60217648740e-19 radix:10]],
 	  @[@"F",	  @"	Faraday constant (C mol⁻¹)",				[BigCFloat bigFloatWithDouble:96485.339924 radix:10]],
 	  @[@"g_e",	  @"	Electron g-factor",							[BigCFloat bigFloatWithDouble:-2.002319304362215 radix:10]],

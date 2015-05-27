@@ -777,6 +777,19 @@ BF_NormaliseNumbers
 	return self;
 }
 
+- (instancetype)initWithString:(NSString *)newValue radix:(unsigned short)newRadix {
+	NSString *separators = newRadix == 10 ? @"eE" : @"";
+	self = [super init];
+	if (self != nil) {
+		NSArray *components = [newValue componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:separators]];
+		NSString *line = components.firstObject;
+		
+//		while (line.length > 0) {
+//		}
+	}
+	return self;
+}
+
 //
 // encodeWithCoder
 //
@@ -816,6 +829,10 @@ BF_NormaliseNumbers
 	copy->bf_is_valid = self->bf_is_valid;
 	
 	return copy;
+}
+
++ (BigFloat*)bigFloatWithString:(NSString *)newValue radix:(unsigned short)newRadix {
+	return [[BigFloat alloc] initWithString:newValue radix:newRadix];
 }
 
 //

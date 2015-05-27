@@ -132,7 +132,6 @@
 	NSAffineTransform	*transform = [NSAffineTransform transform];
 	NSRect				boundsRect;
 	double				scale = [Expression scaleWithLevel:level];
-	BigCFloat			*lvalue;
 	
 	if (![path isEmpty])
 		boundsRect = [path bounds];
@@ -174,20 +173,22 @@
 		case '^':
 			return;
 		case rootOp:
-			if (leftChild != nil)
-				lvalue = [leftChild getValue];
-			else
-				lvalue = [BigCFloat bigFloatWithInt:2 radix:[manager getRadix]];
-			NSUInteger root = lvalue.realPart.doubleValue;
+//			if (leftChild != nil)
+//				lvalue = [leftChild getValue];
+//			else
+//				lvalue = [BigCFloat bigFloatWithInt:2 radix:[manager getRadix]];
+//			NSUInteger root = lvalue.realPart.doubleValue;
 			opPath = [ExpressionSymbols sqrtPath];
-			[opPath appendBezierPath:[ExpressionSymbols nRootPath:root]];
+//			[opPath appendBezierPath:[ExpressionSymbols nRootPath:root]];
 			break;
 		default:
 			opPath = nil;
 			break;
 	}
 	
-	[transform translateXBy:boundsRect.origin.x + boundsRect.size.width + ((op != '.') ? 12.0 : 4.0) yBy:0];
+//	[transform translateXBy:boundsRect.origin.x + boundsRect.size.width + ((op != '.') ? 12.0 : 4.0) yBy:0];
+	[transform translateXBy:boundsRect.origin.x + boundsRect.size.width + ((op != '.') ? 6.0 : 4.0) yBy:0];   // less space is more - Mike
+
 	if (level >= 2)
 		[transform scaleBy:scale];
 	
@@ -786,7 +787,8 @@
 				NSRect				boundsRect = [expressionPath bounds];
 				double				spacing;
 				
-				spacing = (op == '.' || leftChild == nil) ? (scale * 4.0) : (scale * 12.0);
+				spacing = (op == '.' || leftChild == nil) ? (scale * 4.0) : (scale * 6.0);	 // less space is more - Mike
+//				spacing = (op == '.' || leftChild == nil) ? (scale * 4.0) : (scale * 12.0);
 				
 				rightChildPath = [child pathAtLevel:level];
 			

@@ -138,6 +138,13 @@ static NSArray *constantsDataRows = nil;
 	return constantsDataRows;
 }
 
++ (NSFont *)getDisplayFontWithSize:(CGFloat)size {
+	NSFont *font = [NSFont fontWithName:@"HelveticaNeue-Light" size:size];
+	if (font == nil) font = [NSFont labelFontOfSize:size];
+//	NSLog(@"Found font = %@", font);
+	return font;
+}
+
 + (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(NSInteger)superscript withOffset:(CGFloat)offsetx {
 	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
 	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
@@ -151,7 +158,8 @@ static NSArray *constantsDataRows = nil;
 	// Use a layout manager to get the glyphs for the string
 	// Create a text storage area for the string
 	[text addLayoutManager:layoutManager];
-	[text setAttributedString: [[NSAttributedString alloc] initWithString:symbol attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:size]}]];
+	NSFont *font = [ExpressionSymbols getDisplayFontWithSize:size];
+	[text setAttributedString: [[NSAttributedString alloc] initWithString:symbol attributes:@{NSFontAttributeName:font}]];
 	[path moveToPoint:NSMakePoint(offsetx, offsety)];
 	numGlyphs = [layoutManager numberOfGlyphs];
 	glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);

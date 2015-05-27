@@ -112,7 +112,7 @@ typedef NS_ENUM(unsigned int, BFTrigMode)
 // Extended Mathematics Functions
 - (void)powerOfE;
 - (void)ln;
-- (void)raiseToIntPower: (NSUInteger)n;
+- (void)raiseToIntPower: (NSInteger)n;
 - (void)raiseToPower:(BigFloat*)num;
 - (void)sqrt;
 - (void)cbrt;

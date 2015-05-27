@@ -26,12 +26,12 @@
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
 	NSArray				*contents = [self objectValue];
-	NSBezierPath			*path = [NSBezierPath bezierPath];
+	NSBezierPath		*path = [NSBezierPath bezierPath];
 	NSRect				contentBounds;
-	NSAffineTransform *transform = [NSAffineTransform transform];
+	NSAffineTransform	*transform = [NSAffineTransform transform];
 	double				scale = 1.0;
-	NSString				*numberString;
-	NSBezierPath			*line = [NSBezierPath bezierPath];
+	NSString			*numberString;
+	NSBezierPath		*line = [NSBezierPath bezierPath];
 	
 	[super drawInteriorWithFrame:cellFrame inView:controlView];
 	

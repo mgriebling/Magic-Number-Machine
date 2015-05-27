@@ -755,7 +755,7 @@
 		[text setAttributedString:
 			[[NSAttributedString alloc]
 				initWithString:mantissa
-				attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:24]}
+				attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:24]}
 			]
 		];
 		numGlyphs = [layoutManager numberOfGlyphs];
@@ -780,7 +780,7 @@
 			[text setAttributedString:
 				[[NSAttributedString alloc]
 					initWithString:@"x10"
-					attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:8.5]}
+					attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:8.5]}
 				]
 			];
 			numGlyphs = [layoutManager numberOfGlyphs];
@@ -803,7 +803,7 @@
 			[text setAttributedString:
 				[[NSAttributedString alloc]
 					initWithString:exponent
-					attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:12]}
+					attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:12]}
 				]
 			];
 			numGlyphs = [layoutManager numberOfGlyphs];
@@ -876,7 +876,7 @@
 		[text setAttributedString:
 			[[NSAttributedString alloc]
 				initWithString:imaginary
-				attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:24]}
+				attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:24]}
 			]
 		];
 		numGlyphs = [layoutManager numberOfGlyphs];
@@ -901,7 +901,7 @@
 			[text setAttributedString:
 				[[NSAttributedString alloc]
 					initWithString:@"x10"
-					attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:8.5]}
+					attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:8.5]}
 				]
 			];
 			numGlyphs = [layoutManager numberOfGlyphs];
@@ -924,7 +924,7 @@
 			[text setAttributedString:
 				[[NSAttributedString alloc]
 					initWithString:imExponent
-					attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:12]}
+					attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:12]}
 				]
 			];
 			numGlyphs = [layoutManager numberOfGlyphs];
@@ -950,7 +950,7 @@
 		[text setAttributedString:
 			[[NSAttributedString alloc]
 				initWithString:@"i"
-				attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:24]}
+				attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:24]} //  [NSFont labelFontOfSize:24]}
 			]
 		];
 		numGlyphs = [layoutManager numberOfGlyphs];

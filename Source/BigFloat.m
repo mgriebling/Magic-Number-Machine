@@ -1032,7 +1032,7 @@ BF_NormaliseNumbers
 	int						i;
 	unsigned long		carryBits;
 	BigFloat				*exponentNum;
-	BigFloat				*powerNum;
+//	BigFloat				*powerNum;
 	
 	// Check for a valid new radix
 	if (bf_radix == newRadix || newRadix < 2 || newRadix > 36)
@@ -1097,8 +1097,9 @@ BF_NormaliseNumbers
 	exponentNum = [[BigFloat alloc] initWithInt: bf_radix radix: newRadix];
 	
 	// Raise the BigFloat to the old exponent power
-	powerNum = [[BigFloat alloc] initWithInt: bf_exponent radix: newRadix];
-	[exponentNum raiseToPower:powerNum];
+//	powerNum = [[BigFloat alloc] initWithInt: bf_exponent radix: newRadix];
+//	[exponentNum raiseToPower:powerNum];
+	[exponentNum raiseToIntPower:bf_exponent];
 
 	// Set the values and elements of this number
 	BF_AssignValues(bf_array, result);
@@ -2447,27 +2448,146 @@ BF_NormaliseNumbers
 
 - (void)sqrt {
 	[self nRoot:2];
+//	BigFloat				*original;
+//	BigFloat				*prevGuess;
+//	BigFloat				*newGuess;
+//	BigFloat				*two;
+//	int						i, j;
+//	BOOL					digitNotFound = YES;
+//	int						numDigits;
+//	NSComparisonResult	compare;
+//	
+//	if (!bf_is_valid)
+//		return;
+//	
+//	if ([self isNegative])
+//	{
+//		bf_is_valid = NO;
+//		return;
+//	}
+//	
+//	if ([self isZero])
+//	{
+//		return;
+//	}
+//	
+//	original = [self copy];
+//	two = [[BigFloat alloc] initWithInt:2 radix: bf_radix];
+//	
+//	// Count the number of digits left of the point
+//	numDigits = BF_num_values * bf_value_precision + bf_exponent - bf_user_point;
+//	for (i = BF_num_values - 1; i >= 0 && digitNotFound; i--)
+//	{
+//		for (j = bf_value_precision - 1; j >= 0 && digitNotFound; j--)
+//		{
+//			if ((bf_array[i] / (unsigned long)(pow(bf_radix, j)) % bf_radix) == 0)
+//			{
+//				numDigits--;
+//			}
+//			else
+//			{
+//				digitNotFound = NO;
+//			}
+//		}
+//	}
+//	
+//	// The first guess will be this number with its numDigits halved
+//	bf_exponent -= (numDigits / 2);
+//	prevGuess = [self copy];
+//	newGuess = [self copy];
+//	compare = NSOrderedDescending;
+//	
+//	// Do some Newton's method iterations until we converge
+//	while(compare != NSOrderedSame)
+//	{
+//		[prevGuess assign: newGuess];
+//		
+//		[newGuess assign: original];
+//		[newGuess divideBy: prevGuess];
+//		[newGuess add: prevGuess];
+//		[newGuess divideBy: two];
+//		
+//		compare = [newGuess compareWith: prevGuess];
+//	}
+//	
+//	// Use the last guess
+//	[self assign: newGuess];
+//	
+//	//
+//	// This method has problems actually giving "1" as a result. If we're
+//	// within 2 * smallest digit size, then round to one.
+//	//
+//	BigFloat *one = [[BigFloat alloc] initWithInt:1 radix:bf_radix];
+//	BigFloat *twoEpsilon =
+//	[[BigFloat alloc]
+//	 initWithMantissa:2
+//	 exponent:-(BF_num_values * bf_value_precision) + 1
+//	 isNegative:NO
+//	 radix:bf_radix
+//	 userPointAt:0];
+//	if ([one compareWith:self] == NSOrderedDescending)
+//	{
+//		//
+//		// If we're slightly greater than 1, check if we should round down
+//		//
+//		BigFloat *difference = [one copy];
+//		[difference subtract:self];
+//		if ([difference compareWith:twoEpsilon] == NSOrderedAscending)
+//		{
+//			[self assign:one];
+//		}
+//	}
+//	else
+//	{
+//		//
+//		// If we're slightly less than 1, check if we should round up
+//		//
+//		BigFloat *difference = [self copy];
+//		[difference subtract:one];
+//		if ([difference compareWith:twoEpsilon] == NSOrderedAscending)
+//		{
+//			[self assign:one];
+//		}
+//	}
+//	
 }
 
 - (void)cbrt {
 	[self nRoot:3];
 }
 
-- (void)raiseToIntPower: (NSUInteger)n {
-	BigFloat *Z = [BigFloat bigFloatWithInt:0 radix:10];
-	NSUInteger N = n;
+- (void)raiseToIntPower: (NSInteger)n {
+	BigFloat *Z = [BigFloat bigFloatWithInt:0 radix:bf_radix];
+	NSUInteger N = labs(n);
 	NSUInteger t;
-	BigFloat *Y = [BigFloat bigFloatWithInt:1 radix:10];
+	BigFloat *Y = [BigFloat bigFloatWithInt:1 radix:bf_radix];
+	BOOL isNegativePower = n < 0;
+	
+	if (!bf_is_valid) return;
+	
+	if ([self isZero])
+	{
+		// Zero raised to anything except zero is zero (provided exponent is valid)
+		if (n == 0)
+		{
+			[self assign:Y];
+		}
+		return;
+	}
+	
 	[Z assign:self];
 	while (true) {
 		t = N % 2; N = N/2;
 		if (t != 0) {
 			[Y multiplyBy:Z];
-			if (N == 0) break;
 		}
+		if (N == 0) break;
 		[Z multiplyBy:Z];
 	}
 	[self assign:Y];
+	if (isNegativePower) {
+		[self inverse];
+	}
 }
 
 //
@@ -2521,7 +2641,7 @@ BF_NormaliseNumbers
 	
 	// The first guess will be the scaled exponent of this number
 	double froot = pow(self.doubleValue, 1.0/n);
-	[self assign:[BigFloat bigFloatWithDouble:froot radix:10]];
+	[self assign:[BigFloat bigFloatWithDouble:froot radix:bf_radix]];
 //	NSLog(@"Initial guess = %f", froot);
 //	bf_exponent -= (numDigits / n);
 	prevGuess = [self copy];
@@ -2534,13 +2654,13 @@ BF_NormaliseNumbers
 	BigFloat *power = [[BigFloat alloc] init];
 	while (compare != NSOrderedSame && maxIterations-- > 0)
 	{
-		[prevGuess assign: newGuess];
-		[power assign:newGuess];
+		prevGuess = [newGuess copy];
+		power = [newGuess copy];
 		[power raiseToIntPower:n-1];
 		
-		[newGuess assign: original];
+		newGuess = [original copy];
 		[newGuess divideBy: power];
-		[power assign:prevGuess];
+		power = [prevGuess copy];
 		[power multiplyBy:rootn1];
 		[newGuess add:power];
 	
@@ -2560,7 +2680,7 @@ BF_NormaliseNumbers
 	BigFloat *one = [[BigFloat alloc] initWithInt:1 radix:bf_radix];
 	BigFloat *twoEpsilon =
 		[[BigFloat alloc]
-			initWithMantissa:n
+			initWithMantissa:2
 			exponent:-(BF_num_values * bf_value_precision) + 1
 			isNegative:NO
 			radix:bf_radix

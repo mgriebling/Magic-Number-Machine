@@ -2445,20 +2445,44 @@ BF_NormaliseNumbers
 	
 }
 
+- (void)sqrt {
+	[self nRoot:2];
+}
+
+- (void)cbrt {
+	[self nRoot:3];
+}
+
+- (void)raiseToIntPower: (NSUInteger)n {
+	BigFloat *Z = [BigFloat bigFloatWithInt:0 radix:10];
+	NSUInteger N = n;
+	NSUInteger t;
+	BigFloat *Y = [BigFloat bigFloatWithInt:1 radix:10];
+	[Z assign:self];
+	while (true) {
+		t = N % 2; N = N/2;
+		if (t != 0) {
+			[Y multiplyBy:Z];
+			if (N == 0) break;
+		}
+		[Z multiplyBy:Z];
+	}
+	[self assign:Y];
+}
+
 //
-// sqrt
+// nRoot
 //
-// Takes the square root of the receiver (raises to the power 1/2)
+// Takes the nth root of the receiver
 //
-- (void)sqrt
-{
+- (void)nRoot: (NSUInteger)n {
 	BigFloat				*original;
 	BigFloat				*prevGuess;
 	BigFloat				*newGuess;
-	BigFloat				*two;
-	int						i, j;
-	BOOL					digitNotFound = YES;
-	int						numDigits;
+	BigFloat				*root;
+//	int						i, j;
+//	BOOL					digitNotFound = YES;
+//	int						numDigits;
 	NSComparisonResult	compare;
 	
 	if (!bf_is_valid)
@@ -2476,55 +2500,67 @@ BF_NormaliseNumbers
 	}
 	
 	original = [self copy];
-	two = [[BigFloat alloc] initWithInt:2 radix: bf_radix];
+	root = [[BigFloat alloc] initWithInt:n radix: bf_radix];
 	
-	// Count the number of digits left of the point
-	numDigits = BF_num_values * bf_value_precision + bf_exponent - bf_user_point;
-	for (i = BF_num_values - 1; i >= 0 && digitNotFound; i--)
-	{
-		for (j = bf_value_precision - 1; j >= 0 && digitNotFound; j--)
-		{
-			if ((bf_array[i] / (unsigned long)(pow(bf_radix, j)) % bf_radix) == 0)
-			{
-				numDigits--;
-			}
-			else
-			{
-				digitNotFound = NO;
-			}
-		}
-	}
+//	// Count the number of digits left of the point
+//	numDigits = BF_num_values * bf_value_precision + bf_exponent - bf_user_point;
+//	for (i = BF_num_values - 1; i >= 0 && digitNotFound; i--)
+//	{
+//		for (j = bf_value_precision - 1; j >= 0 && digitNotFound; j--)
+//		{
+//			if ((bf_array[i] / (unsigned long)(pow(bf_radix, j)) % bf_radix) == 0)
+//			{
+//				numDigits--;
+//			}
+//			else
+//			{
+//				digitNotFound = NO;
+//			}
+//		}
+//	}
 	
-	// The first guess will be this number with its numDigits halved
-	bf_exponent -= (numDigits / 2);
+	// The first guess will be the scaled exponent of this number
+	double froot = pow(self.doubleValue, 1.0/n);
+	[self assign:[BigFloat bigFloatWithDouble:froot radix:10]];
+//	NSLog(@"Initial guess = %f", froot);
+//	bf_exponent -= (numDigits / n);
 	prevGuess = [self copy];
 	newGuess = [self copy];
 	compare = NSOrderedDescending;
 	
 	// Do some Newton's method iterations until we converge
-	while(compare != NSOrderedSame)
+	NSInteger maxIterations = 1000;
+	BigFloat *rootn1 = [[BigFloat alloc] initWithInt:n-1 radix: bf_radix];
+	BigFloat *power = [[BigFloat alloc] init];
+	while (compare != NSOrderedSame && maxIterations-- > 0)
 	{
 		[prevGuess assign: newGuess];
+		[power assign:newGuess];
+		[power raiseToIntPower:n-1];
 		
 		[newGuess assign: original];
-		[newGuess divideBy: prevGuess];
-		[newGuess add: prevGuess];
-		[newGuess divideBy: two];
+		[newGuess divideBy: power];
+		[power assign:prevGuess];
+		[power multiplyBy:rootn1];
+		[newGuess add:power];
+	
+		[newGuess divideBy: root];
 		
 		compare = [newGuess compareWith: prevGuess];
 	}
+	if (maxIterations <= 0) NSLog(@"Exceeded iteration limit on root evaluation: Error is likely");
 	
 	// Use the last guess
 	[self assign: newGuess];
 	
 	//
 	// This method has problems actually giving "1" as a result. If we're
-	// within 2 * smallest digit size, then round to one.
+	// within n * smallest digit size, then round to one.
 	//
 	BigFloat *one = [[BigFloat alloc] initWithInt:1 radix:bf_radix];
 	BigFloat *twoEpsilon =
 		[[BigFloat alloc]
-			initWithMantissa:2
+			initWithMantissa:n
 			exponent:-(BF_num_values * bf_value_precision) + 1
 			isNegative:NO
 			radix:bf_radix
@@ -3787,7 +3823,7 @@ BF_NormaliseNumbers
 }
 
 //
-// andWith
+// orWith
 //
 // receiver = receiver | num
 //
@@ -3902,7 +3938,7 @@ BF_NormaliseNumbers
 }
 
 //
-// andWith
+// xorWith
 //
 // receiver = receiver ^ num
 //

@@ -83,6 +83,7 @@
 - (void)ln;
 - (void)raiseToPower:(BigFloat*)num;
 - (void)sqrt;
+- (void)cbrt;
 - (void)inverse;
 - (void)logOfBase:(BigFloat *)base;
 - (void)sinWithTrigMode:(BFTrigMode)mode inv:(BOOL)useInverse hyp:(BOOL)useHyp;

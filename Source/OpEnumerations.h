@@ -36,6 +36,7 @@ enum
 	factorialOp = 26,
 	invOp = 27,
 	cubedOp = 28,
+	cbrtOp = 29,
 	modOp = 37,			// '%'
 	multiplyOp = 42,	// '*'
 	plusOp = 43,		// '+'

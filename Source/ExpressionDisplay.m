@@ -22,6 +22,10 @@
 
 @implementation ExpressionDisplay
 
+- (BOOL)allowsVibrancy {
+	return YES;
+}
+
 //
 // initWithFrame
 //
@@ -93,6 +97,8 @@ NSBezierPath* GetResultPath(Expression* expression)
 - (void)drawRect:(NSRect)rect
 {
 	NSBezierPath 	*background;
+	
+	[NSColor.secondaryLabelColor set];
 	
 	// Clear the background
 	if (caretPath)

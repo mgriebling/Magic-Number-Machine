@@ -788,14 +788,13 @@ BF_NormaliseNumbers
 
 - (instancetype)initWithString:(NSString *)newValue radix:(unsigned short)newRadix {
 	NSString *separators = newRadix == 10 ? @"eE" : @"";
-	NSCharacterSet *validDigits = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+	NSString *digits = [@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ" substringToIndex:newRadix];
+	NSCharacterSet *validDigits = [NSCharacterSet characterSetWithCharactersInString:digits];
 	NSCharacterSet *signChars = [NSCharacterSet characterSetWithCharactersInString:@"+-"];
 	NSInteger userPoint = 0;
 
 	self = [self initWithInt:0 radix:newRadix];
 	if (self != nil) {
-//		NSLog(@"Pre-digit add = %@", self.toString);
-//		bf_radix = newRadix;
 		NSArray *components = [newValue componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:separators]];
 		NSString *mantissa = [components.firstObject stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 		char ch = [self getCharFromString:&mantissa];

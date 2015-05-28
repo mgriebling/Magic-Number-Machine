@@ -4,10 +4,7 @@
 "Precision: %d significant figures" = "Precision: %d significant figures";
 "Precision: %d point places" = "Precision: %d point places";
 "Precision: %d-bit 2's Complement" = "Precision: %d-bit 2's Complement";
-"Radix: Binary" = "Radix: Binary";
-"Radix: Octal" = "Radix: Octal";
-"Radix: Decimal" = "Radix: Decimal";
-"Radix: Hexadecimal" = "Radix: Hexadecimal";
-"Trig. Mode: Degrees" = "Trig. Mode: Degrees";
-"Trig. Mode: Radians" = "Trig. Mode: Radians";
-"Trig. Mode: Gradians" = "Trig. Mode: Gradians";
+"Radix: %d" = "Radix: %d";
+"Degrees" = "Degrees";
+"Radians" = "Radians";
+"Gradians" = "Gradians";

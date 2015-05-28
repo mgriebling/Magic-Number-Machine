@@ -4,10 +4,7 @@
 "Precision: %d significant figures" = "Precisione: %d cifre significative";
 "Precision: %d point places" = "Precisione: %d cifre dopo la virgola";
 "Precision: %d-bit 2's Complement" = "Precisione: complemento a due a %d-bit";
-"Radix: Binary" = "Base: Binaria";
-"Radix: Octal" = "Base: Ottale";
-"Radix: Decimal" = "Base: Decimale";
-"Radix: Hexadecimal" = "Base: Esadecimale";
-"Trig. Mode: Degrees" = "Angoli: Gradi sessadecimali";
-"Trig. Mode: Radians" = "Angoli: Radianti";
-"Trig. Mode: Gradians" = "Angoli: Gradi centesimali";﻿﻿﻿
+"Radix: %d" = "Base: %d";
+"Degrees" = "Gradi sessadecimali";
+"Radians" = "Radianti";
+"Gradians" = "Gradi centesimali";﻿﻿﻿

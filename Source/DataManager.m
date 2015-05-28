@@ -275,10 +275,7 @@
 
 - (void)updateExponentLeftShift
 {
-	if (fixedPlaces == 0 && complement == 0)
-		[exponentLeftShift setEnabled:YES];
-	else
-		[exponentLeftShift setEnabled:NO];
+	[exponentLeftShift setEnabled:(fixedPlaces == 0 && complement == 0)];
 }
 
 - (void)updateTrigModeDisplay
@@ -286,13 +283,13 @@
 	switch (trigMode)
 	{
 		case BF_degrees:
-			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Trig. Mode: Degrees" value:nil table:nil]];
+			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Degrees" value:nil table:nil]];
 			break;
 		case BF_radians:
-			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Trig. Mode: Radians" value:nil table:nil]];
+			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radians" value:nil table:nil]];
 			break;
 		case BF_gradians:
-			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Trig. Mode: Gradians" value:nil table:nil]];
+			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Gradians" value:nil table:nil]];
 			break;
 	}
 }
@@ -341,8 +338,7 @@
 {
 	BigCFloat	*numberCopy;
 	
-	if (!equalsPressed)
-		[self equalsPressed];
+	if (!equalsPressed) [self equalsPressed];
 	
 	numberCopy = [[currentExpression getValue] copy];
 	
@@ -458,8 +454,7 @@
 //
 - (void)equalsPressed
 {
-	if (equalsPressed)
-		return;
+	if (equalsPressed) return;
 	
 	// Enable dispaly of the result
 	equalsPressed = YES;

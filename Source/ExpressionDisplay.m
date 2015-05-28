@@ -27,6 +27,8 @@
 //
 // Creates empty paths and sets the caret point.
 //
+// Mike: Updated to be a little more noticeable
+//
 - (instancetype)initWithFrame:(NSRect)frame
 {
 	self = [super initWithFrame:frame];
@@ -36,9 +38,10 @@
 		resultPath = [NSBezierPath bezierPath];
 		
 		caretPath = [NSBezierPath bezierPath];
-		[caretPath moveToPoint:NSMakePoint(-3.0, -4.0)];
+		[caretPath setLineWidth:2];
+		[caretPath moveToPoint:NSMakePoint(-6.0, -8.0)];
 		[caretPath lineToPoint:NSMakePoint(0.0, 0.0)];
-		[caretPath moveToPoint:NSMakePoint(3.0, -4.0)];
+		[caretPath moveToPoint:NSMakePoint(6.0, -8.0)];
 		[caretPath lineToPoint:NSMakePoint(0.0, 0.0)];
 		
 		updateBlocked = false;
@@ -75,7 +78,7 @@ NSBezierPath* GetResultPath(Expression* expression)
 	
 	// Move the expression into its vertical position
 	translateTransform = [NSAffineTransform transform];
-	[translateTransform translateXBy:0.0 yBy:5.0];
+	[translateTransform translateXBy:0.0 yBy:20.0];
 	[resultPath transformUsingAffineTransform:translateTransform];
 	
 	return resultPath;

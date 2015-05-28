@@ -76,6 +76,8 @@ typedef NS_ENUM(NSInteger, ConstType) {
 
 + (NSBezierPath *)getSymbolForString:(NSString *)string;
 
++ (NSFont *)getDisplayFontWithSize:(CGFloat)size;
+
 + (NSBezierPath *)makeSymbolForConstant:(enum ConstType)constant;
 + (BigCFloat *)getValueForConstant:(enum ConstType)constant;
 + (NSString *)getNameForConstant:(enum ConstType)constant;
@@ -103,6 +105,7 @@ typedef NS_ENUM(NSInteger, ConstType) {
 + (NSBezierPath *)logPath;
 + (NSBezierPath *)lnPath;
 + (NSBezierPath *)sqrtPath;
++ (NSBezierPath *)nRootPath:(NSUInteger)n;
 + (NSBezierPath *)sigmaPath;
 + (NSBezierPath *)tenPath;
 + (NSBezierPath *)ePath;
@@ -116,6 +119,7 @@ typedef NS_ENUM(NSInteger, ConstType) {
 + (NSBezierPath *)rightBracketPath;
 + (NSBezierPath *)dotPath;
 + (NSBezierPath *)squarePath;
++ (NSBezierPath *)cubedPath;
 + (NSBezierPath *)inversePath;
 
 @end

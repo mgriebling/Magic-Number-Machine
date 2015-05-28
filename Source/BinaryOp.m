@@ -15,6 +15,7 @@
 #import "Constant.h"
 #import "PreOp.h"
 #import "PostOp.h"
+#import "OpEnumerations.h"
 
 //
 // About BinaryOp
@@ -127,7 +128,7 @@
 //
 - (void)appendOpToPath:(NSBezierPath*)path atLevel:(int)level
 {
-	NSBezierPath			*opPath;
+	NSBezierPath		*opPath;
 	NSAffineTransform	*transform = [NSAffineTransform transform];
 	NSRect				boundsRect;
 	double				scale = [Expression scaleWithLevel:level];
@@ -139,44 +140,55 @@
 	
 	switch (op)
 	{
-	case '-':
-		opPath = [ExpressionSymbols minusPath];
-		break;
-	case '+':
-		opPath = [ExpressionSymbols plusPath];
-		break;
-	case '*':
-		opPath = [ExpressionSymbols multiplyPath];
-		break;
-	case '%':
-		opPath = [ExpressionSymbols modPath];
-		break;
-	case 'p':
-		opPath = [ExpressionSymbols nprPath];
-		break;
-	case 'c':
-		opPath = [ExpressionSymbols ncrPath];
-		break;
-	case 'a':
-		opPath = [ExpressionSymbols andPath];
-		break;
-	case 'o':
-		opPath = [ExpressionSymbols orPath];
-		break;
-	case 'x':
-		opPath = [ExpressionSymbols xorPath];
-		break;
-	case '.':
-		opPath = [ExpressionSymbols dotPath]; 
-		break;
-	case '^':
-		return;
-	default:
-		opPath = nil;
-		break;
+		case '-':
+			opPath = [ExpressionSymbols minusPath];
+			break;
+		case '+':
+			opPath = [ExpressionSymbols plusPath];
+			break;
+		case '*':
+			opPath = [ExpressionSymbols multiplyPath];
+			break;
+		case '%':
+			opPath = [ExpressionSymbols modPath];
+			break;
+		case 'p':
+			opPath = [ExpressionSymbols nprPath];
+			break;
+		case 'c':
+			opPath = [ExpressionSymbols ncrPath];
+			break;
+		case 'a':
+			opPath = [ExpressionSymbols andPath];
+			break;
+		case 'o':
+			opPath = [ExpressionSymbols orPath];
+			break;
+		case 'x':
+			opPath = [ExpressionSymbols xorPath];
+			break;
+		case '.':
+			opPath = [ExpressionSymbols dotPath];
+			break;
+		case '^':
+			return;
+		case rootOp:
+//			if (leftChild != nil)
+//				lvalue = [leftChild getValue];
+//			else
+//				lvalue = [BigCFloat bigFloatWithInt:2 radix:[manager getRadix]];
+//			NSUInteger root = lvalue.realPart.doubleValue;
+			opPath = [ExpressionSymbols sqrtPath];
+//			[opPath appendBezierPath:[ExpressionSymbols nRootPath:root]];
+			break;
+		default:
+			opPath = nil;
+			break;
 	}
 	
-	[transform translateXBy:boundsRect.origin.x + boundsRect.size.width + ((op != '.') ? 12.0 : 4.0) yBy:0];
+//	[transform translateXBy:boundsRect.origin.x + boundsRect.size.width + ((op != '.') ? 12.0 : 4.0) yBy:0];
+	[transform translateXBy:boundsRect.origin.x + boundsRect.size.width + ((op != '.') ? 6.0 : 4.0) yBy:0];   // less space is more - Mike
+
 	if (level >= 2)
 		[transform scaleBy:scale];
 	
@@ -457,45 +469,48 @@
 	
 	switch (op)
 	{
-	case '-':
-		resultString = [resultString stringByAppendingString:@" - "];
-		break;
-	case '+':
-		resultString = [resultString stringByAppendingString:@" + "];
-		break;
-	case '*':
-		resultString = [resultString stringByAppendingString:@" x "];
-		break;
-	case '/':
-		resultString = [resultString stringByAppendingString:@" / "];
-		break;
-	case '%':
-		resultString = [resultString stringByAppendingString:@" % "];
-		break;
-	case 'p':
-		resultString = [resultString stringByAppendingString:@" npr "];
-		break;
-	case 'c':
-		resultString = [resultString stringByAppendingString:@" ncr "];
-		break;
-	case 'a':
-		resultString = [resultString stringByAppendingString:@" and "];
-		break;
-	case 'o':
-		resultString = [resultString stringByAppendingString:@" or "];
-		break;
-	case 'x':
-		resultString = [resultString stringByAppendingString:@" xor "];
-		break;
-	case '.':
-		resultString = [resultString stringByAppendingString:@" x "];
-		break;
-	case '^':
-		resultString = [resultString stringByAppendingString:@"^"];
-		break;
-	default:
-		resultString = [resultString stringByAppendingString:@" "];
-		break;
+		case '-':
+			resultString = [resultString stringByAppendingString:@" - "];
+			break;
+		case '+':
+			resultString = [resultString stringByAppendingString:@" + "];
+			break;
+		case '*':
+			resultString = [resultString stringByAppendingString:@" x "];
+			break;
+		case '/':
+			resultString = [resultString stringByAppendingString:@" / "];
+			break;
+		case '%':
+			resultString = [resultString stringByAppendingString:@" % "];
+			break;
+		case 'p':
+			resultString = [resultString stringByAppendingString:@" npr "];
+			break;
+		case 'c':
+			resultString = [resultString stringByAppendingString:@" ncr "];
+			break;
+		case 'a':
+			resultString = [resultString stringByAppendingString:@" and "];
+			break;
+		case 'o':
+			resultString = [resultString stringByAppendingString:@" or "];
+			break;
+		case 'x':
+			resultString = [resultString stringByAppendingString:@" xor "];
+			break;
+		case '.':
+			resultString = [resultString stringByAppendingString:@" x "];
+			break;
+		case '^':
+			resultString = [resultString stringByAppendingString:@"^"];
+			break;
+		case rootOp:
+			resultString = [resultString stringByAppendingString:@" √ "];
+			break;
+		default:
+			resultString = [resultString stringByAppendingString:@" "];
+			break;
 	}
 
 	if (child != nil)
@@ -531,45 +546,47 @@
 		
 		switch (op)
 		{
-		case '-':
-			[value subtract:rightChildValue];
-			break;
-		case '+':
-			[value add:rightChildValue];
-			break;
-		case '*':
-		case '.':
-			[value multiplyBy:rightChildValue];
-			break;
-		case '/':
-			[value divideBy:rightChildValue];
-			break;
-		case '%':
-			[value moduloBy:rightChildValue];
-			break;
-		case 'p':
-			[value nPr:rightChildValue];
-			break;
-		case 'c':
-			[value nCr:rightChildValue];
-			break;
-		case '^':
-			[value raiseToPower:rightChildValue];
-			break;
-		case 'a':
-			[value andWith:rightChildValue
-				usingComplement:[manager getComplement]];
-			break;
-		case 'o':
-			[value orWith:rightChildValue
-				usingComplement:[manager getComplement]];
-			break;
-		case 'x':
-			[value xorWith:rightChildValue
-				usingComplement:[manager getComplement]];
-			break;
-		default:
-			break;
+			case '-':
+				[value subtract:rightChildValue];
+				break;
+			case '+':
+				[value add:rightChildValue];
+				break;
+			case '*':
+			case '.':
+				[value multiplyBy:rightChildValue];
+				break;
+			case '/':
+				[value divideBy:rightChildValue];
+				break;
+			case '%':
+				[value moduloBy:rightChildValue];
+				break;
+			case 'p':
+				[value nPr:rightChildValue];
+				break;
+			case 'c':
+				[value nCr:rightChildValue];
+				break;
+			case '^':
+				[value raiseToPower:rightChildValue];
+				break;
+			case 'a':
+				[value andWith:rightChildValue usingComplement:[manager getComplement]];
+				break;
+			case 'o':
+				[value orWith:rightChildValue usingComplement:[manager getComplement]];
+				break;
+			case 'x':
+				[value xorWith:rightChildValue usingComplement:[manager getComplement]];
+				break;
+			case rootOp:
+				[value inverse];
+				[rightChildValue raiseToPower:value];
+				[value assign:rightChildValue];
+				break;
+			default:
+				break;
 		}
 	
 	}
@@ -770,7 +787,8 @@
 				NSRect				boundsRect = [expressionPath bounds];
 				double				spacing;
 				
-				spacing = (op == '.' || leftChild == nil) ? (scale * 4.0) : (scale * 12.0);
+				spacing = (op == '.' || leftChild == nil) ? (scale * 4.0) : (scale * 6.0);	 // less space is more - Mike
+//				spacing = (op == '.' || leftChild == nil) ? (scale * 4.0) : (scale * 12.0);
 				
 				rightChildPath = [child pathAtLevel:level];
 			

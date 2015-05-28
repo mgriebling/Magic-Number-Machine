@@ -72,6 +72,7 @@ typedef NS_ENUM(unsigned int, BFTrigMode)
 	isNegative:			(BOOL)flag
 	radix:				(unsigned short)newRadix
 	userPointAt:		(unsigned short)pointLocation;
+- (instancetype)initWithString:(NSString *)newValue radix:(unsigned short)newRadix;
 - (instancetype)initWithInt:(signed int)newValue radix:(unsigned short)newRadix;
 - (instancetype)initWithDouble:(double)newValue radix:(unsigned short)newRadix;
 - (instancetype)initPiWithRadix:(unsigned short)newRadix;
@@ -80,6 +81,7 @@ typedef NS_ENUM(unsigned int, BFTrigMode)
 - (void)encodeWithCoder:(NSCoder *)coder;
 - (id)copyWithZone:(NSZone*)zone;
 
++ (BigFloat*)bigFloatWithString:(NSString *)newValue radix:(unsigned short)newRadix;
 + (BigFloat*)bigFloatWithInt:(signed int)newValue radix:(unsigned short)newRadix;
 + (BigFloat*)bigFloatWithDouble:(double)newValue radix:(unsigned short)newRadix;
 + (BigFloat*)piWithRadix:(unsigned short)newRadix;
@@ -112,8 +114,10 @@ typedef NS_ENUM(unsigned int, BFTrigMode)
 // Extended Mathematics Functions
 - (void)powerOfE;
 - (void)ln;
+- (void)raiseToIntPower: (NSInteger)n;
 - (void)raiseToPower:(BigFloat*)num;
 - (void)sqrt;
+- (void)cbrt;
 - (void)inverse;
 - (void)logOfBase:(BigFloat *)base;
 - (void)sinWithTrigMode:(BFTrigMode)mode inv:(BOOL)useInverse hyp:(BOOL)useHyp;

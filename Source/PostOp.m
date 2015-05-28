@@ -86,18 +86,21 @@
 
 	switch (op)
 	{
-	case squaredOp:
-		opPath = [ExpressionSymbols squarePath];
-		break;
-	case factorialOp:
-		opPath = [ExpressionSymbols factorialPath];
-		break;
-	case invOp:
-		opPath = [ExpressionSymbols inversePath];
-		break;
-	default:
-		opPath = nil;
-		break;
+		case squaredOp:
+			opPath = [ExpressionSymbols squarePath];
+			break;
+		case cubedOp:
+			opPath = [ExpressionSymbols cubedPath];
+			break;
+		case factorialOp:
+			opPath = [ExpressionSymbols factorialPath];
+			break;
+		case invOp:
+			opPath = [ExpressionSymbols inversePath];
+			break;
+		default:
+			opPath = nil;
+			break;
 	}
 	
 	if (level >= 2)
@@ -126,15 +129,18 @@
 
 	switch (op)
 	{
-	case squaredOp:
-		resultString = [resultString stringByAppendingString:@"^2"];
-		break;
-	case factorialOp:
-		resultString = [resultString stringByAppendingString:@"!"];
-		break;
-	case invOp:
-		resultString = [resultString stringByAppendingString:@"^(-1)"];
-		break;
+		case squaredOp:
+			resultString = [resultString stringByAppendingString:@"^2"];
+			break;
+		case cubedOp:
+			resultString = [resultString stringByAppendingString:@"^3"];
+			break;
+		case factorialOp:
+			resultString = [resultString stringByAppendingString:@"!"];
+			break;
+		case invOp:
+			resultString = [resultString stringByAppendingString:@"^(-1)"];
+			break;
 	}
 
 	return resultString;
@@ -155,19 +161,22 @@
 			
 			switch (op)
 			{
-			case squaredOp:
-				[value multiplyBy:value];
-				break;
-			case factorialOp:
-				[value factorial];
-				break;
-			case invOp:
-				[value inverse];
-				break;
-			default:
-				break;
+				case squaredOp:
+					[value multiplyBy:value];
+					break;
+				case cubedOp:
+					[value raiseToIntPower:3];
+					break;
+				case factorialOp:
+					[value factorial];
+					break;
+				case invOp:
+					[value inverse];
+					break;
+				default:
+					break;
 			}
-	
+			
 		}
 		valueValid = YES;
 	}

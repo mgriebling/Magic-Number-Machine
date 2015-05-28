@@ -43,22 +43,6 @@
 		constant = newConstant;
 		value = [ExpressionSymbols getValueForConstant:constant];
 		negative = NO;
-//		switch (constant)
-//		{
-//		case Pi:
-//			value = [BigCFloat piWithRadix:[manager getRadix]];
-//			break;
-//		case RootOfMinusOne:
-//			value =
-//				[BigCFloat
-//					bigFloatWithReal:[BigFloat bigFloatWithInt:0 radix:[manager getRadix]]
-//					imaginary:[BigFloat bigFloatWithInt:1 radix:[manager getRadix]]
-//				];
-//			break;
-//		default:
-//			// default behaviour is to remain zero.
-//			break;
-//		}
 	}
 	return self;
 }
@@ -160,19 +144,7 @@
 - (NSString*)getExpressionString
 {
 	NSString *resultString = negative ? @"-" : @"";
-	
 	resultString = [resultString stringByAppendingString:[ExpressionSymbols getNameForConstant:constant]];
-//	switch (constant)
-//	{
-//		case Pi:
-//			resultString = [resultString stringByAppendingString:@"π"];
-//			break;
-//		case RootOfMinusOne:
-//			resultString = [resultString stringByAppendingString:@"i"];
-//			break;
-//		default: break;
-//	}
-
 	return resultString;
 }
 
@@ -188,18 +160,6 @@
 	if (pathValidAt != level)
 	{
 		expressionPath = [NSBezierPath bezierPath];
-		
-//		switch (constant)
-//		{
-//			case Pi:
-//				[expressionPath appendBezierPath:[ExpressionSymbols piPath]];
-//				break;
-//			case RootOfMinusOne:
-//				[expressionPath appendBezierPath:[ExpressionSymbols iPath]];
-//				break;
-//			default:
-//				break;
-//		}
 		[expressionPath appendBezierPath:[ExpressionSymbols makeSymbolForConstant:constant]];
 		
 		if (negative)

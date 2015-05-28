@@ -47,7 +47,7 @@ static NSArray *constantsDataRows = nil;
 	  @[@"c",	  @"	Speed of light in vacuum (m s⁻¹)",			[BigCFloat bigFloatWithInt:299792458 radix:10]],
 	  @[@"E_h",	  @"	Hartree energy (J)",						[BigCFloat bigFloatWithDouble:4.3597439422e-18 radix:10]],
 	  @[@"e_c",	  @"	Elementary charge (C)",						[BigCFloat bigFloatWithDouble:1.60217648740e-19 radix:10]],
-	  @[@"ε_0",	  @"	Permittivity of vacuum (F m⁻¹)",			[BigCFloat bigFloatWithDouble:8.854187817620389850536563e-12 radix:10]],
+	  @[@"ε_0",	  @"	Permittivity of vacuum (F m⁻¹)",			[BigCFloat bigFloatWithString:@"8.854187817620389850536563e-12" radix:10]],
 	  @[@"eV",	  @"	Electron volt (J)",							[BigCFloat bigFloatWithDouble:1.60217648740e-19 radix:10]],
 	  @[@"F",	  @"	Faraday constant (C mol⁻¹)",				[BigCFloat bigFloatWithDouble:96485.339924 radix:10]],
 	  @[@"g_e",	  @"	Electron g-factor",							[BigCFloat bigFloatWithDouble:-2.002319304362215 radix:10]],
@@ -117,7 +117,7 @@ static NSArray *constantsDataRows = nil;
 		path = [ExpressionSymbols makeSymbolForString:constantStrings[0] usingSuperscript:0 withOffset:0];
 		if (constantStrings.count > 1) {
 			CGFloat offset = path.bounds.size.width;
-			[path appendBezierPath:[ExpressionSymbols makeSymbolForString:constantStrings[1] usingSuperscript:-1 withOffset:offset]];
+			[path appendBezierPath:[ExpressionSymbols makeSymbolForString:constantStrings[1] usingSuperscript:-8 withOffset:offset]];
 		}
 		symbols[constantName] = path;
 	} else {
@@ -138,6 +138,13 @@ static NSArray *constantsDataRows = nil;
 	return constantsDataRows;
 }
 
++ (NSFont *)getDisplayFontWithSize:(CGFloat)size {
+	NSFont *font = [NSFont fontWithName:@"HelveticaNeue-Light" size:size];
+	if (font == nil) font = [NSFont labelFontOfSize:size];
+//	NSLog(@"Found font = %@", font);
+	return font;
+}
+
 + (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(NSInteger)superscript withOffset:(CGFloat)offsetx {
 	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
 	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
@@ -145,14 +152,14 @@ static NSArray *constantsDataRows = nil;
 	NSGlyph			*glyphs;
 	int				j;
 	int				numGlyphs;
-//	CGFloat			offsetx = continued ? 16 : 0;
-	CGFloat			offsety = superscript < 0 ? -8 : superscript == 0 ? 0 : 12;
+	CGFloat			offsety = superscript;
 	CGFloat			size = superscript == 0 ? 24 : 16;
 	
 	// Use a layout manager to get the glyphs for the string
 	// Create a text storage area for the string
 	[text addLayoutManager:layoutManager];
-	[text setAttributedString: [[NSAttributedString alloc] initWithString:symbol attributes:@{NSFontAttributeName: [NSFont labelFontOfSize:size]}]];
+	NSFont *font = [ExpressionSymbols getDisplayFontWithSize:size];
+	[text setAttributedString: [[NSAttributedString alloc] initWithString:symbol attributes:@{NSFontAttributeName:font}]];
 	[path moveToPoint:NSMakePoint(offsetx, offsety)];
 	numGlyphs = [layoutManager numberOfGlyphs];
 	glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
@@ -168,7 +175,7 @@ static NSArray *constantsDataRows = nil;
 	return path;
 }
 
-+ (NSBezierPath *)getSymbolForString:(NSString *)string withSuperscript:(BOOL)superscript {
++ (NSBezierPath *)getSymbolForString:(NSString *)string withSuperscript:(NSInteger)superscript {
 	NSBezierPath *copy = [NSBezierPath bezierPath];
 	NSBezierPath *symbol;
 	if (![symbols valueForKey:string]) {
@@ -182,7 +189,7 @@ static NSArray *constantsDataRows = nil;
 }
 
 + (NSBezierPath *)getSymbolForString:(NSString *)string {
-	return [ExpressionSymbols getSymbolForString:string withSuperscript:NO];
+	return [ExpressionSymbols getSymbolForString:string withSuperscript:0];
 }
 
 //
@@ -386,6 +393,18 @@ static NSArray *constantsDataRows = nil;
 }
 
 //
+// nRootPath
+//
+// Returns the relevant bezier path.
+//
++ (NSBezierPath *)nRootPath:(NSUInteger)n
+{
+	NSString *root = [NSString stringWithFormat:@"%lu", (unsigned long)n];
+	NSBezierPath *path = [ExpressionSymbols makeSymbolForString:root usingSuperscript:6 withOffset:0];
+	return path;
+}
+
+//
 // sigmaPath
 //
 // Returns the relevant bezier path.
@@ -512,7 +531,17 @@ static NSArray *constantsDataRows = nil;
 //
 + (NSBezierPath *)squarePath
 {
-	return [ExpressionSymbols getSymbolForString:@"2" withSuperscript:YES];
+	return [ExpressionSymbols getSymbolForString:@"2" withSuperscript:12];
+}
+
+//
+// cubedPath
+//
+// Returns the relevant bezier path.
+//
++ (NSBezierPath *)cubedPath
+{
+	return [ExpressionSymbols getSymbolForString:@"3" withSuperscript:12];
 }
 
 //
@@ -522,7 +551,7 @@ static NSArray *constantsDataRows = nil;
 //
 + (NSBezierPath *)inversePath
 {
-	return [ExpressionSymbols getSymbolForString:@"-1" withSuperscript:YES];
+	return [ExpressionSymbols getSymbolForString:@"-1" withSuperscript:12];
 }
 
 @end

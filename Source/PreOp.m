@@ -71,160 +71,161 @@
 //
 - (void)appendOpToPath:(NSBezierPath*)path atLevel:(int)level
 {
-	NSBezierPath			*opPath;
+	NSBezierPath		*opPath;
 	NSAffineTransform	*workingTransform;
-	NSBezierPath			*workingPath;
+	NSBezierPath		*workingPath;
 	NSRect				workingBounds;
 
 	switch (op)
 	{
-	case sinOp:
-		opPath = [ExpressionSymbols sinPath];
-		break;
-	case cosOp:
-		opPath = [ExpressionSymbols cosPath];
-		break;
-	case tanOp:
-		opPath = [ExpressionSymbols tanPath];
-		break;
-	case arcsinOp:
-		workingPath = [ExpressionSymbols sinPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols inversePath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[opPath appendBezierPath:workingPath];
-		break;
-	case arccosOp:
-		workingPath = [ExpressionSymbols cosPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols inversePath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[opPath appendBezierPath:workingPath];
-		break;
-	case arctanOp:
-		workingPath = [ExpressionSymbols tanPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols inversePath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[opPath appendBezierPath:workingPath];
-		break;
-	case sinhOp:
-		workingPath = [ExpressionSymbols sinPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols hypPath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[opPath appendBezierPath:workingPath];
-		break;
-	case coshOp:
-		workingPath = [ExpressionSymbols cosPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols hypPath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[opPath appendBezierPath:workingPath];
-		break;
-	case tanhOp:
-		workingPath = [ExpressionSymbols tanPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols hypPath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[opPath appendBezierPath:workingPath];
-		break;
-	case arcsinhOp:
-		workingPath = [ExpressionSymbols sinPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols hypPath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[workingPath appendBezierPath:opPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols inversePath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[opPath appendBezierPath:workingPath];
-		break;
-	case arccoshOp:
-		workingPath = [ExpressionSymbols cosPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols hypPath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[workingPath appendBezierPath:opPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols inversePath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[opPath appendBezierPath:workingPath];
-		break;
-	case arctanhOp:
-		workingPath = [ExpressionSymbols tanPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols hypPath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[workingPath appendBezierPath:opPath];
-		workingBounds = [workingPath bounds];
-		workingTransform = [NSAffineTransform transform];
-		[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-		opPath = [ExpressionSymbols inversePath];
-		[opPath transformUsingAffineTransform:workingTransform];
-		[opPath appendBezierPath:workingPath];
-		break;
-	case reOp:
-		opPath = [ExpressionSymbols rePath];
-		break;
-	case imOp:
-		opPath = [ExpressionSymbols imPath];
-		break;
-	case argOp:
-		opPath = [ExpressionSymbols argPath];
-		break;
-	case absOp:
-		opPath = [ExpressionSymbols absPath];
-		break;
-	case notOp:
-		opPath = [ExpressionSymbols notPath];
-		break;
-	case rndOp:
-		opPath = [ExpressionSymbols rndPath];
-		break;
-	case logOp:
-		opPath = [ExpressionSymbols logPath];
-		break;
-	case lnOp:
-		opPath = [ExpressionSymbols lnPath];
-		break;
-	case sqrtOp:
-		opPath = [ExpressionSymbols sqrtPath];
-		break;
-	case sigmaOp:
-		opPath = [ExpressionSymbols sigmaPath];
-		break;
-	case tenOp:
-		opPath = [ExpressionSymbols tenPath];
-		break;
-	case eOp:
-		opPath = [ExpressionSymbols ePath];
-		break;
-	default:
-		opPath = nil;
-		break;
+		case sinOp:
+			opPath = [ExpressionSymbols sinPath];
+			break;
+		case cosOp:
+			opPath = [ExpressionSymbols cosPath];
+			break;
+		case tanOp:
+			opPath = [ExpressionSymbols tanPath];
+			break;
+		case arcsinOp:
+			workingPath = [ExpressionSymbols sinPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols inversePath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[opPath appendBezierPath:workingPath];
+			break;
+		case arccosOp:
+			workingPath = [ExpressionSymbols cosPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols inversePath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[opPath appendBezierPath:workingPath];
+			break;
+		case arctanOp:
+			workingPath = [ExpressionSymbols tanPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols inversePath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[opPath appendBezierPath:workingPath];
+			break;
+		case sinhOp:
+			workingPath = [ExpressionSymbols sinPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols hypPath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[opPath appendBezierPath:workingPath];
+			break;
+		case coshOp:
+			workingPath = [ExpressionSymbols cosPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols hypPath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[opPath appendBezierPath:workingPath];
+			break;
+		case tanhOp:
+			workingPath = [ExpressionSymbols tanPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols hypPath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[opPath appendBezierPath:workingPath];
+			break;
+		case arcsinhOp:
+			workingPath = [ExpressionSymbols sinPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols hypPath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[workingPath appendBezierPath:opPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols inversePath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[opPath appendBezierPath:workingPath];
+			break;
+		case arccoshOp:
+			workingPath = [ExpressionSymbols cosPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols hypPath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[workingPath appendBezierPath:opPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols inversePath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[opPath appendBezierPath:workingPath];
+			break;
+		case arctanhOp:
+			workingPath = [ExpressionSymbols tanPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols hypPath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[workingPath appendBezierPath:opPath];
+			workingBounds = [workingPath bounds];
+			workingTransform = [NSAffineTransform transform];
+			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+			opPath = [ExpressionSymbols inversePath];
+			[opPath transformUsingAffineTransform:workingTransform];
+			[opPath appendBezierPath:workingPath];
+			break;
+		case reOp:
+			opPath = [ExpressionSymbols rePath];
+			break;
+		case imOp:
+			opPath = [ExpressionSymbols imPath];
+			break;
+		case argOp:
+			opPath = [ExpressionSymbols argPath];
+			break;
+		case absOp:
+			opPath = [ExpressionSymbols absPath];
+			break;
+		case notOp:
+			opPath = [ExpressionSymbols notPath];
+			break;
+		case rndOp:
+			opPath = [ExpressionSymbols rndPath];
+			break;
+		case logOp:
+			opPath = [ExpressionSymbols logPath];
+			break;
+		case lnOp:
+			opPath = [ExpressionSymbols lnPath];
+			break;
+		case sqrtOp:
+		case cbrtOp:
+			opPath = [ExpressionSymbols sqrtPath];
+			break;
+		case sigmaOp:
+			opPath = [ExpressionSymbols sigmaPath];
+			break;
+		case tenOp:
+			opPath = [ExpressionSymbols tenPath];
+			break;
+		case eOp:
+			opPath = [ExpressionSymbols ePath];
+			break;
+		default:
+			opPath = nil;
+			break;
 	}
 	
 	if (level >= 2)
@@ -269,78 +270,81 @@
 	
 	switch (op)
 	{
-	case sinOp:
-		resultString = [resultString stringByAppendingString:@"sin"];
-		break;
-	case cosOp:
-		resultString = [resultString stringByAppendingString:@"cos"];
-		break;
-	case tanOp:
-		resultString = [resultString stringByAppendingString:@"tan"];
-		break;
-	case arcsinOp:
-		resultString = [resultString stringByAppendingString:@"asin"];
-		break;
-	case arccosOp:
-		resultString = [resultString stringByAppendingString:@"acos"];
-		break;
-	case arctanOp:
-		resultString = [resultString stringByAppendingString:@"atan"];
-		break;
-	case sinhOp:
-		resultString = [resultString stringByAppendingString:@"sinh"];
-		break;
-	case coshOp:
-		resultString = [resultString stringByAppendingString:@"cosh"];
-		break;
-	case tanhOp:
-		resultString = [resultString stringByAppendingString:@"tanh"];
-		break;
-	case arcsinhOp:
-		resultString = [resultString stringByAppendingString:@"asinh"];
-		break;
-	case arccoshOp:
-		resultString = [resultString stringByAppendingString:@"acosh"];
-		break;
-	case arctanhOp:
-		resultString = [resultString stringByAppendingString:@"atanh"];
-		break;
-	case reOp:
-		resultString = [resultString stringByAppendingString:@"Re"];
-		break;
-	case imOp:
-		resultString = [resultString stringByAppendingString:@"Im"];
-		break;
-	case argOp:
-		resultString = [resultString stringByAppendingString:@"arg"];
-		break;
-	case absOp:
-		resultString = [resultString stringByAppendingString:@"abs"];
-		break;
-	case notOp:
-		resultString = [resultString stringByAppendingString:@"not"];
-		break;
-	case rndOp:
-		resultString = [resultString stringByAppendingString:@"Rnd"];
-		break;
-	case logOp:
-		resultString = [resultString stringByAppendingString:@"log"];
-		break;
-	case lnOp:
-		resultString = [resultString stringByAppendingString:@"ln"];
-		break;
-	case sqrtOp:
-		resultString = [resultString stringByAppendingString:@"√"];
-		break;
-	case sigmaOp:
-		resultString = [resultString stringByAppendingString:@"∑"];
-		break;
-	case tenOp:
-		resultString = [resultString stringByAppendingString:@"10^"];
-		break;
-	case eOp:
-		resultString = [resultString stringByAppendingString:@"e^"];
-		break;
+		case sinOp:
+			resultString = [resultString stringByAppendingString:@"sin"];
+			break;
+		case cosOp:
+			resultString = [resultString stringByAppendingString:@"cos"];
+			break;
+		case tanOp:
+			resultString = [resultString stringByAppendingString:@"tan"];
+			break;
+		case arcsinOp:
+			resultString = [resultString stringByAppendingString:@"asin"];
+			break;
+		case arccosOp:
+			resultString = [resultString stringByAppendingString:@"acos"];
+			break;
+		case arctanOp:
+			resultString = [resultString stringByAppendingString:@"atan"];
+			break;
+		case sinhOp:
+			resultString = [resultString stringByAppendingString:@"sinh"];
+			break;
+		case coshOp:
+			resultString = [resultString stringByAppendingString:@"cosh"];
+			break;
+		case tanhOp:
+			resultString = [resultString stringByAppendingString:@"tanh"];
+			break;
+		case arcsinhOp:
+			resultString = [resultString stringByAppendingString:@"asinh"];
+			break;
+		case arccoshOp:
+			resultString = [resultString stringByAppendingString:@"acosh"];
+			break;
+		case arctanhOp:
+			resultString = [resultString stringByAppendingString:@"atanh"];
+			break;
+		case reOp:
+			resultString = [resultString stringByAppendingString:@"Re"];
+			break;
+		case imOp:
+			resultString = [resultString stringByAppendingString:@"Im"];
+			break;
+		case argOp:
+			resultString = [resultString stringByAppendingString:@"arg"];
+			break;
+		case absOp:
+			resultString = [resultString stringByAppendingString:@"abs"];
+			break;
+		case notOp:
+			resultString = [resultString stringByAppendingString:@"not"];
+			break;
+		case rndOp:
+			resultString = [resultString stringByAppendingString:@"Rnd"];
+			break;
+		case logOp:
+			resultString = [resultString stringByAppendingString:@"log"];
+			break;
+		case lnOp:
+			resultString = [resultString stringByAppendingString:@"ln"];
+			break;
+		case sqrtOp:
+			resultString = [resultString stringByAppendingString:@"√"];
+			break;
+		case cbrtOp:
+			resultString = [resultString stringByAppendingString:@"∛"];
+			break;
+		case sigmaOp:
+			resultString = [resultString stringByAppendingString:@"∑"];
+			break;
+		case tenOp:
+			resultString = [resultString stringByAppendingString:@"10^"];
+			break;
+		case eOp:
+			resultString = [resultString stringByAppendingString:@"e^"];
+			break;
 	}
 
 	if (child != nil)
@@ -366,82 +370,85 @@
 			
 			switch (op)
 			{
-			case sinOp:
-				[value sinWithTrigMode:[manager getTrigMode] inv:NO hyp:NO];
-				break;
-			case cosOp:
-				[value cosWithTrigMode:[manager getTrigMode] inv:NO hyp:NO];
-				break;
-			case tanOp:
-				[value tanWithTrigMode:[manager getTrigMode] inv:NO hyp:NO];
-				break;
-			case arcsinOp:
-				[value sinWithTrigMode:[manager getTrigMode] inv:YES hyp:NO];
-				break;
-			case arccosOp:
-				[value cosWithTrigMode:[manager getTrigMode] inv:YES hyp:NO];
-				break;
-			case arctanOp:
-				[value tanWithTrigMode:[manager getTrigMode] inv:YES hyp:NO];
-				break;
-			case sinhOp:
-				[value sinWithTrigMode:[manager getTrigMode] inv:NO hyp:YES];
-				break;
-			case coshOp:
-				[value cosWithTrigMode:[manager getTrigMode] inv:NO hyp:YES];
-				break;
-			case tanhOp:
-				[value tanWithTrigMode:[manager getTrigMode] inv:NO hyp:YES];
-				break;
-			case arcsinhOp:
-				[value sinWithTrigMode:[manager getTrigMode] inv:YES hyp:YES];
-				break;
-			case arccoshOp:
-				[value cosWithTrigMode:[manager getTrigMode] inv:YES hyp:YES];
-				break;
-			case arctanhOp:
-				[value tanWithTrigMode:[manager getTrigMode] inv:YES hyp:YES];
-				break;
-			case reOp:
-				value = [BigCFloat bigFloatWithReal:[value realPart] imaginary:nil];
-				break;
-			case imOp:
-				value = [BigCFloat bigFloatWithReal:[value imaginaryPart] imaginary:nil];
-				break;
-			case argOp:
-				value = [BigCFloat bigFloatWithReal:[value angle] imaginary:nil];
-				break;
-			case absOp:
-				value = [BigCFloat bigFloatWithReal:[value magnitude] imaginary:nil];
-				break;
-			case notOp:
-				[value bitnotWithComplement:[manager getComplement]];
-				break;
-			case rndOp:
-				[value wholePart];
-				break;
-			case logOp:
-				[value logOfBase:[BigCFloat bigFloatWithInt:10 radix:[manager getRadix]]];
-				break;
-			case lnOp:
-				[value ln];
-				break;
-			case sqrtOp:
-				[value sqrt];
-				break;
-			case sigmaOp:
-				[value sum];
-				break;
-			case tenOp:
-				temp = [BigCFloat bigFloatWithInt:10 radix:[manager getRadix]];
-				[temp raiseToPower:value];
-				value = (BigCFloat*)[temp duplicate];
-				break;
-			case eOp:
-				[value powerOfE];
-				break;
-			default:
-				break;
+				case sinOp:
+					[value sinWithTrigMode:[manager getTrigMode] inv:NO hyp:NO];
+					break;
+				case cosOp:
+					[value cosWithTrigMode:[manager getTrigMode] inv:NO hyp:NO];
+					break;
+				case tanOp:
+					[value tanWithTrigMode:[manager getTrigMode] inv:NO hyp:NO];
+					break;
+				case arcsinOp:
+					[value sinWithTrigMode:[manager getTrigMode] inv:YES hyp:NO];
+					break;
+				case arccosOp:
+					[value cosWithTrigMode:[manager getTrigMode] inv:YES hyp:NO];
+					break;
+				case arctanOp:
+					[value tanWithTrigMode:[manager getTrigMode] inv:YES hyp:NO];
+					break;
+				case sinhOp:
+					[value sinWithTrigMode:[manager getTrigMode] inv:NO hyp:YES];
+					break;
+				case coshOp:
+					[value cosWithTrigMode:[manager getTrigMode] inv:NO hyp:YES];
+					break;
+				case tanhOp:
+					[value tanWithTrigMode:[manager getTrigMode] inv:NO hyp:YES];
+					break;
+				case arcsinhOp:
+					[value sinWithTrigMode:[manager getTrigMode] inv:YES hyp:YES];
+					break;
+				case arccoshOp:
+					[value cosWithTrigMode:[manager getTrigMode] inv:YES hyp:YES];
+					break;
+				case arctanhOp:
+					[value tanWithTrigMode:[manager getTrigMode] inv:YES hyp:YES];
+					break;
+				case reOp:
+					value = [BigCFloat bigFloatWithReal:[value realPart] imaginary:nil];
+					break;
+				case imOp:
+					value = [BigCFloat bigFloatWithReal:[value imaginaryPart] imaginary:nil];
+					break;
+				case argOp:
+					value = [BigCFloat bigFloatWithReal:[value angle] imaginary:nil];
+					break;
+				case absOp:
+					value = [BigCFloat bigFloatWithReal:[value magnitude] imaginary:nil];
+					break;
+				case notOp:
+					[value bitnotWithComplement:[manager getComplement]];
+					break;
+				case rndOp:
+					[value wholePart];
+					break;
+				case logOp:
+					[value logOfBase:[BigCFloat bigFloatWithInt:10 radix:[manager getRadix]]];
+					break;
+				case lnOp:
+					[value ln];
+					break;
+				case sqrtOp:
+					[value sqrt];
+					break;
+				case cbrtOp:
+					[value cbrt];
+					break;
+				case sigmaOp:
+					[value sum];
+					break;
+				case tenOp:
+					temp = [BigCFloat bigFloatWithInt:10 radix:[manager getRadix]];
+					[temp raiseToPower:value];
+					value = (BigCFloat*)[temp duplicate];
+					break;
+				case eOp:
+					[value powerOfE];
+					break;
+				default:
+					break;
 			}
 	
 		}
@@ -494,9 +501,9 @@
 			[transform translateXBy:boundsRect.origin.x + boundsRect.size.width yBy:0];
 			[childPath transformUsingAffineTransform:transform];
 			
-			if (op == sqrtOp)
+			if (op == sqrtOp || op == cbrtOp)
 			{
-				NSBezierPath		*overLine = [NSBezierPath bezierPath];
+				NSBezierPath	*overLine = [NSBezierPath bezierPath];
 				NSRect			childBounds = [childPath bounds];
 				
 				transform = [NSAffineTransform transform];
@@ -524,6 +531,7 @@
 				];
 				[overLine closePath];
 				[expressionPath appendBezierPath:overLine];
+				if (op == cbrtOp) [expressionPath appendBezierPath:[ExpressionSymbols nRootPath:3]];
 			}
 
 			[expressionPath appendBezierPath:childPath];

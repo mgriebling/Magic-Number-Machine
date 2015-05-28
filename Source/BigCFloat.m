@@ -1004,10 +1004,8 @@
 - (void)raiseToPower:(BigFloat*)num
 {
 	BigCFloat	*cnum;
-	BigCFloat	*one;
 
-	if (!bf_is_valid)
-		return;
+	if (!bf_is_valid) return;
 	
 	if (!bcf_has_imaginary && ![num isKindOfClass:[BigCFloat class]])
 	{
@@ -1015,25 +1013,18 @@
 		return;
 	}
 	
-	one = [[BigCFloat alloc] initWithInt:1 radix:bf_radix];
-	
 	// Promote num to a BigCFloat
 	cnum = (BigCFloat*)num;
 	if ([self isZero])
 	{
 		// Zero raised to anything except zero is zero (provided exponent is valid)
 		bf_is_valid = [num isValid];
-		if ([cnum isZero])
-		{
-			
-			[self assign:one];
-		}
+		if ([cnum isZero]) { [self assign:[BigCFloat one]]; }
 		return;
 	}
 	[self ln];
 	[self multiplyBy: cnum];
 	[self powerOfE];
-	
 }
 
 //
@@ -1048,10 +1039,7 @@
 	BigFloat 	*two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
 	BigCFloat	*value;
 	
-	if (!bf_is_valid)
-	{
-		return;
-	}
+	if (!bf_is_valid) { return; }
 	
 	if(!bcf_has_imaginary && !bf_is_negative)
 	{
@@ -1064,6 +1052,36 @@
 	
 	[r sqrt];
 	[theta divideBy:two];
+	value = [[BigCFloat alloc] initWithMagnitude:r angle:theta];
+	[self assign:value];
+	
+}
+
+//
+// sqrt
+//
+// Wrapper that adds complex number support around the base class
+//
+- (void)cbrt
+{
+	BigFloat 	*r;
+	BigFloat 	*theta;
+	BigFloat 	*three = [[BigFloat alloc] initWithInt:3 radix:bf_radix];
+	BigCFloat	*value;
+	
+	if (!bf_is_valid) { return; }
+	
+	if(!bcf_has_imaginary && !bf_is_negative)
+	{
+		[super cbrt];
+		return;
+	}
+	
+	r = [self magnitudeCopy];
+	theta = [self angleCopy];
+	
+	[r cbrt];
+	[theta divideBy:three];
 	value = [[BigCFloat alloc] initWithMagnitude:r angle:theta];
 	[self assign:value];
 	

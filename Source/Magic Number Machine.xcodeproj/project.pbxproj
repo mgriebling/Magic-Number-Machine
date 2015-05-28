@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		471FE6EB1B15C7CC00085DFE /* sqrt.png in Resources */ = {isa = PBXBuildFile; fileRef = 471FE6EA1B15C7CC00085DFE /* sqrt.png */; };
-		471FE6ED1B15C88D00085DFE /* cbrt.png in Resources */ = {isa = PBXBuildFile; fileRef = 471FE6EC1B15C88D00085DFE /* cbrt.png */; };
-		471FE6EF1B15C90100085DFE /* nRoot.png in Resources */ = {isa = PBXBuildFile; fileRef = 471FE6EE1B15C90100085DFE /* nRoot.png */; };
-		471FE6F11B15C9A100085DFE /* reciprocal.png in Resources */ = {isa = PBXBuildFile; fileRef = 471FE6F01B15C9A100085DFE /* reciprocal.png */; };
-		471FE6F31B15CA1500085DFE /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 471FE6F21B15CA1500085DFE /* second.png */; };
+		2F6947931B1771FC0012C173 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6947921B1771FC0012C173 /* Media.xcassets */; };
+		2F6947991B17B60A0012C173 /* History.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6947971B17B60A0012C173 /* History.h */; };
+		2F69479A1B17B60A0012C173 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6947981B17B60A0012C173 /* History.m */; };
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -55,12 +53,11 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2F6947921B1771FC0012C173 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		2F6947941B17B3EC0012C173 /* Magic Number Machine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine-Bridging-Header.h"; sourceTree = "<group>"; };
+		2F6947971B17B60A0012C173 /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
+		2F6947981B17B60A0012C173 /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Magic Number Machine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine_Prefix.pch"; sourceTree = "<group>"; };
-		471FE6EA1B15C7CC00085DFE /* sqrt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sqrt.png; sourceTree = "<group>"; };
-		471FE6EC1B15C88D00085DFE /* cbrt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cbrt.png; sourceTree = "<group>"; };
-		471FE6EE1B15C90100085DFE /* nRoot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nRoot.png; sourceTree = "<group>"; };
-		471FE6F01B15C9A100085DFE /* reciprocal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reciprocal.png; sourceTree = "<group>"; };
-		471FE6F21B15CA1500085DFE /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
 		47B96FD71B13372E0064FEEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -205,6 +202,9 @@
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */,
 				47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */,
+				2F6947941B17B3EC0012C173 /* Magic Number Machine-Bridging-Header.h */,
+				2F6947971B17B60A0012C173 /* History.h */,
+				2F6947981B17B60A0012C173 /* History.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -212,17 +212,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				471FE6F21B15CA1500085DFE /* second.png */,
-				471FE6F01B15C9A100085DFE /* reciprocal.png */,
-				471FE6EE1B15C90100085DFE /* nRoot.png */,
-				471FE6EC1B15C88D00085DFE /* cbrt.png */,
-				471FE6EA1B15C7CC00085DFE /* sqrt.png */,
 				C95D1E430F536BC000851908 /* MNMWindow.nib */,
 				C956BF2B05E8C099002D425F /* Localizable.strings */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				C900A92905588FC400809D76 /* Icon.icns */,
 				C900A91A05588FB000809D76 /* Help */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				2F6947921B1771FC0012C173 /* Media.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -309,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */,
+				2F6947991B17B60A0012C173 /* History.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,20 +367,16 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				C900A92205588FB000809D76 /* expression_tree.png in Resources */,
-				471FE6ED1B15C88D00085DFE /* cbrt.png in Resources */,
 				C900A92305588FB000809D76 /* Magic_Number_Machine_Buttons.html in Resources */,
-				471FE6EF1B15C90100085DFE /* nRoot.png in Resources */,
-				471FE6F11B15C9A100085DFE /* reciprocal.png in Resources */,
 				C900A92405588FB000809D76 /* Magic_Number_Machine_Help.html in Resources */,
 				C900A92505588FB000809D76 /* Magic_Number_Machine_Key_Features.html in Resources */,
-				471FE6F31B15CA1500085DFE /* second.png in Resources */,
 				C900A92605588FB000809D76 /* Magic_Number_Machine_RAQ.html in Resources */,
-				471FE6EB1B15C7CC00085DFE /* sqrt.png in Resources */,
 				C900A92705588FB000809D76 /* Magic_Number_Machine_Source_Code.html in Resources */,
 				C900A92805588FB000809D76 /* top_level_design.png in Resources */,
 				C900A92A05588FC400809D76 /* Icon.icns in Resources */,
 				C956BF2D05E8C099002D425F /* Localizable.strings in Resources */,
 				C93A20C50624459300F3A43C /* key_shortcuts.png in Resources */,
+				2F6947931B1771FC0012C173 /* Media.xcassets in Resources */,
 				C95D1E450F536BC000851908 /* MNMWindow.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +402,7 @@
 				C900A8D805588E6700809D76 /* PostOp.m in Sources */,
 				C900A8DA05588E6700809D76 /* TreeHead.m in Sources */,
 				C900A8DB05588E6700809D76 /* Value.m in Sources */,
+				2F69479A1B17B60A0012C173 /* History.m in Sources */,
 				C900A8DD05588E6700809D76 /* BinaryOp.m in Sources */,
 				C900A8DE05588E6700809D76 /* Bracket.m in Sources */,
 				C900A8E005588E6700809D76 /* Constant.m in Sources */,
@@ -466,6 +460,7 @@
 		C9556619092DB998003B8FED /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -483,6 +478,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "";
@@ -490,6 +486,8 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = "Magic Number Machine";
 				SECTORDER_FLAGS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -503,6 +501,7 @@
 		C955661A092DB998003B8FED /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
@@ -518,6 +517,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "";
@@ -525,6 +525,7 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = "Magic Number Machine";
 				SECTORDER_FLAGS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -538,6 +539,7 @@
 		C955661B092DB998003B8FED /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -551,12 +553,14 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "Magic Number Machine";
 				SECTORDER_FLAGS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",

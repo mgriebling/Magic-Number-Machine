@@ -969,8 +969,6 @@
 			free(glyphs);
 		}
 	}
-	
-	// NOTE: this is the partner explicit free to the above note.
 }
 
 //

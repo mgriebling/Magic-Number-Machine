@@ -786,7 +786,13 @@ BF_NormaliseNumbers
 	return 0;
 }
 
+//
+// initWithString
+//
+// The most requested constructor for those numbers that don't fit in 15 digits.
+//
 - (instancetype)initWithString:(NSString *)newValue radix:(unsigned short)newRadix {
+	// Mike - created this primarily for the constants
 	NSString *separators = newRadix == 10 ? @"eE" : @"";
 	NSString *digits = [@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ" substringToIndex:newRadix];
 	NSCharacterSet *validDigits = [NSCharacterSet characterSetWithCharactersInString:digits];
@@ -839,7 +845,7 @@ BF_NormaliseNumbers
 		}
 		[self setUserPoint:userPoint];
 	}
-	NSLog(@"\"%@\" = %@", newValue, [self toString]);
+//	NSLog(@"\"%@\" = %@", newValue, [self toString]);
 	return self;
 }
 
@@ -884,6 +890,11 @@ BF_NormaliseNumbers
 	return copy;
 }
 
+//
+// bigFloatWithString
+//
+// A static method to do this quickly and return a BigFloat of a string.
+//
 + (BigFloat*)bigFloatWithString:(NSString *)newValue radix:(unsigned short)newRadix {
 	return [[BigFloat alloc] initWithString:newValue radix:newRadix];
 }

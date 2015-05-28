@@ -362,11 +362,7 @@
 	[dataManager ensureInputWithValue:NO];
 	inputPoint = [dataManager getInputPoint];
 	[inputPoint constantPressed:[sender clickedRow]];
-	
-//	pasteValue = constantsDataRows[[sender clickedRow]][1];
-//	[dataManager ensureInputWithValue:NO];
-//	inputPoint = [dataManager getInputPoint];
-//	[inputPoint valueInserted:pasteValue];
+
 	[dataManager valueChanged];
 }
 

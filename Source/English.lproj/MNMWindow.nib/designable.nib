@@ -200,14 +200,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="1312">
-                        <rect key="frame" x="0.0" y="238" width="612" height="217"/>
+                        <rect key="frame" x="0.0" y="236" width="612" height="219"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="pvs-CR-Vh0">
-                            <rect key="frame" x="1" y="1" width="610" height="215"/>
+                            <rect key="frame" x="1" y="1" width="610" height="217"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <customView id="617" customClass="ExpressionDisplay">
-                                    <rect key="frame" x="0.0" y="0.0" width="610" height="215"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="610" height="217"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <connections>
                                         <outlet property="dataManager" destination="797" id="1331"/>
@@ -538,18 +538,6 @@ Gw
                                         <action selector="delPressed:" target="678" id="832"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(p) Pi" id="789">
-                                    <rect key="frame" x="135" y="157" width="45" height="40"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                    <buttonCell key="cell" type="square" title="π" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2799">
-                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="20" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">p</string>
-                                    </buttonCell>
-                                    <connections>
-                                        <action selector="valuePressed:" target="678" id="829"/>
-                                    </connections>
-                                </button>
                                 <button tag="7" id="306">
                                     <rect key="frame" x="3" y="118" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -584,6 +572,18 @@ Gw
                                     </buttonCell>
                                     <connections>
                                         <action selector="userPointPressed:" target="678" id="856"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(p) Pi" id="789">
+                                    <rect key="frame" x="135" y="157" width="45" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    <buttonCell key="cell" type="square" title="π" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2799">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="20" name="HelveticaNeue-Light"/>
+                                        <string key="keyEquivalent">p</string>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="valuePressed:" target="678" id="829"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -856,7 +856,7 @@ Gw
                                         <action selector="bracketPressed:" target="678" id="1722"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(o) Cosine" tag="8" id="1674">
+                                <button toolTip="(⌥o) Hyperbolic Cosine" tag="8" id="1674">
                                     <rect key="frame" x="99" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="cosh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2746">
@@ -881,7 +881,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="1708"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(v) Square Root" tag="29" id="2907">
+                                <button toolTip="(⌘v) Cube Root" tag="29" id="2907">
                                     <rect key="frame" x="197" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="cbrt" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2908">
@@ -894,7 +894,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="2909"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(v) Square Root" tag="30" id="2910">
+                                <button toolTip="(⌥v) Nth Root" tag="30" id="2910">
                                     <rect key="frame" x="197" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="nRoot" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2911">
@@ -926,19 +926,20 @@ Gw
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="18" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">l</string>
-                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="preOpPressed:" target="678" id="2932"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(z) e, raised to the next number" tag="23" id="2929">
+                                <button toolTip="(z) 10, raised to the next number" tag="23" id="2929">
                                     <rect key="frame" x="246" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="10ˣ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="24" inset="2" id="2930">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="18" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">z</string>
+                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="preOpPressed:" target="678" id="2933"/>
@@ -968,13 +969,14 @@ Gw
                                         <action selector="postOpPressed:" target="678" id="2927"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(w) square the current number" tag="28" id="2904">
+                                <button toolTip="(w) cube the current number" tag="28" id="2904">
                                     <rect key="frame" x="246" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x³" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="25" inset="2" id="2905">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="18" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">x</string>
+                                        <string key="keyEquivalent">w</string>
+                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="postOpPressed:" target="678" id="2906"/>
@@ -993,7 +995,7 @@ Gw
                                         <action selector="precisionPressed:" target="678" id="1704"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌘D) Display Precision" id="2922">
+                                <button toolTip="(⎇) Second function" id="2922">
                                     <rect key="frame" x="1" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="second" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2923">
@@ -1006,7 +1008,7 @@ Gw
                                         <action selector="shiftPressed:" target="678" id="2937"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(t) Tangent" tag="9" id="1687">
+                                <button toolTip="(⌥t) Hyperboic Tangent" tag="9" id="1687">
                                     <rect key="frame" x="148" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="tanh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2759">
@@ -1032,19 +1034,20 @@ Gw
                                         <action selector="trigModePressed:" target="678" id="1703"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(y) raise to the next number" tag="94" id="1693">
+                                <button toolTip="(⌥w) raise to the next number" tag="94" id="1693">
                                     <rect key="frame" x="246" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="xʸ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="94" inset="2" id="2765">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="18" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">y</string>
+                                        <string key="keyEquivalent">w</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="binaryOpPressed:" target="678" id="1716"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(s) Sine" tag="7" id="1697">
+                                <button toolTip="(⌥s) Hyperbolic Sine" tag="7" id="1697">
                                     <rect key="frame" x="50" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="sinh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2769">
@@ -1143,7 +1146,7 @@ IA
                                         <action selector="binaryOpPressed:" target="678" id="1718"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(m) Modulo -- not percent" tag="18" id="2934">
+                                <button toolTip="(m) Round the number" tag="18" id="2934">
                                     <rect key="frame" x="147" y="198" width="52" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Rnd" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="2935">

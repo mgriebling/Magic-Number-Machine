@@ -136,6 +136,35 @@
 	return [[NSUserDefaults standardUserDefaults] boolForKey:@"useThousandsSeparator"];
 }
 
+- (void)setHistoryData:(NSArray *)historyData
+{
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSArray *paths = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask];
+	NSURL *file = [paths.firstObject URLByAppendingPathComponent:@"MagicNumberMachine" isDirectory:YES];
+	NSError *error;
+	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
+	NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData];
+//	[fileData writeToURL:file atomically:YES];
+	[fileData writeToURL:file options:nil error:&error];
+	if (error) {
+		NSLog(@"Write error: %@", error);
+	}
+}
+
+- (NSArray *)getHistoryDataFromPref {
+	NSArray *historyData = [NSArray array];
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSArray *paths = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask];
+	NSURL *file = [paths.firstObject URLByAppendingPathComponent:@"MagicNumberMachine" isDirectory:YES];
+	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
+	NSData *fileData = [NSData dataWithContentsOfURL:file];
+	if (fileData) {
+		NSKeyedUnarchiver *unarchiver = [NSKeyedUnarchiver unarchiveObjectWithData:fileData];
+		historyData = [unarchiver decodeObject];
+	}
+	return historyData;
+}
+
 - (void)setDefaultTrigMode:(int)mode
 {
 	trigMode = (BFTrigMode)mode;
@@ -188,7 +217,10 @@
 		arrayDataArray = [NSMutableArray arrayWithCapacity:0];
 		dataArray      = [NSMutableArray arrayWithCapacity:0];
 		data2DArray    = [NSMutableArray arrayWithCapacity:0];
-		historyArray   = [NSMutableArray arrayWithCapacity:0];
+//		historyArray   = [NSMutableArray arrayWithCapacity:0];
+		
+		// Read a history array from user defaults
+		historyArray = [NSMutableArray arrayWithArray:[self getHistoryDataFromPref]];
 	}
 	return self;
 }
@@ -233,21 +265,6 @@
 	NSString *format = [[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: %d" value:nil table:nil];
 	NSString *radixString = [NSString localizedStringWithFormat:format, radix];
 	[radixDisplay setStringValue:radixString];
-//	switch (radix)
-//	{
-//		case 2:
-//			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Binary" value:nil table:nil]];
-//			break;
-//		case 8:
-//			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Octal" value:nil table:nil]];
-//			break;
-//		case 10:
-//			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Decimal" value:nil table:nil]];
-//			break;
-//		case 16:
-//			[radixDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: Hexadecimal" value:nil table:nil]];
-//			break;
-//	}
 }
 
 - (void)updatePrecisionDisplay
@@ -419,6 +436,7 @@
 - (IBAction)clearHistory:(id)sender
 {
 	historyArray = [NSMutableArray arrayWithCapacity:0];
+	[self setHistoryData:historyArray];
 	[drawerManager updateHistory];
 }
 
@@ -490,6 +508,7 @@
 				[expressionDisplay expressionPathFlipped],
 				@([historyArray count] + 1)]
 		];
+		[self setHistoryData:historyArray];   // save the data to user preferences
 		[drawerManager updateHistory];
 	}
 }

@@ -105,7 +105,7 @@
 - (void)shiftIsPressed;
 // - (void)shiftToggled;
 - (void)shiftResult:(BOOL)left;
-- (void)trigModePressed;
+- (void)trigModePressedWithButton:(NSButton *)button;
 - (void)valueChanged;
 @property (NS_NONATOMIC_IOSONLY, readonly, strong) id window;
 - (BOOL)windowShouldClose:(id)sender;

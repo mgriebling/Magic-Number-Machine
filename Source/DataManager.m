@@ -278,24 +278,44 @@
 	[exponentLeftShift setEnabled:(fixedPlaces == 0 && complement == 0)];
 }
 
-- (void)updateTrigModeDisplay
-{
-	switch (trigMode)
-	{
+- (NSString *)getTrigStringForMode:(BFTrigMode)mode {
+	switch (mode) {
 		case BF_degrees:
-			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Degrees" value:nil table:nil]];
-			break;
+			return [[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Degrees" value:nil table:nil];
 		case BF_radians:
-			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radians" value:nil table:nil]];
-			break;
+			return [[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radians" value:nil table:nil];
 		case BF_gradians:
-			[trigModeDisplay setStringValue:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Gradians" value:nil table:nil]];
-			break;
+			return [[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Gradians" value:nil table:nil];
 	}
 }
 
-- (void)updateExpressionDisplay
-{
+- (NSString *)getTrigAbbreviationForMode:(BFTrigMode)mode {
+	switch (mode) {
+		case BF_degrees:
+			return [[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Deg" value:nil table:nil];
+		case BF_radians:
+			return [[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Rad" value:nil table:nil];
+		case BF_gradians:
+			return [[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Grad" value:nil table:nil];
+	}
+}
+
+- (BFTrigMode)increment:(BFTrigMode)mode {
+	switch (mode) {
+		case BF_degrees:
+			return BF_radians;
+		case BF_radians:
+			return BF_gradians;
+		case BF_gradians:
+			return BF_degrees;
+	}
+}
+
+- (void)updateTrigModeDisplay {
+	[trigModeDisplay setStringValue:[self getTrigStringForMode:trigMode]];
+}
+
+- (void)updateExpressionDisplay {
 	[currentExpression refresh];
 	[self valueChanged];
 }
@@ -851,16 +871,14 @@
 //
 // Toggle the current state of the trig mode.
 //
-- (void)trigModePressed
-{
-	switch (trigMode) {
-		case BF_degrees: trigMode = BF_radians; break;
-		case BF_radians: trigMode = BF_gradians; break;
-		case BF_gradians: trigMode = BF_degrees; break;
-	}
+- (void)trigModePressedWithButton:(NSButton *)button {
+	trigMode = [self increment:trigMode];
 	
 	[self setDefaultTrigMode:(int)trigMode];	// dennis
 	[self updateTrigModeDisplay];				// dennis
+	
+	NSString *title = [self getTrigAbbreviationForMode:[self increment:trigMode]];
+	[button setTitle:title];   // Mike
 }
 
 //

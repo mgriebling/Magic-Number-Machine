@@ -777,16 +777,70 @@ BF_NormaliseNumbers
 	return self;
 }
 
+- (char)getCharFromString:(NSString **)string {
+	if ((*string).length > 0) {
+		char ch = [*string characterAtIndex:0];
+		*string = [*string substringFromIndex:1];
+		return ch;
+	}
+	return 0;
+}
+
 - (instancetype)initWithString:(NSString *)newValue radix:(unsigned short)newRadix {
 	NSString *separators = newRadix == 10 ? @"eE" : @"";
-	self = [super init];
+	NSCharacterSet *validDigits = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+	NSCharacterSet *signChars = [NSCharacterSet characterSetWithCharactersInString:@"+-"];
+	NSInteger userPoint = 0;
+
+	self = [self initWithInt:0 radix:newRadix];
 	if (self != nil) {
+//		NSLog(@"Pre-digit add = %@", self.toString);
+//		bf_radix = newRadix;
 		NSArray *components = [newValue componentsSeparatedByCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:separators]];
-		NSString *line = components.firstObject;
+		NSString *mantissa = [components.firstObject stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+		char ch = [self getCharFromString:&mantissa];
 		
-//		while (line.length > 0) {
-//		}
+		// extract the sign
+		if ([signChars characterIsMember:ch]) { [self appendDigit:ch useComplement:0]; ch = [self getCharFromString:&mantissa]; }
+		
+		// extract the mantissa
+		while ([validDigits characterIsMember:ch]) {
+			[self appendDigit:ch - '0' useComplement:0];
+			ch = [self getCharFromString:&mantissa];
+		}
+		
+		// extract the fraction
+		if (ch == '.') {
+			ch = [self getCharFromString:&mantissa];
+			while ([validDigits characterIsMember:ch]) {
+				[self appendDigit:ch - '0' useComplement:0];
+				ch = [self getCharFromString:&mantissa];
+				userPoint++;
+			}
+		}
+		
+		// extract the exponent
+		if (components.count > 1) {
+			NSString *expString = components[1];
+			
+			// add exponent to the number
+			BOOL expNegative = NO;
+			if (expString.length > 0) {
+				ch = [self getCharFromString:&expString];
+				if ([signChars characterIsMember:ch]) {
+					expNegative = ch == '-';
+					ch = [self getCharFromString:&expString];
+				}
+				while ([validDigits characterIsMember:ch]) {
+					[self appendExpDigit:ch - '0'];
+					ch = [self getCharFromString:&expString];
+				}
+				if (expNegative) { [self appendExpDigit:'-']; }
+			}
+		}
+		[self setUserPoint:userPoint];
 	}
+	NSLog(@"\"%@\" = %@", newValue, [self toString]);
 	return self;
 }
 
@@ -878,7 +932,7 @@ BF_NormaliseNumbers
 {
 	unsigned long		values[BF_num_values];
 	
-	if (digit == L'-')
+	if (digit == '-')
 	{
 		bf_is_negative = (bf_is_negative == NO) ? YES : NO;
 	}
@@ -965,7 +1019,7 @@ BF_NormaliseNumbers
 - (void)appendExpDigit: (short)digit
 {
 	// Change the sign when '+/-' is pressed
-	if (digit == L'-')
+	if (digit == '-')
 	{
 		bf_exponent *= -1;
 		return;
@@ -2613,13 +2667,13 @@ BF_NormaliseNumbers
 // Takes the nth root of the receiver
 //
 - (void)nRoot: (NSUInteger)n {
-	BigFloat				*original;
-	BigFloat				*prevGuess;
-	BigFloat				*newGuess;
-	BigFloat				*root;
-//	int						i, j;
-//	BOOL					digitNotFound = YES;
-//	int						numDigits;
+	BigFloat			*original;
+	BigFloat			*prevGuess;
+	BigFloat			*newGuess;
+	BigFloat			*root;
+	int					i, j;
+	BOOL				digitNotFound = YES;
+	int					numDigits;
 	NSComparisonResult	compare;
 	
 	if (!bf_is_valid)
@@ -2639,28 +2693,28 @@ BF_NormaliseNumbers
 	original = [self copy];
 	root = [[BigFloat alloc] initWithInt:n radix: bf_radix];
 	
-//	// Count the number of digits left of the point
-//	numDigits = BF_num_values * bf_value_precision + bf_exponent - bf_user_point;
-//	for (i = BF_num_values - 1; i >= 0 && digitNotFound; i--)
-//	{
-//		for (j = bf_value_precision - 1; j >= 0 && digitNotFound; j--)
-//		{
-//			if ((bf_array[i] / (unsigned long)(pow(bf_radix, j)) % bf_radix) == 0)
-//			{
-//				numDigits--;
-//			}
-//			else
-//			{
-//				digitNotFound = NO;
-//			}
-//		}
-//	}
+	// Count the number of digits left of the point
+	numDigits = BF_num_values * bf_value_precision + bf_exponent - bf_user_point;
+	for (i = BF_num_values - 1; i >= 0 && digitNotFound; i--)
+	{
+		for (j = bf_value_precision - 1; j >= 0 && digitNotFound; j--)
+		{
+			if ((bf_array[i] / (unsigned long)(pow(bf_radix, j)) % bf_radix) == 0)
+			{
+				numDigits--;
+			}
+			else
+			{
+				digitNotFound = NO;
+			}
+		}
+	}
 	
 	// The first guess will be the scaled exponent of this number
-	double froot = pow(self.doubleValue, 1.0/n);
-	[self assign:[BigFloat bigFloatWithDouble:froot radix:bf_radix]];
+//	double froot = pow(self.doubleValue, 1.0/n);
+//	[self assign:[BigFloat bigFloatWithDouble:froot radix:bf_radix]];
 //	NSLog(@"Initial guess = %f", froot);
-//	bf_exponent -= (numDigits / n);
+	bf_exponent -= (numDigits / n);
 	prevGuess = [self copy];
 	newGuess = [self copy];
 	compare = NSOrderedDescending;

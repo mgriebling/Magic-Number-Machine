@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, ConstType) {
 	ElectronComptonWavelength,
 	DeuteronMass,
 	ElectronMass,
-	NuetronMass,
+	NeutronMass,
 	PlanckMass,
 	ProtonMass,
 	AtomicMassConstant,

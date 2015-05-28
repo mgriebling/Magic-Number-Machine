@@ -625,9 +625,9 @@
 //
 // Tells the DataManager to cycle the trigonometric mode.
 //
-- (IBAction)trigModePressed:(id)sender
+- (IBAction)trigModePressed:(NSButton *)sender
 {
-	[dataManager trigModePressed];
+	[dataManager trigModePressedWithButton:sender];
 }
 
 //

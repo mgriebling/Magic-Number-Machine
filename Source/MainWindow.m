@@ -17,6 +17,13 @@
 //
 @implementation MainWindow
 
+- (void)awakeFromNib {
+	[super awakeFromNib];
+	
+	// just need to make the title bar transparent - Mike
+	self.titlebarAppearsTransparent = YES;
+}
+
 //
 // flagsChanged
 //

@@ -78,7 +78,7 @@ NSBezierPath* GetResultPath(Expression* expression)
 	
 	// Move the expression into its vertical position
 	translateTransform = [NSAffineTransform transform];
-	[translateTransform translateXBy:0.0 yBy:20.0];
+	[translateTransform translateXBy:0.0 yBy:5.0];
 	[resultPath transformUsingAffineTransform:translateTransform];
 	
 	return resultPath;

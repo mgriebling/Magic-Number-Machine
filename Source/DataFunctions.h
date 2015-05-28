@@ -20,7 +20,7 @@
 //
 @interface DataFunctions : NSObject
 {
-	IBOutlet DataManager		*dataManager;
+	IBOutlet DataManager	*dataManager;
 	IBOutlet DrawerManager	*drawerManager;
 }
 - (id)afromrankregressiononx:(NSMutableArray *)values;

@@ -860,7 +860,7 @@ Gw
                                 <button identifier="squareRoot" toolTip="(v) Square Root" tag="21" id="1679">
                                     <rect key="frame" x="197" y="198" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="sqrt" imagePosition="overlaps" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2751">
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="2_x" imagePosition="overlaps" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2751">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">v</string>
@@ -872,7 +872,7 @@ Gw
                                 <button toolTip="(⌘v) Cube Root" tag="29" id="2907">
                                     <rect key="frame" x="197" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="cbrt" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2908">
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="3_x" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2908">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="AppleSymbols"/>
                                         <string key="keyEquivalent">v</string>
@@ -885,7 +885,7 @@ Gw
                                 <button toolTip="(⌥v) Nth Root" tag="30" id="2910">
                                     <rect key="frame" x="197" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="nRoot" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2911">
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="x_y" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2911">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="AppleSymbols"/>
                                         <string key="keyEquivalent">v</string>
@@ -986,7 +986,7 @@ Gw
                                 <button toolTip="(⎇) Second function" id="2922">
                                     <rect key="frame" x="1" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="2nd" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="2923">
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="2nd" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2923">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">d</string>
@@ -2376,9 +2376,9 @@ Gw
         </window>
     </objects>
     <resources>
+        <image name="2_x" width="40" height="30"/>
         <image name="2nd" width="40" height="30"/>
-        <image name="cbrt" width="40" height="45"/>
-        <image name="nRoot" width="40" height="45"/>
-        <image name="sqrt" width="40" height="45"/>
+        <image name="3_x" width="40" height="30"/>
+        <image name="x_y" width="40" height="30"/>
     </resources>
 </document>

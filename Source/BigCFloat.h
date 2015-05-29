@@ -30,6 +30,7 @@
 - (instancetype)initWithMagnitude:(BigFloat *)r angle:(BigFloat *)theta;
 - (instancetype)initWithInt:(signed int)newValue radix:(unsigned short)newRadix;
 - (instancetype)initWithDouble:(double)newValue radix:(unsigned short)newRadix;
+- (instancetype)initWithString:(NSString *)newValue radix:(unsigned short)newRadix;
 - (instancetype)initPiWithRadix:(unsigned short)newRadix ;
 
 - (instancetype)initWithCoder:(NSCoder *)coder;
@@ -40,6 +41,7 @@
 + (BigCFloat*)bigFloatWithMagnitude:(BigFloat *)r angle:(BigFloat *)theta;
 + (BigCFloat*)bigFloatWithInt:(signed int)newValue radix:(unsigned short)newRadix;
 + (BigCFloat*)bigFloatWithDouble:(double)newValue radix:(unsigned short)newRadix;
++ (BigCFloat*)bigFloatWithString:(NSString *)newValue radix:(unsigned short)newRadix;
 + (BigCFloat*)piWithRadix:(unsigned short)newRadix;
 
 + (BigCFloat *)one;

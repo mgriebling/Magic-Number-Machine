@@ -150,6 +150,66 @@
 }
 
 //
+// initWithString
+//
+// Wrapper that adds complex number support around the base class
+// Note: we assume an exponent of 'e' where base 15 and higher numbers use character 'E'.
+//
+- (instancetype)initWithString:(NSString *)newValue radix:(unsigned short)newRadix {
+	self = [super initWithInt:0 radix:newRadix];
+	if (self && newValue.length > 0) {
+		// break apart the string into real and imaginary pieces
+		NSCharacterSet *signChars = [NSCharacterSet characterSetWithCharactersInString:@"+-"];
+		NSMutableString *number = [NSMutableString stringWithString:@""];
+		NSString *inumber = @"";
+		char ch = [newValue characterAtIndex:0];
+		
+		// remove leading sign -- if any
+		if ([signChars characterIsMember:ch]) { [number appendFormat:@"%c", ch]; newValue = [newValue substringFromIndex:1]; }
+		NSRange range = [newValue rangeOfCharacterFromSet:signChars];
+		if (range.length > 0) {
+			// check if this is an exponent
+			NSRange expRange = [newValue rangeOfString:@"e"];
+			if (expRange.length > 0 && expRange.location == range.location-1) {
+				// search beyond the exponent
+				range.location++; range.length = newValue.length - range.location;
+				range = [newValue rangeOfCharacterFromSet:signChars options:0 range:range];
+				if (range.length > 0) {
+					// This is likely the start of the second number
+					[number appendString:[newValue substringToIndex:range.location-1]];
+					inumber = [newValue substringFromIndex:range.location];
+				} else {
+					// Only one number exists
+					if ([newValue hasSuffix:@"i"]) {
+						inumber = [NSString stringWithFormat:@"%@%@", number, newValue];		// transfer the sign
+						number = [NSMutableString stringWithString:@""];						// clear the real part
+					} else {
+						number = [NSMutableString stringWithFormat:@"%@%@", number, newValue];  // copy the number
+					}
+				}
+			} else {
+				// This is the start of the second number
+				[number appendString:[newValue substringToIndex:range.location-1]];
+				inumber = [newValue substringFromIndex:range.location];
+			}
+		} else {
+			// only one number exists
+			if ([newValue hasSuffix:@"i"]) {
+				inumber = [NSString stringWithFormat:@"%@%@", number, newValue];		// transfer the sign
+				number = [NSMutableString stringWithString:@""];						// clear the real part
+			} else {
+				number = [NSMutableString stringWithFormat:@"%@%@", number, newValue];  // copy the number
+			}
+		}
+		self = [super initWithString:number radix:newRadix];
+		inumber = [inumber stringByReplacingOccurrencesOfString:@"i" withString:@""];	// remove the "i"
+		bcf_imaginary = [BigFloat bigFloatWithString:inumber radix:newRadix];
+		bcf_has_imaginary = ![bcf_imaginary isZero];
+	}
+	return self;
+}
+
+//
 // initPiWithRadix
 //
 // Wrapper that adds complex number support around the base class
@@ -249,6 +309,15 @@
 + (BigCFloat*)bigFloatWithDouble:(double)newValue radix:(unsigned short)newRadix
 {
 	return [[BigCFloat alloc] initWithDouble:newValue radix:newRadix];
+}
+
+//
+// bigFloatWithString
+//
+// Wrapper that adds complex number support around the base class
+//
++ (BigCFloat*)bigFloatWithString:(NSString *)newValue radix:(unsigned short)newRadix {
+	return [[BigCFloat alloc] initWithString:newValue radix:newRadix];
 }
 
 //

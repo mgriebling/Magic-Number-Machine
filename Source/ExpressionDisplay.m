@@ -61,10 +61,10 @@
 //
 NSBezierPath* GetResultPath(Expression* expression)
 {
-	NSBezierPath			*resultPath;
-	NSBezierPath			*valuePath;
+	NSBezierPath	  *resultPath;
+	NSBezierPath	  *valuePath;
 	NSAffineTransform *translateTransform = [NSAffineTransform transform];
-	NSRect				resultBounds;
+	NSRect			  resultBounds;
 	
 	// Get the result value
 	valuePath = [expression getValuePathWithLevel:0];
@@ -137,14 +137,14 @@ NSBezierPath* GetResultPath(Expression* expression)
 //
 - (void)expressionChanged
 {
-	Expression		*displayExpression;
+	Expression *displayExpression;
 	
-	NSRect			expressionBounds = NSMakeRect(0.0, 0.0, 0.0, 0.0);
-	NSRect			resultBounds = NSMakeRect(0.0, 0.0, 0.0, 0.0);
-	NSRect			frameRect = [self frame];
+	NSRect		expressionBounds = NSZeroRect;
+	NSRect		resultBounds = NSZeroRect;
+	NSRect		frameRect = [self frame];
 	
-	double			availableHeight = frameRect.size.height - 10.0;
-	double			maximumWidth;
+	double		availableHeight = frameRect.size.height - 10.0;
+	double		maximumWidth;
 	
 	// Ensure that the old area is updated
 	if (![expressionPath isEmpty])
@@ -324,7 +324,7 @@ NSBezierPath* GetResultPath(Expression* expression)
 //
 - (void)setFrame:(NSRect)frameRect
 {
-	NSRect  resultBounds = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+	NSRect  resultBounds = NSZeroRect;
 	double  heightScale = frameRect.size.height / _frame.size.height;
 	
 	// We don't want this call to setFrame to actually do any rendering

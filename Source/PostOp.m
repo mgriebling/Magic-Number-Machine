@@ -196,7 +196,7 @@
 	
 	if (pathValidAt != level)
 	{
-		NSBezierPath			*childPath = [NSBezierPath bezierPath];
+		NSBezierPath *childPath = [NSBezierPath bezierPath];
 
 		expressionPath = [NSBezierPath bezierPath];
 

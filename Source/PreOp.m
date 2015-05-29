@@ -65,6 +65,54 @@
 }
 
 //
+// Adds inverse to the workingPath argument -- Mike (why was this never factored before?)
+//
+- (NSBezierPath *)addInverseTo: (NSBezierPath *)workingPath {
+	NSRect workingBounds;
+	NSBezierPath *opPath;
+	NSAffineTransform *workingTransform;
+	workingBounds = [workingPath bounds];
+	workingTransform = [NSAffineTransform transform];
+	[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+	opPath = [ExpressionSymbols inversePath];
+	[opPath transformUsingAffineTransform:workingTransform];
+	[opPath appendBezierPath:workingPath];
+	return opPath;
+}
+
+//
+// Adds hyperbolic to the workingPath argument -- Mike (why was this never factored before?)
+//
+- (NSBezierPath *)addHyperbolicTo: (NSBezierPath *)workingPath {
+	NSRect workingBounds;
+	NSBezierPath *opPath;
+	NSAffineTransform *workingTransform;
+	workingBounds = [workingPath bounds];
+	workingTransform = [NSAffineTransform transform];
+	[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+	opPath = [ExpressionSymbols hypPath];
+	[opPath transformUsingAffineTransform:workingTransform];
+	[opPath appendBezierPath:workingPath];
+	return opPath;
+}
+
+//
+// Adds subscript 2 to the workingPath argument -- Mike (why was this never factored before?)
+//
+- (NSBezierPath *)addSubscript2: (NSBezierPath *)workingPath {
+	NSRect workingBounds;
+	NSBezierPath *opPath;
+	NSAffineTransform *workingTransform;
+	workingBounds = [workingPath bounds];
+	workingTransform = [NSAffineTransform transform];
+	[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
+	opPath = [ExpressionSymbols sub2Path];
+	[opPath transformUsingAffineTransform:workingTransform];
+	[opPath appendBezierPath:workingPath];
+	return opPath;
+}
+
+//
 // appendOpToPath
 //
 // Creates the bezierPath representation of the operand
@@ -72,9 +120,9 @@
 - (void)appendOpToPath:(NSBezierPath*)path atLevel:(int)level
 {
 	NSBezierPath		*opPath;
-	NSAffineTransform	*workingTransform;
-	NSBezierPath		*workingPath;
-	NSRect				workingBounds;
+//	NSAffineTransform	*workingTransform;
+//	NSBezierPath		*workingPath;
+//	NSRect				workingBounds;
 
 	switch (op)
 	{
@@ -88,103 +136,31 @@
 			opPath = [ExpressionSymbols tanPath];
 			break;
 		case arcsinOp:
-			workingPath = [ExpressionSymbols sinPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols inversePath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[opPath appendBezierPath:workingPath];
+			opPath = [self addInverseTo:[ExpressionSymbols sinPath]];
 			break;
 		case arccosOp:
-			workingPath = [ExpressionSymbols cosPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols inversePath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[opPath appendBezierPath:workingPath];
+			opPath = [self addInverseTo:[ExpressionSymbols cosPath]];
 			break;
 		case arctanOp:
-			workingPath = [ExpressionSymbols tanPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols inversePath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[opPath appendBezierPath:workingPath];
+			opPath = [self addInverseTo:[ExpressionSymbols tanPath]];
 			break;
 		case sinhOp:
-			workingPath = [ExpressionSymbols sinPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols hypPath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[opPath appendBezierPath:workingPath];
+			opPath = [self addHyperbolicTo:[ExpressionSymbols sinPath]];
 			break;
 		case coshOp:
-			workingPath = [ExpressionSymbols cosPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols hypPath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[opPath appendBezierPath:workingPath];
+			opPath = [self addHyperbolicTo:[ExpressionSymbols cosPath]];
 			break;
 		case tanhOp:
-			workingPath = [ExpressionSymbols tanPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols hypPath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[opPath appendBezierPath:workingPath];
+			opPath = [self addHyperbolicTo:[ExpressionSymbols tanPath]];
 			break;
 		case arcsinhOp:
-			workingPath = [ExpressionSymbols sinPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols hypPath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[workingPath appendBezierPath:opPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols inversePath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[opPath appendBezierPath:workingPath];
+			opPath = [self addInverseTo:[self addHyperbolicTo:[ExpressionSymbols sinPath]]];
 			break;
 		case arccoshOp:
-			workingPath = [ExpressionSymbols cosPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols hypPath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[workingPath appendBezierPath:opPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols inversePath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[opPath appendBezierPath:workingPath];
+			opPath = [self addInverseTo:[self addHyperbolicTo:[ExpressionSymbols cosPath]]];
 			break;
 		case arctanhOp:
-			workingPath = [ExpressionSymbols tanPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols hypPath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[workingPath appendBezierPath:opPath];
-			workingBounds = [workingPath bounds];
-			workingTransform = [NSAffineTransform transform];
-			[workingTransform translateXBy:workingBounds.origin.x + workingBounds.size.width yBy:0];
-			opPath = [ExpressionSymbols inversePath];
-			[opPath transformUsingAffineTransform:workingTransform];
-			[opPath appendBezierPath:workingPath];
+			opPath = [self addInverseTo:[self addHyperbolicTo:[ExpressionSymbols tanPath]]];
 			break;
 		case reOp:
 			opPath = [ExpressionSymbols rePath];
@@ -207,6 +183,9 @@
 		case logOp:
 			opPath = [ExpressionSymbols logPath];
 			break;
+		case log2Op:
+			opPath = [self addSubscript2:[ExpressionSymbols logPath]];			
+			break;
 		case lnOp:
 			opPath = [ExpressionSymbols lnPath];
 			break;
@@ -219,6 +198,9 @@
 			break;
 		case tenOp:
 			opPath = [ExpressionSymbols tenPath];
+			break;
+		case twoOp:
+			opPath = [ExpressionSymbols getSymbolForString:@"2"];
 			break;
 		case eOp:
 			opPath = [ExpressionSymbols ePath];
@@ -327,6 +309,9 @@
 		case logOp:
 			resultString = [resultString stringByAppendingString:@"log"];
 			break;
+		case log2Op:
+			resultString = [resultString stringByAppendingString:@"log₂"];
+			break;
 		case lnOp:
 			resultString = [resultString stringByAppendingString:@"ln"];
 			break;
@@ -341,6 +326,9 @@
 			break;
 		case tenOp:
 			resultString = [resultString stringByAppendingString:@"10^"];
+			break;
+		case twoOp:
+			resultString = [resultString stringByAppendingString:@"2^"];
 			break;
 		case eOp:
 			resultString = [resultString stringByAppendingString:@"e^"];
@@ -427,6 +415,9 @@
 				case logOp:
 					[value logOfBase:[BigCFloat bigFloatWithInt:10 radix:[manager getRadix]]];
 					break;
+				case log2Op:
+					[value logOfBase:[BigCFloat bigFloatWithInt:2 radix:[manager getRadix]]];
+					break;
 				case lnOp:
 					[value ln];
 					break;
@@ -441,6 +432,11 @@
 					break;
 				case tenOp:
 					temp = [BigCFloat bigFloatWithInt:10 radix:[manager getRadix]];
+					[temp raiseToPower:value];
+					value = (BigCFloat*)[temp duplicate];
+					break;
+				case twoOp:
+					temp = [BigCFloat bigFloatWithInt:2 radix:[manager getRadix]];
 					[temp raiseToPower:value];
 					value = (BigCFloat*)[temp duplicate];
 					break;
@@ -466,12 +462,12 @@
 //
 - (NSBezierPath*)pathAtLevel:(int)level
 {
-	NSBezierPath		*copy;
-	double			scale = [Expression scaleWithLevel:level];
+	NSBezierPath *copy;
+	double		 scale = [Expression scaleWithLevel:level];
 	
 	if (pathValidAt != level)
 	{
-		NSBezierPath			*childPath = [NSBezierPath bezierPath];
+		NSBezierPath *childPath = [NSBezierPath bezierPath];
 
 		expressionPath = [NSBezierPath bezierPath];
 
@@ -480,9 +476,9 @@
 		if (child != nil)
 		{
 			NSAffineTransform *transform;
-			NSRect				boundsRect = [expressionPath bounds];
+			NSRect			  boundsRect = [expressionPath bounds];
 			
-			if (op == eOp || op == tenOp)
+			if (op == eOp || op == tenOp || op == twoOp)
 			{
 				transform = [NSAffineTransform transform];
 				if (level == 0)
@@ -501,7 +497,7 @@
 			[transform translateXBy:boundsRect.origin.x + boundsRect.size.width yBy:0];
 			[childPath transformUsingAffineTransform:transform];
 			
-			if (op == sqrtOp || op == cbrtOp)
+			if (op == sqrtOp || op == cbrtOp || op == rootOp)
 			{
 				NSBezierPath	*overLine = [NSBezierPath bezierPath];
 				NSRect			childBounds = [childPath bounds];

@@ -103,6 +103,7 @@ typedef NS_ENUM(NSInteger, ConstType) {
 + (NSBezierPath *)notPath;
 + (NSBezierPath *)rndPath;
 + (NSBezierPath *)logPath;
++ (NSBezierPath *)sub2Path;
 + (NSBezierPath *)lnPath;
 + (NSBezierPath *)sqrtPath;
 + (NSBezierPath *)nRootPath:(NSUInteger)n;

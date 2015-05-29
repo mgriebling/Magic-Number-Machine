@@ -32,16 +32,25 @@
 
 @interface DataManager : NSObject
 {
-	IBOutlet ExpressionDisplay	*expressionDisplay;	// window's main display
-	IBOutlet DrawerManager		*drawerManager;		// handles all the window drawers
-	IBOutlet id					inputManager;			// routes input from buttons
-//	__weak IBOutlet NSSegmentedControl *shiftOption;
-//	IBOutlet NSButton			*optionButton;			// the option button
-//	IBOutlet NSButton			*shiftButton;				// the shift button
-	IBOutlet NSButton			*exponentLeftShift;		// the "<<" button
-	IBOutlet NSTextField		*precisionDisplay;		// Displays the number of digits
-	IBOutlet NSTextField		*trigModeDisplay;		// Displays degress, radians, gradians
-	IBOutlet NSTextField		*radixDisplay;			// Displays hex, decimal, etc
+	__weak IBOutlet ExpressionDisplay	*expressionDisplay;	// window's main display
+	__weak IBOutlet DrawerManager		*drawerManager;		// handles all the window drawers
+	__weak IBOutlet id					inputManager;			// routes input from buttons
+	__weak IBOutlet NSTextField		*precisionDisplay;		// Displays the number of digits
+	__weak IBOutlet NSTextField		*trigModeDisplay;		// Displays degress, radians, gradians
+	__weak IBOutlet NSTextField		*radixDisplay;			// Displays hex, decimal, etc
+	
+	// All the little buttons that get updated
+	__weak IBOutlet NSButton *modButton;
+	__weak IBOutlet NSButton *tenToXButton;
+	__weak IBOutlet NSButton *logButton;
+	__weak IBOutlet NSButton *shift3Left;
+	__weak IBOutlet NSButton *shift3Right;
+	__weak IBOutlet NSButton *tanhButton;
+	__weak IBOutlet NSButton *coshButton;
+	__weak IBOutlet NSButton *sinhButton;
+	__weak IBOutlet NSButton *tanButton;
+	__weak IBOutlet NSButton *cosButton;
+	__weak IBOutlet NSButton *sinButton;
 	
 	unsigned int				defaultDigits;
 	unsigned int				defaultSignificant;

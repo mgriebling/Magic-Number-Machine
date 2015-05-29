@@ -292,7 +292,8 @@
 
 - (void)updateExponentLeftShift
 {
-	[exponentLeftShift setEnabled:(fixedPlaces == 0 && complement == 0)];
+	[shift3Left setEnabled:(shiftIsActive || (fixedPlaces == 0 && complement == 0))];
+	[shift3Right setEnabled:(shiftIsActive || (fixedPlaces == 0 && complement == 0))];
 }
 
 - (NSString *)getTrigStringForMode:(BFTrigMode)mode {
@@ -837,6 +838,24 @@
 }
 
 //
+// toFormattedString:
+//
+// Translates the constant with an "_" to a superscript -- Mike
+//
+- (NSAttributedString *)toFormattedString: (NSString *)string {
+	NSRange location = [string rangeOfString:@"_"];
+	string = [string stringByReplacingOccurrencesOfString:@"_" withString:@""];
+	if (location.length > 0) {
+		location.length = string.length - location.location;
+	}
+	NSMutableAttributedString *result = [[NSMutableAttributedString alloc] initWithString:string];
+	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getDisplayFontWithSize:18] range:NSMakeRange(0, string.length)];
+	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getDisplayFontWithSize:12] range:location];
+	[result addAttribute:NSSuperscriptAttributeName value:@1 range:location];
+	return result;
+}
+
+//
 // shiftIsPressed
 //
 // Set the current state of the shift button.
@@ -844,6 +863,34 @@
 - (void)shiftIsPressed
 {
 	shiftIsActive = !shiftIsActive;
+	
+	// Relabel keys that are double-duty
+	if (shiftIsActive) {
+		sinButton.attributedTitle = [self toFormattedString:@"sin_-1"];
+//		sinButton.title = @"sin⁻¹";
+		cosButton.title = @"cos⁻¹";
+		tanButton.title = @"tan⁻¹";
+		sinhButton.title = @"sinh⁻¹";
+		coshButton.title = @"cosh⁻¹";
+		tanhButton.title = @"tanh⁻¹";
+		tenToXButton.title = @"2ˣ";
+		logButton.title = @"log₂";
+		shift3Left.title = @"xor";
+		shift3Right.title = @"not";
+		modButton.title = @"arg";
+	} else {
+		sinButton.title = @"sin";
+		cosButton.title = @"cos";
+		tanButton.title = @"tan";
+		sinhButton.title = @"sinh";
+		coshButton.title = @"cosh";
+		tanhButton.title = @"tanh";
+		tenToXButton.title = @"10ˣ";
+		logButton.title = @"log";
+		shift3Left.title = @"<3";
+		shift3Right.title = @">3";
+		modButton.title = @"mod";
+	}
 
 //	if (shiftIsDown != isPressed)
 //	{
@@ -908,7 +955,7 @@
 	[expressionDisplay expressionChanged];
 	
 	if (self.getShift) {
-		shiftIsActive = NO;
+		[self shiftIsPressed];
 	}
 }
 

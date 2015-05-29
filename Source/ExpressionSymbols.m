@@ -373,6 +373,16 @@ static NSArray *constantsDataRows = nil;
 }
 
 //
+// log2Path
+//
+// Returns the relevant bezier path.
+//
++ (NSBezierPath *)log2Path
+{
+	return [ExpressionSymbols getSymbolForString:@"log"];
+}
+
+//
 // lnPath
 //
 // Returns the relevant bezier path.
@@ -532,6 +542,16 @@ static NSArray *constantsDataRows = nil;
 + (NSBezierPath *)squarePath
 {
 	return [ExpressionSymbols getSymbolForString:@"2" withSuperscript:12];
+}
+
+//
+// sub2Path
+//
+// Returns the relevant bezier path.
+//
++ (NSBezierPath *)sub2Path
+{
+	return [ExpressionSymbols getSymbolForString:@"2" withSuperscript:-12];
 }
 
 //

@@ -51,20 +51,6 @@
 	[dataManager ensureInputWithValue:YES];
 	inputPoint = [dataManager getInputPoint];
 	
-	if ([dataManager getShift])
-	{
-		if (buttonTag == 'o')
-		{
-			buttonTag = 'x';
-		}
-		else if (buttonTag == 'a')
-		{
-			[inputPoint preOpPressed:notOp];
-			[dataManager valueChanged];
-			return;
-		}
-	}
-	
 	[inputPoint binaryOpPressed:buttonTag];
 	[dataManager valueChanged];
 }
@@ -277,7 +263,20 @@
 //
 - (IBAction)exponentShiftPressed:(NSButton *)sender
 {
-	[dataManager shiftResult:sender.tag < 0];
+	Expression *inputPoint;
+	
+	if (dataManager.shift) {
+		[dataManager ensureInputWithValue:YES];
+		inputPoint = [dataManager getInputPoint];
+		if (sender.tag < 0) {
+			[inputPoint binaryOpPressed:xorOp];
+		} else {
+			[inputPoint preOpPressed:notOp];
+		}
+		[dataManager valueChanged];		
+	} else {
+		[dataManager shiftResult:sender.tag < 0];
+	}
 }
 
 //
@@ -544,40 +543,36 @@
 //
 - (IBAction)preOpPressed:(id)sender
 {
-	Expression		*inputPoint;
-	int					buttonTag = [sender tag];
+	Expression	*inputPoint;
+	int			buttonTag = [sender tag];
 	
 	[dataManager ensureInputWithValue:YES];
 	inputPoint = [dataManager getInputPoint];
 	
 	switch (buttonTag)
 	{
-	case sinOp:
-	case cosOp:
-	case tanOp:
-	case sinhOp:
-	case coshOp:
-	case tanhOp:
-		if ([dataManager getShift])
-			buttonTag += 3;
-		break;
-	case modOp:
-		if ([dataManager getShift])
-			buttonTag = argOp;
-		break;
-	case tenOp:
-		if ([dataManager getShift])
-			buttonTag = twoOp;
-		break;
-	case logOp:
-		if ([dataManager getShift])
-			buttonTag = log2Op;
-		break;
-	case factorialOp:
-		NSAssert([dataManager getShift], @"Button input misdirected.");
-		buttonTag = sigmaOp;
-	default:
-		break;
+		case sinOp:
+		case cosOp:
+		case tanOp:
+		case sinhOp:
+		case coshOp:
+		case tanhOp:
+			if ([dataManager getShift]) buttonTag += 3;
+			break;
+		case modOp:
+			if ([dataManager getShift]) buttonTag = argOp;
+			break;
+		case tenOp:
+			if ([dataManager getShift]) buttonTag = twoOp;
+			break;
+		case logOp:
+			if ([dataManager getShift]) buttonTag = log2Op;
+			break;
+		case factorialOp:
+			NSAssert([dataManager getShift], @"Button input misdirected.");
+			buttonTag = sigmaOp;
+		default:
+			break;
 	}
 	
 	[inputPoint preOpPressed:buttonTag];
@@ -606,33 +601,7 @@
 - (IBAction)shiftPressed:(id)sender
 {
 	[dataManager shiftIsPressed];	// toggle the shift flag
-	
-	// Relabel keys that are double-duty
-	if (dataManager.shift) {
-		sinButton.title = @"sin⁻¹";
-		cosButton.title = @"cos⁻¹";
-		tanButton.title = @"tan⁻¹";
-		sinhButton.title = @"sinh⁻¹";
-		coshButton.title = @"cosh⁻¹";
-		tanhButton.title = @"tanh⁻¹";
-		tenToXButton.title = @"2ˣ";
-		logButton.title = @"log₂";
-		shift3Left.title = @"xor";
-		shift3Right.title = @"not";
-		modButton.title = @"arg";
-	} else {
-		sinButton.title = @"sin";
-		cosButton.title = @"cos";
-		tanButton.title = @"tan";
-		sinhButton.title = @"sinh";
-		coshButton.title = @"cosh";
-		tanhButton.title = @"tanh";
-		tenToXButton.title = @"10ˣ";
-		logButton.title = @"log";
-		shift3Left.title = @"<3";
-		shift3Right.title = @">3";
-		modButton.title = @"mod";
-	}
+
 }
 
 //

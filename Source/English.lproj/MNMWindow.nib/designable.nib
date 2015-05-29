@@ -907,7 +907,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="1720"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(l) Natural Logarithm" id="2928">
+                                <button toolTip="(l) Natural Logarithm" tag="19" id="2928">
                                     <rect key="frame" x="197" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="log" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" inset="2" id="2931">
@@ -1077,7 +1077,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="sin" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2898">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="18" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">s</string>
                                     </buttonCell>
                                     <connections>
@@ -1178,8 +1178,6 @@ IA
                 <outlet property="aButton" destination="309" id="939"/>
                 <outlet property="bButton" destination="305" id="940"/>
                 <outlet property="cButton" destination="293" id="941"/>
-                <outlet property="cosButton" destination="2895" id="2Ji-mx-XWE"/>
-                <outlet property="coshButton" destination="1674" id="W66-1u-gHW"/>
                 <outlet property="dButton" destination="197" id="942"/>
                 <outlet property="dataManager" destination="797" id="800"/>
                 <outlet property="defaultDigits" destination="1781" id="1802"/>
@@ -1195,22 +1193,13 @@ IA
                 <outlet property="fixSettings" destination="857" id="909"/>
                 <outlet property="fixValue" destination="859" id="910"/>
                 <outlet property="fourButton" destination="212" id="933"/>
-                <outlet property="logButton" destination="2928" id="xYf-gb-0vu"/>
                 <outlet property="mainWindow" destination="270" id="1356"/>
-                <outlet property="modButton" destination="1652" id="6Ua-8x-zKh"/>
                 <outlet property="nineButton" destination="308" id="938"/>
                 <outlet property="preferencesPanel" destination="1763" id="1800"/>
                 <outlet property="sciSettings" destination="884" id="908"/>
                 <outlet property="sciValue" destination="888" id="911"/>
                 <outlet property="sevenButton" destination="306" id="936"/>
-                <outlet property="shift3Left" destination="1668" id="y5Q-Uz-TeV"/>
-                <outlet property="shift3Right" destination="2913" id="5zu-os-Ffg"/>
-                <outlet property="sinButton" destination="2897" id="xUL-Gt-rld"/>
-                <outlet property="sinhButton" destination="1697" id="wm7-XP-iw6"/>
                 <outlet property="sixButton" destination="304" id="935"/>
-                <outlet property="tanButton" destination="2896" id="zRM-bB-2MZ"/>
-                <outlet property="tanhButton" destination="1687" id="KEF-8A-eIw"/>
-                <outlet property="tenToXButton" destination="2929" id="0je-ba-9ye"/>
                 <outlet property="thousandsSeparator" destination="1764" id="1801"/>
                 <outlet property="threeButton" destination="268" id="932"/>
                 <outlet property="twoButton" destination="196" id="931"/>
@@ -1254,7 +1243,7 @@ IA
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn editable="NO" width="195.7080078125" minWidth="107.70800018310547" maxWidth="1000" id="692">
+                                    <tableColumn editable="NO" width="194.7080078125" minWidth="107.70800018310547" maxWidth="1000" id="692">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Expression History">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1369,7 +1358,7 @@ IA
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                     </tableColumn>
-                                    <tableColumn identifier="2" editable="NO" width="53.66400146484375" minWidth="33.66400146484375" maxWidth="1000" id="947">
+                                    <tableColumn identifier="2" editable="NO" width="52.66400146484375" minWidth="33.66400146484375" maxWidth="1000" id="947">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="# Bits">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1480,7 +1469,7 @@ IA
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn editable="NO" width="196" minWidth="40" maxWidth="1000" id="727">
+                                    <tableColumn editable="NO" width="195" minWidth="40" maxWidth="1000" id="727">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Apply Function to Data Values">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1528,7 +1517,7 @@ IA
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn editable="NO" width="195.7080078125" minWidth="107.70800018310547" maxWidth="1000" id="709">
+                                    <tableColumn editable="NO" width="194.7080078125" minWidth="107.70800018310547" maxWidth="1000" id="709">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Data Values">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1605,7 +1594,7 @@ IA
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="240" minWidth="40" maxWidth="1000" id="1316">
+                                    <tableColumn width="239" minWidth="40" maxWidth="1000" id="1316">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Apply Function to Data Values">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1785,7 +1774,7 @@ IA
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn editable="NO" width="240" minWidth="40" maxWidth="1000" id="1324">
+                                    <tableColumn editable="NO" width="239" minWidth="40" maxWidth="1000" id="1324">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Apply Function to Data Values">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1953,7 +1942,7 @@ IA
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="239.53900146484375" minWidth="61.53900146484375" maxWidth="1000" id="784">
+                                    <tableColumn width="238.53900146484375" minWidth="61.53900146484375" maxWidth="1000" id="784">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Constants">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1996,12 +1985,22 @@ IA
         </customView>
         <customObject id="797" userLabel="DataManager" customClass="DataManager">
             <connections>
+                <outlet property="cosButton" destination="2895" id="Ak3-Hh-sgQ"/>
+                <outlet property="coshButton" destination="1674" id="uP4-zR-isA"/>
                 <outlet property="drawerManager" destination="693" id="921"/>
-                <outlet property="exponentLeftShift" destination="1668" id="1698"/>
                 <outlet property="expressionDisplay" destination="617" id="798"/>
                 <outlet property="inputManager" destination="678" id="945"/>
+                <outlet property="logButton" destination="2928" id="TNf-mq-mZA"/>
+                <outlet property="modButton" destination="1652" id="ChS-BN-eiK"/>
                 <outlet property="precisionDisplay" destination="1379" id="1381"/>
                 <outlet property="radixDisplay" destination="1383" id="1384"/>
+                <outlet property="shift3Left" destination="1668" id="num-fr-tpW"/>
+                <outlet property="shift3Right" destination="2913" id="21B-ca-DRi"/>
+                <outlet property="sinButton" destination="2897" id="jNl-qB-Ggz"/>
+                <outlet property="sinhButton" destination="1697" id="3uc-aq-Sc8"/>
+                <outlet property="tanButton" destination="2896" id="D7L-xN-16p"/>
+                <outlet property="tanhButton" destination="1687" id="wsV-Om-ct9"/>
+                <outlet property="tenToXButton" destination="2929" id="0Nb-E7-hWp"/>
                 <outlet property="trigModeDisplay" destination="1380" id="1382"/>
             </connections>
         </customObject>

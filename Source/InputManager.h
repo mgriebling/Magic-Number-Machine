@@ -58,19 +58,6 @@
 	__weak IBOutlet id	dButton;
 	__weak IBOutlet id	eButton;
 	__weak IBOutlet id	fButton;
-	
-	// All the little buttons that get updated
-	__weak IBOutlet NSButton *modButton;
-	__weak IBOutlet NSButton *tenToXButton;
-	__weak IBOutlet NSButton *logButton;
-	__weak IBOutlet NSButton *shift3Left;
-	__weak IBOutlet NSButton *shift3Right;
-	__weak IBOutlet NSButton *tanhButton;
-	__weak IBOutlet NSButton *coshButton;
-	__weak IBOutlet NSButton *sinhButton;
-	__weak IBOutlet NSButton *tanButton;
-	__weak IBOutlet NSButton *cosButton;
-	__weak IBOutlet NSButton *sinButton;
 }
 - (IBAction)allClearPressed:(id)sender;
 - (IBAction)binaryOpPressed:(id)sender;

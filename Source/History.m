@@ -47,10 +47,13 @@
 		array = [NSMutableArray arrayWithCapacity:size];
 		for (int i=0; i<size; i++) {
 			NSMutableArray *item = [NSMutableArray array];
-			[item addObject:[decoder decodeObjectForKey:[NSString stringWithFormat:@"NSData[%d]", i]]];
-			[item addObject:[decoder decodeObjectForKey:[NSString stringWithFormat:@"NSBezier[%d]", i]]];
-			[item addObject:[decoder decodeObjectForKey:[NSString stringWithFormat:@"Index[%d]", i]]];
-			[array addObject:item];
+			id object = [decoder decodeObjectForKey:[NSString stringWithFormat:@"NSData[%d]", i]];
+			if (object) {
+				[item addObject:object];
+				[item addObject:[decoder decodeObjectForKey:[NSString stringWithFormat:@"NSBezier[%d]", i]]];
+				[item addObject:[decoder decodeObjectForKey:[NSString stringWithFormat:@"Index[%d]", i]]];
+				[array addObject:item];
+			}
 			size--;
 		}
 	}

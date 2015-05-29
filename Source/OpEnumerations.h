@@ -38,6 +38,8 @@ enum
 	cubedOp = 28,
 	cbrtOp = 29,
 	rootOp = 30,
+	twoOp = 31,
+	log2Op = 32,
 	modOp = 37,			// '%'
 	multiplyOp = 42,	// '*'
 	plusOp = 43,		// '+'

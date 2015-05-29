@@ -184,7 +184,7 @@
 	NSPasteboard	*pasteBoard;
 	Expression		*expression;
 	NSData			*data;
-	NSString			*stringValue;
+	NSString		*stringValue;
 
 	expression = [[dataManager getCurrentExpression] child];
 	data = [NSKeyedArchiver archivedDataWithRootObject:expression];
@@ -195,11 +195,8 @@
 
 	stringValue = [expression getExpressionString];
 	
-	if ([dataManager getEqualsPressed])
-	{
-		Value				*result;
-	
-		result = [[Value alloc] initWithParent:nil value:[expression getValue] andManager:dataManager];
+	if ([dataManager getEqualsPressed]) {
+		Value *result = [[Value alloc] initWithParent:nil value:[expression getValue] andManager:dataManager];
 		stringValue = [[stringValue stringByAppendingString:@" = "] stringByAppendingString:[result getExpressionString]];
 	}
 	
@@ -564,24 +561,17 @@
 		if ([dataManager getShift])
 			buttonTag += 3;
 		break;
-	case absOp:
+	case modOp:
 		if ([dataManager getShift])
-			buttonTag += 1;
+			buttonTag = argOp;
 		break;
-	case eOp:
+	case tenOp:
 		if ([dataManager getShift])
-			buttonTag = tenOp;
+			buttonTag = twoOp;
 		break;
-	case sqrtOp:
+	case logOp:
 		if ([dataManager getShift])
-		{
-			[self postOpPressed:sender];
-			return;
-		}
-		break;
-	case lnOp:
-		if ([dataManager getShift])
-			buttonTag = logOp;
+			buttonTag = log2Op;
 		break;
 	case factorialOp:
 		NSAssert([dataManager getShift], @"Button input misdirected.");
@@ -617,7 +607,32 @@
 {
 	[dataManager shiftIsPressed];	// toggle the shift flag
 	
-	// TBD: Relabel keys that are double-duty
+	// Relabel keys that are double-duty
+	if (dataManager.shift) {
+		sinButton.title = @"sin⁻¹";
+		cosButton.title = @"cos⁻¹";
+		tanButton.title = @"tan⁻¹";
+		sinhButton.title = @"sinh⁻¹";
+		coshButton.title = @"cosh⁻¹";
+		tanhButton.title = @"tanh⁻¹";
+		tenToXButton.title = @"2ˣ";
+		logButton.title = @"log₂";
+		shift3Left.title = @"xor";
+		shift3Right.title = @"not";
+		modButton.title = @"arg";
+	} else {
+		sinButton.title = @"sin";
+		cosButton.title = @"cos";
+		tanButton.title = @"tan";
+		sinhButton.title = @"sinh";
+		coshButton.title = @"cosh";
+		tanhButton.title = @"tanh";
+		tenToXButton.title = @"10ˣ";
+		logButton.title = @"log";
+		shift3Left.title = @"<3";
+		shift3Right.title = @">3";
+		modButton.title = @"mod";
+	}
 }
 
 //

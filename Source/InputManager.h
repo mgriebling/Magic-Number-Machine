@@ -29,35 +29,48 @@
 {
 	IBOutlet DataManager	*dataManager;
 	
-	IBOutlet NSWindow 	*dispSettings;
-	IBOutlet NSWindow 	*sciSettings;
-	IBOutlet NSWindow 	*fixSettings;
-	IBOutlet id 		mainWindow;
-	IBOutlet id 		fixValue;
-	IBOutlet id 		sciValue;
-	IBOutlet id 		dispValue;
-	IBOutlet id 		defaultDigits;
-	IBOutlet id 		defaultDisplay;
-	IBOutlet id 		defaultSignificant;
-	IBOutlet id 		defaultFixed;
-	IBOutlet id 		thousandsSeparator;
-	IBOutlet id 		preferencesPanel;
+	__weak IBOutlet NSWindow 	*dispSettings;
+	__weak IBOutlet NSWindow 	*sciSettings;
+	__weak IBOutlet NSWindow 	*fixSettings;
+	__weak IBOutlet id 		mainWindow;
+	__weak IBOutlet id 		fixValue;
+	__weak IBOutlet id 		sciValue;
+	__weak IBOutlet id 		dispValue;
+	__weak IBOutlet id 		defaultDigits;
+	__weak IBOutlet id 		defaultDisplay;
+	__weak IBOutlet id 		defaultSignificant;
+	__weak IBOutlet id 		defaultFixed;
+	__weak IBOutlet id 		thousandsSeparator;
+	__weak IBOutlet id 		preferencesPanel;
 	
 	// All the little buttons that get disabled
-	IBOutlet id	twoButton;
-	IBOutlet id	threeButton;
-	IBOutlet id	fourButton;
-	IBOutlet id	fiveButton;
-	IBOutlet id	sixButton;
-	IBOutlet id	sevenButton;
-	IBOutlet id	eightButton;
-	IBOutlet id	nineButton;
-	IBOutlet id	aButton;
-	IBOutlet id	bButton;
-	IBOutlet id	cButton;
-	IBOutlet id	dButton;
-	IBOutlet id	eButton;
-	IBOutlet id	fButton;
+	__weak IBOutlet id	twoButton;
+	__weak IBOutlet id	threeButton;
+	__weak IBOutlet id	fourButton;
+	__weak IBOutlet id	fiveButton;
+	__weak IBOutlet id	sixButton;
+	__weak IBOutlet id	sevenButton;
+	__weak IBOutlet id	eightButton;
+	__weak IBOutlet id	nineButton;
+	__weak IBOutlet id	aButton;
+	__weak IBOutlet id	bButton;
+	__weak IBOutlet id	cButton;
+	__weak IBOutlet id	dButton;
+	__weak IBOutlet id	eButton;
+	__weak IBOutlet id	fButton;
+	
+	// All the little buttons that get updated
+	__weak IBOutlet NSButton *modButton;
+	__weak IBOutlet NSButton *tenToXButton;
+	__weak IBOutlet NSButton *logButton;
+	__weak IBOutlet NSButton *shift3Left;
+	__weak IBOutlet NSButton *shift3Right;
+	__weak IBOutlet NSButton *tanhButton;
+	__weak IBOutlet NSButton *coshButton;
+	__weak IBOutlet NSButton *sinhButton;
+	__weak IBOutlet NSButton *tanButton;
+	__weak IBOutlet NSButton *cosButton;
+	__weak IBOutlet NSButton *sinButton;
 }
 - (IBAction)allClearPressed:(id)sender;
 - (IBAction)binaryOpPressed:(id)sender;

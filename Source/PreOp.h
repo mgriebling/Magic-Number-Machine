@@ -20,8 +20,7 @@
 //
 @interface PreOp : Expression
 {
-@protected
-	int					op;
+@protected int	op;
 }
 - (instancetype)initWithParent:(Expression*)newParent manager:(DataManager*)newManager
 	andOp:(int)newOp;

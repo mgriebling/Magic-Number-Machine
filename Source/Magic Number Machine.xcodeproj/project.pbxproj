@@ -10,6 +10,7 @@
 		2F6947931B1771FC0012C173 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6947921B1771FC0012C173 /* Media.xcassets */; };
 		2F6947991B17B60A0012C173 /* History.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6947971B17B60A0012C173 /* History.h */; };
 		2F69479A1B17B60A0012C173 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6947981B17B60A0012C173 /* History.m */; };
+		473B3CAE1B1875EF0078F759 /* 2nd.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 473B3CAD1B1875EF0078F759 /* 2nd.tiff */; };
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -58,6 +59,7 @@
 		2F6947971B17B60A0012C173 /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
 		2F6947981B17B60A0012C173 /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Magic Number Machine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine_Prefix.pch"; sourceTree = "<group>"; };
+		473B3CAD1B1875EF0078F759 /* 2nd.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = 2nd.tiff; sourceTree = "<group>"; };
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
 		47B96FD71B13372E0064FEEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				C900A91A05588FB000809D76 /* Help */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				2F6947921B1771FC0012C173 /* Media.xcassets */,
+				473B3CAD1B1875EF0078F759 /* 2nd.tiff */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				C900A92305588FB000809D76 /* Magic_Number_Machine_Buttons.html in Resources */,
 				C900A92405588FB000809D76 /* Magic_Number_Machine_Help.html in Resources */,
 				C900A92505588FB000809D76 /* Magic_Number_Machine_Key_Features.html in Resources */,
+				473B3CAE1B1875EF0078F759 /* 2nd.tiff in Resources */,
 				C900A92605588FB000809D76 /* Magic_Number_Machine_RAQ.html in Resources */,
 				C900A92705588FB000809D76 /* Magic_Number_Machine_Source_Code.html in Resources */,
 				C900A92805588FB000809D76 /* top_level_design.png in Resources */,

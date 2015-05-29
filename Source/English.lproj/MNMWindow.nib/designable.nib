@@ -729,7 +729,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title=")" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2727">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">)</string>
                                     </buttonCell>
                                     <connections>
@@ -741,7 +741,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="abs" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="15" inset="2" id="2729">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">r</string>
                                     </buttonCell>
                                     <connections>
@@ -753,7 +753,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Im" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="13" inset="2" id="2920">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">i</string>
                                     </buttonCell>
                                     <connections>
@@ -765,7 +765,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="nPr" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="112" inset="2" id="2734">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">N</string>
                                     </buttonCell>
                                     <connections>
@@ -777,7 +777,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="nCr" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="112" inset="2" id="2917">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">n</string>
                                     </buttonCell>
                                     <connections>
@@ -789,7 +789,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="ln" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" inset="2" id="2736">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">l</string>
                                     </buttonCell>
                                     <connections>
@@ -801,7 +801,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="&lt;3" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2740">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">g</string>
                                     </buttonCell>
                                     <connections>
@@ -813,7 +813,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="&gt;3" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2914">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">G</string>
                                     </buttonCell>
                                     <connections>
@@ -825,7 +825,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x!" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="26" inset="2" id="2741">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">q</string>
                                     </buttonCell>
                                     <connections>
@@ -837,7 +837,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="(" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2744">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">(</string>
                                     </buttonCell>
                                     <connections>
@@ -849,7 +849,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="cosh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2746">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">o</string>
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
@@ -900,7 +900,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="eˣ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="24" inset="2" id="2752">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">z</string>
                                     </buttonCell>
                                     <connections>
@@ -912,7 +912,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="log" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" inset="2" id="2931">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">l</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
@@ -925,7 +925,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="10ˣ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="24" inset="2" id="2930">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">z</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
@@ -938,7 +938,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x²" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="25" inset="2" id="2755">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">w</string>
                                     </buttonCell>
                                     <connections>
@@ -950,7 +950,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="25" imageScaling="proportionallyDown" inset="2" id="2926">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">r</string>
                                     </buttonCell>
                                     <connections>
@@ -962,7 +962,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x³" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="25" inset="2" id="2905">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">w</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
@@ -975,7 +975,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Disp" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2756">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">d</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
@@ -986,7 +986,7 @@ Gw
                                 <button toolTip="(⎇) Second function" id="2922">
                                     <rect key="frame" x="1" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="2nd" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2923">
+                                    <buttonCell key="cell" type="square" title="2nd" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2923">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">d</string>
@@ -1001,7 +1001,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="tanh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2759">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">t</string>
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
@@ -1014,7 +1014,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Rad" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="2764">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">t</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
@@ -1027,7 +1027,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="xʸ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="94" inset="2" id="2765">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">w</string>
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
@@ -1040,7 +1040,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="sinh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2769">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">s</string>
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
@@ -1053,7 +1053,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="cos" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2900">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">o</string>
                                     </buttonCell>
                                     <connections>
@@ -1065,7 +1065,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="tan" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2899">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">t</string>
                                     </buttonCell>
                                     <connections>
@@ -1077,7 +1077,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="sin" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2898">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="18" name="HelveticaNeue-Light"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">s</string>
                                     </buttonCell>
                                     <connections>
@@ -1089,7 +1089,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="or" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="111" inset="2" id="2745">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">j</string>
                                     </buttonCell>
                                     <connections>
@@ -1101,7 +1101,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="and" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="97" inset="2" id="2763">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">h</string>
                                     </buttonCell>
                                     <connections>
@@ -1113,7 +1113,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Add Data" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="40" inset="2" id="2753">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent" base64-UTF8="YES">
 IA
 </string>
@@ -1127,7 +1127,7 @@ IA
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="mod" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="2724">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">m</string>
                                     </buttonCell>
                                     <connections>
@@ -1139,7 +1139,7 @@ IA
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Rnd" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="2935">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">m</string>
                                     </buttonCell>
                                     <connections>
@@ -1151,7 +1151,7 @@ IA
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Re" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="13" inset="2" id="2730">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="16" name="ArialUnicodeMS"/>
+                                        <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">k</string>
                                     </buttonCell>
                                     <connections>
@@ -1237,7 +1237,7 @@ IA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="60" headerView="2863" id="689">
-                                <rect key="frame" x="0.0" y="0.0" width="199" height="62"/>
+                                <rect key="frame" x="0.0" y="0.0" width="198" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1326,7 +1326,7 @@ IA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="13" headerView="2866" id="703">
-                                <rect key="frame" x="0.0" y="0.0" width="199" height="15"/>
+                                <rect key="frame" x="0.0" y="0.0" width="198" height="15"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1463,7 +1463,7 @@ IA
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2872" id="726">
-                                <rect key="frame" x="0.0" y="0.0" width="199" height="19"/>
+                                <rect key="frame" x="0.0" y="0.0" width="198" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1511,7 +1511,7 @@ IA
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2869" id="712">
-                                <rect key="frame" x="0.0" y="0.0" width="199" height="19"/>
+                                <rect key="frame" x="0.0" y="0.0" width="198" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1588,7 +1588,7 @@ IA
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="12" headerView="2878" id="1314">
-                                <rect key="frame" x="0.0" y="0.0" width="243" height="14"/>
+                                <rect key="frame" x="0.0" y="0.0" width="242" height="14"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1768,7 +1768,7 @@ IA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="13" headerView="2884" id="1330">
-                                <rect key="frame" x="0.0" y="0.0" width="243" height="15"/>
+                                <rect key="frame" x="0.0" y="0.0" width="242" height="15"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1936,7 +1936,7 @@ IA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="15" headerView="2887" id="780">
-                                <rect key="frame" x="0.0" y="0.0" width="243" height="17"/>
+                                <rect key="frame" x="0.0" y="0.0" width="242" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1994,6 +1994,8 @@ IA
                 <outlet property="modButton" destination="1652" id="ChS-BN-eiK"/>
                 <outlet property="precisionDisplay" destination="1379" id="1381"/>
                 <outlet property="radixDisplay" destination="1383" id="1384"/>
+                <outlet property="reciprocalButton" destination="2925" id="K3H-Yk-6t7"/>
+                <outlet property="secondButton" destination="2922" id="s2p-vb-ePL"/>
                 <outlet property="shift3Left" destination="1668" id="num-fr-tpW"/>
                 <outlet property="shift3Right" destination="2913" id="21B-ca-DRi"/>
                 <outlet property="sinButton" destination="2897" id="jNl-qB-Ggz"/>
@@ -2376,7 +2378,6 @@ Gw
     </objects>
     <resources>
         <image name="2_x" width="40" height="30"/>
-        <image name="2nd" width="40" height="30"/>
         <image name="3_x" width="40" height="30"/>
         <image name="x_y" width="40" height="30"/>
     </resources>

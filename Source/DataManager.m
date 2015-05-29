@@ -414,6 +414,9 @@
 	[self updateRadixDisplay];		// dennis
 	[self updatePrecisionDisplay];	// dennis
 	[self updateTrigModeDisplay];	// dennis
+	
+	reciprocalButton.attributedTitle = [self toFormattedString:@"x^-1"];
+	secondButton.attributedTitle = [self toFormattedString:@"2^nd"];
 }
 
 //
@@ -840,18 +843,36 @@
 //
 // toFormattedString:
 //
-// Translates the constant with an "_" to a superscript -- Mike
+// Translates the constant with an "_" to a subscript or "^" to a superscript -- Mike
 //
 - (NSAttributedString *)toFormattedString: (NSString *)string {
-	NSRange location = [string rangeOfString:@"_"];
+	NSRange subLocation = [string rangeOfString:@"_"];
+	NSRange superLocation = [string rangeOfString:@"^"];
+	NSRange location;
+	NSNumber *number;
+	NSNumber *baseOffset;
 	string = [string stringByReplacingOccurrencesOfString:@"_" withString:@""];
-	if (location.length > 0) {
-		location.length = string.length - location.location;
+	string = [string stringByReplacingOccurrencesOfString:@"^" withString:@""];
+	if (subLocation.length > 0) {
+		location.length = string.length - subLocation.location;
+		location.location = subLocation.location;
+		number = @-1;
+		baseOffset = @0;
 	}
+	if (superLocation.length > 0) {
+		location.length = string.length - superLocation.location;
+		location.location = superLocation.location;
+		number = @1;
+		baseOffset = @8;
+	}
+	NSRange full = NSMakeRange(0, string.length);
 	NSMutableAttributedString *result = [[NSMutableAttributedString alloc] initWithString:string];
-	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getDisplayFontWithSize:18] range:NSMakeRange(0, string.length)];
+	[result setAlignment:kCTTextAlignmentCenter range:full];
+	[result addAttribute:NSKernAttributeName value:@-0.5 range:full];
+	[result addAttribute:NSBaselineOffsetAttributeName value:baseOffset range:full];
+	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getDisplayFontWithSize:16] range:full];
 	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getDisplayFontWithSize:12] range:location];
-	[result addAttribute:NSSuperscriptAttributeName value:@1 range:location];
+	[result addAttribute:NSSuperscriptAttributeName value:number range:location];
 	return result;
 }
 
@@ -866,15 +887,14 @@
 	
 	// Relabel keys that are double-duty
 	if (shiftIsActive) {
-		sinButton.attributedTitle = [self toFormattedString:@"sin_-1"];
-//		sinButton.title = @"sin⁻¹";
-		cosButton.title = @"cos⁻¹";
-		tanButton.title = @"tan⁻¹";
-		sinhButton.title = @"sinh⁻¹";
-		coshButton.title = @"cosh⁻¹";
-		tanhButton.title = @"tanh⁻¹";
-		tenToXButton.title = @"2ˣ";
-		logButton.title = @"log₂";
+		sinButton.attributedTitle = [self toFormattedString:@" sin^-1"];
+		cosButton.attributedTitle = [self toFormattedString:@"cos^-1"];
+		tanButton.attributedTitle = [self toFormattedString:@"tan^-1"];
+		sinhButton.attributedTitle = [self toFormattedString:@"sinh^-1"];
+		coshButton.attributedTitle = [self toFormattedString:@"cosh^-1"];
+		tanhButton.attributedTitle = [self toFormattedString:@"tanh^-1"];
+		tenToXButton.attributedTitle = [self toFormattedString:@"2^x"];
+		logButton.attributedTitle = [self toFormattedString:@"log_2"];
 		shift3Left.title = @"xor";
 		shift3Right.title = @"not";
 		modButton.title = @"arg";
@@ -885,7 +905,7 @@
 		sinhButton.title = @"sinh";
 		coshButton.title = @"cosh";
 		tanhButton.title = @"tanh";
-		tenToXButton.title = @"10ˣ";
+		tenToXButton.attributedTitle = [self toFormattedString:@"10^x"];
 		logButton.title = @"log";
 		shift3Left.title = @"<3";
 		shift3Right.title = @">3";

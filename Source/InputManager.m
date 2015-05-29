@@ -197,10 +197,10 @@
 - (IBAction)copyResult:(id)sender
 {
 	NSPasteboard	*pasteBoard;
-	BigCFloat			*value;
+	BigCFloat		*value;
 	NSData			*data;
-	NSString			*stringValue;
-	Value				*result;
+	NSString		*stringValue;
+	Value			*result;
 
 	value = [[dataManager getCurrentExpression] getValue];
 	data = [NSKeyedArchiver archivedDataWithRootObject:value];

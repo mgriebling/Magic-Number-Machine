@@ -51,6 +51,8 @@
 	__weak IBOutlet NSButton *tanButton;
 	__weak IBOutlet NSButton *cosButton;
 	__weak IBOutlet NSButton *sinButton;
+	__weak IBOutlet NSButton *reciprocalButton;	
+	__weak IBOutlet NSButton *secondButton;
 	
 	unsigned int				defaultDigits;
 	unsigned int				defaultSignificant;

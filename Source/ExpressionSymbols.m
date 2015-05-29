@@ -178,11 +178,12 @@ static NSArray *constantsDataRows = nil;
 + (NSBezierPath *)getSymbolForString:(NSString *)string withSuperscript:(NSInteger)superscript {
 	NSBezierPath *copy = [NSBezierPath bezierPath];
 	NSBezierPath *symbol;
-	if (![symbols valueForKey:string]) {
+	NSString *index = [NSString stringWithFormat:@"%@-%ld", string, superscript]; // distinguish between sub- and super-script
+	if (![symbols valueForKey:index]) {
 		symbol = [ExpressionSymbols makeSymbolForString:string usingSuperscript:superscript withOffset:0];
-		symbols[string] = symbol;
+		symbols[index] = symbol;	// cache the symbol
 	} else {
-		symbol = symbols[string];
+		symbol = symbols[index];
 	}
 	[copy appendBezierPath:symbol];
 	return copy;

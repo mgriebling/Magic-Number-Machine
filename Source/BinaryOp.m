@@ -933,7 +933,7 @@
 		leftChild != nil && [leftChild isEqualTo:oldChild]
 	)
 	{
-		BinaryOp		*newTerm;
+		BinaryOp *newTerm;
 
 		// The new node binds equally loosely or more loosely than the current node, so
 		// we must move the branch as high up the tree as we can before attaching.

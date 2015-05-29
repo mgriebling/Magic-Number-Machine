@@ -49,10 +49,8 @@
 	self = [super init];
 	if (self)
 	{
-		if (!realPart)
-			realPart = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
-		if (!imaginaryPart)
-			imaginaryPart = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
+		if (!realPart) realPart = [BigFloat bigFloatWithInt:0 radix:bf_radix];
+		if (!imaginaryPart) imaginaryPart = [BigFloat bigFloatWithInt:0 radix:bf_radix];
 
 		[super assign:realPart];
 		if ([imaginaryPart isKindOfClass:[BigCFloat class]])
@@ -109,10 +107,7 @@
 		if ([bcf_imaginary radix] != bf_radix)
 			[bcf_imaginary convertToRadix:bf_radix];
 		
-		if ([imaginaryPart isZero])
-			bcf_has_imaginary = NO;
-		else
-			bcf_has_imaginary = YES;
+		bcf_has_imaginary = [imaginaryPart isZero];
 		
 	}
 	return self;
@@ -129,7 +124,7 @@
 	
 	if (self)
 	{
-		bcf_imaginary = [[BigFloat alloc] initWithInt:0 radix:newRadix];
+		bcf_imaginary = [BigFloat bigFloatWithInt:0 radix:newRadix];
 		bcf_has_imaginary = NO;
 	}
 	
@@ -147,7 +142,7 @@
 	
 	if (self)
 	{
-		bcf_imaginary = [[BigFloat alloc] initWithInt:0 radix:newRadix];
+		bcf_imaginary = [BigFloat bigFloatWithInt:0 radix:newRadix];
 		bcf_has_imaginary = NO;
 	}
 	
@@ -165,7 +160,7 @@
 	
 	if (self)
 	{
-		bcf_imaginary = [[BigFloat alloc] initWithInt:0 radix:newRadix];
+		bcf_imaginary = [BigFloat bigFloatWithInt:0 radix:newRadix];
 		bcf_has_imaginary = NO;
 	}
 	
@@ -375,7 +370,7 @@
 		if (bf_is_negative)
 			return [[BigFloat alloc] initPiWithRadix:bf_radix];
 		else
-			return [[BigFloat alloc] initWithInt:0 radix:bf_radix]; 
+			return [BigFloat bigFloatWithInt:0 radix:bf_radix];
 	}
 	
 	angle = [bcf_imaginary copy];
@@ -388,7 +383,7 @@
 		BigFloat *piMinusAngle;
 		BigFloat *minusOne;
 		
-		minusOne = [[BigFloat alloc] initWithInt:-1 radix:bf_radix];
+		minusOne = [BigFloat bigFloatWithInt:-1 radix:bf_radix];
 		piMinusAngle = [minusOne copy];
 		[piMinusAngle cosWithTrigMode:BF_radians inv:YES hyp:NO];
 		
@@ -425,10 +420,9 @@
 {
 	BigFloat *minusOne;
 	
-	if (!bcf_has_imaginary)
-		return;
+	if (!bcf_has_imaginary) return;
 	
-	minusOne = [[BigFloat alloc] initWithInt:-1 radix:bf_radix];
+	minusOne = [BigFloat bigFloatWithInt:-1 radix:bf_radix];
 	[bcf_imaginary multiplyBy:minusOne];
 }
 
@@ -797,12 +791,7 @@
 		[self assign:real];
 		[bcf_imaginary assign:imaginary];
 		
-		if ([bcf_imaginary isZero])
-			bcf_has_imaginary = NO;
-		else
-			bcf_has_imaginary = YES;
-		
-		
+		bcf_has_imaginary = ![bcf_imaginary isZero];
 		return;
 	}
 	
@@ -813,10 +802,7 @@
 	if (bcf_has_imaginary)
 	{
 		[bcf_imaginary multiplyBy: num];
-		if ([bcf_imaginary isZero])
-			bcf_has_imaginary = NO;
-		else
-			bcf_has_imaginary = YES;
+		bcf_has_imaginary = ![bcf_imaginary isZero];
 	}
 }
 
@@ -864,13 +850,7 @@
 		
 		[self assign:real];
 		[bcf_imaginary assign:imaginary];
-		
-		if ([bcf_imaginary isZero])
-			bcf_has_imaginary = NO;
-		else
-			bcf_has_imaginary = YES;
-
-
+		bcf_has_imaginary = ![bcf_imaginary isZero];
 		return;
 	}
 	
@@ -881,10 +861,7 @@
 	if (bcf_has_imaginary)
 	{
 		[bcf_imaginary divideBy: num];
-		if ([bcf_imaginary isZero])
-			bcf_has_imaginary = NO;
-		else
-			bcf_has_imaginary = YES;
+		bcf_has_imaginary = ![bcf_imaginary isZero];
 	}
 }
 
@@ -955,12 +932,7 @@
 		[bcf_imaginary assign:realPart];
 		[bcf_imaginary multiplyBy:sinPart];
 		
-		if ([bcf_imaginary isZero])
-			bcf_has_imaginary = NO;
-		else
-			bcf_has_imaginary = YES;
-		
-		
+		bcf_has_imaginary = ![bcf_imaginary isZero];
 		return;
 	}
 	
@@ -1117,6 +1089,44 @@
 	[super logOfBase:base];
 }
 
+- (void)convertToMode:(BFTrigMode)mode {
+	if (mode != BF_radians)
+	{
+		BigCFloat *pi = [BigCFloat piWithRadix:bf_radix];
+		if (mode == BF_degrees)
+		{
+			BigCFloat *oneEighty = [BigCFloat bigFloatWithInt:180 radix: bf_radix];
+			[self divideBy:oneEighty];
+		}
+		else if (mode == BF_gradians)
+		{
+			BigCFloat *twoHundred = [BigCFloat bigFloatWithInt:200 radix: bf_radix];
+			[self divideBy:twoHundred];
+		}
+		
+		[self multiplyBy:pi];
+	}
+}
+
+- (void)convertFromMode:(BFTrigMode)mode {
+	if (mode != BF_radians)
+	{
+		BigCFloat *pi = [BigCFloat piWithRadix:bf_radix];
+		if (mode == BF_degrees)
+		{
+			BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
+			[self multiplyBy:oneEighty];
+		}
+		else if (mode == BF_gradians)
+		{
+			BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
+			[self multiplyBy:twoHundred];
+		}
+		
+		[self divideBy:pi];
+	}
+}
+
 //
 // sinWithTrigMode
 //
@@ -1163,21 +1173,22 @@
 
 	if (useInverse == NO)
 	{
-		if (mode != BF_radians)
-		{
-			if (mode == BF_degrees)
-			{
-				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
-				[self divideBy:oneEighty];
-			}
-			else if (mode == BF_gradians)
-			{
-				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
-				[self divideBy:twoHundred];
-			}
-			
-			[self multiplyBy:pi];
-		}
+		[self convertToMode:mode];
+//		if (mode != BF_radians)
+//		{
+//			if (mode == BF_degrees)
+//			{
+//				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
+//				[self divideBy:oneEighty];
+//			}
+//			else if (mode == BF_gradians)
+//			{
+//				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
+//				[self divideBy:twoHundred];
+//			}
+//			
+//			[self multiplyBy:pi];
+//		}
 		
 		// sin(z) = (e^iz - e^-iz) / 2i
 		firstTerm = [[BigCFloat alloc]
@@ -1222,21 +1233,22 @@
 		[firstTerm multiplyBy:secondTerm];
 		[self assign:firstTerm];
 		
-		if (mode != BF_radians)
-		{
-			if (mode == BF_degrees)
-			{
-				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
-				[self multiplyBy:oneEighty];
-			}
-			else if (mode == BF_gradians)
-			{
-				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
-				[self multiplyBy:twoHundred];
-			}
-			
-			[self divideBy:pi];
-		}
+		[self convertFromMode:mode];
+//		if (mode != BF_radians)
+//		{
+//			if (mode == BF_degrees)
+//			{
+//				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
+//				[self multiplyBy:oneEighty];
+//			}
+//			else if (mode == BF_gradians)
+//			{
+//				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
+//				[self multiplyBy:twoHundred];
+//			}
+//			
+//			[self divideBy:pi];
+//		}
 	}
 	
 }
@@ -1287,21 +1299,22 @@
 	
 	if (useInverse == NO)
 	{
-		if (mode != BF_radians)
-		{
-			if (mode == BF_degrees)
-			{
-				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
-				[self divideBy:oneEighty];
-			}
-			else if (mode == BF_gradians)
-			{
-				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
-				[self divideBy:twoHundred];
-			}
-			
-			[self multiplyBy:pi];
-		}
+		[self convertToMode:mode];
+//		if (mode != BF_radians)
+//		{
+//			if (mode == BF_degrees)
+//			{
+//				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
+//				[self divideBy:oneEighty];
+//			}
+//			else if (mode == BF_gradians)
+//			{
+//				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
+//				[self divideBy:twoHundred];
+//			}
+//			
+//			[self multiplyBy:pi];
+//		}
 		
 		// cos(z) = (e^iz + e^-iz) / 2
 		firstTerm = [[BigCFloat alloc]
@@ -1335,21 +1348,22 @@
 		[firstTerm subtract:self];
 		[self assign:firstTerm];
 		
-		if (mode != BF_radians)
-		{
-			if (mode == BF_degrees)
-			{
-				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
-				[self multiplyBy:oneEighty];
-			}
-			else if (mode == BF_gradians)
-			{
-				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
-				[self multiplyBy:twoHundred];
-			}
-			
-			[self divideBy:pi];
-		}
+		[self convertFromMode:mode];
+//		if (mode != BF_radians)
+//		{
+//			if (mode == BF_degrees)
+//			{
+//				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
+//				[self multiplyBy:oneEighty];
+//			}
+//			else if (mode == BF_gradians)
+//			{
+//				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
+//				[self multiplyBy:twoHundred];
+//			}
+//			
+//			[self divideBy:pi];
+//		}
 
 	}
 	
@@ -1390,21 +1404,22 @@
 
 	if (useInverse == NO)
 	{
-		if (mode != BF_radians)
-		{
-			if (mode == BF_degrees)
-			{
-				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
-				[self divideBy:oneEighty];
-			}
-			else if (mode == BF_gradians)
-			{
-				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
-				[self divideBy:twoHundred];
-			}
-			
-			[self multiplyBy:pi];
-		}
+		[self convertToMode:mode];
+//		if (mode != BF_radians)
+//		{
+//			if (mode == BF_degrees)
+//			{
+//				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
+//				[self divideBy:oneEighty];
+//			}
+//			else if (mode == BF_gradians)
+//			{
+//				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
+//				[self divideBy:twoHundred];
+//			}
+//			
+//			[self multiplyBy:pi];
+//		}
 		
 		// tan(z) = sin(z) / cos(z)
 		firstTerm = [self copy];
@@ -1446,21 +1461,22 @@
 		[thirdTerm multiplyBy:firstTerm];
 		[self assign:thirdTerm];
 		
-		if (mode != BF_radians)
-		{
-			if (mode == BF_degrees)
-			{
-				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
-				[self multiplyBy:oneEighty];
-			}
-			else if (mode == BF_gradians)
-			{
-				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
-				[self multiplyBy:twoHundred];
-			}
-			
-			[self divideBy:pi];
-		}
+		[self convertFromMode:mode];
+//		if (mode != BF_radians)
+//		{
+//			if (mode == BF_degrees)
+//			{
+//				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
+//				[self multiplyBy:oneEighty];
+//			}
+//			else if (mode == BF_gradians)
+//			{
+//				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
+//				[self multiplyBy:twoHundred];
+//			}
+//			
+//			[self divideBy:pi];
+//		}
 		
 	}
 

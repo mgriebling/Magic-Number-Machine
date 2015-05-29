@@ -29,7 +29,7 @@
 // The particular difficulty with a this class is that there are really three types of binary
 // operator that have been smushed (sure, that's a word) together: loosely binding (+, -),
 // normal binding (*, /, and) and tightly binding (x^y). This different behaviour comes
-// out of the "order of operations". As such, theses different behaviours should have
+// out of the "order of operations". As such, these different behaviours should have
 // been different classes. Oh well.
 //
 
@@ -133,10 +133,8 @@
 	NSRect				boundsRect;
 	double				scale = [Expression scaleWithLevel:level];
 	
-	if (![path isEmpty])
-		boundsRect = [path bounds];
-	else
-		boundsRect = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+	if (![path isEmpty]) boundsRect = [path bounds];
+	else boundsRect = NSZeroRect;
 	
 	switch (op)
 	{
@@ -189,8 +187,7 @@
 //	[transform translateXBy:boundsRect.origin.x + boundsRect.size.width + ((op != '.') ? 12.0 : 4.0) yBy:0];
 	[transform translateXBy:boundsRect.origin.x + boundsRect.size.width + ((op != '.') ? 6.0 : 4.0) yBy:0];   // less space is more - Mike
 
-	if (level >= 2)
-		[transform scaleBy:scale];
+	if (level >= 2) [transform scaleBy:scale];
 	
 	[opPath transformUsingAffineTransform:transform];
 	[path appendBezierPath:opPath];
@@ -532,15 +529,11 @@
 	
 	if (valueValid == NO)
 	{
-		if (child != nil)
-			rightChildValue = [child getValue];
-		else
-			rightChildValue = [BigCFloat bigFloatWithInt:0 radix:[manager getRadix]];
+		if (child != nil) rightChildValue = [child getValue];
+		else rightChildValue = [BigCFloat zero];
 		
-		if (leftChild != nil)
-			leftChildValue = [leftChild getValue];
-		else
-			leftChildValue = [BigCFloat bigFloatWithInt:0 radix:[manager getRadix]];
+		if (leftChild != nil) leftChildValue = [leftChild getValue];
+		else leftChildValue = [BigCFloat zero];
 		
 		value = (BigCFloat*)[leftChildValue duplicate];
 		
@@ -671,18 +664,18 @@
 	
 	if (pathValidAt != level)
 	{
-		NSBezierPath			*rightChildPath = [NSBezierPath bezierPath];
-		NSBezierPath			*leftChildPath = [NSBezierPath bezierPath];
+		NSBezierPath *rightChildPath = [NSBezierPath bezierPath];
+		NSBezierPath *leftChildPath = [NSBezierPath bezierPath];
 
 		expressionPath = [NSBezierPath bezierPath];
 
 		if (op == '/')
 		{
-			NSRect				numeratorBounds = NSMakeRect(0, 0, 0, 0);
-			NSRect				denominatorBounds = NSMakeRect(0, 0, 0, 0);
-			NSRect				combinedBounds = NSMakeRect(0, 0, 0, 0);
-			NSRect				lineBounds = NSMakeRect(0, 0, 0, 0);
-			NSAffineTransform	*transform;
+			NSRect	numeratorBounds = NSZeroRect;
+			NSRect	denominatorBounds = NSZeroRect;
+			NSRect	combinedBounds = NSZeroRect;
+			NSRect	lineBounds = NSZeroRect;
+			NSAffineTransform *transform;
 			
 			if (leftChild != nil)
 			{
@@ -802,15 +795,15 @@
 		if (![expressionPath isEmpty])
 			naturalBounds = [expressionPath bounds];
 		else
-			naturalBounds = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+			naturalBounds = NSZeroRect;
 		if (![rightChildPath isEmpty])
 			childNaturalBounds = [rightChildPath bounds];
 		else
-			childNaturalBounds = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+			childNaturalBounds = NSZeroRect;
 		if (![leftChildPath isEmpty])
 			leftChildNaturalBounds = [leftChildPath bounds];
 		else
-			leftChildNaturalBounds = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+			leftChildNaturalBounds = NSZeroRect;
 		pathValidAt = level;
 	}
 	
@@ -857,8 +850,8 @@
 //
 - (void)receiveBounds:(NSRect)bounds
 {
-	NSBezierPath			*leftChildPath = [NSBezierPath bezierPathWithRect:leftChildNaturalBounds];
-	NSAffineTransform	*leftChildTransform = [NSAffineTransform	transform];
+	NSBezierPath		*leftChildPath = [NSBezierPath bezierPathWithRect:leftChildNaturalBounds];
+	NSAffineTransform	*leftChildTransform = [NSAffineTransform transform];
 	
 	[super receiveBounds:bounds];
 	

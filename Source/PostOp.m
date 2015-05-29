@@ -221,11 +221,11 @@
 		if (![expressionPath isEmpty])
 			naturalBounds = [expressionPath bounds];
 		else
-			naturalBounds = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+			naturalBounds = NSZeroRect;
 		if (![childPath isEmpty])
 			childNaturalBounds = [childPath bounds];
 		else
-			childNaturalBounds = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+			childNaturalBounds = NSZeroRect;
 		pathValidAt = level;
 	}
 	

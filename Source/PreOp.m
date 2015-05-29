@@ -190,8 +190,11 @@
 			opPath = [ExpressionSymbols lnPath];
 			break;
 		case sqrtOp:
+			opPath = [ExpressionSymbols sqrtPath];
+			break;
 		case cbrtOp:
 			opPath = [ExpressionSymbols sqrtPath];
+			[opPath appendBezierPath:[ExpressionSymbols nRootPath:3]];
 			break;
 		case sigmaOp:
 			opPath = [ExpressionSymbols sigmaPath];
@@ -499,8 +502,8 @@
 			
 			if (op == sqrtOp || op == cbrtOp || op == rootOp)
 			{
-				NSBezierPath	*overLine = [NSBezierPath bezierPath];
-				NSRect			childBounds = [childPath bounds];
+				NSBezierPath *overLine = [NSBezierPath bezierPath];
+				NSRect		 childBounds = [childPath bounds];
 				
 				transform = [NSAffineTransform transform];
 				[transform translateXBy:0.0 yBy:childBounds.origin.y - 0.5 * boundsRect.origin.y];

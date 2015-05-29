@@ -86,11 +86,7 @@
 	{
 		BigCFloat *minusOne = [BigCFloat bigFloatWithInt:-1 radix:[manager getRadix]];
 		[value multiplyBy:minusOne];
-		if (negative)
-			negative = NO;
-		else
-			negative = YES;
-
+		negative = !negative;
 		[self valueChanged];
 		return;
 	}

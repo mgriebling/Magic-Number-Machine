@@ -289,7 +289,7 @@
 //
 // getExpressionString
 //
-// Converts the current value to a string. Most of this method would not exists (it is basically
+// Converts the current value to a string. Most of this method would not exist (it is basically
 // a duplication of generateValuePath) except this is really late in development and I'm long
 // past caring about good programming style :-)
 //
@@ -517,10 +517,8 @@
 		}
 		
 		// In the case where the value is simply "1", leave it as implicit
-		if ([imaginary isEqualToString:@"1"])
-			imaginary = @"";
-		if ([imaginary isEqualToString:@"-1"])
-			imaginary = @"-";
+		if ([imaginary isEqualToString:@"1"]) imaginary = @"";
+		if ([imaginary isEqualToString:@"-1"]) imaginary = @"-";
 		
 		// Show a leading plus sign if there is a real part
 		if (showReal && ([imaginary length] == 0 || [imaginary characterAtIndex:0] != '-'))
@@ -528,8 +526,7 @@
 			imaginary = [@"+" stringByAppendingString:imaginary];
 		}
 
-		if (thousands)
-			imaginary = [self insertThousands:imaginary];
+		if (thousands) imaginary = [self insertThousands:imaginary];
 
 		resultString = [resultString stringByAppendingString:mantissa];
 
@@ -545,6 +542,70 @@
 	return resultString;
 }
 
+- (void)appendString:(NSString *)string withSize:(CGFloat)size {
+	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
+	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
+	int				numGlyphs;
+	NSGlyph			*glyphs;
+	int				i;
+	
+	[text addLayoutManager:layoutManager];
+	[text setAttributedString:
+	 [[NSAttributedString alloc]
+	  initWithString:string
+	  attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:size]}
+	  ]
+	 ];
+	numGlyphs = [layoutManager numberOfGlyphs];
+	if (numGlyphs > 0)
+	{
+		glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
+		for (i = 0; i < numGlyphs; i++)
+		{
+			glyphs[i] = [layoutManager glyphAtIndex:i];
+		}
+		[expressionPath
+		 appendBezierPathWithGlyphs:glyphs
+		 count:numGlyphs
+		 inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
+		 ];
+		free(glyphs);
+	}
+}
+
+- (void)appendExponent:(NSString*)exponent {
+	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
+	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
+	int				numGlyphs;
+	NSGlyph			*glyphs;
+	int				i;
+
+	[text addLayoutManager:layoutManager];
+	[text setAttributedString:
+	 [[NSAttributedString alloc]
+	  initWithString:exponent
+	  attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:12]}
+	  ]
+	 ];
+	numGlyphs = [layoutManager numberOfGlyphs];
+	if (numGlyphs > 0)
+	{
+		glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
+		for (i = 0; i < numGlyphs; i++)
+		{
+			glyphs[i] = [layoutManager glyphAtIndex:i];
+		}
+		[expressionPath relativeMoveToPoint:NSMakePoint(-10, 8.5)];
+		[expressionPath
+		 appendBezierPathWithGlyphs:glyphs
+		 count:numGlyphs
+		 inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
+		 ];
+		[expressionPath relativeMoveToPoint:NSMakePoint(0, -8.5)];
+		free(glyphs);
+	}
+}
+
 //
 // generateValuePath
 //
@@ -554,11 +615,6 @@
 //
 - (void)generateValuePath
 {
-	NSTextStorage			*text;
-	NSLayoutManager			*layoutManager;
-	int						numGlyphs;
-	NSGlyph					*glyphs;
-	int						i;
 	NSString				*mantissa;
 	NSString				*exponent;
 	NSString				*imaginary;
@@ -643,14 +699,9 @@
 					userPointState = -1;
 			}
 		}
-		if ([exponent length] > 0)
-		{
-			hasExponent = YES;
-		}
-		else
-		{
-			hasExponent = NO;
-		}
+	
+		hasExponent = [exponent length] > 0;
+
 		if ([imaginary length] > 0)
 		{
 			hasImaginary = YES;
@@ -680,14 +731,9 @@
 						imaginaryPointState = -1;
 				}
 			}
-			if ([imExponent length] > 0)
-			{
-				hasImaginaryExponent = YES;
-			}
-			else
-			{
-				hasImaginaryExponent = NO;
-			}
+			
+			hasImaginaryExponent = [imExponent length] > 0;
+
 		}
 		else
 		{
@@ -701,19 +747,10 @@
 	// Do we need to show the real part of the number?
 	if (![mantissa isEqualToString:@"0"] || hasExponent || !hasImaginary)
 		showReal = YES;
-	
-	// Use a layout manager to get the glyphs for the string
-	layoutManager = [[NSLayoutManager alloc] init];
 
 	// Create a bezier path to contain the display
 	expressionPath = [NSBezierPath bezierPath];
 	[expressionPath moveToPoint:NSMakePoint(0, 0)];
-
-	// Create a text storage area for the string
-	// NOTE: text is not autoreleased due to bizarre timing error on free while resizing the window
-	// (it is explicitly freed below).
-	text = [[NSTextStorage alloc] initWithString:@""];
-	[text addLayoutManager:layoutManager];
 	
 	// Show the real part of the string
 	if (showReal)
@@ -752,77 +789,15 @@
 		if (thousands)
 			mantissa = [self insertThousands:mantissa];
 		
-		[text setAttributedString:
-			[[NSAttributedString alloc]
-				initWithString:mantissa
-				attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:24]}
-			]
-		];
-		numGlyphs = [layoutManager numberOfGlyphs];
-		if (numGlyphs > 0)
-		{
-			glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
-			for (i = 0; i < numGlyphs; i++)
-			{
-				glyphs[i] = [layoutManager glyphAtIndex:i];
-			}
-			[expressionPath
-				appendBezierPathWithGlyphs:glyphs
-				count:numGlyphs
-				inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
-			];
-			free(glyphs);
-		}
+		[self appendString:mantissa withSize:24];
 		
 		if ((hasExponent && fillLimit == NO) || [exponent length] > 0)
 		{
 			// Write the x10 in nice little text
-			[text setAttributedString:
-				[[NSAttributedString alloc]
-					initWithString:@"x10"
-					attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:8.5]}
-				]
-			];
-			numGlyphs = [layoutManager numberOfGlyphs];
-			if (numGlyphs > 0)
-			{
-				glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
-				for (i = 0; i < numGlyphs; i++)
-				{
-					glyphs[i] = [layoutManager glyphAtIndex:i];
-				}
-				[expressionPath
-					appendBezierPathWithGlyphs:glyphs
-					count:numGlyphs
-					inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
-				];
-				free(glyphs);
-			}
+			[self appendString:@"×10" withSize:8.5];
 	
 			// Get the text representation of the exponent value
-			[text setAttributedString:
-				[[NSAttributedString alloc]
-					initWithString:exponent
-					attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:12]}
-				]
-			];
-			numGlyphs = [layoutManager numberOfGlyphs];
-			if (numGlyphs > 0)
-			{
-				glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
-				for (i = 0; i < numGlyphs; i++)
-				{
-					glyphs[i] = [layoutManager glyphAtIndex:i];
-				}
-				[expressionPath relativeMoveToPoint:NSMakePoint(-10, 8.5)];
-				[expressionPath
-					appendBezierPathWithGlyphs:glyphs
-					count:numGlyphs
-					inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
-				];
-				[expressionPath relativeMoveToPoint:NSMakePoint(0, -8.5)];
-				free(glyphs);
-			}
+			[self appendExponent:exponent];
 		}
 	}
 	if (hasImaginary)
@@ -859,10 +834,8 @@
 		}
 		
 		// In the case where the value is simply "1", leave it as implicit
-		if ([imaginary isEqualToString:@"1"])
-			imaginary = @"";
-		if ([imaginary isEqualToString:@"-1"])
-			imaginary = @"-";
+		if ([imaginary isEqualToString:@"1"]) imaginary = @"";
+		if ([imaginary isEqualToString:@"-1"])  imaginary = @"-";
 		
 		// Show a leading plus sign if there is a real part
 		if (showReal && ([imaginary length] == 0 || [imaginary characterAtIndex:0] != '-'))
@@ -870,104 +843,21 @@
 			imaginary = [@"+" stringByAppendingString:imaginary];
 		}
 		
-		if (thousands)
-			imaginary = [self insertThousands:imaginary];
+		if (thousands) imaginary = [self insertThousands:imaginary];
 
-		[text setAttributedString:
-			[[NSAttributedString alloc]
-				initWithString:imaginary
-				attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:24]}
-			]
-		];
-		numGlyphs = [layoutManager numberOfGlyphs];
-		if (numGlyphs > 0)
-		{
-			glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
-			for (i = 0; i < numGlyphs; i++)
-			{
-				glyphs[i] = [layoutManager glyphAtIndex:i];
-			}
-			[expressionPath
-				appendBezierPathWithGlyphs:glyphs
-				count:numGlyphs
-				inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
-			];
-			free(glyphs);
-		}
+		[self appendString:imaginary withSize:24];
 		
 		if ((hasImaginaryExponent && fillLimit == NO) || [imExponent length] > 0)
 		{
 			// Write the x10 in nice little text
-			[text setAttributedString:
-				[[NSAttributedString alloc]
-					initWithString:@"x10"
-					attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:8.5]}
-				]
-			];
-			numGlyphs = [layoutManager numberOfGlyphs];
-			if (numGlyphs > 0)
-			{
-				glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
-				for (i = 0; i < numGlyphs; i++)
-				{
-					glyphs[i] = [layoutManager glyphAtIndex:i];
-				}
-				[expressionPath
-					appendBezierPathWithGlyphs:glyphs
-					count:numGlyphs
-					inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
-				];
-				free(glyphs);
-			}
+			[self appendString:@"×10" withSize:8.5];
 
 			// Get the text representation of the exponent value
-			[text setAttributedString:
-				[[NSAttributedString alloc]
-					initWithString:imExponent
-					attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:12]}
-				]
-			];
-			numGlyphs = [layoutManager numberOfGlyphs];
-			if (numGlyphs > 0)
-			{
-				glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
-				for (i = 0; i < numGlyphs; i++)
-				{
-					glyphs[i] = [layoutManager glyphAtIndex:i];
-				}
-				[expressionPath relativeMoveToPoint:NSMakePoint(-10.0, 8.5)];
-				[expressionPath
-					appendBezierPathWithGlyphs:glyphs
-					count:numGlyphs
-					inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
-				];
-				[expressionPath relativeMoveToPoint:NSMakePoint(0.0, -8.5)];
-				free(glyphs);
-			}
+			[self appendExponent:imExponent];
 		}
 
 		// And finally... actually draw the "i"
-		[text setAttributedString:
-			[[NSAttributedString alloc]
-				initWithString:@"i"
-				attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:24]} //  [NSFont labelFontOfSize:24]}
-			]
-		];
-		numGlyphs = [layoutManager numberOfGlyphs];
-		if (numGlyphs > 0)
-		{
-			glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
-			for (i = 0; i < numGlyphs; i++)
-			{
-				glyphs[i] = [layoutManager glyphAtIndex:i];
-			}
-			[expressionPath
-				appendBezierPathWithGlyphs:glyphs
-				count:numGlyphs
-				inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
-			];
-			free(glyphs);
-		}
+		[self appendString:@"i" withSize:24];
 	}
 }
 

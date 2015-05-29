@@ -63,11 +63,11 @@
 		isInputPoint = NO;
 		pathValidAt = -1;
 		isBoundsValid = NO;
-		displayBounds = NSMakeRect(0, 0, 0, 0);
-		naturalBounds = NSMakeRect(0, 0, 0, 0);
-		childNaturalBounds = NSMakeRect(0, 0, 0, 0);
-		childDisplayBounds = NSMakeRect(0, 0, 0, 0);
-		value = [BigCFloat bigFloatWithInt:0 radix:[manager getRadix]];
+		displayBounds = NSZeroRect;
+		naturalBounds = NSZeroRect;
+		childNaturalBounds = NSZeroRect;
+		childDisplayBounds = NSZeroRect;
+		value = [BigCFloat zero];
 		valueValid = YES;
 	}
 	return self;
@@ -89,11 +89,11 @@
 	isInputPoint = NO;
 	pathValidAt = -1;
 	isBoundsValid = NO;
-	displayBounds = NSMakeRect(0, 0, 0, 0);
-	naturalBounds = NSMakeRect(0, 0, 0, 0);
-	childNaturalBounds = NSMakeRect(0, 0, 0, 0);
-	childDisplayBounds = NSMakeRect(0, 0, 0, 0);
-	value = [BigCFloat bigFloatWithInt:0 radix:[manager getRadix]];
+	displayBounds = NSZeroRect;
+	naturalBounds = NSZeroRect;
+	childNaturalBounds = NSZeroRect;
+	childDisplayBounds = NSZeroRect;
+	value = [BigCFloat zero];
 	valueValid = NO;
 	
 	return self;
@@ -541,11 +541,11 @@
 		if (![expressionPath isEmpty])
 			naturalBounds = [expressionPath bounds];
 		else
-			naturalBounds = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+			naturalBounds = NSZeroRect;
 		if (![expressionPath isEmpty])
 			childNaturalBounds = [expressionPath bounds];
 		else
-			childNaturalBounds = NSMakeRect(0.0, 0.0, 0.0, 0.0);
+			childNaturalBounds = NSZeroRect;
 		pathValidAt = level;
 	}
 	

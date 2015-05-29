@@ -154,7 +154,7 @@
 //
 - (NSBezierPath*)pathAtLevel:(int)level
 {
-	NSBezierPath		*copy;
+	NSBezierPath *copy;
 	
 	if (pathValidAt != level)
 	{
@@ -162,7 +162,7 @@
 		NSAffineTransform	*transform;
 		double				scale = [Expression scaleWithLevel:level];
 		NSRect				boundsRect;
-		NSBezierPath			*childPath = [NSBezierPath bezierPath];
+		NSBezierPath		*childPath = [NSBezierPath bezierPath];
 		double				bracketHeight;
 		double				bracketWidth;
 		double				bracketBaseline;

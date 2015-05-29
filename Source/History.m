@@ -40,12 +40,36 @@
 	return array.count;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder {
-	
+- (instancetype)initWithCoder:(NSCoder *)decoder {
+	self = [super init];
+	if (self) {
+		NSInteger size = [decoder decodeIntegerForKey:@"historyArray.size"];
+		array = [NSMutableArray arrayWithCapacity:size];
+		for (int i=0; i<size; i++) {
+			NSMutableArray *item = [NSMutableArray array];
+			[item addObject:[decoder decodeObjectForKey:[NSString stringWithFormat:@"NSData[%d]", i]]];
+			[item addObject:[decoder decodeObjectForKey:[NSString stringWithFormat:@"NSBezier[%d]", i]]];
+			[item addObject:[decoder decodeObjectForKey:[NSString stringWithFormat:@"Index[%d]", i]]];
+			[array addObject:item];
+			size--;
+		}
+	}
+	return self;
 }
 
-- (void)encodeWithCoder:(NSCoder *)coder {
+- (void)encodeWithCoder:(NSCoder *)encoder {
+	[encoder encodeInteger:array.count forKey:@"historyArray.size"];
+	int i = 0;
+	for (NSArray *item in array) {
+		[encoder encodeObject:item[0] forKey:[NSString stringWithFormat:@"NSData[%d]", i]];		// NSData
+		[encoder encodeObject:item[1] forKey:[NSString stringWithFormat:@"NSBezier[%d]", i]];	// NSBezier path
+		[encoder encodeObject:item[2] forKey:[NSString stringWithFormat:@"Index[%d]", i]];		// index of item
+		i++;
+	}
+}
 
+- (void)clear {
+	array = [NSMutableArray array];
 }
 
 @end

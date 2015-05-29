@@ -12,6 +12,7 @@
 #import "HistoryCell.h"
 #import "Expression.h"
 #import "ExpressionSymbols.h"
+#import "History.h"
 
 #import "NSObject+NSPerformSelector.h"
 
@@ -391,10 +392,10 @@
 	Expression	*pasteExpression;
 	Expression	*inputPoint;
 	
-	if ([sender clickedRow] == -1)
-		return;
+	if ([sender clickedRow] == -1) return;
 	
-	pasteExpression = [NSKeyedUnarchiver unarchiveObjectWithData:[dataManager history][[sender clickedRow]][0]];
+	NSArray *item = [dataManager.history getItemAtIndex:[sender clickedRow]];
+	pasteExpression = [NSKeyedUnarchiver unarchiveObjectWithData:item[0]];
 	[dataManager ensureInputWithValue:NO];
 //	inputPoint = [dataManager getInputPoint];
 //	[inputPoint bracketPressed];
@@ -609,7 +610,8 @@
 	}
 	else if ([aTableView isEqualTo:historyTableView])
 	{
-		return [dataManager history][rowIndex];
+		NSArray *data = [dataManager.history getItemAtIndex:rowIndex];
+		return data;
 	}
 	else if ([aTableView isEqualTo:radixTableView])
 	{

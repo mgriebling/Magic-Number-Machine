@@ -13,6 +13,7 @@
 #import "DrawerManager.h"
 #import "ExpressionSymbols.h"
 #import "Value.h"
+#import "History.h"
 
 //
 // About the DataManager
@@ -136,31 +137,30 @@
 	return [[NSUserDefaults standardUserDefaults] boolForKey:@"useThousandsSeparator"];
 }
 
-- (void)setHistoryData:(NSArray *)historyData
+- (void)setHistoryData:(History *)historyData
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSArray *paths = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask];
 	NSURL *file = [paths.firstObject URLByAppendingPathComponent:@"MagicNumberMachine" isDirectory:YES];
 	NSError *error;
+	[fileManager createDirectoryAtURL:file withIntermediateDirectories:YES attributes:nil error:&error];
 	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
 	NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData];
-//	[fileData writeToURL:file atomically:YES];
 	[fileData writeToURL:file options:nil error:&error];
 	if (error) {
 		NSLog(@"Write error: %@", error);
 	}
 }
 
-- (NSArray *)getHistoryDataFromPref {
-	NSArray *historyData = [NSArray array];
+- (History *)getHistoryDataFromPref {
+	History *historyData = [[History alloc] init];
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSArray *paths = [fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask];
 	NSURL *file = [paths.firstObject URLByAppendingPathComponent:@"MagicNumberMachine" isDirectory:YES];
 	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
 	NSData *fileData = [NSData dataWithContentsOfURL:file];
 	if (fileData) {
-		NSKeyedUnarchiver *unarchiver = [NSKeyedUnarchiver unarchiveObjectWithData:fileData];
-		historyData = [unarchiver decodeObject];
+		historyData = [NSKeyedUnarchiver unarchiveObjectWithData:fileData];
 	}
 	return historyData;
 }
@@ -220,7 +220,7 @@
 //		historyArray   = [NSMutableArray arrayWithCapacity:0];
 		
 		// Read a history array from user defaults
-		historyArray = [NSMutableArray arrayWithArray:[self getHistoryDataFromPref]];
+		historyArray = [self getHistoryDataFromPref];
 	}
 	return self;
 }
@@ -435,7 +435,7 @@
 //
 - (IBAction)clearHistory:(id)sender
 {
-	historyArray = [NSMutableArray arrayWithCapacity:0];
+	historyArray = [[History alloc] init];
 	[self setHistoryData:historyArray];
 	[drawerManager updateHistory];
 }
@@ -503,11 +503,8 @@
 	// Append the current expression to the history
 	if ([currentExpression child] != nil)
 	{
-		[historyArray addObject:
-			@[[NSKeyedArchiver archivedDataWithRootObject:[currentExpression child]],
-				[expressionDisplay expressionPathFlipped],
-				@([historyArray count] + 1)]
-		];
+		[historyArray addItem:[NSKeyedArchiver archivedDataWithRootObject:[currentExpression child]]
+			   withBezierPath:[expressionDisplay expressionPathFlipped]];
 		[self setHistoryData:historyArray];   // save the data to user preferences
 		[drawerManager updateHistory];
 	}
@@ -649,7 +646,7 @@
 //
 // Allows access to the history array.
 //
-- (NSMutableArray*)history
+- (History *)history
 {
 	return historyArray;
 }

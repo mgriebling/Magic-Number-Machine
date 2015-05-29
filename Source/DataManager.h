@@ -12,6 +12,7 @@
 @class DrawerManager;
 @class TreeHead;
 @class Expression;
+@class History;
 
 #import "BigCFloat.h"
 
@@ -64,7 +65,7 @@
 //	BOOL						optionEnabledByToggle;
 	BOOL						thousandsSeparator;
 		
-	NSMutableArray				*historyArray;
+	History						*historyArray;
 	NSMutableArray				*dataArray;
 	NSMutableArray				*data2DArray;
 	NSMutableArray				*arrayDataArray;
@@ -95,7 +96,7 @@
 @property (NS_NONATOMIC_IOSONLY, getter=getShift, readonly) BOOL shift;
 @property (NS_NONATOMIC_IOSONLY, getter=getThousandsSeparator) BOOL thousandsSeparator;
 @property (NS_NONATOMIC_IOSONLY, getter=getTrigMode, readonly) int trigMode;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSMutableArray *history;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) History *history;
 - (void)lengthLimit:(unsigned int)limit fillLimit:(BOOL)fill fixedPlaces:(unsigned int)places;
 //- (void)optionIsPressed:(BOOL)isPressed;
 //- (void)optionToggled;

@@ -3816,6 +3816,71 @@ BF_NormaliseNumbers
 }
 
 //
+// gamma
+//
+// Implementation of the Gamma function using Stirling's approximation
+//
+- (void)gamma {
+	BigFloat *y = [BigFloat bigFloatWithInt:2 radix:bf_radix];
+	BigFloat *tmp1 = [BigFloat piWithRadix:bf_radix];
+//	BigFloat *gam = [BigFloat bigFloatWithInt:30 radix:bf_radix];
+	BigFloat *two = [BigFloat bigFloatWithInt:2 radix:bf_radix];
+	BigFloat *tmp = [BigFloat bigFloatWithInt:1 radix:bf_radix];
+//	BigFloat *tmp2 = [BigFloat bigFloatWithInt:12 radix:bf_radix];
+	BigFloat *e = [BigFloat bigFloatWithInt:1 radix:bf_radix];
+//	NSInteger i,j;
+	
+	if (!bf_is_negative) {
+		[y add:self];			// y = x + 2
+		[tmp1 multiplyBy:two];	// pi * 2
+		[tmp1 multiplyBy:self]; // pi * 2 * x
+		[tmp1 sqrt];			// sqrt(pi * 2 * x)
+		[tmp assign:self];
+		[e powerOfE];			// e
+		[tmp divideBy:e];		// x / e
+		[tmp raiseToPower:self];// (x/e)^x
+		[tmp1 multiplyBy:tmp];	// sqrt(pi * 2 * x) * (x/e)^x
+		[self assign:tmp1];
+		
+//		[gam multiplyBy:y];		// 30 * y
+//		[gam multiplyBy:y];		// 30 * y^2
+//		[gam inverse];			// 1/(30 * y^2)
+//		[tmp subtract:gam];		// 1 - 1/(30 * y^2)
+//		[tmp2 multiplyBy:y];	// 12 * y
+//		[tmp divideBy:tmp2];    // (1 - 1/(30 * y^2))/(12 * y)
+//		[tmp subtract:y];		// (1 - 1/(30 * y^2))/(12 * y) - y
+//		[tmp2 assign:y];
+//		[tmp2 ln];				// ln(y)
+//		[tmp2 multiplyBy:y];	// y * ln(y)
+//		[tmp2 add:tmp];			// y * ln(y) + (1 - 1/(30 * y^2))/(12 * y) - y
+//		[tmp2 powerOfE];		// exp(y * ln(y) + (1 - 1/(30 * y^2))/(12 * y) - y)
+//		[gam assign:tmp1];		// gam = sqrt(pi * 2 / y)
+//		[gam multiplyBy:tmp2];	// gam = sqrt(pi * 2 / y) * exp(y * ln(y) + (1 - 1/(30 * y^2))/(12 * y) - y)
+//		[tmp assign:self];
+//		[tmp add:one];			// x + 1
+//		[tmp multiplyBy:self];	// x*(x+1)
+//		[gam divideBy:tmp];		// gam = gam / (x*(x+1))
+//		[self assign:gam];
+	} // else {
+//		// x < 0
+//		j = 0; [y assign:self];	// y = x
+//		do {
+//			j++; [y add:one];
+//		} while ([y isNegative]);
+//		[gam assign:y];
+//		[gam gamma];			// recursive call to this function
+//		for (i=0; i<j; i++) {
+//			tmp = [BigFloat bigFloatWithInt:i radix:bf_radix];
+//			[tmp add:self];		// i + x
+//			[gam divideBy:tmp]; // gam = gam / (x + i)
+//		}
+//		[self assign:gam];
+//	}
+	
+	
+}
+
+//
 // bitnot
 //
 // Set the receiver to ~receiver

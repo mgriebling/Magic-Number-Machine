@@ -3877,7 +3877,49 @@ BF_NormaliseNumbers
 //		[self assign:gam];
 //	}
 	
-	
+}
+
+- (void)preComplement:(int)complement withNumber:(BigFloat *)number {
+	if (complement)
+	{
+		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
+		
+		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+		BigFloat *complementNumberFull = [complementNumberHalf copy];
+		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
+		[complementNumberFull multiplyBy:two];
+		
+		if ([number isNegative])
+		{
+			BigFloat *normal = [complementNumberFull copy];
+			[normal add:number];
+			[number assign:normal];
+		}
+	}
+}
+
+- (void)postComplement:(int)complement {
+	if (complement)
+	{
+		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
+		
+		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+		BigFloat *complementNumberFull = [complementNumberHalf copy];
+		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
+		[complementNumberFull multiplyBy:two];
+		
+		NSComparisonResult relative = [self compareWith:complementNumberHalf];
+		if (relative == NSOrderedSame || relative == NSOrderedDescending)
+		{
+			BigFloat *zero = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
+			
+			[complementNumberFull subtract:self];
+			[zero subtract:complementNumberFull];
+			
+			[self assign:zero];
+		}
+		
+	}
 }
 
 //
@@ -3892,26 +3934,26 @@ BF_NormaliseNumbers
 	unsigned long	offset;
 	int					old_radix;
 	
-	if (!bf_is_valid)
-		return;
+	if (!bf_is_valid) return;
 
-	if (complement)
-	{
-		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
-		
-		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
-		BigFloat *complementNumberFull = [complementNumberHalf copy];
-		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
-		[complementNumberFull multiplyBy:two];
-		
-		if (bf_is_negative)
-		{
-			BigFloat *normal = [complementNumberFull copy];
-			[normal add:self];
-			[self assign:normal];
-		}
-		
-	}
+	[self preComplement:complement withNumber:self];
+//	if (complement)
+//	{
+//		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
+//		
+//		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+//		BigFloat *complementNumberFull = [complementNumberHalf copy];
+//		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
+//		[complementNumberFull multiplyBy:two];
+//		
+//		if (bf_is_negative)
+//		{
+//			BigFloat *normal = [complementNumberFull copy];
+//			[normal add:self];
+//			[self assign:normal];
+//		}
+//		
+//	}
 
 	// Convert to a radix that is a power of 2
 	old_radix = bf_radix;
@@ -3951,27 +3993,28 @@ BF_NormaliseNumbers
 	if (old_radix != bf_radix)
 		[self convertToRadix: old_radix];
 
-	if (complement)
-	{
-		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
-		
-		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
-		BigFloat *complementNumberFull = [complementNumberHalf copy];
-		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
-		[complementNumberFull multiplyBy:two];
-		
-		NSComparisonResult relative = [self compareWith:complementNumberHalf];
-		if (relative == NSOrderedSame || relative == NSOrderedDescending)
-		{
-			BigFloat *zero = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
-			
-			[complementNumberFull subtract:self];
-			[zero subtract:complementNumberFull];
-			
-			[self assign:zero];
-		}
-		
-	}
+	[self postComplement:complement];
+//	if (complement)
+//	{
+//		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
+//		
+//		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+//		BigFloat *complementNumberFull = [complementNumberHalf copy];
+//		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
+//		[complementNumberFull multiplyBy:two];
+//		
+//		NSComparisonResult relative = [self compareWith:complementNumberHalf];
+//		if (relative == NSOrderedSame || relative == NSOrderedDescending)
+//		{
+//			BigFloat *zero = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
+//			
+//			[complementNumberFull subtract:self];
+//			[zero subtract:complementNumberFull];
+//			
+//			[self assign:zero];
+//		}
+//		
+//	}
 }
 
 //
@@ -3997,29 +4040,31 @@ BF_NormaliseNumbers
 		return;
 	}
 
-	if (complement)
-	{
-		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
-		
-		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
-		BigFloat *complementNumberFull = [complementNumberHalf copy];
-		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
-		[complementNumberFull multiplyBy:two];
-		
-		if (bf_is_negative)
-		{
-			BigFloat *normal = [complementNumberFull copy];
-			[normal add:self];
-			[self assign:normal];
-		}
-		
-		if ([num isNegative])
-		{
-			BigFloat *normal = [complementNumberFull copy];
-			[normal add:num];
-			[num assign:normal];
-		}
-	}
+	[self preComplement:complement withNumber:self];
+	[self preComplement:complement withNumber:num];
+//	if (complement)
+//	{
+//		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
+//		
+//		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+//		BigFloat *complementNumberFull = [complementNumberHalf copy];
+//		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
+//		[complementNumberFull multiplyBy:two];
+//		
+//		if (bf_is_negative)
+//		{
+//			BigFloat *normal = [complementNumberFull copy];
+//			[normal add:self];
+//			[self assign:normal];
+//		}
+//		
+//		if ([num isNegative])
+//		{
+//			BigFloat *normal = [complementNumberFull copy];
+//			[normal add:num];
+//			[num assign:normal];
+//		}
+//	}
 	
 	otherNum = [num copy];
 	
@@ -4064,28 +4109,28 @@ BF_NormaliseNumbers
 	// Restore the radix
 	[self convertToRadix: old_radix];
 	
-
-	if (complement)
-	{
-		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
-		
-		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
-		BigFloat *complementNumberFull = [complementNumberHalf copy];
-		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
-		[complementNumberFull multiplyBy:two];
-		
-		NSComparisonResult relative = [self compareWith:complementNumberHalf];
-		if (relative == NSOrderedSame || relative == NSOrderedDescending)
-		{
-			BigFloat *zero = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
-			
-			[complementNumberFull subtract:self];
-			[zero subtract:complementNumberFull];
-			
-			[self assign:zero];
-		}
-		
-	}
+	[self postComplement:complement];
+//	if (complement)
+//	{
+//		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
+//		
+//		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+//		BigFloat *complementNumberFull = [complementNumberHalf copy];
+//		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
+//		[complementNumberFull multiplyBy:two];
+//		
+//		NSComparisonResult relative = [self compareWith:complementNumberHalf];
+//		if (relative == NSOrderedSame || relative == NSOrderedDescending)
+//		{
+//			BigFloat *zero = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
+//			
+//			[complementNumberFull subtract:self];
+//			[zero subtract:complementNumberFull];
+//			
+//			[self assign:zero];
+//		}
+//		
+//	}
 }
 
 //
@@ -4111,29 +4156,31 @@ BF_NormaliseNumbers
 		return;
 	}
 
-	if (complement)
-	{
-		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
-		
-		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
-		BigFloat *complementNumberFull = [complementNumberHalf copy];
-		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
-		[complementNumberFull multiplyBy:two];
-		
-		if (bf_is_negative)
-		{
-			BigFloat *normal = [complementNumberFull copy];
-			[normal add:self];
-			[self assign:normal];
-		}
-		
-		if ([num isNegative])
-		{
-			BigFloat *normal = [complementNumberFull copy];
-			[normal add:num];
-			[num assign:normal];
-		}
-	}
+	[self preComplement:complement withNumber:self];
+	[self preComplement:complement withNumber:num];
+//	if (complement)
+//	{
+//		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
+//		
+//		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+//		BigFloat *complementNumberFull = [complementNumberHalf copy];
+//		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
+//		[complementNumberFull multiplyBy:two];
+//		
+//		if (bf_is_negative)
+//		{
+//			BigFloat *normal = [complementNumberFull copy];
+//			[normal add:self];
+//			[self assign:normal];
+//		}
+//		
+//		if ([num isNegative])
+//		{
+//			BigFloat *normal = [complementNumberFull copy];
+//			[normal add:num];
+//			[num assign:normal];
+//		}
+//	}
 	
 	otherNum = [num copy];
 	
@@ -4179,28 +4226,29 @@ BF_NormaliseNumbers
 	if (old_radix != bf_radix)
 		[self convertToRadix: old_radix];
 
-
-	if (complement)
-	{
-		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
-		
-		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
-		BigFloat *complementNumberFull = [complementNumberHalf copy];
-		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
-		[complementNumberFull multiplyBy:two];
-		
-		NSComparisonResult relative = [self compareWith:complementNumberHalf];
-		if (relative == NSOrderedSame || relative == NSOrderedDescending)
-		{
-			BigFloat *zero = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
-			
-			[complementNumberFull subtract:self];
-			[zero subtract:complementNumberFull];
-			
-			[self assign:zero];
-		}
-		
-	}
+	
+	[self postComplement:complement];
+//	if (complement)
+//	{
+//		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
+//		
+//		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+//		BigFloat *complementNumberFull = [complementNumberHalf copy];
+//		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
+//		[complementNumberFull multiplyBy:two];
+//		
+//		NSComparisonResult relative = [self compareWith:complementNumberHalf];
+//		if (relative == NSOrderedSame || relative == NSOrderedDescending)
+//		{
+//			BigFloat *zero = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
+//			
+//			[complementNumberFull subtract:self];
+//			[zero subtract:complementNumberFull];
+//			
+//			[self assign:zero];
+//		}
+//		
+//	}
 }
 
 //
@@ -4226,29 +4274,31 @@ BF_NormaliseNumbers
 		return;
 	}
 
-	if (complement)
-	{
-		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
-		
-		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
-		BigFloat *complementNumberFull = [complementNumberHalf copy];
-		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
-		[complementNumberFull multiplyBy:two];
-		
-		if (bf_is_negative)
-		{
-			BigFloat *normal = [complementNumberFull copy];
-			[normal add:self];
-			[self assign:normal];
-		}
-		
-		if ([num isNegative])
-		{
-			BigFloat *normal = [complementNumberFull copy];
-			[normal add:num];
-			[num assign:normal];
-		}
-	}
+	[self preComplement:complement withNumber:self];
+	[self preComplement:complement withNumber:num];
+//	if (complement)
+//	{
+//		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
+//		
+//		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+//		BigFloat *complementNumberFull = [complementNumberHalf copy];
+//		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
+//		[complementNumberFull multiplyBy:two];
+//		
+//		if (bf_is_negative)
+//		{
+//			BigFloat *normal = [complementNumberFull copy];
+//			[normal add:self];
+//			[self assign:normal];
+//		}
+//		
+//		if ([num isNegative])
+//		{
+//			BigFloat *normal = [complementNumberFull copy];
+//			[normal add:num];
+//			[num assign:normal];
+//		}
+//	}
 
 	otherNum = [num copy];
 	
@@ -4295,27 +4345,27 @@ BF_NormaliseNumbers
 	if (old_radix != bf_radix)
 		[self convertToRadix: old_radix];
 
-	
-	if (complement)
-	{
-		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
-		
-		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
-		BigFloat *complementNumberFull = [complementNumberHalf copy];
-		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
-		[complementNumberFull multiplyBy:two];
-		
-		NSComparisonResult relative = [self compareWith:complementNumberHalf];
-		if (relative == NSOrderedSame || relative == NSOrderedDescending)
-		{
-			BigFloat *zero = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
-			[complementNumberFull subtract:self];
-			[zero subtract:complementNumberFull];
-			
-			[self assign:zero];
-		}
-		
-	}
+	[self postComplement:complement];
+//	if (complement)
+//	{
+//		unsigned long long	complementHalf = ((unsigned long long)1 << (complement - 1));
+//		
+//		BigFloat *complementNumberHalf = [[BigFloat alloc] initWithMantissa:complementHalf exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+//		BigFloat *complementNumberFull = [complementNumberHalf copy];
+//		BigFloat *two = [[BigFloat alloc] initWithInt:2 radix:bf_radix];
+//		[complementNumberFull multiplyBy:two];
+//		
+//		NSComparisonResult relative = [self compareWith:complementNumberHalf];
+//		if (relative == NSOrderedSame || relative == NSOrderedDescending)
+//		{
+//			BigFloat *zero = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
+//			[complementNumberFull subtract:self];
+//			[zero subtract:complementNumberFull];
+//			
+//			[self assign:zero];
+//		}
+//		
+//	}
 }
 
 

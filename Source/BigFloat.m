@@ -233,12 +233,12 @@ BF_NumDigitsInArray(unsigned long *values, unsigned short radix, unsigned long p
 	int digitNumber;
 	
 	// Trace through the number looking the the most significant non-zero digit
-	digitsInNumber = BF_num_values * precision;
+	digitsInNumber = (int) (BF_num_values * precision);
 	valueNumber = BF_num_values;
 	do
 	{
 		valueNumber--;
-		digitNumber = precision - 1;
+		digitNumber = (int) (precision - 1);
 		while
 		(
 			(((int)(values[valueNumber] / pow(radix, digitNumber)) % radix) == 0)
@@ -519,8 +519,8 @@ BF_NormaliseNumbers
 	bf_radix = radix;
 	
 	bf_value_precision = (unsigned long)(log(0xFFFF + 1) / log(radix));
-	bf_value_limit = (unsigned long)(pow(radix, bf_value_precision));
-	bf_exponent_precision = (unsigned long)(log(0xFFFF + 1) / log(radix));
+	bf_value_limit = (unsigned int)(pow(radix, bf_value_precision));
+	bf_exponent_precision = (unsigned int)(log(0xFFFF + 1) / log(radix));
 
 	// Apply the decimal point
 	if (userPoint > (bf_value_precision * BF_num_values - 1))
@@ -666,9 +666,9 @@ BF_NormaliseNumbers
 	doubleExponent = log(newValue) / log(newRadix);
 	
 	if (doubleExponent < 0)
-		newExponent = (long)floor(doubleExponent);
+		newExponent = (int)floor(doubleExponent);
 	else
-		newExponent = (long)ceil(doubleExponent);
+		newExponent = (int)ceil(doubleExponent);
 	
 	// Remove the exponent from the newValue
 	newValue /= pow(newRadix, newExponent);
@@ -842,7 +842,7 @@ BF_NormaliseNumbers
 				if (expNegative) { [self appendExpDigit:'-']; }
 			}
 		}
-		[self setUserPoint:userPoint];
+		[self setUserPoint:(int)userPoint];
 	}
 //	NSLog(@"\"%@\" = %@", newValue, [self toString]);
 	return self;
@@ -1137,9 +1137,9 @@ BF_NormaliseNumbers
 	// Adjust the precision related elements
 	elements.bf_radix = newRadix;
 	elements.bf_exponent = 0;
-	elements.bf_exponent_precision =  (unsigned long)(log(0xFFFF + 1) / log(elements.bf_radix));
+	elements.bf_exponent_precision =  (unsigned int)(log(0xFFFF + 1) / log(elements.bf_radix));
 	elements.bf_value_precision = (unsigned long)(log(0xFFFF + 1) / log(elements.bf_radix));
-	elements.bf_value_limit = (unsigned long)(pow(newRadix, elements.bf_value_precision));
+	elements.bf_value_limit = (unsigned int)(pow(newRadix, elements.bf_value_precision));
 
 	// Clear the working space
 	BF_ClearValuesArray(reverse, 2);
@@ -1214,7 +1214,7 @@ BF_NormaliseNumbers
 //
 - (int)mantissaLength
 {
-	return BF_NumDigitsInArray(bf_array, bf_radix, bf_value_precision);
+	return (int)BF_NumDigitsInArray(bf_array, bf_radix, bf_value_precision);
 }
 
 //
@@ -1618,7 +1618,7 @@ BF_NormaliseNumbers
 - (void)multiplyBy: (BigFloat*)num
 {
 	int					i, j;
-	long				carryBits;
+	long				carryBits = 0;
 	unsigned long		result[BF_num_values * 2];
 	unsigned long		values[BF_num_values];
 	unsigned long		otherNum[BF_num_values];
@@ -2444,7 +2444,7 @@ BF_NormaliseNumbers
 		[self appendDigit:L'-' useComplement:0];
 	
 	// Descale the result
-	factorNum = [[BigFloat alloc] initWithInt: outputFactor radix: bf_radix];
+	factorNum = [[BigFloat alloc] initWithInt: (int)outputFactor radix: bf_radix];
 	[self multiplyBy:factorNum];
 	
 }
@@ -2617,7 +2617,7 @@ BF_NormaliseNumbers
 	}
 	
 	original = [self copy];
-	root = [[BigFloat alloc] initWithInt:n radix: bf_radix];
+	root = [[BigFloat alloc] initWithInt:(int)n radix: bf_radix];
 	
 	// Count the number of digits left of the point
 	numDigits = BF_num_values * bf_value_precision + bf_exponent - bf_user_point;
@@ -2859,8 +2859,8 @@ BF_NormaliseNumbers
 				[nextTerm assign:powerCopy];
 				
 				// Divide the term by (2n+1)!
-				twoN = [[BigFloat alloc] initWithInt: (i * 2) radix: bf_radix];
-				twoNPlusOne = [[BigFloat alloc] initWithInt: (i * 2 + 1) radix: bf_radix];
+				twoN = [[BigFloat alloc] initWithInt: (int)(i * 2) radix: bf_radix];
+				twoNPlusOne = [[BigFloat alloc] initWithInt:(int) (i * 2 + 1) radix: bf_radix];
 				[factorial multiplyBy:twoN];
 				[factorial multiplyBy:twoNPlusOne];
 				[nextTerm divideBy: factorial];
@@ -2941,13 +2941,13 @@ BF_NormaliseNumbers
 				// Determine the next term of the series
 				[powerCopy multiplyBy: original];
 				[powerCopy multiplyBy: original];
-				twoN = [[BigFloat alloc] initWithInt: (i * 2) radix:bf_radix];
-				twoNMinusOne = [[BigFloat alloc] initWithInt:(i * 2 - 1) radix:bf_radix];
+				twoN = [[BigFloat alloc] initWithInt: (int)(i * 2) radix:bf_radix];
+				twoNMinusOne = [[BigFloat alloc] initWithInt:(int)(i * 2 - 1) radix:bf_radix];
 				[factorial multiplyBy:twoNMinusOne];
 				[factorial divideBy:twoN];
 				
 				[nextTerm assign:powerCopy];
-				twoNPlusOne = [[BigFloat alloc] initWithInt:(i * 2 + 1) radix:bf_radix];
+				twoNPlusOne = [[BigFloat alloc] initWithInt:(int)(i * 2 + 1) radix:bf_radix];
 				[nextTerm divideBy:twoNPlusOne];
 				[nextTerm multiplyBy:factorial];
 				
@@ -3067,8 +3067,8 @@ BF_NormaliseNumbers
 				[nextTerm assign:powerCopy];
 				
 				// Divide the term by (2n)!
-				twoN = [[BigFloat alloc] initWithInt: (i * 2) radix:bf_radix];
-				twoNMinusOne = [[BigFloat alloc] initWithInt:(i * 2 - 1) radix:bf_radix];
+				twoN = [[BigFloat alloc] initWithInt: (int)(i * 2) radix:bf_radix];
+				twoNMinusOne = [[BigFloat alloc] initWithInt:(int)(i * 2 - 1) radix:bf_radix];
 				[factorial multiplyBy:twoN];
 				[factorial multiplyBy:twoNMinusOne];
 				[nextTerm divideBy: factorial];
@@ -4341,7 +4341,7 @@ BF_NormaliseNumbers
 			}
 			
 			// We may have changed the number of digits... recount
-			digitsInNumber = BF_NumDigitsInArray(values, bf_radix, bf_value_precision);
+			digitsInNumber = (int)BF_NumDigitsInArray(values, bf_radix, bf_value_precision);
 		}
 	}
 	

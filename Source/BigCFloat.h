@@ -48,28 +48,29 @@
 + (BigCFloat *)zero;
 + (BigCFloat *)i;
 
-// Complex Functions
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) BigFloat *realPartCopy;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) BigFloat *realPart;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) BigFloat *imaginaryPart;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) BigFloat *magnitude;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) BigFloat *angle;
+// Complex Functions & properties
+@property (nonatomic, readonly, copy) BigFloat *realPartCopy;
+@property (nonatomic, readonly, copy) BigFloat *realPart;
+@property (nonatomic, readonly, copy) BigFloat *imaginaryPart;
+@property (nonatomic, readonly, copy) BigFloat *magnitude;
+@property (nonatomic, readonly, copy) BigFloat *angle;
+@property (nonatomic, readonly) BOOL hasImaginary;
+@property (nonatomic, readonly) BOOL imaginaryHasExponent;
 - (void)conjugate;
-@property (NS_NONATOMIC_IOSONLY, readonly) BOOL hasImaginary;
-@property (NS_NONATOMIC_IOSONLY, readonly) BOOL imaginaryHasExponent;
 
-// Public Utility Functions
+// Public Utility Functions & properties
+@property (nonatomic, readonly) unsigned short radix;
+@property (nonatomic, getter=isValid, readonly) BOOL valid;
+@property (nonatomic, getter=getUserPoint) int userPoint;
+@property (nonatomic, readonly, copy) BigFloat *duplicate;
+
 - (BOOL)appendDigit: (short)digit useComplement:(int)complement;
 - (void)appendExpDigit:(short)digit;
 - (void)deleteDigitUseComplement:(int)complement;
 - (void)deleteExpDigit;
 - (void)convertToRadix:(unsigned short)newRadix;
-@property (NS_NONATOMIC_IOSONLY, readonly) unsigned short radix;
-@property (NS_NONATOMIC_IOSONLY, getter=isValid, readonly) BOOL valid;
 - (BOOL)isZero;
-@property (NS_NONATOMIC_IOSONLY, getter=getUserPoint) int userPoint;
 - (NSComparisonResult)compareWith:(BigFloat*)num;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) BigFloat *duplicate;
 - (void)assign:(BigFloat*)newValue;
 - (void)abs;
 
@@ -105,9 +106,9 @@
 - (void)xorWith:(BigFloat*)num usingComplement:(int)complement;
 
 // Accessor Functions
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *imaginaryMantissaString;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *imaginaryExponentString;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *toString;
+@property (nonatomic, readonly, copy) NSString *imaginaryMantissaString;
+@property (nonatomic, readonly, copy) NSString *imaginaryExponentString;
+@property (nonatomic, readonly, copy) NSString *toString;
 - (NSString*)toShortString:(int)precision;
 - (void)limitedString:(unsigned int)lengthLimit fixedPlaces:(unsigned int)places fillLimit:(BOOL)fill complement:(unsigned int)complement mantissa:(NSString**)mantissaOut exponent:(NSString**)exponentOut imaginaryMantissa:(NSString**)imaginaryMantissaOut imaginaryExponent:(NSString**)imaginaryExponentOut;
 - (void)debugDisplay;

@@ -60,7 +60,7 @@ typedef NS_ENUM(unsigned int, BFTrigMode)
 	unsigned short		bf_radix;
 	unsigned short		bf_value_precision;
 	unsigned int		bf_value_limit;
-	unsigned long		bf_exponent_precision;
+	unsigned int		bf_exponent_precision;
 
 	BOOL				bf_is_valid;
 }
@@ -86,23 +86,25 @@ typedef NS_ENUM(unsigned int, BFTrigMode)
 + (BigFloat*)bigFloatWithDouble:(double)newValue radix:(unsigned short)newRadix;
 + (BigFloat*)piWithRadix:(unsigned short)newRadix;
 
-// Public Utility Functions
+// Public Utility Functions and properties
+@property (nonatomic, getter=getUserPoint) int userPoint;
+@property (nonatomic, readonly) int mantissaLength;
+@property (nonatomic, readonly) unsigned short radix;
+@property (nonatomic, getter=isValid, readonly) BOOL valid;
+@property (nonatomic, getter=isNegative, readonly) BOOL negative;
+@property (nonatomic, readonly) BOOL hasExponent;
+@property (nonatomic, getter=isZero, readonly) BOOL zero;
+@property (nonatomic, readonly, copy) BigFloat *duplicate;
+
 - (BOOL)appendDigit: (short)digit useComplement:(int)complement;
 - (void)appendExpDigit:(short)digit;
 - (void)deleteDigitUseComplement:(int)complement;
 - (void)deleteExpDigit;
 - (void)convertToRadix:(unsigned short)newRadix;
-@property (NS_NONATOMIC_IOSONLY, getter=getUserPoint) int userPoint;
-@property (NS_NONATOMIC_IOSONLY, readonly) int mantissaLength;
-@property (NS_NONATOMIC_IOSONLY, readonly) unsigned short radix;
-@property (NS_NONATOMIC_IOSONLY, getter=isValid, readonly) BOOL valid;
-@property (NS_NONATOMIC_IOSONLY, getter=isNegative, readonly) BOOL negative;
-@property (NS_NONATOMIC_IOSONLY, readonly) BOOL hasExponent;
-@property (NS_NONATOMIC_IOSONLY, getter=isZero, readonly) BOOL zero;
 - (NSComparisonResult)compareWith:(BigFloat*)num;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) BigFloat *duplicate;
 - (void)assign:(BigFloat*)newValue;
 - (void)abs;
+- (void)negate;
 
 // Arithmetic Functions
 - (void)add:(BigFloat*)num;
@@ -137,10 +139,10 @@ typedef NS_ENUM(unsigned int, BFTrigMode)
 - (void)xorWith:(BigFloat*)num usingComplement:(int)complement;
 
 // Conversion Functions
-@property (NS_NONATOMIC_IOSONLY, readonly) double doubleValue;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *mantissaString;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *exponentString;
-@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *toString;
+@property (nonatomic, readonly) double doubleValue;
+@property (nonatomic, readonly, copy) NSString *mantissaString;
+@property (nonatomic, readonly, copy) NSString *exponentString;
+@property (nonatomic, readonly, copy) NSString *toString;
 - (NSString*)toShortString:(int)precision;
 - (void)limitedString:(unsigned int)lengthLimit fixedPlaces:(unsigned int)places fillLimit:(BOOL)fill complement:(unsigned int)complement mantissa:(NSString**)mantissaOut exponent:(NSString**)exponentOut;
 - (void)debugDisplay;

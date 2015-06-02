@@ -3762,12 +3762,12 @@ BF_NormaliseNumbers
 //
 - (void)andWith: (BigFloat*)num usingComplement:(int)complement
 {
-	int					digit;
-	int					index;
+	int				digit;
+	int				index;
 	unsigned long	offset;
 	unsigned long	otherValues[BF_num_values];
-	int					old_radix;
-	BigFloat			*otherNum;
+	int				old_radix;
+	BigFloat		*otherNum;
 	
 	if (!bf_is_valid)
 		return;
@@ -4430,7 +4430,7 @@ BF_NormaliseNumbers
 		
 		if (bf_is_negative)
 		{
-			BigFloat *two = [[BigFloat alloc] initWithMantissa:2 exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
+			BigFloat *two = [BigFloat bigFloatWithInt:2 radix:bf_radix];
 			[complementNumber multiplyBy:two];
 			[complementNumber subtract:mantissaNumber];
 			BF_CopyValues(complementNumber->bf_array, values);

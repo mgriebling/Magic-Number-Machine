@@ -2730,16 +2730,19 @@ BF_NormaliseNumbers
 	BigFloat *power = [[BigFloat alloc] init];
 	while (compare != NSOrderedSame && maxIterations-- > 0)
 	{
-		prevGuess = [newGuess copy];
-		power = [newGuess copy];
-		[power raiseToIntPower:n-1];
+		[prevGuess assign:newGuess];
 		
-		newGuess = [original copy];
-		[newGuess divideBy: power];
-		power = [prevGuess copy];
-		[power multiplyBy:rootn1];
+		[newGuess assign:original];
+		[power assign:prevGuess];
+		if (n > 2) {
+			[power raiseToIntPower:n-1];
+			[newGuess divideBy: power];
+			[power assign:prevGuess];
+			[power multiplyBy:rootn1];
+		} else {
+			[newGuess divideBy: prevGuess];
+		}
 		[newGuess add:power];
-	
 		[newGuess divideBy: root];
 		
 		compare = [newGuess compareWith: prevGuess];

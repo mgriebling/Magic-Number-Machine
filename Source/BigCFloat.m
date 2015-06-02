@@ -1048,7 +1048,8 @@
 
 	if (!bf_is_valid) return;
 	
-	if (!bcf_has_imaginary && ![num isKindOfClass:[BigCFloat class]])
+	cnum = (BigCFloat*)num;
+	if (!bcf_has_imaginary && !cnum->bcf_has_imaginary)
 	{
 		[super raiseToPower:num];
 		return;

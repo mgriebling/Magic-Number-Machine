@@ -1099,7 +1099,7 @@
 }
 
 //
-// sqrt
+// cbrt
 //
 // Wrapper that adds complex number support around the base class
 //
@@ -1112,7 +1112,7 @@
 	
 	if (!bf_is_valid) { return; }
 	
-	if(!bcf_has_imaginary && !bf_is_negative)
+	if (!bcf_has_imaginary)
 	{
 		[super cbrt];
 		return;

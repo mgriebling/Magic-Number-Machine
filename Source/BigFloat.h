@@ -95,6 +95,7 @@ typedef NS_ENUM(unsigned int, BFTrigMode)
 @property (nonatomic, readonly) BOOL hasExponent;
 @property (nonatomic, getter=isZero, readonly) BOOL zero;
 @property (nonatomic, readonly, copy) BigFloat *duplicate;
+@property (nonatomic, readonly, copy) BigFloat *pi;
 
 - (BOOL)appendDigit: (short)digit useComplement:(int)complement;
 - (void)appendExpDigit:(short)digit;

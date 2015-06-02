@@ -456,8 +456,11 @@ BF_NormaliseNumbers
 	// pi_array is retained permanently (until the program quits)
 	pi_array[bf_radix] = [p copy];
 	[pi_array[bf_radix] inverse];
+}
 
-	// Free all the memory
+- (BigFloat *)pi {
+	if (!pi_array[bf_radix]) {[self calculatePi]; }
+	return [pi_array[bf_radix] copy];
 }
 
 //
@@ -512,8 +515,7 @@ BF_NormaliseNumbers
 	bf_is_valid = isValid;
 
 	// Set the bf_radix (if it is valid)
-	if (radix < 2 || radix > 36)
-		radix = 10;
+	if (radix < 2 || radix > 36) radix = 10;
 	bf_radix = radix;
 	
 	bf_value_precision = (unsigned long)(log(0xFFFF + 1) / log(radix));
@@ -738,12 +740,8 @@ BF_NormaliseNumbers
 	
 	if (self != nil)
 	{
-		// Make certain that we have a pi for this radix
-		if (pi_array[newRadix] == nil)
-			[self calculatePi];
-		
 		// Don't actually return our private PI (in case the caller messes it up)
-		[self assign:pi_array[newRadix]];
+		[self assign:self.pi];   // automatically calculate new pi for unknown radices
 	}
 	
 	return self;
@@ -794,8 +792,8 @@ BF_NormaliseNumbers
 //
 - (instancetype)initWithString:(NSString *)newValue radix:(unsigned short)newRadix {
 	// Mike - created this primarily for the constants
-	NSString *separators = newRadix == 10 ? @"eE" : @"p";
-	NSString *digits = [@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ" substringToIndex:newRadix];
+	NSString *separators = newRadix == 10 ? @"eE" : @"pP";
+	NSString *digits = [BF_digits substringToIndex:newRadix];
 	NSCharacterSet *validDigits = [NSCharacterSet characterSetWithCharactersInString:digits];
 	NSCharacterSet *signChars = [NSCharacterSet characterSetWithCharactersInString:@"+-"];
 	NSInteger userPoint = 0;
@@ -2487,6 +2485,13 @@ BF_NormaliseNumbers
 		return;
 	}
 	
+	[numCopy fractionalPart];
+	if ([numCopy isZero]) {
+		[self raiseToIntPower:(int)num.doubleValue];
+		return;
+	}
+	numCopy = [num copy];
+	
 	if (bf_is_negative)
 	{
 		bf_is_negative = NO;
@@ -2521,116 +2526,30 @@ BF_NormaliseNumbers
 	
 }
 
+//
+// sqrt
+//
+// Takes the square root of the receiver
+//
 - (void)sqrt {
 	[self nRoot:2];
-//	BigFloat				*original;
-//	BigFloat				*prevGuess;
-//	BigFloat				*newGuess;
-//	BigFloat				*two;
-//	int						i, j;
-//	BOOL					digitNotFound = YES;
-//	int						numDigits;
-//	NSComparisonResult	compare;
-//	
-//	if (!bf_is_valid)
-//		return;
-//	
-//	if ([self isNegative])
-//	{
-//		bf_is_valid = NO;
-//		return;
-//	}
-//	
-//	if ([self isZero])
-//	{
-//		return;
-//	}
-//	
-//	original = [self copy];
-//	two = [[BigFloat alloc] initWithInt:2 radix: bf_radix];
-//	
-//	// Count the number of digits left of the point
-//	numDigits = BF_num_values * bf_value_precision + bf_exponent - bf_user_point;
-//	for (i = BF_num_values - 1; i >= 0 && digitNotFound; i--)
-//	{
-//		for (j = bf_value_precision - 1; j >= 0 && digitNotFound; j--)
-//		{
-//			if ((bf_array[i] / (unsigned long)(pow(bf_radix, j)) % bf_radix) == 0)
-//			{
-//				numDigits--;
-//			}
-//			else
-//			{
-//				digitNotFound = NO;
-//			}
-//		}
-//	}
-//	
-//	// The first guess will be this number with its numDigits halved
-//	bf_exponent -= (numDigits / 2);
-//	prevGuess = [self copy];
-//	newGuess = [self copy];
-//	compare = NSOrderedDescending;
-//	
-//	// Do some Newton's method iterations until we converge
-//	while(compare != NSOrderedSame)
-//	{
-//		[prevGuess assign: newGuess];
-//		
-//		[newGuess assign: original];
-//		[newGuess divideBy: prevGuess];
-//		[newGuess add: prevGuess];
-//		[newGuess divideBy: two];
-//		
-//		compare = [newGuess compareWith: prevGuess];
-//	}
-//	
-//	// Use the last guess
-//	[self assign: newGuess];
-//	
-//	//
-//	// This method has problems actually giving "1" as a result. If we're
-//	// within 2 * smallest digit size, then round to one.
-//	//
-//	BigFloat *one = [[BigFloat alloc] initWithInt:1 radix:bf_radix];
-//	BigFloat *twoEpsilon =
-//	[[BigFloat alloc]
-//	 initWithMantissa:2
-//	 exponent:-(BF_num_values * bf_value_precision) + 1
-//	 isNegative:NO
-//	 radix:bf_radix
-//	 userPointAt:0];
-//	if ([one compareWith:self] == NSOrderedDescending)
-//	{
-//		//
-//		// If we're slightly greater than 1, check if we should round down
-//		//
-//		BigFloat *difference = [one copy];
-//		[difference subtract:self];
-//		if ([difference compareWith:twoEpsilon] == NSOrderedAscending)
-//		{
-//			[self assign:one];
-//		}
-//	}
-//	else
-//	{
-//		//
-//		// If we're slightly less than 1, check if we should round up
-//		//
-//		BigFloat *difference = [self copy];
-//		[difference subtract:one];
-//		if ([difference compareWith:twoEpsilon] == NSOrderedAscending)
-//		{
-//			[self assign:one];
-//		}
-//	}
-//	
+
 }
 
+//
+// cbrt
+//
+// Takes the third root of the receiver
+//
 - (void)cbrt {
 	[self nRoot:3];
 }
 
+//
+// raiseToIntPower
+//
+// Takes the third root of the receiver
+//
 - (void)raiseToIntPower: (NSInteger)n {
 	BigFloat *Z = [BigFloat bigFloatWithInt:0 radix:bf_radix];
 	NSUInteger N = labs(n);
@@ -2717,17 +2636,13 @@ BF_NormaliseNumbers
 	}
 	
 	// The first guess will be the scaled exponent of this number
-//	double froot = pow(self.doubleValue, 1.0/n);
-//	[self assign:[BigFloat bigFloatWithDouble:froot radix:bf_radix]];
-//	NSLog(@"Initial guess = %f", froot);
-	bf_exponent -= (numDigits / n);
+	bf_exponent -= (numDigits / (int)n);
 	prevGuess = [self copy];
 	newGuess = [self copy];
 	compare = NSOrderedDescending;
 	
 	// Do some Newton's method iterations until we converge
 	NSInteger maxIterations = 1000;
-	BigFloat *rootn1 = [[BigFloat alloc] initWithInt:n-1 radix: bf_radix];
 	BigFloat *power = [[BigFloat alloc] init];
 	while (compare != NSOrderedSame && maxIterations-- > 0)
 	{
@@ -2735,18 +2650,12 @@ BF_NormaliseNumbers
 		
 		[newGuess assign:original];
 		[power assign:prevGuess];
-		if (n > 2) {
-			[power raiseToIntPower:n-1];
-			[newGuess divideBy: power];
-			[power assign:prevGuess];
-			[power multiplyBy:rootn1];
-		} else {
-			[newGuess divideBy: prevGuess];
-		}
-		[newGuess add:power];
-		[newGuess divideBy: root];
-		
-		compare = [newGuess compareWith: prevGuess];
+		[power raiseToIntPower:n-1];
+		[newGuess divideBy: power];
+		[newGuess subtract:prevGuess];
+		[newGuess divideBy:root];
+		[newGuess add:prevGuess];
+		compare = [newGuess compareWith:prevGuess];
 	}
 	if (maxIterations <= 0) NSLog(@"Exceeded iteration limit on root evaluation: Error is likely");
 	
@@ -2842,6 +2751,53 @@ BF_NormaliseNumbers
 	
 }
 
+- (void)toRadiansFrom:(BFTrigMode)mode {
+	if (mode != BF_radians)
+	{
+		
+		if (mode == BF_degrees)
+		{
+			BigFloat *oneEighty = [BigFloat bigFloatWithInt: 180 radix: bf_radix];
+			BigFloat *threeSixty = [BigFloat bigFloatWithInt: 360 radix: bf_radix];
+			[self divideBy:oneEighty];
+			[self moduloBy:threeSixty];
+		}
+		else if (mode == BF_gradians)
+		{
+			BigFloat *twoHundred = [BigFloat bigFloatWithInt: 200 radix: bf_radix];
+			BigFloat *fourHundred = [BigFloat bigFloatWithInt: 400 radix: bf_radix];
+			[self divideBy:twoHundred];
+			[self moduloBy:fourHundred];
+		}
+		
+		[self multiplyBy: self.pi];
+	}
+	else
+	{
+		BigFloat *two_pi = [BigFloat bigFloatWithInt:2 radix: bf_radix];
+		[two_pi multiplyBy:self.pi];
+		[self moduloBy:two_pi];
+	}
+}
+
+- (void)radiansToMode:(BFTrigMode)mode {
+	if (mode != BF_radians)
+	{
+		if (mode == BF_degrees)
+		{
+			BigFloat *oneEighty = [[BigFloat alloc] initWithInt: 180 radix: bf_radix];
+			[self multiplyBy:oneEighty];
+		}
+		else if (mode == BF_gradians)
+		{
+			BigFloat *twoHundred = [[BigFloat alloc] initWithInt: 200 radix: bf_radix];
+			[self multiplyBy:twoHundred];
+		}
+		
+		[self divideBy: self.pi];
+	}
+}
+
 //
 // sinWithTrigMode
 //
@@ -2878,35 +2834,7 @@ BF_NormaliseNumbers
 	{
 		if (useInverse == NO)
 		{
-			if (pi_array[bf_radix] == nil)
-				[self calculatePi];
-
-			if (mode != BF_radians)
-			{
-				
-				if (mode == BF_degrees)
-				{
-					BigFloat *oneEighty = [[BigFloat alloc] initWithInt: 180 radix: bf_radix];
-					BigFloat *threeSixty = [[BigFloat alloc] initWithInt: 360 radix: bf_radix];
-					[self divideBy:oneEighty];
-					[self moduloBy:threeSixty];
-				}
-				else if (mode == BF_gradians)
-				{
-					BigFloat *twoHundred = [[BigFloat alloc] initWithInt: 200 radix: bf_radix];
-					BigFloat *fourHundred = [[BigFloat alloc] initWithInt: 400 radix: bf_radix];
-					[self divideBy:twoHundred];
-					[self moduloBy:fourHundred];
-				}
-				
-				[self multiplyBy: pi_array[bf_radix]];
-			}
-			else
-			{
-				BigFloat *two_pi = [[BigFloat alloc] initWithInt:2 radix: bf_radix];
-				[two_pi multiplyBy:pi_array[bf_radix]];
-				[self moduloBy:two_pi];
-			}
+			[self toRadiansFrom:mode];
 			
 			prevIteration = [zero copy];
 			factorial = [one copy];
@@ -3030,22 +2958,16 @@ BF_NormaliseNumbers
 			
 			if (arcsinShift == YES)
 			{
-				if (pi_array[bf_radix] == nil)
-					[self calculatePi];
 				[self multiplyBy:four];
 				[self appendDigit:L'-' useComplement:0];
-				[self add: pi_array[bf_radix]];
+				[self add: self.pi];
 				[self divideBy:two];
 			}
 			
-			if (signChange == YES)
-				[self appendDigit:L'-' useComplement:0];
-			
-			if (pi_array[bf_radix] == nil)
-				[self calculatePi];
+			if (signChange == YES) [self appendDigit:L'-' useComplement:0];
 
 			// Check that accurracy hasn't caused something illegal
-			[original assign: pi_array[bf_radix]];
+			[original assign: self.pi];
 			[original divideBy:two];
 			if ([self compareWith: original] == NSOrderedDescending)
 				[self assign: original];
@@ -3053,21 +2975,7 @@ BF_NormaliseNumbers
 			if ([self compareWith: original] == NSOrderedAscending)
 				[self assign: original];
 
-			if (mode != BF_radians)
-			{
-				if (mode == BF_degrees)
-				{
-					BigFloat *oneEighty = [[BigFloat alloc] initWithInt: 180 radix: bf_radix];
-					[self multiplyBy:oneEighty];
-				}
-				else if (mode == BF_gradians)
-				{
-					BigFloat *twoHundred = [[BigFloat alloc] initWithInt: 200 radix: bf_radix];
-					[self multiplyBy:twoHundred];
-				}
-		
-				[self divideBy: pi_array[bf_radix]];
-			}
+			[self radiansToMode:mode];
 		}
 
 	}
@@ -3132,35 +3040,7 @@ BF_NormaliseNumbers
 	{
 		if (useInverse == NO)
 		{
-			if (pi_array[bf_radix] == nil)
-				[self calculatePi];
-
-			if (mode != BF_radians)
-			{
-				
-				if (mode == BF_degrees)
-				{
-					BigFloat *oneEighty = [[BigFloat alloc] initWithInt: 180 radix: bf_radix];
-					BigFloat *threeSixty = [[BigFloat alloc] initWithInt: 360 radix: bf_radix];
-					[self divideBy:oneEighty];
-					[self moduloBy:threeSixty];
-				}
-				else if (mode == BF_gradians)
-				{
-					BigFloat *twoHundred = [[BigFloat alloc] initWithInt: 200 radix: bf_radix];
-					BigFloat *fourHundred = [[BigFloat alloc] initWithInt: 400 radix: bf_radix];
-					[self divideBy:twoHundred];
-					[self moduloBy:fourHundred];
-				}
-				
-				[self multiplyBy: pi_array[bf_radix]];
-			}
-			else
-			{
-				BigFloat *two_pi = [[BigFloat alloc] initWithInt:2 radix: bf_radix];
-				[two_pi multiplyBy:pi_array[bf_radix]];
-				[self moduloBy:two_pi];
-			}
+			[self toRadiansFrom:mode];
 			
 			prevIteration = [zero copy];
 			factorial = [one copy];
@@ -3229,30 +3109,12 @@ BF_NormaliseNumbers
 			// arccos = π/2 - arcsin
 			original = [self copy];
 			[original sinWithTrigMode: BF_radians inv: YES hyp: NO];
-			if (pi_array[bf_radix] == nil)
-				[self calculatePi];
-			factorial = [pi_array[bf_radix] copy];
+			factorial = self.pi;
 			[factorial divideBy:two];
 			[factorial subtract: original];
 			
 			[self assign: factorial];
-			
-			if (mode != BF_radians)
-			{
-				if (mode == BF_degrees)
-				{
-					BigFloat *oneEighty = [[BigFloat alloc] initWithInt: 180 radix: bf_radix];
-					[self multiplyBy:oneEighty];
-				}
-				else if (mode == BF_gradians)
-				{
-					BigFloat *twoHundred = [[BigFloat alloc] initWithInt: 200 radix: bf_radix];
-					[self multiplyBy:twoHundred];
-				}
-		
-				[self divideBy: pi_array[bf_radix]];
-			}
-			
+			[self radiansToMode:mode];
 		}
 	}
 	else	// hyperbolic cosine
@@ -3318,35 +3180,7 @@ BF_NormaliseNumbers
 	{
 		if (useInverse == NO)
 		{
-			if (pi_array[bf_radix] == nil)
-				[self calculatePi];
-
-			if (mode != BF_radians)
-			{
-				
-				if (mode == BF_degrees)
-				{
-					BigFloat *oneEighty = [[BigFloat alloc] initWithInt: 180 radix: bf_radix];
-					BigFloat *threeSixty = [[BigFloat alloc] initWithInt: 360 radix: bf_radix];
-					[self divideBy:oneEighty];
-					[self moduloBy:threeSixty];
-				}
-				else if (mode == BF_gradians)
-				{
-					BigFloat *twoHundred = [[BigFloat alloc] initWithInt: 200 radix: bf_radix];
-					BigFloat *fourHundred = [[BigFloat alloc] initWithInt: 400 radix: bf_radix];
-					[self divideBy:twoHundred];
-					[self moduloBy:fourHundred];
-				}
-				
-				[self multiplyBy: pi_array[bf_radix]];
-			}
-			else
-			{
-				BigFloat *two_pi = [[BigFloat alloc] initWithInt:2 radix: bf_radix];
-				[two_pi multiplyBy:pi_array[bf_radix]];
-				[self moduloBy:two_pi];
-			}
+			[self toRadiansFrom:mode];
 			
 			original = [self copy];
 			[self sinWithTrigMode:BF_radians inv:NO hyp:NO];
@@ -3387,11 +3221,8 @@ BF_NormaliseNumbers
 			}
 			else
 			{
-				if (pi_array[bf_radix] == nil)
-					[self calculatePi];
-	
 				// tan-1(1) = pi/4
-				[self assign:pi_array[bf_radix]];
+				[self assign:self.pi];
 				[self divideBy:two];
 				[self divideBy:two];
 				path = 4;
@@ -3427,11 +3258,9 @@ BF_NormaliseNumbers
 			else if (path != 4) // inverse tangent for |x| >= 1
 			{
 				// arctan = ((x>=1) * -1)π/2 - 1/x + 1/(3x^3) - 1/(5x^5) +...
-				if (pi_array[bf_radix] == nil)
-					[self calculatePi];
 	
 				// generate the (+/-) π/2
-				[self assign:pi_array[bf_radix]];
+				[self assign:self.pi];
 				[self divideBy:two];
 				if (path == 3)
 					[self appendDigit:L'-' useComplement:0];
@@ -3472,24 +3301,7 @@ BF_NormaliseNumbers
 				prevIteration = [self copy];
 			}
 			
-			if (mode != BF_radians)
-			{
-				if (mode == BF_degrees)
-				{
-					BigFloat *oneEighty = [[BigFloat alloc] initWithInt: 180 radix: bf_radix];
-					[self multiplyBy:oneEighty];
-				}
-				else if (mode == BF_gradians)
-				{
-					BigFloat *twoHundred = [[BigFloat alloc] initWithInt: 200 radix: bf_radix];
-					[self multiplyBy:twoHundred];
-				}
-				
-				if (pi_array[bf_radix] == nil)
-					[self calculatePi];
-				
-				[self divideBy: pi_array[bf_radix]];
-			}
+			[self radiansToMode:mode];
 
 		}
 	}
@@ -3877,6 +3689,7 @@ BF_NormaliseNumbers
 //		}
 //		[self assign:gam];
 //	}
+	
 }
 
 - (void)preComplement:(int)complement withNumber:(BigFloat *)number {
@@ -4764,7 +4577,7 @@ BF_NormaliseNumbers
 		
 		complementNumber = [[BigFloat alloc] initWithMantissa:complementBits exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
 		mantissaNumber = [complementNumber copy];
-		BF_AssignValues(mantissaNumber->bf_array, values);
+		BF_CopyValues(mantissaNumber->bf_array, values);
 		
 		carryBits = 0;
 		while

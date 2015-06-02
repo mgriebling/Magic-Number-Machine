@@ -235,7 +235,7 @@
 {
 	NSPoint caretPoint = [super getCaretPoint];
 	
-	if ((op == eOp || op == tenOp) && child == nil)
+	if ((op == eOp || op == tenOp || op == twoOp) && child == nil)
 	{
 		caretPoint.y += 16.0 * [Expression scaleWithLevel:pathValidAt];
 	}

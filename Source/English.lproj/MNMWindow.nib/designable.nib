@@ -199,7 +199,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="611" height="454"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="1312">
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" id="1312">
                         <rect key="frame" x="0.0" y="236" width="612" height="219"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="pvs-CR-Vh0">
@@ -216,7 +216,7 @@
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="2860">
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="2860">
                             <rect key="frame" x="1" y="182" width="610" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>

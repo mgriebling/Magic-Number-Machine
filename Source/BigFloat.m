@@ -790,10 +790,11 @@ BF_NormaliseNumbers
 // initWithString
 //
 // The most requested constructor for those numbers that don't fit in 15 digits.
+// BTW: I'll go with the Swift convention and use a 'p' exponent for radices other than 10.
 //
 - (instancetype)initWithString:(NSString *)newValue radix:(unsigned short)newRadix {
 	// Mike - created this primarily for the constants
-	NSString *separators = newRadix == 10 ? @"eE" : @"";
+	NSString *separators = newRadix == 10 ? @"eE" : @"p";
 	NSString *digits = [@"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ" substringToIndex:newRadix];
 	NSCharacterSet *validDigits = [NSCharacterSet characterSetWithCharactersInString:digits];
 	NSCharacterSet *signChars = [NSCharacterSet characterSetWithCharactersInString:@"+-"];
@@ -3876,8 +3877,6 @@ BF_NormaliseNumbers
 //		}
 //		[self assign:gam];
 //	}
-	
-	
 }
 
 //

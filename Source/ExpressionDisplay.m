@@ -20,6 +20,8 @@
 // compiling of the result with the expression.
 //
 
+#define DEFAULT_HEIGHT (217)		// default expression height -- shouldn't be hard-coded
+
 @implementation ExpressionDisplay
 
 - (BOOL)allowsVibrancy {
@@ -82,7 +84,7 @@ NSBezierPath* GetResultPath(Expression* expression)
 	
 	// Move the expression into its vertical position
 	translateTransform = [NSAffineTransform transform];
-	[translateTransform translateXBy:0.0 yBy:5.0];
+	[translateTransform translateXBy:0.0 yBy:15.0];			// yBy:5.0  Adjust for scroll bar - Mike
 	[resultPath transformUsingAffineTransform:translateTransform];
 	
 	return resultPath;
@@ -179,7 +181,7 @@ NSBezierPath* GetResultPath(Expression* expression)
 	if (![expressionPath isEmpty])
 	{
 		NSAffineTransform	*transform = [NSAffineTransform transform];
-		double	scale = (frameRect.size.height / 104.0); // 104.0 is the default height
+		double	scale = (frameRect.size.height / DEFAULT_HEIGHT); // 104.0 is the default height
 
 		expressionBounds = [expressionPath bounds];
 		
@@ -275,7 +277,7 @@ NSBezierPath* GetResultPath(Expression* expression)
 		NSRect	bounds = [expressionPath bounds];
 		
 		[path appendBezierPath:expressionPath];
-		[transform scaleXBy:104.0 / visibleSize.height yBy:-104.0 / visibleSize.height];
+		[transform scaleXBy:DEFAULT_HEIGHT / visibleSize.height yBy:-DEFAULT_HEIGHT / visibleSize.height];
 		[transform
 			translateXBy:-bounds.origin.x
 			yBy:-bounds.size.height - bounds.origin.y

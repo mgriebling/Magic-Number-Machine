@@ -145,6 +145,19 @@ static NSArray *constantsDataRows = nil;
 	return font;
 }
 
+// This one is for iOS
+//func appendString(string: String, withSize size: CGFloat) {
+//	var unichars = [UniChar](string.utf16)
+//	var glyphs = [CGGlyph](count: unichars.count, repeatedValue: 0)
+//	let font = CTFontCreateWithName("HelveticaNeue", size, nil)
+//	let gotGlyphs = CTFontGetGlyphsForCharacters(font, &unichars, &glyphs, unichars.count)
+//	if gotGlyphs {
+//		let cgpath = CTFontCreatePathForGlyph(font, glyphs[0], nil)
+//		let path = UIBezierPath(CGPath: cgpath)
+//		println(path)
+//	}
+//}
+
 + (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(NSInteger)superscript withOffset:(CGFloat)offsetx {
 	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
 	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];

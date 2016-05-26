@@ -337,7 +337,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = C955661C092DB998003B8FED /* Build configuration list for PBXProject "Magic Number Machine" */;
 			compatibilityVersion = "Xcode 6.3";
@@ -484,6 +484,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattgallagher.magicnumbermachine;
 				PRODUCT_NAME = "Magic Number Machine";
 				SECTORDER_FLAGS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
@@ -523,6 +524,7 @@
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattgallagher.magicnumbermachine;
 				PRODUCT_NAME = "Magic Number Machine";
 				SECTORDER_FLAGS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
@@ -558,6 +560,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattgallagher.magicnumbermachine;
 				PRODUCT_NAME = "Magic Number Machine";
 				SECTORDER_FLAGS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
@@ -573,7 +576,9 @@
 		C955661D092DB998003B8FED /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Development;

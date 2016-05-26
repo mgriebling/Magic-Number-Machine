@@ -58,6 +58,7 @@
 	BOOL			isBoundsValid;
 	BOOL			valueValid;
 }
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithParent:(Expression*)newParent andManager:(DataManager*)newManager NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
 - (void)encodeWithCoder:(NSCoder *)coder;

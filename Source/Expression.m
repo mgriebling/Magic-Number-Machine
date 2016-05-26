@@ -46,6 +46,14 @@
 //
 @implementation Expression
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
+
 //
 // initWithParent
 //

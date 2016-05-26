@@ -21,10 +21,10 @@ typedef id (^CallBackType)(id param);
 
 @interface CallBack : NSObject {
 	id	callBackObject;
-//	SEL	callBackMethod;
 	CallBackType callBackMethod;
 }
 
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithObject:(id)object method:(CallBackType)method NS_DESIGNATED_INITIALIZER;
 - (void)dealloc;
 + (instancetype)callBack:(id)object method:(CallBackType)method;

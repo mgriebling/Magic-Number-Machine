@@ -412,7 +412,7 @@
 //
 - (IBAction)precisionCancel:(id)sender
 {
-	[NSApp stopModal];
+    [mainWindow endSheet:[sender window] returnCode:NSModalResponseCancel];
 }
 
 //
@@ -479,7 +479,7 @@
 	
 	[dataManager updateLengthLimit];	// dennis
 	
-	[NSApp stopModal];
+    [mainWindow endSheet:[sender window] returnCode:NSModalResponseCancel];
 }
 
 //
@@ -492,6 +492,7 @@
 	BOOL		shift = [dataManager getShift];
 	BOOL 		option = [dataManager getOption];
 	NSWindow	*sheet;
+    NSWindow    *targetWindow = [self window];
 	
 	if (option)
 	{
@@ -509,10 +510,11 @@
 		[dispValue setIntValue: [dataManager getDefaultDigitsFromPref]]; // dennis
 	}
 
-	[NSApp beginSheet:sheet modalForWindow:mainWindow modalDelegate:nil didEndSelector:nil contextInfo:nil];
-	[NSApp runModalForWindow:sheet];
-	[NSApp endSheet:sheet];
-	[sheet orderOut:self];
+    [targetWindow beginSheet:sheet completionHandler:nil];
+//	[NSApp beginSheet:sheet modalForWindow:mainWindow modalDelegate:nil didEndSelector:nil contextInfo:nil];
+//	[NSApp runModalForWindow:sheet];
+//	[NSApp endSheet:sheet];
+//	[sheet orderOut:self];
 	
 	// The modal sheet can mess with our shift/option key detection. Clear them here.
 //	[dataManager shiftIsPressed:NO];

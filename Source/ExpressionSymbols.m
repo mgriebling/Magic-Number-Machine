@@ -174,7 +174,7 @@ static NSArray *constantsDataRows = nil;
 	NSFont *font = [ExpressionSymbols getDisplayFontWithSize:size];
 	[text setAttributedString: [[NSAttributedString alloc] initWithString:symbol attributes:@{NSFontAttributeName:font}]];
 	[path moveToPoint:NSMakePoint(offsetx, offsety)];
-	numGlyphs = [layoutManager numberOfGlyphs];
+	numGlyphs = (int)[layoutManager numberOfGlyphs];
 	glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
 	for (j = 0; j < numGlyphs; j++) {
 		glyphs[j] = [layoutManager glyphAtIndex:j];

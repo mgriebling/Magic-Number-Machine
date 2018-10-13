@@ -28,7 +28,7 @@
 {
 	BigCFloat *a = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
 	BigCFloat *averagex = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
-	BigCFloat *n = [BigCFloat bigFloatWithInt:[values count] / 2 radix:[dataManager getRadix]];
+	BigCFloat *n = [BigCFloat bigFloatWithInt:(int)[values count] / 2 radix:[dataManager getRadix]];
 	BigCFloat *m = [self mfromrankregressiononx:values];
 	BigCFloat *b = [self bfromrankregressiononx:values];
 	int			i;
@@ -54,7 +54,7 @@
 {
 	BigCFloat *a = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
 	BigCFloat *averagex = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
-	BigCFloat *n = [BigCFloat bigFloatWithInt:[values count] / 2 radix:[dataManager getRadix]];
+	BigCFloat *n = [BigCFloat bigFloatWithInt:(int)[values count] / 2 radix:[dataManager getRadix]];
 	BigCFloat *m = [self mfromrankregressionony:values];
 	BigCFloat *b = [self bfromrankregressionony:values];
 	int			i;
@@ -80,7 +80,7 @@
 {
 	BigCFloat *averagey = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
 	BigCFloat *averagex = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
-	BigCFloat *n = [BigCFloat bigFloatWithInt:[values count] / 2 radix:[dataManager getRadix]];
+	BigCFloat *n = [BigCFloat bigFloatWithInt:(int)[values count] / 2 radix:[dataManager getRadix]];
 	BigCFloat *m = [self bfromrankregressiononx:values];
 	int			i;
 
@@ -111,7 +111,7 @@
 {
 	BigCFloat *averagey = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
 	BigCFloat *averagex = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
-	BigCFloat *n = [BigCFloat bigFloatWithInt:[values count] / 2 radix:[dataManager getRadix]];
+	BigCFloat *n = [BigCFloat bigFloatWithInt:(int)[values count] / 2 radix:[dataManager getRadix]];
 	BigCFloat *m = [self mfromrankregressionony:values];
 	int			i;
 
@@ -264,7 +264,7 @@
 	if (one == two)
 		return;
 	
-	numRows = [values count] / numColumns;
+	numRows = (int)[values count] / numColumns;
 	
 	for (i = 0; i < numColumns; i++)
 	{
@@ -566,7 +566,7 @@
 {
 	BigCFloat	*sum;
 	BigCFloat	*total;
-	int			numValues = [values count];
+	int			numValues = (int)[values count];
 	int			i;
 	
 	sum = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
@@ -619,9 +619,9 @@
 	BigCFloat *sumy = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
 	BigCFloat *sum_of_products = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
 	BigCFloat *product = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
-	BigCFloat *n = [BigCFloat bigFloatWithInt:[values count] / 2 radix:[dataManager getRadix]];
-	BigCFloat *numerator = [BigCFloat bigFloatWithInt:[values count] radix:[dataManager getRadix]];
-	BigCFloat *denominator = [BigCFloat bigFloatWithInt:[values count] radix:[dataManager getRadix]];
+	BigCFloat *n = [BigCFloat bigFloatWithInt:(int)[values count] / 2 radix:[dataManager getRadix]];
+	BigCFloat *numerator = [BigCFloat bigFloatWithInt:(int)[values count] radix:[dataManager getRadix]];
+	BigCFloat *denominator = [BigCFloat bigFloatWithInt:(int)[values count] radix:[dataManager getRadix]];
 	int			i;
 	
 	for (i = 0; i < [values count] / 2; i++)
@@ -710,9 +710,9 @@
 	BigCFloat *sumy = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
 	BigCFloat *sum_of_products = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
 	BigCFloat *product = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
-	BigCFloat *n = [BigCFloat bigFloatWithInt:[values count] / 2 radix:[dataManager getRadix]];
-	BigCFloat *numerator = [BigCFloat bigFloatWithInt:[values count] radix:[dataManager getRadix]];
-	BigCFloat *denominator = [BigCFloat bigFloatWithInt:[values count] radix:[dataManager getRadix]];
+	BigCFloat *n = [BigCFloat bigFloatWithInt:(int)[values count] / 2 radix:[dataManager getRadix]];
+	BigCFloat *numerator = [BigCFloat bigFloatWithInt:(int)[values count] radix:[dataManager getRadix]];
+	BigCFloat *denominator = [BigCFloat bigFloatWithInt:(int)[values count] radix:[dataManager getRadix]];
 	int			i;
 	
 	for (i = 0; i < [values count] / 2; i++)
@@ -843,7 +843,7 @@
 	{
 		[values addObject:zero];
 	}
-	numRows = [values count] / numColumns;
+	numRows = (int)[values count] / numColumns;
 	
 	*columns = numColumns;
 	*rows = numRows;
@@ -901,7 +901,7 @@
 	
 	mean = [self mean:values];
 	
-	term1 = [BigCFloat bigFloatWithInt:[values count] - 1 radix:[dataManager getRadix]];
+	term1 = [BigCFloat bigFloatWithInt:(int)[values count] - 1 radix:[dataManager getRadix]];
 	[term1 inverse];
 	
 	term3 = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];

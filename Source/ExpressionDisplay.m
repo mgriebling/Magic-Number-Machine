@@ -327,7 +327,7 @@ NSBezierPath* GetResultPath(Expression* expression)
 - (void)setFrame:(NSRect)frameRect
 {
 	NSRect  resultBounds = NSZeroRect;
-	double  heightScale = frameRect.size.height / _frame.size.height;
+    double  heightScale = frameRect.size.height / frameRect.size.height;   // _frame.size.height;
 	
 	// We don't want this call to setFrame to actually do any rendering
 	updateBlocked = true;

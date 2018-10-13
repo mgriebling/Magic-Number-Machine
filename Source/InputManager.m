@@ -46,7 +46,7 @@
 - (IBAction)binaryOpPressed:(id)sender
 {
 	Expression	*inputPoint;
-	int			buttonTag = [sender tag];
+	int			buttonTag = (int)[sender tag];
 	
 	[dataManager ensureInputWithValue:YES];
 	inputPoint = [dataManager getInputPoint];
@@ -154,7 +154,7 @@
 								   digits:[defaultDigits intValue] 
 							  significant:[defaultSignificant intValue] 
 									fixed:[defaultFixed intValue] 
-								  display:[[defaultDisplay selectedCell] tag]];
+								  display:(int)[[defaultDisplay selectedCell] tag]];
 	
 	[dataManager updateLengthLimit];
 	[NSApp stopModal];
@@ -242,7 +242,7 @@
 	[dataManager ensureInputWithValue:NO];
 	inputPoint = [dataManager getInputPoint];
 	
-	[inputPoint appendDigit:[sender tag]];
+	[inputPoint appendDigit:(int)[sender tag]];
 	[dataManager valueChanged];
 }
 
@@ -390,7 +390,7 @@
 - (IBAction)postOpPressed:(id)sender
 {
 	Expression		*inputPoint;
-	int					buttonTag = [sender tag];
+	int					buttonTag = (int)[sender tag];
 	
 	[dataManager ensureInputWithValue:YES];
 	inputPoint = [dataManager getInputPoint];
@@ -546,7 +546,7 @@
 - (IBAction)preOpPressed:(id)sender
 {
 	Expression	*inputPoint;
-	int			buttonTag = [sender tag];
+	int			buttonTag = (int)[sender tag];
 	
 	[dataManager ensureInputWithValue:YES];
 	inputPoint = [dataManager getInputPoint];

@@ -68,7 +68,7 @@
 
 - (int)getDefaultRadixFromPref
 {
-	return [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultRadix"];
+	return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"defaultRadix"];
 }
 
 - (void)setDefaultComplement:(int)bits
@@ -79,7 +79,7 @@
 
 - (int)getDefaultComplementFromPref
 {
-	return [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultComplement"];
+	return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"defaultComplement"];
 }
 
 - (void)setDefaultDisplayType:(int)displayType
@@ -90,7 +90,7 @@
 
 - (int)getDefaultDisplayTypeFromPref
 {
-	return [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultDisplayType"];
+	return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"defaultDisplayType"];
 }
 
 - (void)setDefaultDigits:(int)digits
@@ -101,7 +101,7 @@
 
 - (int)getDefaultDigitsFromPref
 {
-	return [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultDigits"];
+	return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"defaultDigits"];
 }
 
 - (void)setDefaultSignificant:(int)significant
@@ -112,7 +112,7 @@
 
 - (int)getDefaultSignificantFromPref
 {
-	return [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultSignificant"];
+	return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"defaultSignificant"];
 }
 
 - (void)setDefaultFixed:(int)fixed
@@ -123,7 +123,7 @@
 
 - (int)getDefaultFixedFromPref
 {
-	return [[NSUserDefaults standardUserDefaults] integerForKey:@"defaultFixed"];
+	return (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"defaultFixed"];
 }
 
 - (void)setDefaultThousandsSeparator:(BOOL)isUsed
@@ -146,10 +146,11 @@
 	[fileManager createDirectoryAtURL:file withIntermediateDirectories:YES attributes:nil error:&error];
 	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
 	NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData];
-	[fileData writeToURL:file options:nil error:&error];
-	if (error) {
-		NSLog(@"Write error: %@", error);
-	}
+    [fileData writeToURL:file atomically:YES];
+//    [fileData writeToURL:file error:&error];
+//    if (error) {
+//        NSLog(@"Write error: %@", error);
+//    }
 }
 
 - (History *)getHistoryDataFromPref {
@@ -867,7 +868,7 @@
 	}
 	NSRange full = NSMakeRange(0, string.length);
 	NSMutableAttributedString *result = [[NSMutableAttributedString alloc] initWithString:string];
-	[result setAlignment:kCTTextAlignmentCenter range:full];
+    [result setAlignment:NSTextAlignmentCenter range:full];   //kCTTextAlignmentCenter range:full];
 	[result addAttribute:NSKernAttributeName value:@-0.5 range:full];
 	[result addAttribute:NSBaselineOffsetAttributeName value:baseOffset range:full];
 	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getDisplayFontWithSize:16] range:full];

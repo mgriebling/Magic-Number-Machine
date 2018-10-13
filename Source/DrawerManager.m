@@ -150,7 +150,7 @@
 	
 	while ([arrayDataTableView numberOfColumns] > numArrayColumns)
 	{
-		int numberOfColumns = [arrayDataTableView numberOfColumns];
+		int numberOfColumns = (int)[arrayDataTableView numberOfColumns];
 		column = [arrayDataTableView tableColumnWithIdentifier:[NSString stringWithFormat:@"%d", numberOfColumns - 1]];
 		[arrayDataTableView removeTableColumn:column];
 	}
@@ -362,7 +362,7 @@
 	
 	[dataManager ensureInputWithValue:NO];
 	inputPoint = [dataManager getInputPoint];
-	[inputPoint constantPressed:[sender clickedRow]];
+	[inputPoint constantPressed:(int)[sender clickedRow]];
 
 	[dataManager valueChanged];
 }
@@ -425,39 +425,39 @@
 {
 	if ([aTableView isEqualTo:arrayDataTableView])
 	{
-		return ([[dataManager arrayData] count] + (numArrayColumns - 1)) / numArrayColumns;
+		return (int)([[dataManager arrayData] count] + (numArrayColumns - 1)) / numArrayColumns;
 	}
 	else if ([aTableView isEqualTo:arrayDataFunctionsTableView])
 	{
-		return [arrayDataFunctionRows count];
+		return (int)[arrayDataFunctionRows count];
 	}
 	else if ([aTableView isEqualTo:constantsTableView])
 	{
-		return [[ExpressionSymbols getConstants] count]; 
+		return (int)[[ExpressionSymbols getConstants] count];
 	}
 	else if ([aTableView isEqualTo:dataTableView])
 	{
-		return [[dataManager data] count];
+		return (int)[[dataManager data] count];
 	}
 	else if ([aTableView isEqualTo:dataFunctionsTableView])
 	{
-		return [dataFunctionRows count];
+		return (int)[dataFunctionRows count];
 	}
 	else if ([aTableView isEqualTo:data2DTableView])
 	{
-		return ([[dataManager data2D] count] + 1) / 2;
+		return (int)([[dataManager data2D] count] + 1) / 2;
 	}
 	else if ([aTableView isEqualTo:data2DFunctionsTableView])
 	{
-		return [data2DFunctionRows count];
+		return (int)[data2DFunctionRows count];
 	}
 	else if ([aTableView isEqualTo:historyTableView])
 	{
-		return [[dataManager history] count];
+		return (int)[[dataManager history] count];
 	}
 	else if ([aTableView isEqualTo:radixTableView])
 	{
-		return [radixDataRows count];
+		return (int)[radixDataRows count];
 	}
 	else
 	{
@@ -565,7 +565,7 @@
 {
 	if ([aTableView isEqualTo:arrayDataTableView])
 	{
-		int count = [[dataManager arrayData] count];
+		int count = (int)[[dataManager arrayData] count];
 		int column = [[aTableColumn identifier] intValue];
 		BigCFloat *object;
 		

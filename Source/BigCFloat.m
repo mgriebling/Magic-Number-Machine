@@ -107,7 +107,7 @@
 		if ([bcf_imaginary radix] != bf_radix)
 			[bcf_imaginary convertToRadix:bf_radix];
 		
-		bcf_has_imaginary = [imaginaryPart isZero];
+		bcf_has_imaginary = ![imaginaryPart isZero];
 		
 	}
 	return self;

@@ -362,7 +362,7 @@
 		else
 		{
 			userPointState = 1;
-			postPoint = [(NSString*)splitString[1] length];
+			postPoint = (int)[(NSString*)splitString[1] length];
 			
 			if (fixedPlaces != 0)
 			{
@@ -399,7 +399,7 @@
 			else
 			{
 				imaginaryPointState = 1;
-				postImaginaryPoint = [(NSString*)splitString[1] length];
+				postImaginaryPoint = (int)[(NSString*)splitString[1] length];
 			
 				if (fixedPlaces != 0)
 				{
@@ -451,7 +451,7 @@
 			splitString = [mantissa componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
 			if ([splitString count] > 1)
 			{
-				extraZeros = postPoint - [(NSString*)splitString[1] length];
+				extraZeros = postPoint - (int)[(NSString*)splitString[1] length];
 			}
 			else
 			{
@@ -495,7 +495,7 @@
 			splitString = [imaginary componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
 			if ([splitString count] > 1)
 			{
-				extraZeros = postImaginaryPoint - [(NSString*)splitString[1] length];
+				extraZeros = postImaginaryPoint - (int)[(NSString*)splitString[1] length];
 			}
 			else
 			{
@@ -556,7 +556,7 @@
 	  attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:size]}
 	  ]
 	 ];
-	numGlyphs = [layoutManager numberOfGlyphs];
+	numGlyphs = (int)[layoutManager numberOfGlyphs];
 	if (numGlyphs > 0)
 	{
 		glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
@@ -587,7 +587,7 @@
 	  attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:12]}
 	  ]
 	 ];
-	numGlyphs = [layoutManager numberOfGlyphs];
+	numGlyphs = (int)[layoutManager numberOfGlyphs];
 	if (numGlyphs > 0)
 	{
 		glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
@@ -682,7 +682,7 @@
 		else
 		{
 			userPointState = 1;
-			postPoint = [(NSString*)splitString[1] length];
+			postPoint = (int)[(NSString*)splitString[1] length];
 			
 			if (fixedPlaces != 0)
 			{
@@ -714,7 +714,7 @@
 			else
 			{
 				imaginaryPointState = 1;
-				postImaginaryPoint = [(NSString*)splitString[1] length];
+				postImaginaryPoint = (int)[(NSString*)splitString[1] length];
 			
 				if (fixedPlaces != 0)
 				{
@@ -765,7 +765,7 @@
 			splitString = [mantissa componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
 			if ([splitString count] > 1)
 			{
-				extraZeros = postPoint - [(NSString*)splitString[1] length];
+				extraZeros = postPoint - (int)[(NSString*)splitString[1] length];
 			}
 			else
 			{
@@ -812,7 +812,7 @@
 			splitString = [imaginary componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
 			if ([splitString count] > 1)
 			{
-				extraZeros = postImaginaryPoint - [(NSString*)splitString[1] length];
+				extraZeros = postImaginaryPoint - (int)[(NSString*)splitString[1] length];
 			}
 			else
 			{
@@ -992,8 +992,8 @@
 			break;
 	}
 	NSRange range = [mantissa rangeOfString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
-	point = range.location;
-	if (range.location == NSNotFound) point = [mantissa length];
+	point = (int)range.location;
+	if (range.location == NSNotFound) point = (int)[mantissa length];
 	if (point >= 1 + distance)
 	{
 		point -= distance;

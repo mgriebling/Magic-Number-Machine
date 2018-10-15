@@ -1,0 +1,675 @@
+
+/* Class = "NSMenuItem"; title = "Mostrar todo"; ObjectID = "5"; */
+"5.title" = "Mostrar todo";
+
+/* Class = "NSMenuItem"; title = "Ventana"; ObjectID = "19"; */
+"19.title" = "Ventana";
+
+/* Class = "NSMenuItem"; title = "Minimizar"; ObjectID = "23"; */
+"23.title" = "Minimizar";
+
+/* Class = "NSMenu"; title = "Ventana"; ObjectID = "24"; */
+"24.title" = "Ventana";
+
+/* Class = "NSMenu"; title = "Interface"; ObjectID = "29"; */
+"29.title" = "Interface";
+
+/* Class = "NSMenuItem"; title = "Magic Number Machine"; ObjectID = "56"; */
+"56.title" = "Magic Number Machine";
+
+/* Class = "NSMenu"; title = "Magic Number Machine"; ObjectID = "57"; */
+"57.title" = "Magic Number Machine";
+
+/* Class = "NSMenuItem"; title = "Acerca de Magic Number Machine"; ObjectID = "58"; */
+"58.title" = "Acerca de Magic Number Machine";
+
+/* Class = "NSMenuItem"; title = "Ayuda"; ObjectID = "103"; */
+"103.title" = "Ayuda";
+
+/* Class = "NSMenu"; title = "Ayuda"; ObjectID = "106"; */
+"106.title" = "Ayuda";
+
+/* Class = "NSMenuItem"; title = "Ayuda de Magic Number Machine"; ObjectID = "111"; */
+"111.title" = "Ayuda de Magic Number Machine";
+
+/* Class = "NSMenu"; title = "Servicios"; ObjectID = "130"; */
+"130.title" = "Servicios";
+
+/* Class = "NSMenuItem"; title = "Servicios"; ObjectID = "131"; */
+"131.title" = "Servicios";
+
+/* Class = "NSMenuItem"; title = "Ocultar Magic Number Machine"; ObjectID = "134"; */
+"134.title" = "Ocultar Magic Number Machine";
+
+/* Class = "NSMenuItem"; title = "Salir de Magic Number Machine"; ObjectID = "136"; */
+"136.title" = "Salir de Magic Number Machine";
+
+/* Class = "NSMenuItem"; title = "Ocultar otros"; ObjectID = "145"; */
+"145.title" = "Ocultar otros";
+
+/* Class = "NSMenuItem"; title = "Mostrar todo"; ObjectID = "150"; */
+"150.title" = "Mostrar todo";
+
+/* Class = "NSMenuItem"; title = "Buscar..."; ObjectID = "154"; */
+"154.title" = "Buscar...";
+
+/* Class = "NSMenuItem"; title = "Ir a la selección"; ObjectID = "155"; */
+"155.title" = "Ir a la selección";
+
+/* Class = "NSMenuItem"; title = "Copiar toda la expresión"; ObjectID = "157"; */
+"157.title" = "Copiar toda la expresión";
+
+/* Class = "NSMenuItem"; title = "Deshacer"; ObjectID = "158"; */
+"158.title" = "Deshacer";
+
+/* Class = "NSMenu"; title = "Buscar"; ObjectID = "159"; */
+"159.title" = "Buscar";
+
+/* Class = "NSMenuItem"; title = "Usar la selección para buscar"; ObjectID = "161"; */
+"161.title" = "Usar la selección para buscar";
+
+/* Class = "NSMenuItem"; title = "Buscar el anterior"; ObjectID = "162"; */
+"162.title" = "Buscar el anterior";
+
+/* Class = "NSMenuItem"; title = "Edición"; ObjectID = "163"; */
+"163.title" = "Edición";
+
+/* Class = "NSMenuItem"; title = "Borrar"; ObjectID = "164"; */
+"164.title" = "Borrar";
+
+/* Class = "NSMenuItem"; title = "Buscar el siguiente"; ObjectID = "167"; */
+"167.title" = "Buscar el siguiente";
+
+/* Class = "NSMenuItem"; title = "Buscar"; ObjectID = "168"; */
+"168.title" = "Buscar";
+
+/* Class = "NSMenu"; title = "Edición"; ObjectID = "169"; */
+"169.title" = "Edición";
+
+/* Class = "NSMenuItem"; title = "Pegar"; ObjectID = "171"; */
+"171.title" = "Pegar";
+
+/* Class = "NSMenuItem"; title = "Rehacer"; ObjectID = "173"; */
+"173.title" = "Rehacer";
+
+/* Class = "NSMenuItem"; title = "Ortografía"; ObjectID = "184"; */
+"184.title" = "Ortografía";
+
+/* Class = "NSMenu"; title = "Ortografía"; ObjectID = "185"; */
+"185.title" = "Ortografía";
+
+/* Class = "NSMenuItem"; title = "Corrector ortográfico..."; ObjectID = "187"; */
+"187.title" = "Corrector ortográfico...";
+
+/* Class = "NSMenuItem"; title = "Corregir sintaxis"; ObjectID = "189"; */
+"189.title" = "Corregir sintaxis";
+
+/* Class = "NSMenuItem"; title = "Corregir sintaxis mientras se escribe"; ObjectID = "191"; */
+"191.title" = "Corregir sintaxis mientras se escribe";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(Esc) Borra el número actual"; ObjectID = "235"; */
+"235.ibShadowedToolTip" = "(Esc) Borra el número actual";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(⌘⌫) Borra toda la expresión"; ObjectID = "252"; */
+"252.ibShadowedToolTip" = "(⌘⌫) Borra toda la expresión";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(.) Separador decimal"; ObjectID = "265"; */
+"265.ibShadowedToolTip" = "(.) Separador decimal";
+
+/* Class = "NSWindow"; title = "Magic Number Machine"; ObjectID = "270"; */
+"270.title" = "Magic Number Machine";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(Enter) Muestra el resultado"; ObjectID = "292"; */
+"292.ibShadowedToolTip" = "(Enter) Muestra el resultado";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(x) Añade exponente científico"; ObjectID = "311"; */
+"311.ibShadowedToolTip" = "(x) Añade exponente científico";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(⌘-) Cambiar el signo"; ObjectID = "313"; */
+"313.ibShadowedToolTip" = "(⌘-) Cambiar el signo";
+
+/* Class = "NSButton"; ibShadowedToolTip = "i - raíz cuadrada de -1"; ObjectID = "314"; */
+"314.ibShadowedToolTip" = "i - raíz cuadrada de -1";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(Delete) Borra una cifra o parte de la expresión"; ObjectID = "315"; */
+"315.ibShadowedToolTip" = "(Delete) Borra una cifra o parte de la expresión";
+
+/* Class = "NSTableColumn"; headerCell.title = "Historial de expresiones"; ObjectID = "692"; */
+"692.headerCell.title" = "Historial de expresiones";
+
+/* Class = "NSTableColumn"; headerCell.title = "Base"; ObjectID = "704"; */
+"704.headerCell.title" = "Base";
+
+/* Class = "NSTableColumn"; headerCell.title = "Base"; ObjectID = "706"; */
+"706.headerCell.title" = "Base";
+
+/* Class = "NSTableColumn"; headerCell.title = "Datos de la tabla"; ObjectID = "709"; */
+"709.headerCell.title" = "Datos de la tabla";
+
+/* Class = "NSTableColumn"; headerCell.title = "Aplicar función a los datos"; ObjectID = "727"; */
+"727.headerCell.title" = "Aplicar función a los datos";
+
+/* Class = "NSTableColumn"; headerCell.title = "Valores de X"; ObjectID = "746"; */
+"746.headerCell.title" = "Valores de X";
+
+/* Class = "NSTableColumn"; headerCell.title = "Valores de Y"; ObjectID = "747"; */
+"747.headerCell.title" = "Valores de Y";
+
+/* Class = "NSTableColumn"; headerCell.title = "Constantes"; ObjectID = "784"; */
+"784.headerCell.title" = "Constantes";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(p) Pi"; ObjectID = "789"; */
+"789.ibShadowedToolTip" = "(p) Pi";
+
+/* Class = "NSWindow"; title = "Precisión fija"; ObjectID = "857"; */
+"857.title" = "Precisión fija";
+
+/* Class = "NSWindow"; title = "Notación científica"; ObjectID = "884"; */
+"884.title" = "Notación científica";
+
+/* Class = "NSWindow"; title = "Número de cifras"; ObjectID = "890"; */
+"890.title" = "Número de cifras";
+
+/* Class = "NSTableColumn"; headerCell.title = "nº Bits"; ObjectID = "947"; */
+"947.headerCell.title" = "nº Bits";
+
+/* Class = "NSTableColumn"; headerCell.title = "Aplicar función a los datos"; ObjectID = "1316"; */
+"1316.headerCell.title" = "Aplicar función a los datos";
+
+/* Class = "NSTableColumn"; headerCell.title = "Aplicar función a los datos"; ObjectID = "1324"; */
+"1324.headerCell.title" = "Aplicar función a los datos";
+
+/* Class = "NSBox"; title = "Título"; ObjectID = "1339"; */
+"1339.title" = "Título";
+
+/* Class = "NSBox"; title = "Título"; ObjectID = "1341"; */
+"1341.title" = "Título";
+
+/* Class = "NSMenuItem"; title = "Copiar el resultado"; ObjectID = "1398"; */
+"1398.title" = "Copiar el resultado";
+
+/* Class = "NSTableColumn"; headerCell.title = "1"; ObjectID = "1446"; */
+"1446.headerCell.title" = "1";
+
+/* Class = "NSTableColumn"; headerCell.title = "2"; ObjectID = "1447"; */
+"1447.headerCell.title" = "2";
+
+/* Class = "NSTableColumn"; headerCell.title = "3"; ObjectID = "1448"; */
+"1448.headerCell.title" = "3";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(⌘N) Abre el registro de constantes"; ObjectID = "1475"; */
+"1475.ibShadowedToolTip" = "(⌘N) Abre el registro de constantes";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(⌘R) Abre el cuadro de base numérica"; ObjectID = "1477"; */
+"1477.ibShadowedToolTip" = "(⌘R) Abre el cuadro de base numérica";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(⌘Y) Abre el historial"; ObjectID = "1478"; */
+"1478.ibShadowedToolTip" = "(⌘Y) Abre el historial";
+
+/* Class = "NSBox"; title = "Caja"; ObjectID = "1479"; */
+"1479.title" = "Caja";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(⌘3) Abre la matriz"; ObjectID = "1480"; */
+"1480.ibShadowedToolTip" = "(⌘3) Abre la matriz";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(⌘2) Abre la tabla de 2D"; ObjectID = "1481"; */
+"1481.ibShadowedToolTip" = "(⌘2) Abre la tabla de 2D";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(⌘1) Abre la tabla"; ObjectID = "1482"; */
+"1482.ibShadowedToolTip" = "(⌘1) Abre la tabla";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(m) Resto de división (NO porcentaje)"; ObjectID = "1652"; */
+"1652.ibShadowedToolTip" = "(m) Resto de división (NO porcentaje)";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Paréntesis derecho"; ObjectID = "1655"; */
+"1655.ibShadowedToolTip" = "Paréntesis derecho";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(r) Magnitud compleja"; ObjectID = "1657"; */
+"1657.ibShadowedToolTip" = "(r) Magnitud compleja";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(k) Parte real"; ObjectID = "1658"; */
+"1658.ibShadowedToolTip" = "(k) Parte real";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(n) Permutaciones"; ObjectID = "1662"; */
+"1662.ibShadowedToolTip" = "(n) Permutaciones";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(l) Logaritmo natural"; ObjectID = "1664"; */
+"1664.ibShadowedToolTip" = "(l) Logaritmo natural";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(g) Resta 3 al exponente científico"; ObjectID = "1668"; */
+"1668.ibShadowedToolTip" = "(g) Resta 3 al exponente científico";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(q) Factorial"; ObjectID = "1669"; */
+"1669.ibShadowedToolTip" = "(q) Factorial";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(Alt) Activa las funciones azules"; ObjectID = "1671"; */
+"1671.ibShadowedToolTip" = "(Alt) Activa las funciones azules";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Paréntesis Izquierdo"; ObjectID = "1672"; */
+"1672.ibShadowedToolTip" = "Paréntesis Izquierdo";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(j) OR binario"; ObjectID = "1673"; */
+"1673.ibShadowedToolTip" = "(j) OR binario";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(o) Coseno"; ObjectID = "1674"; */
+"1674.ibShadowedToolTip" = "(o) Coseno";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(shift) Activa las funciones rojas"; ObjectID = "1676"; */
+"1676.ibShadowedToolTip" = "(shift) Activa las funciones rojas";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(v) Raíz cuadrada"; ObjectID = "1679"; */
+"1679.ibShadowedToolTip" = "(v) Raíz cuadrada";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(z) e elevado a"; ObjectID = "1680"; */
+"1680.ibShadowedToolTip" = "(z) e elevado a";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(espacio) Añade el resultado al cuaderno"; ObjectID = "1681"; */
+"1681.ibShadowedToolTip" = "(espacio) Añade el resultado al cuaderno";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(w) eleva al cuadrado"; ObjectID = "1683"; */
+"1683.ibShadowedToolTip" = "(w) eleva al cuadrado";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(⌘D) Precisión mostrada"; ObjectID = "1684"; */
+"1684.ibShadowedToolTip" = "(⌘D) Precisión mostrada";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(t) Tangente"; ObjectID = "1687"; */
+"1687.ibShadowedToolTip" = "(t) Tangente";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(h) AND binario"; ObjectID = "1691"; */
+"1691.ibShadowedToolTip" = "(h) AND binario";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(⌘T) Cambia el modo triginométrico"; ObjectID = "1692"; */
+"1692.ibShadowedToolTip" = "(⌘T) Cambia el modo triginométrico";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(y) elevado a"; ObjectID = "1693"; */
+"1693.ibShadowedToolTip" = "(y) elevado a";
+
+/* Class = "NSButton"; ibShadowedToolTip = "(s) Seno"; ObjectID = "1697"; */
+"1697.ibShadowedToolTip" = "(s) Seno";
+
+/* Class = "NSMenuItem"; title = "Preferencias..."; ObjectID = "1761"; */
+"1761.title" = "Preferencias...";
+
+/* Class = "NSWindow"; title = "Preferencias"; ObjectID = "1763"; */
+"1763.title" = "Preferencias";
+
+/* Class = "NSButtonCell"; title = "Defecto"; ObjectID = "1768"; */
+"1768.title" = "Defecto";
+
+/* Class = "NSButtonCell"; title = "Científica"; ObjectID = "1769"; */
+"1769.title" = "Científica";
+
+/* Class = "NSButtonCell"; title = "Cifras"; ObjectID = "1770"; */
+"1770.title" = "Cifras";
+
+/* Class = "NSMenuItem"; title = "Muestre los atajos del teclado"; ObjectID = "1976"; */
+"1976.title" = "Muestre los atajos del teclado";
+
+/* Class = "NSMenuItem"; title = "Archivo"; ObjectID = "2356"; */
+"2356.title" = "Archivo";
+
+/* Class = "NSMenu"; title = "Archivo"; ObjectID = "2357"; */
+"2357.title" = "Archivo";
+
+/* Class = "NSMenuItem"; title = "Exportar PDF..."; ObjectID = "2358"; */
+"2358.title" = "Exportar PDF...";
+
+/* Class = "NSTextFieldCell"; title = "_"; ObjectID = "2361"; */
+"2361.title" = "_";
+
+/* Class = "NSButtonCell"; title = "%"; ObjectID = "2362"; */
+"2362.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "not"; ObjectID = "2363"; */
+"2363.title" = "not";
+
+/* Class = "NSTextFieldCell"; title = "xor"; ObjectID = "2364"; */
+"2364.title" = "xor";
+
+/* Class = "NSButtonCell"; title = ")"; ObjectID = "2365"; */
+"2365.title" = ")";
+
+/* Class = "NSTextFieldCell"; title = "Rad"; ObjectID = "2366"; */
+"2366.title" = "Rad";
+
+/* Class = "NSButtonCell"; title = "abs"; ObjectID = "2367"; */
+"2367.title" = "abs";
+
+/* Class = "NSButtonCell"; title = "Re"; ObjectID = "2368"; */
+"2368.title" = "Re";
+
+/* Class = "NSTextFieldCell"; title = "∑(x)"; ObjectID = "2369"; */
+"2369.title" = "∑(x)";
+
+/* Class = "NSTextFieldCell"; title = "inv:"; ObjectID = "2370"; */
+"2370.title" = "inv:";
+
+/* Class = "NSTextFieldCell"; title = "Matriz"; ObjectID = "2371"; */
+"2371.title" = "Matriz";
+
+/* Class = "NSButtonCell"; title = "nPr"; ObjectID = "2372"; */
+"2372.title" = "nPr";
+
+/* Class = "NSTextFieldCell"; title = "inv:"; ObjectID = "2373"; */
+"2373.title" = "inv:";
+
+/* Class = "NSButtonCell"; title = "ln"; ObjectID = "2374"; */
+"2374.title" = "ln";
+
+/* Class = "NSTextFieldCell"; title = "hyp:"; ObjectID = "2375"; */
+"2375.title" = "hyp:";
+
+/* Class = "NSTextFieldCell"; title = "hyp:"; ObjectID = "2376"; */
+"2376.title" = "hyp:";
+
+/* Class = "NSTextFieldCell"; title = "hyp:"; ObjectID = "2377"; */
+"2377.title" = "hyp:";
+
+/* Class = "NSButtonCell"; title = "<3"; ObjectID = "2378"; */
+"2378.title" = "<3";
+
+/* Class = "NSButtonCell"; title = "x!"; ObjectID = "2379"; */
+"2379.title" = "x!";
+
+/* Class = "NSTextFieldCell"; title = "_"; ObjectID = "2380"; */
+"2380.title" = "_";
+
+/* Class = "NSButtonCell"; title = "Alt"; ObjectID = "2381"; */
+"2381.title" = "Alt";
+
+/* Class = "NSButtonCell"; title = "("; ObjectID = "2382"; */
+"2382.title" = "(";
+
+/* Class = "NSButtonCell"; title = "or"; ObjectID = "2383"; */
+"2383.title" = "or";
+
+/* Class = "NSButtonCell"; title = "cos"; ObjectID = "2384"; */
+"2384.title" = "cos";
+
+/* Class = "NSTextFieldCell"; title = "arg"; ObjectID = "2385"; */
+"2385.title" = "arg";
+
+/* Class = "NSButtonCell"; title = "Shft"; ObjectID = "2386"; */
+"2386.title" = "Shft";
+
+/* Class = "NSTextFieldCell"; title = "Grad"; ObjectID = "2387"; */
+"2387.title" = "Grad";
+
+/* Class = "NSTextFieldCell"; title = "Cie."; ObjectID = "2388"; */
+"2388.title" = "Cie.";
+
+/* Class = "NSButtonCell"; title = "√"; ObjectID = "2389"; */
+"2389.title" = "√";
+
+/* Class = "NSButtonCell"; title = "e^x"; ObjectID = "2390"; */
+"2390.title" = "e^x";
+
+/* Class = "NSButtonCell"; title = "Añadir al cuaderno"; ObjectID = "2391"; */
+"2391.title" = "Añadir al cuaderno";
+
+/* Class = "NSTextFieldCell"; title = "nCr"; ObjectID = "2392"; */
+"2392.title" = "nCr";
+
+/* Class = "NSButtonCell"; title = "x^2"; ObjectID = "2393"; */
+"2393.title" = "x^2";
+
+/* Class = "NSButtonCell"; title = "Most"; ObjectID = "2394"; */
+"2394.title" = "Most";
+
+/* Class = "NSTextFieldCell"; title = "log"; ObjectID = "2395"; */
+"2395.title" = "log";
+
+/* Class = "NSTextFieldCell"; title = "Img"; ObjectID = "2396"; */
+"2396.title" = "Img";
+
+/* Class = "NSButtonCell"; title = "tan"; ObjectID = "2397"; */
+"2397.title" = "tan";
+
+/* Class = "NSTextFieldCell"; title = "Redon."; ObjectID = "2398"; */
+"2398.title" = "Redon.";
+
+/* Class = "NSTextFieldCell"; title = "inv:"; ObjectID = "2399"; */
+"2399.title" = "inv:";
+
+/* Class = "NSTextFieldCell"; title = "Fijar"; ObjectID = "2400"; */
+"2400.title" = "Fijar";
+
+/* Class = "NSButtonCell"; title = "and"; ObjectID = "2401"; */
+"2401.title" = "and";
+
+/* Class = "NSButtonCell"; title = "Deg"; ObjectID = "2402"; */
+"2402.title" = "Deg";
+
+/* Class = "NSButtonCell"; title = "x^y"; ObjectID = "2403"; */
+"2403.title" = "x^y";
+
+/* Class = "NSTextFieldCell"; title = "2D"; ObjectID = "2404"; */
+"2404.title" = "2D";
+
+/* Class = "NSTextFieldCell"; title = "3>"; ObjectID = "2405"; */
+"2405.title" = "3>";
+
+/* Class = "NSTextFieldCell"; title = "10^x"; ObjectID = "2406"; */
+"2406.title" = "10^x";
+
+/* Class = "NSButtonCell"; title = "sin"; ObjectID = "2407"; */
+"2407.title" = "sin";
+
+/* Class = "NSTextFieldCell"; title = "x^-1"; ObjectID = "2408"; */
+"2408.title" = "x^-1";
+
+/* Class = "NSButtonCell"; title = "2"; ObjectID = "2409"; */
+"2409.title" = "2";
+
+/* Class = "NSButtonCell"; title = "D"; ObjectID = "2410"; */
+"2410.title" = "D";
+
+/* Class = "NSButtonCell"; title = "–"; ObjectID = "2411"; */
+"2411.title" = "–";
+
+/* Class = "NSButtonCell"; title = "1"; ObjectID = "2412"; */
+"2412.title" = "1";
+
+/* Class = "NSButtonCell"; title = "4"; ObjectID = "2413"; */
+"2413.title" = "4";
+
+/* Class = "NSButtonCell"; title = "F"; ObjectID = "2414"; */
+"2414.title" = "F";
+
+/* Class = "NSButtonCell"; title = "5"; ObjectID = "2415"; */
+"2415.title" = "5";
+
+/* Class = "NSButtonCell"; title = "C"; ObjectID = "2416"; */
+"2416.title" = "C";
+
+/* Class = "NSButtonCell"; title = "x"; ObjectID = "2417"; */
+"2417.title" = "x";
+
+/* Class = "NSButtonCell"; title = "+"; ObjectID = "2418"; */
+"2418.title" = "+";
+
+/* Class = "NSButtonCell"; title = "AC"; ObjectID = "2419"; */
+"2419.title" = "AC";
+
+/* Class = "NSButtonCell"; title = "÷"; ObjectID = "2420"; */
+"2420.title" = "÷";
+
+/* Class = "NSButtonCell"; title = "•"; ObjectID = "2421"; */
+"2421.title" = "•";
+
+/* Class = "NSButtonCell"; title = "3"; ObjectID = "2422"; */
+"2422.title" = "3";
+
+/* Class = "NSButtonCell"; title = "E"; ObjectID = "2423"; */
+"2423.title" = "E";
+
+/* Class = "NSButtonCell"; title = "="; ObjectID = "2424"; */
+"2424.title" = "=";
+
+/* Class = "NSButtonCell"; title = "C"; ObjectID = "2425"; */
+"2425.title" = "C";
+
+/* Class = "NSButtonCell"; title = "0"; ObjectID = "2426"; */
+"2426.title" = "0";
+
+/* Class = "NSButtonCell"; title = "6"; ObjectID = "2427"; */
+"2427.title" = "6";
+
+/* Class = "NSButtonCell"; title = "B"; ObjectID = "2428"; */
+"2428.title" = "B";
+
+/* Class = "NSButtonCell"; title = "7"; ObjectID = "2429"; */
+"2429.title" = "7";
+
+/* Class = "NSButtonCell"; title = "8"; ObjectID = "2430"; */
+"2430.title" = "8";
+
+/* Class = "NSButtonCell"; title = "9"; ObjectID = "2431"; */
+"2431.title" = "9";
+
+/* Class = "NSButtonCell"; title = "A"; ObjectID = "2432"; */
+"2432.title" = "A";
+
+/* Class = "NSButtonCell"; title = "EXP"; ObjectID = "2433"; */
+"2433.title" = "EXP";
+
+/* Class = "NSButtonCell"; title = "+/–"; ObjectID = "2434"; */
+"2434.title" = "+/–";
+
+/* Class = "NSButtonCell"; title = "i"; ObjectID = "2435"; */
+"2435.title" = "i";
+
+/* Class = "NSButtonCell"; title = "DEL"; ObjectID = "2436"; */
+"2436.title" = "DEL";
+
+/* Class = "NSButtonCell"; title = "π"; ObjectID = "2437"; */
+"2437.title" = "π";
+
+/* Class = "NSTextFieldCell"; title = "Precisión: 12 cifras"; ObjectID = "2438"; */
+"2438.title" = "Precisión: 12 cifras";
+
+/* Class = "NSTextFieldCell"; title = "Modo trig.: Grados"; ObjectID = "2439"; */
+"2439.title" = "Modo trig.: Grados";
+
+/* Class = "NSTextFieldCell"; title = "Base: Decimal\n"; ObjectID = "2440"; */
+"2440.title" = "Base: Decimal\n";
+
+/* Class = "NSButtonCell"; title = "Constantes"; ObjectID = "2441"; */
+"2441.title" = "Constantes";
+
+/* Class = "NSButtonCell"; title = "Base"; ObjectID = "2442"; */
+"2442.title" = "Base";
+
+/* Class = "NSButtonCell"; title = "Historial"; ObjectID = "2443"; */
+"2443.title" = "Historial";
+
+/* Class = "NSButtonCell"; title = "Matriz"; ObjectID = "2444"; */
+"2444.title" = "Matriz";
+
+/* Class = "NSButtonCell"; title = "Tabla 2D"; ObjectID = "2445"; */
+"2445.title" = "Tabla 2D";
+
+/* Class = "NSButtonCell"; title = "Tabla"; ObjectID = "2446"; */
+"2446.title" = "Tabla";
+
+/* Class = "NSButtonCell"; title = "Borrar historial"; ObjectID = "2447"; */
+"2447.title" = "Borrar historial";
+
+/* Class = "NSButtonCell"; title = "Aplicar función"; ObjectID = "2448"; */
+"2448.title" = "Aplicar función";
+
+/* Class = "NSButtonCell"; title = "Copiar el dato en la pantalla"; ObjectID = "2449"; */
+"2449.title" = "Copiar el dato en la pantalla";
+
+/* Class = "NSButtonCell"; title = "Borrarlo todo"; ObjectID = "2450"; */
+"2450.title" = "Borrarlo todo";
+
+/* Class = "NSButtonCell"; title = "Borrar el dato"; ObjectID = "2451"; */
+"2451.title" = "Borrar el dato";
+
+/* Class = "NSButtonCell"; title = "Borrarlo todo"; ObjectID = "2452"; */
+"2452.title" = "Borrarlo todo";
+
+/* Class = "NSButtonCell"; title = "Aplicar función"; ObjectID = "2453"; */
+"2453.title" = "Aplicar función";
+
+/* Class = "NSButtonCell"; title = "Borrar la fila"; ObjectID = "2454"; */
+"2454.title" = "Borrar la fila";
+
+/* Class = "NSTextFieldCell"; title = "3"; ObjectID = "2455"; */
+"2455.title" = "3";
+
+/* Class = "NSTextFieldCell"; title = "Columnas:"; ObjectID = "2456"; */
+"2456.title" = "Columnas:";
+
+/* Class = "NSButtonCell"; title = "Borrarlo todo"; ObjectID = "2457"; */
+"2457.title" = "Borrarlo todo";
+
+/* Class = "NSButtonCell"; title = "Aplicar función"; ObjectID = "2458"; */
+"2458.title" = "Aplicar función";
+
+/* Class = "NSButtonCell"; title = "Borrar la fila"; ObjectID = "2459"; */
+"2459.title" = "Borrar la fila";
+
+/* Class = "NSTextFieldCell"; title = "3"; ObjectID = "2460"; */
+"2460.title" = "3";
+
+/* Class = "NSTextFieldCell"; title = "Número fijo de cifras decimales:"; ObjectID = "2461"; */
+"2461.title" = "Número fijo de cifras decimales:";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "2462"; */
+"2462.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Cancelar"; ObjectID = "2463"; */
+"2463.title" = "Cancelar";
+
+/* Class = "NSButtonCell"; title = "Cancelar"; ObjectID = "2464"; */
+"2464.title" = "Cancelar";
+
+/* Class = "NSTextFieldCell"; title = "Número de cifras significativas:"; ObjectID = "2465"; */
+"2465.title" = "Número de cifras significativas:";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "2466"; */
+"2466.title" = "OK";
+
+/* Class = "NSTextFieldCell"; title = "3"; ObjectID = "2467"; */
+"2467.title" = "3";
+
+/* Class = "NSTextFieldCell"; title = "12"; ObjectID = "2468"; */
+"2468.title" = "12";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "2469"; */
+"2469.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Cancelar"; ObjectID = "2470"; */
+"2470.title" = "Cancelar";
+
+/* Class = "NSTextFieldCell"; title = "Número de cifras que se muestran:"; ObjectID = "2471"; */
+"2471.title" = "Número de cifras que se muestran:";
+
+/* Class = "NSButtonCell"; title = "Millares separados"; ObjectID = "2472"; */
+"2472.title" = "Millares separados";
+
+/* Class = "NSTextFieldCell"; title = "Exhibición del defecto:"; ObjectID = "2473"; */
+"2473.title" = "Exhibición del defecto:";
+
+/* Class = "NSTextFieldCell"; title = "Agrupar:"; ObjectID = "2474"; */
+"2474.title" = "Agrupar:";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "2475"; */
+"2475.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Cancelar"; ObjectID = "2476"; */
+"2476.title" = "Cancelar";
+
+/* Class = "NSTextFieldCell"; title = "cifras"; ObjectID = "2480"; */
+"2480.title" = "cifras";
+
+/* Class = "NSTextFieldCell"; title = "cifras significativas"; ObjectID = "2481"; */
+"2481.title" = "cifras significativas";
+
+/* Class = "NSTextFieldCell"; title = "cifras decimales"; ObjectID = "2482"; */
+"2482.title" = "cifras decimales";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "2483"; */
+"2483.title" = "Radio";

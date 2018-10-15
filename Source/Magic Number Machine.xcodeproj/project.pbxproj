@@ -12,6 +12,7 @@
 		2F69479A1B17B60A0012C173 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6947981B17B60A0012C173 /* History.m */; };
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
+		47DECF2D2174B33E004018C2 /* MNMWindow-German.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47DECF2C2174B33E004018C2 /* MNMWindow-German.strings */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -62,6 +63,8 @@
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
 		47B96FD71B13372E0064FEEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		47DECF232174B1D5004018C2 /* de */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = de; path = de.lproj/MNMWindow.nib; sourceTree = "<group>"; };
+		47DECF2C2174B33E004018C2 /* MNMWindow-German.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = "MNMWindow-German.strings"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Magic Number Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic Number Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C900A87105588DFA00809D76 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputManager.h; sourceTree = "<group>"; };
@@ -120,10 +123,6 @@
 		C956BF2C05E8C099002D425F /* Spanish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Spanish; path = Spanish.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C956BF2E05E8C0DB002D425F /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C956BF2F05E8C0FF002D425F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C95D1E480F536BED00851908 /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/MNMWindow.nib; sourceTree = "<group>"; };
-		C95D1E4B0F536BF700851908 /* German */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = German; path = German.lproj/MNMWindow.nib; sourceTree = "<group>"; };
-		C95D1E4C0F536C0800851908 /* Italian */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Italian; path = Italian.lproj/MNMWindow.nib; sourceTree = "<group>"; };
-		C95D1E4D0F536C1100851908 /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Spanish; path = Spanish.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		C95D1E4E0F536C3C00851908 /* Italian */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Italian; path = Italian.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C95D1E4F0F536C4300851908 /* Italian */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Italian; path = Italian.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C9640D8005D5F28200FCE93E /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -184,6 +183,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				47DECF2C2174B33E004018C2 /* MNMWindow-German.strings */,
 			);
 			name = "Magic Number Machine XCode";
 			sourceTree = "<group>";
@@ -357,6 +357,8 @@
 				Spanish,
 				Italian,
 				Base,
+				de,
+				fr,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Magic Number Machine XCode */;
 			projectDirPath = "";
@@ -381,6 +383,7 @@
 				C900A92705588FB000809D76 /* Magic_Number_Machine_Source_Code.html in Resources */,
 				C900A92805588FB000809D76 /* top_level_design.png in Resources */,
 				C900A92A05588FC400809D76 /* Icon.icns in Resources */,
+				47DECF2D2174B33E004018C2 /* MNMWindow-German.strings in Resources */,
 				C956BF2D05E8C099002D425F /* Localizable.strings in Resources */,
 				C93A20C50624459300F3A43C /* key_shortcuts.png in Resources */,
 				2F6947931B1771FC0012C173 /* Media.xcassets in Resources */,
@@ -452,11 +455,8 @@
 		C95D1E430F536BC000851908 /* MNMWindow.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C95D1E480F536BED00851908 /* French */,
-				C95D1E4B0F536BF700851908 /* German */,
-				C95D1E4C0F536C0800851908 /* Italian */,
-				C95D1E4D0F536C1100851908 /* Spanish */,
 				475F2C72217272C000D8EB2E /* Base */,
+				47DECF232174B1D5004018C2 /* de */,
 			);
 			name = MNMWindow.nib;
 			sourceTree = "<group>";

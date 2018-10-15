@@ -338,6 +338,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					8D1107260486CEB800E47090 = {
+						DevelopmentTeam = 6389FT2N69;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = C955661C092DB998003B8FED /* Build configuration list for PBXProject "Magic Number Machine" */;
 			compatibilityVersion = "Xcode 6.3";
@@ -463,8 +469,11 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 6389FT2N69;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_TRIGRAPHS = NO;
@@ -483,8 +492,9 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattgallagher.magicnumbermachine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspirations.magicnumbermachine;
 				PRODUCT_NAME = "Magic Number Machine";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -503,8 +513,11 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 6389FT2N69;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -521,8 +534,9 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattgallagher.magicnumbermachine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspirations.magicnumbermachine;
 				PRODUCT_NAME = "Magic Number Machine";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
 				WARNING_CFLAGS = (
@@ -540,7 +554,10 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6389FT2N69;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -557,8 +574,9 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mattgallagher.magicnumbermachine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspirations.magicnumbermachine;
 				PRODUCT_NAME = "Magic Number Machine";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
 				WARNING_CFLAGS = (

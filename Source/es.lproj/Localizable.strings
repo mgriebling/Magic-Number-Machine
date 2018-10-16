@@ -1,0 +1,10 @@
+"Not a number" = "No un número";
+"Value Exceeds Precision" = "El valor excede la precisión.";
+"Precision: %d digits" = "Precisión: %d cifras";
+"Precision: %d significant figures" = "Precisión: %d figuras significativas";
+"Precision: %d point places" = "Precisión: %d point places";
+"Precision: %d-bit 2's Complement" = "Precisión: %d-bit 2's Complement";
+"Radix: %d" = "Base: %d";
+"Degrees" = "Grados";
+"Radians" = "Radianes";
+"Gradians" = "Graduados";

@@ -60,6 +60,7 @@
 		2F6947971B17B60A0012C173 /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
 		2F6947981B17B60A0012C173 /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
 		2FFE8D3221750F320007FF5C /* de */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = de; path = de.lproj/MNMWindow.nib; sourceTree = "<group>"; };
+		2FFFC40221763B5E0033F70D /* es */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = es; path = es.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Magic Number Machine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine_Prefix.pch"; sourceTree = "<group>"; };
 		475F2C72217272C000D8EB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
@@ -120,8 +121,8 @@
 		C900A92105588FB000809D76 /* top_level_design.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_level_design.png; sourceTree = "<group>"; };
 		C900A92905588FC400809D76 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		C93A20C40624459300F3A43C /* key_shortcuts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key_shortcuts.png; sourceTree = "<group>"; };
-		C93BBCCF072FDBEA005E4AAD /* Spanish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Spanish; path = Spanish.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C956BF2C05E8C099002D425F /* Spanish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Spanish; path = Spanish.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C93BBCCF072FDBEA005E4AAD /* Spanish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Spanish; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C956BF2C05E8C099002D425F /* Spanish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Spanish; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C956BF2E05E8C0DB002D425F /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = French; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C956BF2F05E8C0FF002D425F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C95D1E4E0F536C3C00851908 /* Italian */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Italian; path = Italian.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -360,6 +361,7 @@
 				Base,
 				de,
 				fr,
+				es,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Magic Number Machine XCode */;
 			projectDirPath = "";
@@ -459,6 +461,7 @@
 				475F2C72217272C000D8EB2E /* Base */,
 				2FFE8D3221750F320007FF5C /* de */,
 				2F2F67A621761E4E00B7BAAE /* fr */,
+				2FFFC40221763B5E0033F70D /* es */,
 			);
 			name = MNMWindow.nib;
 			sourceTree = "<group>";

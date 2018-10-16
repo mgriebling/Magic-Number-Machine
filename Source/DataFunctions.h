@@ -48,5 +48,6 @@
 - (id)sum:(NSMutableArray *)values;
 - (id)variance:(NSMutableArray *)values;
 - (id)zero:(NSMutableArray *)values;
+- (id)inverse:(NSMutableArray *)values;
 
 @end

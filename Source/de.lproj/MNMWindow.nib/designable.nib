@@ -533,7 +533,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="DEL" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="8" inset="2" id="2798">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="20" name="HelveticaNeue-Light"/>
+                                        <font key="font" size="19" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent"></string>
                                     </buttonCell>
                                     <connections>
@@ -1401,11 +1401,11 @@ IA
             </connections>
         </drawer>
         <customView id="710" userLabel="DataContentView" customClass="DrawerView">
-            <rect key="frame" x="0.0" y="0.0" width="216" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="235" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" id="855">
-                    <rect key="frame" x="5" y="133" width="112" height="32"/>
+                    <rect key="frame" x="5" y="133" width="121" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Wert löschen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2813">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1416,7 +1416,7 @@ IA
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" id="853">
-                    <rect key="frame" x="110" y="133" width="100" height="32"/>
+                    <rect key="frame" x="121" y="133" width="108" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Alles löschen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2812">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1427,7 +1427,7 @@ IA
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" id="852">
-                    <rect key="frame" x="5" y="158" width="205" height="32"/>
+                    <rect key="frame" x="5" y="158" width="224" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Wert in die Anzeige kopieren" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2811">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1438,7 +1438,7 @@ IA
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" id="850">
-                    <rect key="frame" x="5" y="0.0" width="205" height="32"/>
+                    <rect key="frame" x="5" y="0.0" width="224" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Funktion anwenden" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2810">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1449,20 +1449,20 @@ IA
                     </connections>
                 </button>
                 <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="725">
-                    <rect key="frame" x="0.0" y="35" width="216" height="97"/>
+                    <rect key="frame" x="0.0" y="35" width="235" height="97"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" id="pBU-nm-zv8">
-                        <rect key="frame" x="1" y="0.0" width="214" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="1" y="0.0" width="233" height="96"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2872" id="726">
-                                <rect key="frame" x="0.0" y="0.0" width="214" height="79"/>
+                                <rect key="frame" x="0.0" y="0.0" width="233" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn editable="NO" width="211" minWidth="40" maxWidth="1000" id="727">
+                                    <tableColumn editable="NO" width="230" minWidth="40" maxWidth="1000" id="727">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Funktion auf Werte anwenden">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1487,29 +1487,29 @@ IA
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2873">
-                        <rect key="frame" x="199" y="17" width="16" height="79"/>
+                        <rect key="frame" x="218" y="17" width="16" height="79"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <tableHeaderView key="headerView" id="2872">
-                        <rect key="frame" x="0.0" y="0.0" width="214" height="17"/>
+                        <rect key="frame" x="0.0" y="0.0" width="233" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
                 <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="711">
-                    <rect key="frame" x="0.0" y="192" width="216" height="288"/>
+                    <rect key="frame" x="0.0" y="192" width="235" height="288"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="Ycv-5X-pK5">
-                        <rect key="frame" x="1" y="0.0" width="214" height="287"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="1" y="0.0" width="233" height="287"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2869" id="712">
-                                <rect key="frame" x="0.0" y="0.0" width="214" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="233" height="270"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn editable="NO" width="211.2080078125" minWidth="107.70800018310547" maxWidth="1000" id="709">
+                                    <tableColumn editable="NO" width="230.2080078125" minWidth="107.70800018310547" maxWidth="1000" id="709">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Werte">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1534,11 +1534,11 @@ IA
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2870">
-                        <rect key="frame" x="199" y="17" width="16" height="270"/>
+                        <rect key="frame" x="218" y="17" width="16" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <tableHeaderView key="headerView" id="2869">
-                        <rect key="frame" x="0.0" y="0.0" width="214" height="17"/>
+                        <rect key="frame" x="0.0" y="0.0" width="233" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
@@ -1546,6 +1546,7 @@ IA
             <connections>
                 <outlet property="dataManager" destination="797" id="926"/>
             </connections>
+            <point key="canvasLocation" x="251.5" y="1179"/>
         </customView>
         <drawer preferredEdge="minX" trailingOffset="15" id="733" userLabel="Data2DDrawer">
             <size key="contentSize" width="260" height="308"/>
@@ -2041,7 +2042,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="868">
-                        <rect key="frame" x="116" y="20" width="84" height="32"/>
+                        <rect key="frame" x="99" y="20" width="101" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2825">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -2056,7 +2057,7 @@ Gw
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="38" y="609"/>
+            <point key="canvasLocation" x="38" y="608.5"/>
         </window>
         <window title="Wissenschaftliche Darstellung" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="884" userLabel="SciSettings" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES"/>
@@ -2107,7 +2108,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="885">
-                        <rect key="frame" x="116" y="20" width="84" height="32"/>
+                        <rect key="frame" x="105" y="20" width="95" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2826">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -2122,7 +2123,7 @@ Gw
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="769" y="379"/>
+            <point key="canvasLocation" x="769" y="378.5"/>
         </window>
         <window title="Anzahl Ziffern" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="890" userLabel="DispSettings" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES"/>
@@ -2173,7 +2174,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" id="895">
-                        <rect key="frame" x="116" y="20" width="84" height="32"/>
+                        <rect key="frame" x="98" y="20" width="102" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2832">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -2188,7 +2189,7 @@ Gw
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="343" y="173"/>
+            <point key="canvasLocation" x="343" y="172.5"/>
         </window>
         <customObject id="1450" userLabel="DataFunctions" customClass="DataFunctions">
             <connections>
@@ -2199,10 +2200,10 @@ Gw
         <window title="Einstellungen" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="1763" userLabel="PreferencesPanel" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="114" y="706" width="318" height="231"/>
+            <rect key="contentRect" x="114" y="706" width="336" height="231"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <view key="contentView" id="1762">
-                <rect key="frame" x="0.0" y="0.0" width="318" height="231"/>
+                <rect key="frame" x="0.0" y="0.0" width="336" height="231"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button id="1764">
@@ -2214,10 +2215,10 @@ Gw
                         </buttonCell>
                     </button>
                     <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="1766">
-                        <rect key="frame" x="18" y="58" width="96" height="58"/>
+                        <rect key="frame" x="18" y="58" width="127" height="58"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        <size key="cellSize" width="96" height="18"/>
+                        <size key="cellSize" width="127" height="18"/>
                         <size key="intercellSpacing" width="4" height="2"/>
                         <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="2845">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -2259,7 +2260,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" id="1774">
-                        <rect key="frame" x="14" y="12" width="78" height="32"/>
+                        <rect key="frame" x="14" y="12" width="96" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Speichern" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="2837">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -2272,22 +2273,8 @@ DQ
                             <action selector="commitPreferences:" target="678" id="1806"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="1775">
-                        <rect key="frame" x="92" y="12" width="78" height="32"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2838">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                            <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                        </buttonCell>
-                        <connections>
-                            <action selector="cancelPreferences:" target="678" id="1807"/>
-                        </connections>
-                    </button>
                     <textField verticalHuggingPriority="750" id="1781">
-                        <rect key="frame" x="125" y="97" width="42" height="19"/>
+                        <rect key="frame" x="154" y="97" width="42" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="2839">
                             <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0" negativeFormat="-0" localizesFormat="NO" hasThousandSeparators="NO" thousandSeparator="," id="1790">
@@ -2303,7 +2290,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="1782">
-                        <rect key="frame" x="125" y="77" width="42" height="19"/>
+                        <rect key="frame" x="154" y="77" width="42" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="2840">
                             <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0" negativeFormat="-0" localizesFormat="NO" hasThousandSeparators="NO" thousandSeparator="," id="1798">
@@ -2319,7 +2306,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="1783">
-                        <rect key="frame" x="125" y="57" width="42" height="19"/>
+                        <rect key="frame" x="154" y="57" width="42" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="2841">
                             <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0" negativeFormat="-0" localizesFormat="NO" hasThousandSeparators="NO" thousandSeparator="," id="1797">
@@ -2335,7 +2322,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="1787">
-                        <rect key="frame" x="181" y="99" width="114" height="17"/>
+                        <rect key="frame" x="203" y="99" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Ziffern" id="2842">
                             <font key="font" metaFont="system"/>
@@ -2344,7 +2331,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="1788">
-                        <rect key="frame" x="181" y="79" width="120" height="17"/>
+                        <rect key="frame" x="203" y="79" width="120" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="signifikante Stellen" id="2843">
                             <font key="font" metaFont="system"/>
@@ -2353,7 +2340,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="1789">
-                        <rect key="frame" x="181" y="57" width="114" height="17"/>
+                        <rect key="frame" x="203" y="57" width="127" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Nachkommastellen" id="2844">
                             <font key="font" metaFont="system"/>
@@ -2361,9 +2348,23 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" id="1775">
+                        <rect key="frame" x="110" y="12" width="107" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2838">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancelPreferences:" target="678" id="1807"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="779" y="111"/>
+            <point key="canvasLocation" x="788" y="110.5"/>
         </window>
     </objects>
     <resources>

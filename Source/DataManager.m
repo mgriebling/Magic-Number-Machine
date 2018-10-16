@@ -278,7 +278,7 @@
 	{
 		switch (defaultDisplayType)
 		{
-			case 0:
+            case 0:
 				[precisionDisplay setStringValue:[NSString stringWithFormat:[[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Precision: %d digits" value:nil table:nil], defaultDigits]];
 				break;
 			case 1:

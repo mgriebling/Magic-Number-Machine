@@ -58,12 +58,12 @@
 		2F6947941B17B3EC0012C173 /* Magic Number Machine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine-Bridging-Header.h"; sourceTree = "<group>"; };
 		2F6947971B17B60A0012C173 /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
 		2F6947981B17B60A0012C173 /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
+		2FFE8D3221750F320007FF5C /* de */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = de; path = de.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Magic Number Machine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine_Prefix.pch"; sourceTree = "<group>"; };
 		475F2C72217272C000D8EB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
 		47B96FD71B13372E0064FEEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		47DECF232174B1D5004018C2 /* de */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = de; path = de.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		47DECF2C2174B33E004018C2 /* MNMWindow-German.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = "MNMWindow-German.strings"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Magic Number Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic Number Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,8 +126,8 @@
 		C95D1E4E0F536C3C00851908 /* Italian */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Italian; path = Italian.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C95D1E4F0F536C4300851908 /* Italian */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Italian; path = Italian.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C9640D8005D5F28200FCE93E /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C989F7CE072BE95C0050B4FF /* German */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C989F7D0072BE95C0050B4FF /* German */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C989F7CE072BE95C0050B4FF /* German */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = German; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C989F7D0072BE95C0050B4FF /* German */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = German; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,7 +340,7 @@
 				LastUpgradeCheck = 1000;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
-						DevelopmentTeam = 6389FT2N69;
+						DevelopmentTeam = 37VFB869JC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -456,7 +456,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				475F2C72217272C000D8EB2E /* Base */,
-				47DECF232174B1D5004018C2 /* de */,
+				2FFE8D3221750F320007FF5C /* de */,
 			);
 			name = MNMWindow.nib;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 6389FT2N69;
+				DEVELOPMENT_TEAM = 37VFB869JC;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_TRIGRAPHS = NO;
@@ -517,7 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = 6389FT2N69;
+				DEVELOPMENT_TEAM = 37VFB869JC;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -557,7 +557,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6389FT2N69;
+				DEVELOPMENT_TEAM = 37VFB869JC;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;

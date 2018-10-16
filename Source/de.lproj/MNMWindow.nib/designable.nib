@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +18,7 @@
                 <menuItem title="Magic Number Machine" id="56">
                     <menu key="submenu" title="Magic Number Machine" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About Magic Number Machine" id="58">
+                            <menuItem title="Über Magic Number Machine" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -26,7 +27,7 @@
                             <menuItem isSeparatorItem="YES" id="1760">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Preferences..." keyEquivalent="," id="1761">
+                            <menuItem title="Einstellungen..." keyEquivalent="," id="1761">
                                 <connections>
                                     <action selector="preferences:" target="678" id="1799"/>
                                 </connections>
@@ -34,23 +35,23 @@
                             <menuItem isSeparatorItem="YES" id="194">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Services" id="131">
-                                <menu key="submenu" title="Services" systemMenu="services" id="130"/>
+                            <menuItem title="Dienste" id="131">
+                                <menu key="submenu" title="Dienste" systemMenu="services" id="130"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide Magic Number Machine" keyEquivalent="h" id="134">
+                            <menuItem title="Magic Number Machine ausblenden" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-2" id="152"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Hide Others" id="145">
+                            <menuItem title="Andere ausblenden" id="145">
                                 <connections>
                                     <action selector="hideOtherApplications:" target="-2" id="146"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Show All" id="150">
+                            <menuItem title="Alle einblenden" id="150">
                                 <connections>
                                     <action selector="unhideAllApplications:" target="-2" id="153"/>
                                 </connections>
@@ -66,11 +67,11 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="File" id="2706">
+                <menuItem title="Ablage" id="2706">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="File" id="2707">
+                    <menu key="submenu" title="Ablage" id="2707">
                         <items>
-                            <menuItem title="Export to PDF..." keyEquivalent="s" id="2713">
+                            <menuItem title="Exportieren PDF..." keyEquivalent="s" id="2713">
                                 <connections>
                                     <action selector="exportToPDF:" target="797" id="2721"/>
                                 </connections>
@@ -78,15 +79,15 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Edit" id="163">
-                    <menu key="submenu" title="Edit" id="169">
+                <menuItem title="Bearbeiten" id="163">
+                    <menu key="submenu" title="Bearbeiten" id="169">
                         <items>
-                            <menuItem title="Undo" keyEquivalent="z" id="158">
+                            <menuItem title="Wiederrufen" keyEquivalent="z" id="158">
                                 <connections>
                                     <action selector="undo:" target="-1" id="180"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Redo" keyEquivalent="Z" id="173">
+                            <menuItem title="Wiederholen" keyEquivalent="Z" id="173">
                                 <connections>
                                     <action selector="redo:" target="-1" id="178"/>
                                 </connections>
@@ -94,22 +95,22 @@
                             <menuItem isSeparatorItem="YES" id="156">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Copy Full Expression" keyEquivalent="c" id="157">
+                            <menuItem title="Gesamten Ausdruck kopieren" keyEquivalent="c" id="157">
                                 <connections>
                                     <action selector="copy:" target="-1" id="181"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Copy Result" keyEquivalent="C" id="1398">
+                            <menuItem title="Ergebnis kopieren" keyEquivalent="C" id="1398">
                                 <connections>
                                     <action selector="copyResult:" target="-1" id="1400"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Paste" keyEquivalent="v" id="171">
+                            <menuItem title="Einsetzen" keyEquivalent="v" id="171">
                                 <connections>
                                     <action selector="paste:" target="-1" id="176"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Clear" id="164">
+                            <menuItem title="Löschen" id="164">
                                 <connections>
                                     <action selector="clearPressed:" target="678" id="1410"/>
                                 </connections>
@@ -117,31 +118,31 @@
                             <menuItem isSeparatorItem="YES" id="174">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Find" id="168">
-                                <menu key="submenu" title="Find" id="159">
+                            <menuItem title="Suchen" id="168">
+                                <menu key="submenu" title="Suchen" id="159">
                                     <items>
-                                        <menuItem title="Find..." keyEquivalent="f" id="154"/>
-                                        <menuItem title="Find Next" keyEquivalent="g" id="167"/>
-                                        <menuItem title="Find Previous" keyEquivalent="d" id="162"/>
-                                        <menuItem title="Use Selection for Find" keyEquivalent="e" id="161"/>
-                                        <menuItem title="Scroll to Selection" keyEquivalent="j" id="155"/>
+                                        <menuItem title="Suchen..." keyEquivalent="f" id="154"/>
+                                        <menuItem title="Weitersuchen (vorwärts)" keyEquivalent="g" id="167"/>
+                                        <menuItem title="Weitersuchen (rückwärts)" keyEquivalent="d" id="162"/>
+                                        <menuItem title="Auswahl suchen" keyEquivalent="e" id="161"/>
+                                        <menuItem title="Auswahl anzeigen" keyEquivalent="j" id="155"/>
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Spelling" id="184">
-                                <menu key="submenu" title="Spelling" id="185">
+                            <menuItem title="Rechtschreibung" id="184">
+                                <menu key="submenu" title="Rechtschreibung" id="185">
                                     <items>
-                                        <menuItem title="Spelling..." keyEquivalent=":" id="187">
+                                        <menuItem title="Rechtschreibung..." keyEquivalent=":" id="187">
                                             <connections>
                                                 <action selector="showGuessPanel:" target="-1" id="188"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Check Spelling" keyEquivalent=";" id="189">
+                                        <menuItem title="Rechtschreibprüfung" keyEquivalent=";" id="189">
                                             <connections>
                                                 <action selector="checkSpelling:" target="-1" id="190"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Check Spelling As You Type" id="191">
+                                        <menuItem title="Während der Texteingabe prüfen" id="191">
                                             <connections>
                                                 <action selector="toggleContinuousSpellChecking:" target="-1" id="192"/>
                                             </connections>
@@ -152,10 +153,10 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Window" id="19">
-                    <menu key="submenu" title="Window" systemMenu="window" id="24">
+                <menuItem title="Fenster" id="19">
+                    <menu key="submenu" title="Fenster" systemMenu="window" id="24">
                         <items>
-                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                            <menuItem title="Im Dock ablegen" keyEquivalent="m" id="23">
                                 <connections>
                                     <action selector="performMiniaturize:" target="-1" id="37"/>
                                 </connections>
@@ -163,7 +164,7 @@
                             <menuItem isSeparatorItem="YES" id="92">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Bring All to Front" id="5">
+                            <menuItem title="Alle nach vorne bringen" id="5">
                                 <connections>
                                     <action selector="arrangeInFront:" target="-1" id="39"/>
                                 </connections>
@@ -171,15 +172,15 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Help" id="103">
-                    <menu key="submenu" title="Help" id="106">
+                <menuItem title="Hilfe" id="103">
+                    <menu key="submenu" title="Hilfe" id="106">
                         <items>
-                            <menuItem title="Magic Number Machine Help" keyEquivalent="?" id="111">
+                            <menuItem title="Magic Number Machine Hilfe" keyEquivalent="?" id="111">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="122"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Show Keyboard Shortcuts" id="2161">
+                            <menuItem title="Zeigen Sie Tastaturabkürzungen" id="2161">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showKeyboardShortcuts:" target="678" id="2162"/>
@@ -191,7 +192,7 @@
             </items>
             <point key="canvasLocation" x="126" y="320"/>
         </menu>
-        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" frameAutosaveName="Main Window" animationBehavior="default" id="270" userLabel="Main Window" customClass="MainWindow">
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" frameAutosaveName="Main Window" animationBehavior="default" titlebarAppearsTransparent="YES" id="270" userLabel="Main Window" customClass="MainWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="281" y="634" width="611" height="454"/>
@@ -217,11 +218,11 @@
                                 </customView>
                             </subviews>
                         </clipView>
-                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="2860">
+                        <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="2860">
                             <rect key="frame" x="1" y="202" width="610" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="2861">
+                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2861">
                             <rect key="frame" x="-100" y="-100" width="15" height="217"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
@@ -281,7 +282,7 @@
                                         <action selector="binaryOpPressed:" target="678" id="836"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(Return) Display result." id="292">
+                                <button toolTip="(Return) Zeigt das Ergebnis an" id="292">
                                     <rect key="frame" x="135" y="1" width="88" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="=" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2786">
@@ -403,7 +404,7 @@ DQ
                                         <action selector="digitPressed:" target="678" id="817"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(Esc) Clear the current number" id="235">
+                                <button toolTip="(Esc) Löscht die aktuelle Zahl" id="235">
                                     <rect key="frame" x="179" y="157" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="C" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2778">
@@ -417,7 +418,7 @@ Gw
                                         <action selector="clearPressed:" target="678" id="831"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(clear) Clears the whole expression" tag="1234" id="252">
+                                <button toolTip="(clear) Löscht den gesamten Ausdruck" tag="1234" id="252">
                                     <rect key="frame" x="178" y="196" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="AC" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2781">
@@ -490,7 +491,7 @@ Gw
                                         <action selector="digitPressed:" target="678" id="812"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(x) Append scientific-notation-style exponent" tag="101" id="311">
+                                <button toolTip="(x) Fügt den Exponenten der wissenschaftlichen Darstellung an" tag="101" id="311">
                                     <rect key="frame" x="91" y="1" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="EE" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="101" inset="2" id="2795">
@@ -502,7 +503,7 @@ Gw
                                         <action selector="expPressed:" target="678" id="828"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌘-) Change the sign" tag="45" id="313">
+                                <button toolTip="(⌘-) Ändert das Vorzeichen" tag="45" id="313">
                                     <rect key="frame" x="179" y="79" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="⁺⁄₋" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="45" inset="2" id="2796">
@@ -515,7 +516,7 @@ Gw
                                         <action selector="digitPressed:" target="678" id="821"/>
                                     </connections>
                                 </button>
-                                <button toolTip="i - The square root of minus 1" tag="1" id="314">
+                                <button toolTip="i - Die Quadratwurzel von minus 1" tag="1" id="314">
                                     <rect key="frame" x="135" y="196" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="i" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2797">
@@ -527,7 +528,7 @@ Gw
                                         <action selector="valuePressed:" target="678" id="1371"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(Delete) Delete one digit or part of the expression" tag="8" id="315">
+                                <button toolTip="(Delete) Löscht eine Ziffer oder einen Teil des Ausdrucks" tag="8" id="315">
                                     <rect key="frame" x="179" y="118" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="DEL" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="8" inset="2" id="2798">
@@ -563,7 +564,7 @@ Gw
                                         <action selector="digitPressed:" target="678" id="807"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(.) Fractional Point" tag="46" id="265">
+                                <button toolTip="(,) Dezimalkomma" tag="46" id="265">
                                     <rect key="frame" x="47" y="1" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="•" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="46" inset="2" id="2783">
@@ -599,13 +600,13 @@ Gw
                                 <rect key="frame" x="-3" y="-4" width="116" height="246"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" id="fzj-Zi-k2p">
-                                    <rect key="frame" x="2" y="2" width="112" height="242"/>
+                                    <rect key="frame" x="3" y="3" width="110" height="240"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button toolTip="(⌘Y) Open the History Drawer" id="1478">
+                                        <button toolTip="(⌘Y) Das Fach &quot;Verlauf&quot; ein- oder ausblenden" id="1478">
                                             <rect key="frame" x="5" y="198" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <buttonCell key="cell" type="square" title="History" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2805">
+                                            <buttonCell key="cell" type="square" title="Verlauf" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2805">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="16" name="HelveticaNeue-Light"/>
                                                 <string key="keyEquivalent">y</string>
@@ -615,10 +616,10 @@ Gw
                                                 <action selector="toggleDrawer:" target="693" id="1485"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="(⌘R) Opens the Radix Drawer" tag="1" id="1477">
+                                        <button toolTip="(⌘R) Das Fach &quot;Basis&quot; ein- oder ausblenden" tag="1" id="1477">
                                             <rect key="frame" x="5" y="120" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <buttonCell key="cell" type="square" title="Radix" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2804">
+                                            <buttonCell key="cell" type="square" title="Basis" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2804">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="16" name="HelveticaNeue-Light"/>
                                                 <string key="keyEquivalent">r</string>
@@ -628,10 +629,10 @@ Gw
                                                 <action selector="toggleDrawer:" target="693" id="1487"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="(⌘2) Opens the 2D Data Drawer" tag="3" id="1481">
+                                        <button toolTip="(⌘2) Das Fach &quot;Werte 2D&quot; ein- oder ausblenden" tag="3" id="1481">
                                             <rect key="frame" x="5" y="42" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <buttonCell key="cell" type="square" title="Data 2D" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2807">
+                                            <buttonCell key="cell" type="square" title="Werte 2D" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2807">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="16" name="HelveticaNeue-Light"/>
                                                 <string key="keyEquivalent">2</string>
@@ -641,10 +642,10 @@ Gw
                                                 <action selector="toggleDrawer:" target="693" id="1489"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="(⌘1) Opens the Data Drawer" tag="2" id="1482">
+                                        <button toolTip="(⌘1) Das Fach &quot;Werte&quot; ein- oder ausblenden" tag="2" id="1482">
                                             <rect key="frame" x="5" y="81" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <buttonCell key="cell" type="square" title="Data" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2808">
+                                            <buttonCell key="cell" type="square" title="Werte" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2808">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="16" name="HelveticaNeue-Light"/>
                                                 <string key="keyEquivalent">1</string>
@@ -654,10 +655,10 @@ Gw
                                                 <action selector="toggleDrawer:" target="693" id="1488"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="(⌘N) Opens the Constants Drawer" tag="5" id="1475">
+                                        <button toolTip="(⌘N) Das Fach &quot;Konstanten&quot; ein- oder ausblenden" tag="5" id="1475">
                                             <rect key="frame" x="5" y="159" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <buttonCell key="cell" type="square" title="Constants" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="5" inset="2" id="2803">
+                                            <buttonCell key="cell" type="square" title="Konstanten" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="5" inset="2" id="2803">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="16" name="HelveticaNeue-Light"/>
                                                 <string key="keyEquivalent">n</string>
@@ -670,7 +671,7 @@ Gw
                                         <button toolTip="(⌘3) Opens the Array Data Drawer" tag="4" id="1480">
                                             <rect key="frame" x="5" y="3" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <buttonCell key="cell" type="square" title="Array Data" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="4" inset="2" id="2806">
+                                            <buttonCell key="cell" type="square" title="Tabelle" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="4" inset="2" id="2806">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" size="16" name="HelveticaNeue-Light"/>
                                                 <string key="keyEquivalent">3</string>
@@ -688,18 +689,16 @@ Gw
                     <textField verticalHuggingPriority="750" id="1383">
                         <rect key="frame" x="231" y="437" width="148" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="2802">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Basis: 10" id="2802">
                             <font key="font" metaFont="smallSystem"/>
-                            <string key="title">Radix: 10
-</string>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" id="1379">
-                        <rect key="frame" x="71" y="437" width="106" height="14"/>
+                        <rect key="frame" x="71" y="437" width="156" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Precision: 12 Digits" id="2800">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Genauigkeit: 12 Ziffern" id="2800">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" red="1" green="0.98823528999999999" blue="0.98823528999999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -708,7 +707,7 @@ Gw
                     <textField verticalHuggingPriority="750" id="1380">
                         <rect key="frame" x="507" y="437" width="99" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Degrees" id="2801">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Deg" id="2801">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -721,7 +720,7 @@ Gw
                             <rect key="frame" x="3" y="3" width="299" height="237"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button toolTip="Right Parenthesis" tag="1" id="1655">
+                                <button toolTip="Rechte Klammer" tag="1" id="1655">
                                     <rect key="frame" x="246" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title=")" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2727">
@@ -733,7 +732,7 @@ Gw
                                         <action selector="bracketPressed:" target="678" id="1723"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(r) Complex magnitude" tag="15" id="1657">
+                                <button toolTip="(r) Betrag magnitude" tag="15" id="1657">
                                     <rect key="frame" x="50" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="abs" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="15" inset="2" id="2729">
@@ -745,7 +744,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="1706"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(k) Real Part" tag="14" id="2919">
+                                <button toolTip="(k) Realteil" tag="14" id="2919">
                                     <rect key="frame" x="148" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Im" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="13" inset="2" id="2920">
@@ -757,7 +756,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="2921"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(n) Permutations" tag="112" id="1662">
+                                <button toolTip="(n) Permutationen" tag="112" id="1662">
                                     <rect key="frame" x="99" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="nPr" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="112" inset="2" id="2734">
@@ -781,7 +780,7 @@ Gw
                                         <action selector="binaryOpPressed:" target="678" id="2918"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(l) Natural Logarithm" tag="20" id="1664">
+                                <button toolTip="(l) Natürlicher Logarithmus" tag="20" id="1664">
                                     <rect key="frame" x="197" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="ln" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" inset="2" id="2736">
@@ -793,7 +792,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="1719"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(g) shift the exponent left" tag="-1" id="1668">
+                                <button toolTip="(g) Schiebt den Exponenten nach links" tag="-1" id="1668">
                                     <rect key="frame" x="50" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="&lt;3" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2740">
@@ -805,7 +804,7 @@ Gw
                                         <action selector="exponentShiftPressed:" target="678" id="1717"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(g) shift the exponent left" tag="1" id="2913">
+                                <button toolTip="(g) Schiebt den Exponenten nach links" tag="1" id="2913">
                                     <rect key="frame" x="50" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="&gt;3" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2914">
@@ -817,7 +816,7 @@ Gw
                                         <action selector="exponentShiftPressed:" target="678" id="2915"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(q) Factorial" tag="26" id="1669">
+                                <button toolTip="(q) Fakultät" tag="26" id="1669">
                                     <rect key="frame" x="1" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x!" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="26" inset="2" id="2741">
@@ -829,7 +828,7 @@ Gw
                                         <action selector="postOpPressed:" target="678" id="1710"/>
                                     </connections>
                                 </button>
-                                <button toolTip="Left Parenthesis" id="1672">
+                                <button toolTip="Linke Klammer" id="1672">
                                     <rect key="frame" x="197" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="(" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2744">
@@ -841,7 +840,7 @@ Gw
                                         <action selector="bracketPressed:" target="678" id="1722"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌥o) Hyperbolic Cosine" tag="8" id="1674">
+                                <button toolTip="(⌥o) Hyperbolic Cosinus" tag="8" id="1674">
                                     <rect key="frame" x="99" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="cosh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2746">
@@ -854,7 +853,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="1711"/>
                                     </connections>
                                 </button>
-                                <button identifier="squareRoot" toolTip="(v) Square Root" tag="21" id="1679">
+                                <button identifier="squareRoot" toolTip="(v) Quadratwurzel" tag="21" id="1679">
                                     <rect key="frame" x="197" y="198" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="2_x" imagePosition="overlaps" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2751">
@@ -892,7 +891,7 @@ Gw
                                         <action selector="binaryOpPressed:" target="678" id="2939"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(z) e, raised to the next number" tag="24" id="1680">
+                                <button toolTip="(z) e hoch die folgende Zahl" tag="24" id="1680">
                                     <rect key="frame" x="246" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="eˣ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="24" inset="2" id="2752">
@@ -904,7 +903,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="1720"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(l) Natural Logarithm" tag="19" id="2928">
+                                <button toolTip="(l) Natürlicher Logarithmus" tag="19" id="2928">
                                     <rect key="frame" x="197" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="log" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" inset="2" id="2931">
@@ -930,7 +929,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="2933"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(w) square the current number" tag="25" id="1683">
+                                <button toolTip="(w) Quadriert die aktuelle Zahl" tag="25" id="1683">
                                     <rect key="frame" x="246" y="198" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x²" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="25" inset="2" id="2755">
@@ -942,7 +941,7 @@ Gw
                                         <action selector="postOpPressed:" target="678" id="1712"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(w) square the current number" tag="27" id="2925">
+                                <button toolTip="(w) Quadriert die aktuelle Zahl" tag="27" id="2925">
                                     <rect key="frame" x="148" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="25" imageScaling="proportionallyDown" inset="2" id="2926">
@@ -967,7 +966,7 @@ Gw
                                         <action selector="postOpPressed:" target="678" id="2906"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌘D) Display Precision" id="1684">
+                                <button toolTip="(⌘D) Anzeigegenauigkeit" id="1684">
                                     <rect key="frame" x="99" y="198" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Disp" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2756">
@@ -993,7 +992,7 @@ Gw
                                         <action selector="shiftPressed:" target="678" id="2937"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌥t) Hyperboic Tangent" tag="9" id="1687">
+                                <button toolTip="(⌥t) Hyperbolic Tangens" tag="9" id="1687">
                                     <rect key="frame" x="148" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="tanh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2759">
@@ -1006,7 +1005,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="1715"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌘T) Change Trig. Mode" id="1692">
+                                <button toolTip="(⌘T) Winkelmodus ändern" id="1692">
                                     <rect key="frame" x="1" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Rad" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="2764">
@@ -1019,7 +1018,7 @@ Gw
                                         <action selector="trigModePressed:" target="678" id="1703"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌥w) raise to the next number" tag="94" id="1693">
+                                <button toolTip="(⌥w) Exponentiert mit der nächsten Zahl" tag="94" id="1693">
                                     <rect key="frame" x="246" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="xʸ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="94" inset="2" id="2765">
@@ -1032,7 +1031,7 @@ Gw
                                         <action selector="binaryOpPressed:" target="678" id="1716"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌥s) Hyperbolic Sine" tag="7" id="1697">
+                                <button toolTip="(⌥s) Hyperbolic Sinus" tag="7" id="1697">
                                     <rect key="frame" x="50" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="sinh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2769">
@@ -1045,7 +1044,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="1707"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(o) Cosine" tag="2" id="2895">
+                                <button toolTip="(o) Cosinus" tag="2" id="2895">
                                     <rect key="frame" x="99" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="cos" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2900">
@@ -1057,7 +1056,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="2901"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(t) Tangent" tag="3" id="2896">
+                                <button toolTip="(t) Tangens" tag="3" id="2896">
                                     <rect key="frame" x="148" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="tan" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2899">
@@ -1069,7 +1068,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="2902"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(s) Sine" tag="1" id="2897">
+                                <button toolTip="(s) Sinus" tag="1" id="2897">
                                     <rect key="frame" x="50" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="sin" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2898">
@@ -1081,7 +1080,7 @@ Gw
                                         <action selector="preOpPressed:" target="678" id="2903"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(j) binary OR" tag="111" id="1673">
+                                <button toolTip="(j) Binäres ODER" tag="111" id="1673">
                                     <rect key="frame" x="1" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="or" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="111" inset="2" id="2745">
@@ -1093,7 +1092,7 @@ Gw
                                         <action selector="binaryOpPressed:" target="678" id="1709"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(h) binary AND" tag="97" id="1691">
+                                <button toolTip="(h) Binäres UND" tag="97" id="1691">
                                     <rect key="frame" x="1" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="and" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="97" inset="2" id="2763">
@@ -1105,10 +1104,10 @@ Gw
                                         <action selector="binaryOpPressed:" target="678" id="1713"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(space) Adds the result to the Data" tag="40" id="1681">
+                                <button toolTip="(space) Fügt das Ergebnis zu den Werten hinzu" tag="40" id="1681">
                                     <rect key="frame" x="1" y="198" width="99" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" title="Add Data" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="40" inset="2" id="2753">
+                                    <buttonCell key="cell" type="square" title="Wert hinzu" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="40" inset="2" id="2753">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent" base64-UTF8="YES">
@@ -1119,7 +1118,7 @@ IA
                                         <action selector="addData:" target="797" id="1721"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(m) Modulo -- not percent" tag="37" id="1652">
+                                <button toolTip="(m) Modulo -- nicht Prozent" tag="37" id="1652">
                                     <rect key="frame" x="99" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="mod" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="2724">
@@ -1143,7 +1142,7 @@ IA
                                         <action selector="preOpPressed:" target="678" id="2938"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(k) Real Part" tag="13" id="1658">
+                                <button toolTip="(k) Realteil" tag="13" id="1658">
                                     <rect key="frame" x="148" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Re" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="13" inset="2" id="2730">
@@ -1166,7 +1165,7 @@ IA
                 <outlet property="delegate" destination="797" id="1457"/>
                 <outlet property="initialFirstResponder" destination="617" id="1810"/>
             </connections>
-            <point key="canvasLocation" x="195" y="942"/>
+            <point key="canvasLocation" x="242.5" y="632"/>
         </window>
         <customObject id="678" userLabel="InputManager" customClass="InputManager">
             <connections>
@@ -1216,7 +1215,7 @@ IA
                 <button verticalHuggingPriority="750" id="1408">
                     <rect key="frame" x="14" y="-3" width="188" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Clear History" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2809">
+                    <buttonCell key="cell" type="push" title="Verlauf löschen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2809">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1239,7 +1238,7 @@ IA
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn editable="NO" width="194.7080078125" minWidth="107.70800018310547" maxWidth="1000" id="692">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Expression History">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Vergangene Ausdrücke">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1259,11 +1258,11 @@ IA
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="2862">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="2862">
                         <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2864">
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2864">
                         <rect key="frame" x="199" y="17" width="16" height="434"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -1327,7 +1326,7 @@ IA
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn identifier="0" editable="NO" width="40" minWidth="40" maxWidth="1000" id="706">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Radix">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Basis">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1340,7 +1339,7 @@ IA
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                     </tableColumn>
                                     <tableColumn identifier="1" editable="NO" width="95.7919921875" minWidth="78.392997741699219" maxWidth="1000" id="704">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Number Base">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Bezeichnung">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1353,7 +1352,7 @@ IA
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                     </tableColumn>
                                     <tableColumn identifier="2" editable="NO" width="52.66400146484375" minWidth="33.66400146484375" maxWidth="1000" id="947">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="# Bits">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Bits">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -1373,11 +1372,11 @@ IA
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="2865">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="2865">
                         <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2867">
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2867">
                         <rect key="frame" x="199" y="17" width="16" height="462"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -1408,7 +1407,7 @@ IA
                 <button verticalHuggingPriority="750" id="855">
                     <rect key="frame" x="5" y="133" width="112" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Clear Value" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2813">
+                    <buttonCell key="cell" type="push" title="Wert löschen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2813">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1419,7 +1418,7 @@ IA
                 <button verticalHuggingPriority="750" id="853">
                     <rect key="frame" x="110" y="133" width="100" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Clear All" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2812">
+                    <buttonCell key="cell" type="push" title="Alles löschen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2812">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1430,7 +1429,7 @@ IA
                 <button verticalHuggingPriority="750" id="852">
                     <rect key="frame" x="5" y="158" width="205" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Copy Value to Display" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2811">
+                    <buttonCell key="cell" type="push" title="Wert in die Anzeige kopieren" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2811">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1441,7 +1440,7 @@ IA
                 <button verticalHuggingPriority="750" id="850">
                     <rect key="frame" x="5" y="0.0" width="205" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Apply Function" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2810">
+                    <buttonCell key="cell" type="push" title="Funktion anwenden" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2810">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1464,7 +1463,7 @@ IA
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn editable="NO" width="211" minWidth="40" maxWidth="1000" id="727">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Apply Function to Data Values">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Funktion auf Werte anwenden">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1483,11 +1482,11 @@ IA
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="2871">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="2871">
                         <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2873">
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2873">
                         <rect key="frame" x="199" y="17" width="16" height="79"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -1511,7 +1510,7 @@ IA
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn editable="NO" width="211.2080078125" minWidth="107.70800018310547" maxWidth="1000" id="709">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Data Values">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Werte">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1530,11 +1529,11 @@ IA
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="2868">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="2868">
                         <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2870">
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2870">
                         <rect key="frame" x="199" y="17" width="16" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -1564,7 +1563,7 @@ IA
                 <button verticalHuggingPriority="750" id="1321">
                     <rect key="frame" x="5" y="145" width="127" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Clear Row" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2816">
+                    <buttonCell key="cell" type="push" title="Zeile löschen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2816">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1587,7 +1586,7 @@ IA
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn width="255" minWidth="40" maxWidth="1000" id="1316">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Apply Function to Data Values">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Funktion auf Werte anwenden">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1606,11 +1605,11 @@ IA
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="2877">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="2877">
                         <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2879">
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2879">
                         <rect key="frame" x="243" y="17" width="16" height="89"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -1622,7 +1621,7 @@ IA
                 <button verticalHuggingPriority="750" id="1315">
                     <rect key="frame" x="5" y="1" width="249" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Apply Function" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2815">
+                    <buttonCell key="cell" type="push" title="Funktion anwenden" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2815">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1633,7 +1632,7 @@ IA
                 <button verticalHuggingPriority="750" id="1313">
                     <rect key="frame" x="126" y="145" width="128" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Clear All" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2814">
+                    <buttonCell key="cell" type="push" title="Alles löschen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2814">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1656,7 +1655,7 @@ IA
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn identifier="0" editable="NO" width="126" minWidth="10" maxWidth="1000" id="746">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="X Values">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="X-Werte">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1668,7 +1667,7 @@ IA
                                         </textFieldCell>
                                     </tableColumn>
                                     <tableColumn identifier="1" editable="NO" width="111.34199523925781" minWidth="53.341999053955078" maxWidth="1000" id="747">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Y Values">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Y-Werte">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -1686,11 +1685,11 @@ IA
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="2874">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="2874">
                         <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2876">
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2876">
                         <rect key="frame" x="243" y="17" width="16" height="281"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -1720,7 +1719,7 @@ IA
                 <button verticalHuggingPriority="750" id="1329">
                     <rect key="frame" x="5" y="117" width="131" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Clear Row" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2821">
+                    <buttonCell key="cell" type="push" title="Zeile löschen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2821">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1731,7 +1730,7 @@ IA
                 <button verticalHuggingPriority="750" id="1327">
                     <rect key="frame" x="5" y="0.0" width="250" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Apply Function" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2820">
+                    <buttonCell key="cell" type="push" title="Funktion anwenden" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2820">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1742,7 +1741,7 @@ IA
                 <button verticalHuggingPriority="750" id="1326">
                     <rect key="frame" x="131" y="117" width="124" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                    <buttonCell key="cell" type="push" title="Clear All" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2819">
+                    <buttonCell key="cell" type="push" title="Alles löschen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2819">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1765,7 +1764,7 @@ IA
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn editable="NO" width="239" minWidth="40" maxWidth="1000" id="1324">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Apply Function to Data Values">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Funktion auf Werte anwenden">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1784,11 +1783,11 @@ IA
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="2883">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="2883">
                         <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2885">
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2885">
                         <rect key="frame" x="243" y="17" width="16" height="63"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -1800,7 +1799,7 @@ IA
                 <textField verticalHuggingPriority="750" id="771">
                     <rect key="frame" x="46" y="454" width="68" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Columns:" id="2818">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Spalten:" id="2818">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1885,11 +1884,11 @@ IA
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="2880">
+                    <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="2880">
                         <rect key="frame" x="1" y="277" width="258" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2882">
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2882">
                         <rect key="frame" x="243" y="17" width="16" height="276"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -1931,7 +1930,7 @@ IA
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn width="238.53900146484375" minWidth="61.53900146484375" maxWidth="1000" id="784">
-                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Constants">
+                                        <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Konstanten">
                                             <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1951,11 +1950,11 @@ IA
                             </tableView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="2886">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="2886">
                         <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="2888">
+                    <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="2888">
                         <rect key="frame" x="243" y="17" width="16" height="462"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -1993,7 +1992,7 @@ IA
                 <outlet property="trigModeDisplay" destination="1380" id="1382"/>
             </connections>
         </customObject>
-        <window title="Fixed Precision" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="857" userLabel="FixSettings" customClass="NSPanel">
+        <window title="Feste Genauigkeit" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="857" userLabel="FixSettings" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="225" y="505" width="298" height="107"/>
@@ -2021,7 +2020,7 @@ IA
                     <textField verticalHuggingPriority="750" id="866">
                         <rect key="frame" x="17" y="68" width="212" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Fixed Number of Decimal Places:" id="2823">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Feste Anzahl Nachkommastellen:" id="2823">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2044,7 +2043,7 @@ DQ
                     <button verticalHuggingPriority="750" id="868">
                         <rect key="frame" x="116" y="20" width="84" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2825">
+                        <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2825">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -2059,7 +2058,7 @@ Gw
             </view>
             <point key="canvasLocation" x="38" y="609"/>
         </window>
-        <window title="Scientific Notation" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="884" userLabel="SciSettings" customClass="NSPanel">
+        <window title="Wissenschaftliche Darstellung" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="884" userLabel="SciSettings" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="231" y="366" width="298" height="107"/>
@@ -2110,7 +2109,7 @@ DQ
                     <button verticalHuggingPriority="750" id="885">
                         <rect key="frame" x="116" y="20" width="84" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2826">
+                        <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2826">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -2125,7 +2124,7 @@ Gw
             </view>
             <point key="canvasLocation" x="769" y="379"/>
         </window>
-        <window title="Number of Digits" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="890" userLabel="DispSettings" customClass="NSPanel">
+        <window title="Anzahl Ziffern" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="890" userLabel="DispSettings" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="121" y="460" width="298" height="107"/>
@@ -2153,7 +2152,7 @@ Gw
                     <textField verticalHuggingPriority="750" id="896">
                         <rect key="frame" x="17" y="68" width="212" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Number of digits to display:" id="2833">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Anzahl anzuzeigender Ziffern:" id="2833">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2176,7 +2175,7 @@ DQ
                     <button verticalHuggingPriority="750" id="895">
                         <rect key="frame" x="116" y="20" width="84" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2832">
+                        <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2832">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -2197,7 +2196,7 @@ Gw
                 <outlet property="drawerManager" destination="693" id="1451"/>
             </connections>
         </customObject>
-        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="1763" userLabel="PreferencesPanel" customClass="NSPanel">
+        <window title="Einstellungen" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="1763" userLabel="PreferencesPanel" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="114" y="706" width="318" height="231"/>
@@ -2209,7 +2208,7 @@ Gw
                     <button id="1764">
                         <rect key="frame" x="18" y="170" width="199" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <buttonCell key="cell" type="check" title="Use thousands separator" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="2834">
+                        <buttonCell key="cell" type="check" title="Tausenderstellen trennen" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="2834">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -2230,11 +2229,11 @@ Gw
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <buttonCell type="radio" title="Scientific" imagePosition="left" alignment="left" tag="1" inset="2" id="1769">
+                                <buttonCell type="radio" title="Wissenschaftlich" imagePosition="left" alignment="left" tag="1" inset="2" id="1769">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
-                                <buttonCell type="radio" title="Fixed" imagePosition="left" alignment="left" tag="2" inset="2" id="1770">
+                                <buttonCell type="radio" title="Fest" imagePosition="left" alignment="left" tag="2" inset="2" id="1770">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -2244,7 +2243,7 @@ Gw
                     <textField verticalHuggingPriority="750" id="1771">
                         <rect key="frame" x="17" y="122" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Default display:" id="2835">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Anzeigemodus:" id="2835">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2253,7 +2252,7 @@ Gw
                     <textField verticalHuggingPriority="750" id="1772">
                         <rect key="frame" x="17" y="194" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Grouping:" id="2836">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Gruppierung:" id="2836">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2262,7 +2261,7 @@ Gw
                     <button verticalHuggingPriority="750" id="1774">
                         <rect key="frame" x="14" y="12" width="78" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="2837">
+                        <buttonCell key="cell" type="push" title="Speichern" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="2837">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -2276,7 +2275,7 @@ DQ
                     <button verticalHuggingPriority="750" id="1775">
                         <rect key="frame" x="92" y="12" width="78" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2838">
+                        <buttonCell key="cell" type="push" title="Abbrechen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2838">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -2338,7 +2337,7 @@ Gw
                     <textField verticalHuggingPriority="750" id="1787">
                         <rect key="frame" x="181" y="99" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="digits" id="2842">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Ziffern" id="2842">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2347,7 +2346,7 @@ Gw
                     <textField verticalHuggingPriority="750" id="1788">
                         <rect key="frame" x="181" y="79" width="120" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="significant figures" id="2843">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="signifikante Stellen" id="2843">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2356,7 +2355,7 @@ Gw
                     <textField verticalHuggingPriority="750" id="1789">
                         <rect key="frame" x="181" y="57" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="fractional places" id="2844">
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Nachkommastellen" id="2844">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

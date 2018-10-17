@@ -12,8 +12,6 @@
 		2F69479A1B17B60A0012C173 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6947981B17B60A0012C173 /* History.m */; };
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
-		47DECF2D2174B33E004018C2 /* MNMWindow-German.strings in Resources */ = {isa = PBXBuildFile; fileRef = 47DECF2C2174B33E004018C2 /* MNMWindow-German.strings */; };
-		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C900A87805588DFA00809D76 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A87205588DFA00809D76 /* DataManager.m */; };
@@ -379,7 +377,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				C900A92205588FB000809D76 /* expression_tree.png in Resources */,
 				C900A92305588FB000809D76 /* Magic_Number_Machine_Buttons.html in Resources */,
 				C900A92405588FB000809D76 /* Magic_Number_Machine_Help.html in Resources */,
@@ -388,7 +385,6 @@
 				C900A92705588FB000809D76 /* Magic_Number_Machine_Source_Code.html in Resources */,
 				C900A92805588FB000809D76 /* top_level_design.png in Resources */,
 				C900A92A05588FC400809D76 /* Icon.icns in Resources */,
-				47DECF2D2174B33E004018C2 /* MNMWindow-German.strings in Resources */,
 				C956BF2D05E8C099002D425F /* Localizable.strings in Resources */,
 				C93A20C50624459300F3A43C /* key_shortcuts.png in Resources */,
 				2F6947931B1771FC0012C173 /* Media.xcassets in Resources */,

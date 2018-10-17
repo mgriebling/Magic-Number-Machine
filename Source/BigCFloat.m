@@ -1211,7 +1211,6 @@
 	BigCFloat	*two;
 	BigCFloat	*zero;
 	BigCFloat	*minusOne;
-	BigCFloat	*pi;
 	BigCFloat *abs;
 	NSComparisonResult result;
 
@@ -1239,26 +1238,10 @@
 	two = [[BigCFloat alloc] initWithInt:2 radix: bf_radix];
 	zero = [[BigCFloat alloc] initWithInt:0 radix: bf_radix];
 	minusOne = [[BigCFloat alloc] initWithInt:-1 radix: bf_radix];
-	pi = [[BigCFloat alloc] initPiWithRadix:bf_radix];
 
 	if (useInverse == NO)
 	{
 		[self convertToMode:mode];
-//		if (mode != BF_radians)
-//		{
-//			if (mode == BF_degrees)
-//			{
-//				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
-//				[self divideBy:oneEighty];
-//			}
-//			else if (mode == BF_gradians)
-//			{
-//				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
-//				[self divideBy:twoHundred];
-//			}
-//			
-//			[self multiplyBy:pi];
-//		}
 		
 		// sin(z) = (e^iz - e^-iz) / 2i
 		firstTerm = [[BigCFloat alloc]
@@ -1304,21 +1287,6 @@
 		[self assign:firstTerm];
 		
 		[self convertFromMode:mode];
-//		if (mode != BF_radians)
-//		{
-//			if (mode == BF_degrees)
-//			{
-//				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
-//				[self multiplyBy:oneEighty];
-//			}
-//			else if (mode == BF_gradians)
-//			{
-//				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
-//				[self multiplyBy:twoHundred];
-//			}
-//			
-//			[self divideBy:pi];
-//		}
 	}
 	
 }
@@ -1337,7 +1305,6 @@
 	BigCFloat	*two;
 	BigCFloat	*zero;
 	BigCFloat	*minusOne;
-	BigCFloat	*pi;
 	BigCFloat *abs;
 	NSComparisonResult result;
 
@@ -1365,26 +1332,10 @@
 	two = [[BigCFloat alloc] initWithInt:2 radix: bf_radix];
 	zero = [[BigCFloat alloc] initWithInt:0 radix: bf_radix];
 	minusOne = [[BigCFloat alloc] initWithInt:-1 radix: bf_radix];
-	pi = [[BigCFloat alloc] initPiWithRadix:bf_radix];
 	
 	if (useInverse == NO)
 	{
 		[self convertToMode:mode];
-//		if (mode != BF_radians)
-//		{
-//			if (mode == BF_degrees)
-//			{
-//				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
-//				[self divideBy:oneEighty];
-//			}
-//			else if (mode == BF_gradians)
-//			{
-//				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
-//				[self divideBy:twoHundred];
-//			}
-//			
-//			[self multiplyBy:pi];
-//		}
 		
 		// cos(z) = (e^iz + e^-iz) / 2
 		firstTerm = [[BigCFloat alloc]
@@ -1450,10 +1401,8 @@
 	BigCFloat	*secondTerm;
 	BigCFloat	*thirdTerm;
 	BigCFloat	*one;
-	BigCFloat	*two;
 	BigCFloat	*minushalf;
 	BigCFloat	*zero;
-	BigCFloat	*pi;
 
 	if (!bf_is_valid)
 	{
@@ -1467,29 +1416,12 @@
 	}
 	
 	one = [[BigCFloat alloc] initWithInt:1 radix: bf_radix];
-	two = [[BigCFloat alloc] initWithInt:2 radix: bf_radix];
 	minushalf = [[BigCFloat alloc] initWithDouble:-0.5 radix: bf_radix];
 	zero = [[BigCFloat alloc] initWithInt:0 radix: bf_radix];
-	pi = [[BigCFloat alloc] initPiWithRadix:bf_radix];
 
 	if (useInverse == NO)
 	{
 		[self convertToMode:mode];
-//		if (mode != BF_radians)
-//		{
-//			if (mode == BF_degrees)
-//			{
-//				BigCFloat *oneEighty = [[BigCFloat alloc] initWithInt: 180 radix: bf_radix];
-//				[self divideBy:oneEighty];
-//			}
-//			else if (mode == BF_gradians)
-//			{
-//				BigCFloat *twoHundred = [[BigCFloat alloc] initWithInt: 200 radix: bf_radix];
-//				[self divideBy:twoHundred];
-//			}
-//			
-//			[self multiplyBy:pi];
-//		}
 		
 		// tan(z) = sin(z) / cos(z)
 		firstTerm = [self copy];

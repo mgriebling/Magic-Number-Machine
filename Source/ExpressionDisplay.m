@@ -146,7 +146,6 @@ NSBezierPath* GetResultPath(Expression* expression)
 	NSRect		frameRect = [self frame];
 	
 	double		availableHeight = frameRect.size.height - 10.0;
-	double		maximumWidth;
 	
 	// Ensure that the old area is updated
 	if (![expressionPath isEmpty])
@@ -196,7 +195,6 @@ NSBezierPath* GetResultPath(Expression* expression)
 	}
 	
 	// Determine the required width of this view and adjust appropriately
-	maximumWidth = frameRect.size.width;
 	if (expressionBounds.size.width + 10.0 > frameRect.size.width)
 		frameRect.size.width = expressionBounds.size.width + 10.0;
 	if (resultBounds.size.width + 10.0 > frameRect.size.width)
@@ -366,7 +364,6 @@ NSBezierPath* GetResultPath(Expression* expression)
 		
 		if (scale > 0 && scale != 1.0)
 		{
-			double	maximumWidth;
 			NSRect	tempRect;
 			
 			// Adjust the scale
@@ -376,7 +373,6 @@ NSBezierPath* GetResultPath(Expression* expression)
 
 			tempRect = frameRect;
 			tempRect.size = [[self enclosingScrollView] contentSize];
-			maximumWidth = tempRect.size.width;
 			if (expressionBounds.size.width + 10.0 > tempRect.size.width)
 				tempRect.size.width = expressionBounds.size.width + 10.0;
 			if (resultBounds.size.width + 10.0 > tempRect.size.width)

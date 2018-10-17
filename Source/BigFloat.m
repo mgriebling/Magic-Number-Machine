@@ -643,8 +643,8 @@ BF_NormaliseNumbers
 	int						numDigits = 0;
 	int						nextDigit;
 	double					intPart;
-	double					fracPart;
 	double					doubleExponent;
+    double                  fracPart;
 	BOOL					negative = NO;
 	int						radixValuePrecision;
 	
@@ -700,7 +700,6 @@ BF_NormaliseNumbers
 		// Shift the next digit into place
 		newValue = fracPart * newRadix;
 	}
-	fracPart = modf(newValue, &intPart);
 	if (newValue > (newRadix / 2) && 0xFFFFFFFFFFFFFFFFULL > mantissa)
 	{
 		mantissa++;
@@ -1432,12 +1431,9 @@ BF_NormaliseNumbers
 	// Handle differences in sign by calling subtraction instead
 	if (otherNumElements.bf_is_negative != thisNumElements.bf_is_negative)
 	{
-		BigFloat *compareNum;
-		
 		bf_is_negative = !bf_is_negative;
 		[self subtract: num];
 		
-		compareNum = [[BigFloat alloc] initWithInt:0 radix:bf_radix];
 		if (![self isZero])
 			bf_is_negative = !bf_is_negative;
 		
@@ -1624,7 +1620,7 @@ BF_NormaliseNumbers
 	unsigned long		otherNum[BF_num_values];
 	BigFloatElements	thisNumElements;
 	BigFloatElements	otherNumElements;
-	BOOL				shift = NO;
+//	BOOL				shift = NO;
 	
 	if ([num radix] != bf_radix)
 	{
@@ -1672,12 +1668,12 @@ BF_NormaliseNumbers
 			carryBits = result[i + j] / thisNumElements.bf_value_limit;
 			result[i + j] = result[i + j] % thisNumElements.bf_value_limit;
 			
-			if (i + j >= BF_num_values && result[i + j] != 0) shift = YES;
+//			if (i + j >= BF_num_values && result[i + j] != 0) shift = YES;
 		}
 		
 		// Add the carry for the last multiplication to the next column
 		result[j + BF_num_values] += carryBits;
-		if (result[j + BF_num_values] != 0) shift = YES;
+//		if (result[j + BF_num_values] != 0) shift = YES;
 	}
 	
 	// If we have exceeded the precision, divide by the bf_radix until
@@ -2230,7 +2226,7 @@ BF_NormaliseNumbers
 	{
 		carryBits = BF_RemoveDigitFromMantissa(&result[BF_num_values], thisNumElements.bf_radix, thisNumElements.bf_value_limit, 1);
 		result[BF_num_values - 1] += carryBits * thisNumElements.bf_value_limit;
-		carryBits = BF_RemoveDigitFromMantissa(result, thisNumElements.bf_radix, thisNumElements.bf_value_limit, 1);
+		BF_RemoveDigitFromMantissa(result, thisNumElements.bf_radix, thisNumElements.bf_value_limit, 1);
 		divisionExponent++;
 	}
 	
@@ -2248,7 +2244,7 @@ BF_NormaliseNumbers
 	[self copyElements: &thisNumElements];
 	while((thisNumElements.bf_exponent < 0) && (values[0] % thisNumElements.bf_radix == 0))
 	{
-		carryBits = BF_RemoveDigitFromMantissa(values, thisNumElements.bf_radix, thisNumElements.bf_value_limit, 1);
+		BF_RemoveDigitFromMantissa(values, thisNumElements.bf_radix, thisNumElements.bf_value_limit, 1);
 		bf_exponent++;
 	}
 		
@@ -3159,7 +3155,7 @@ BF_NormaliseNumbers
 	BigFloatElements	otherNumElements;
 	BigFloat				*one;
 	BigFloat				*two;
-	BigFloat				*zero;
+//	BigFloat				*zero;
 	BigFloat				*minusOne;
 	BigFloat				*prevIteration;
 	BigFloat				*powerCopy;
@@ -3174,7 +3170,7 @@ BF_NormaliseNumbers
 
 	one = [[BigFloat alloc] initWithInt:1 radix: bf_radix];
 	two = [[BigFloat alloc] initWithInt:2 radix: bf_radix];
-	zero = [[BigFloat alloc] initWithInt:0 radix: bf_radix];
+//	zero = [[BigFloat alloc] initWithInt:0 radix: bf_radix];
 	minusOne = [[BigFloat alloc] initWithInt:-1 radix: bf_radix];
 
 	if (useHyp == NO)
@@ -3299,7 +3295,7 @@ BF_NormaliseNumbers
 			}
 			else
 			{
-				prevIteration = [self copy];
+//				prevIteration = [self copy];
 			}
 			
 			[self radiansToMode:mode];

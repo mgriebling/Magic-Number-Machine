@@ -424,8 +424,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="AC" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2781">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="20" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent"></string>
-                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        <string key="keyEquivalent"></string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="allClearPressed:" target="678" id="830"/>
@@ -534,7 +533,9 @@ Gw
                                     <buttonCell key="cell" type="square" title="DEL" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="8" inset="2" id="2798">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="19" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent"></string>
+                                        <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="delPressed:" target="678" id="832"/>
@@ -750,7 +751,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="Im" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="13" inset="2" id="2920">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">i</string>
+                                        <string key="keyEquivalent">j</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="preOpPressed:" target="678" id="2921"/>
@@ -762,7 +763,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="nPr" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="112" inset="2" id="2734">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">N</string>
+                                        <string key="keyEquivalent">n</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="binaryOpPressed:" target="678" id="1714"/>
@@ -774,7 +775,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="nCr" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="112" inset="2" id="2917">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">n</string>
+                                        <string key="keyEquivalent">?</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="binaryOpPressed:" target="678" id="2918"/>
@@ -798,7 +799,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="&lt;3" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2740">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">g</string>
+                                        <string key="keyEquivalent">&lt;</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="exponentShiftPressed:" target="678" id="1717"/>
@@ -810,7 +811,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="&gt;3" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2914">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">G</string>
+                                        <string key="keyEquivalent">&gt;</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="exponentShiftPressed:" target="678" id="2915"/>
@@ -822,7 +823,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="x!" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="26" inset="2" id="2741">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">q</string>
+                                        <string key="keyEquivalent">!</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="postOpPressed:" target="678" id="1710"/>
@@ -872,7 +873,7 @@ Gw
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="AppleSymbols"/>
                                         <string key="keyEquivalent">v</string>
-                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="preOpPressed:" target="678" id="2909"/>
@@ -884,8 +885,7 @@ Gw
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="x_y" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2911">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="AppleSymbols"/>
-                                        <string key="keyEquivalent">v</string>
-                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                        <string key="keyEquivalent">~</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="binaryOpPressed:" target="678" id="2939"/>
@@ -909,8 +909,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="log" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" inset="2" id="2931">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">l</string>
-                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        <string key="keyEquivalent">g</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="preOpPressed:" target="678" id="2932"/>
@@ -922,8 +921,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="10ˣ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="24" inset="2" id="2930">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">z</string>
-                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        <string key="keyEquivalent">^</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="preOpPressed:" target="678" id="2933"/>
@@ -947,7 +945,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="x⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="25" imageScaling="proportionallyDown" inset="2" id="2926">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">r</string>
+                                        <string key="keyEquivalent">:</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="postOpPressed:" target="678" id="2927"/>
@@ -960,7 +958,7 @@ Gw
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
                                         <string key="keyEquivalent">w</string>
-                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="postOpPressed:" target="678" id="2906"/>
@@ -985,8 +983,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="2nd" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2923">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">d</string>
-                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="shiftPressed:" target="678" id="2937"/>
@@ -1024,8 +1021,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="xʸ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="94" inset="2" id="2765">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">w</string>
-                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                        <string key="keyEquivalent">y</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="binaryOpPressed:" target="678" id="1716"/>
@@ -1086,7 +1082,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="or" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="111" inset="2" id="2745">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">j</string>
+                                        <string key="keyEquivalent">|</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="binaryOpPressed:" target="678" id="1709"/>
@@ -1098,7 +1094,7 @@ Gw
                                     <buttonCell key="cell" type="square" title="and" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="97" inset="2" id="2763">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">h</string>
+                                        <string key="keyEquivalent">&amp;</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="binaryOpPressed:" target="678" id="1713"/>
@@ -1136,7 +1132,7 @@ IA
                                     <buttonCell key="cell" type="square" title="Rnd" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="2935">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">m</string>
+                                        <string key="keyEquivalent">h</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="preOpPressed:" target="678" id="2938"/>

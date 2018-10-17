@@ -257,14 +257,11 @@
 //
 - (void)exchangeRows:(NSMutableArray *)values firstRow:(int)one secondRow:(int)two columns:(int)numColumns
 {
-	int numRows;
 	BigCFloat *temp = [BigCFloat bigFloatWithInt:0 radix:[dataManager getRadix]];
 	int i;
 	
 	if (one == two)
 		return;
-	
-	numRows = (int)[values count] / numColumns;
 	
 	for (i = 0; i < numColumns; i++)
 	{

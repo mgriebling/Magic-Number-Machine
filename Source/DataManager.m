@@ -849,7 +849,7 @@
 - (NSAttributedString *)toFormattedString: (NSString *)string {
 	NSRange subLocation = [string rangeOfString:@"_"];
 	NSRange superLocation = [string rangeOfString:@"^"];
-	NSRange location;
+    NSRange location = NSMakeRange(0, 0);
 	NSNumber *number;
 	NSNumber *baseOffset;
 	string = [string stringByReplacingOccurrencesOfString:@"_" withString:@""];
@@ -912,14 +912,6 @@
 		shift3Right.title = @">3";
 		modButton.title = @"mod";
 	}
-
-//	if (shiftIsDown != isPressed)
-//	{
-//		shiftIsDown = isPressed;
-//		[shiftButton highlight:shiftIsDown];
-//	}
-//	
-//	shiftEnabledByToggle = NO;
 }
 
 //

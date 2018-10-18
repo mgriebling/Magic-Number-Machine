@@ -23,7 +23,7 @@
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>NSHelpFile</key>
-	<string>Magic_Number_Machine_Help.html</string>
+	<string>Magic-Number-Machine.pdf</string>
 	<key>NSMainNibFile</key>
 	<string>MNMWindow</string>
 	<key>NSPrincipalClass</key>

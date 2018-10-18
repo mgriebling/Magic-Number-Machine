@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F5568AD2178C44D00652D06 /* Magic-Number-Machine.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5568AC2178C44D00652D06 /* Magic-Number-Machine.pdf */; };
+		2F5568B32179253800652D06 /* GermanGUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F5568AF2179253800652D06 /* GermanGUI.strings */; };
+		2F5568B82179255A00652D06 /* SpanishGUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F5568B62179255A00652D06 /* SpanishGUI.strings */; };
+		2F5568BE2179256F00652D06 /* FrenchGUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F5568B92179256F00652D06 /* FrenchGUI.strings */; };
+		2F5568C42179258100652D06 /* ItalianGUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F5568C02179258100652D06 /* ItalianGUI.strings */; };
 		2F6947931B1771FC0012C173 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6947921B1771FC0012C173 /* Media.xcassets */; };
 		2F6947991B17B60A0012C173 /* History.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6947971B17B60A0012C173 /* History.h */; };
 		2F69479A1B17B60A0012C173 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6947981B17B60A0012C173 /* History.m */; };
@@ -35,15 +40,7 @@
 		C900A8F805588EA300809D76 /* CallBack.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8F005588EA300809D76 /* CallBack.m */; };
 		C900A8F905588EA300809D76 /* ExpressionSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8F105588EA300809D76 /* ExpressionSymbols.m */; };
 		C900A8FB05588EA300809D76 /* DataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8F305588EA300809D76 /* DataFunctions.m */; };
-		C900A92205588FB000809D76 /* expression_tree.png in Resources */ = {isa = PBXBuildFile; fileRef = C900A91B05588FB000809D76 /* expression_tree.png */; };
-		C900A92305588FB000809D76 /* Magic_Number_Machine_Buttons.html in Resources */ = {isa = PBXBuildFile; fileRef = C900A91C05588FB000809D76 /* Magic_Number_Machine_Buttons.html */; };
-		C900A92405588FB000809D76 /* Magic_Number_Machine_Help.html in Resources */ = {isa = PBXBuildFile; fileRef = C900A91D05588FB000809D76 /* Magic_Number_Machine_Help.html */; };
-		C900A92505588FB000809D76 /* Magic_Number_Machine_Key_Features.html in Resources */ = {isa = PBXBuildFile; fileRef = C900A91E05588FB000809D76 /* Magic_Number_Machine_Key_Features.html */; };
-		C900A92605588FB000809D76 /* Magic_Number_Machine_RAQ.html in Resources */ = {isa = PBXBuildFile; fileRef = C900A91F05588FB000809D76 /* Magic_Number_Machine_RAQ.html */; };
-		C900A92705588FB000809D76 /* Magic_Number_Machine_Source_Code.html in Resources */ = {isa = PBXBuildFile; fileRef = C900A92005588FB000809D76 /* Magic_Number_Machine_Source_Code.html */; };
-		C900A92805588FB000809D76 /* top_level_design.png in Resources */ = {isa = PBXBuildFile; fileRef = C900A92105588FB000809D76 /* top_level_design.png */; };
 		C900A92A05588FC400809D76 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = C900A92905588FC400809D76 /* Icon.icns */; };
-		C93A20C50624459300F3A43C /* key_shortcuts.png in Resources */ = {isa = PBXBuildFile; fileRef = C93A20C40624459300F3A43C /* key_shortcuts.png */; };
 		C956BF2D05E8C099002D425F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C956BF2B05E8C099002D425F /* Localizable.strings */; };
 		C95D1E450F536BC000851908 /* MNMWindow.nib in Resources */ = {isa = PBXBuildFile; fileRef = C95D1E430F536BC000851908 /* MNMWindow.nib */; };
 /* End PBXBuildFile section */
@@ -52,14 +49,26 @@
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2F20D70C21765746001C6643 /* it */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = it; path = it.lproj/MNMWindow.nib; sourceTree = "<group>"; };
-		2F2F67A621761E4E00B7BAAE /* fr */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = fr; path = fr.lproj/MNMWindow.nib; sourceTree = "<group>"; };
+		2F5568AC2178C44D00652D06 /* Magic-Number-Machine.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Magic-Number-Machine.pdf"; sourceTree = "<group>"; };
+		2F5568AE2179253800652D06 /* de */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = de; path = de.lproj/MNMWindow.nib; sourceTree = "<group>"; };
+		2F5568B02179253800652D06 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/GermanGUI.strings; sourceTree = "<group>"; };
+		2F5568B12179253800652D06 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2F5568B22179253800652D06 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2F5568B42179255A00652D06 /* es */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = es; path = es.lproj/MNMWindow.nib; sourceTree = "<group>"; };
+		2F5568B52179255A00652D06 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2F5568B72179255A00652D06 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SpanishGUI.strings; sourceTree = "<group>"; };
+		2F5568BA2179256F00652D06 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FrenchGUI.strings; sourceTree = "<group>"; };
+		2F5568BB2179256F00652D06 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2F5568BC2179256F00652D06 /* fr */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = fr; path = fr.lproj/MNMWindow.nib; sourceTree = "<group>"; };
+		2F5568BD2179256F00652D06 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2F5568BF2179258100652D06 /* it */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = it; path = it.lproj/MNMWindow.nib; sourceTree = "<group>"; };
+		2F5568C12179258100652D06 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/ItalianGUI.strings; sourceTree = "<group>"; };
+		2F5568C22179258100652D06 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2F5568C32179258100652D06 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F6947921B1771FC0012C173 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		2F6947941B17B3EC0012C173 /* Magic Number Machine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine-Bridging-Header.h"; sourceTree = "<group>"; };
 		2F6947971B17B60A0012C173 /* History.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = History.h; sourceTree = "<group>"; };
 		2F6947981B17B60A0012C173 /* History.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = History.m; sourceTree = "<group>"; };
-		2FFE8D3221750F320007FF5C /* de */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = de; path = de.lproj/MNMWindow.nib; sourceTree = "<group>"; };
-		2FFFC40221763B5E0033F70D /* es */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = es; path = es.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Magic Number Machine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine_Prefix.pch"; sourceTree = "<group>"; };
 		475F2C72217272C000D8EB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
@@ -119,15 +128,8 @@
 		C900A92105588FB000809D76 /* top_level_design.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_level_design.png; sourceTree = "<group>"; };
 		C900A92905588FC400809D76 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		C93A20C40624459300F3A43C /* key_shortcuts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key_shortcuts.png; sourceTree = "<group>"; };
-		C93BBCCF072FDBEA005E4AAD /* Spanish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Spanish; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C956BF2C05E8C099002D425F /* Spanish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Spanish; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C956BF2E05E8C0DB002D425F /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = French; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C956BF2F05E8C0FF002D425F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C95D1E4E0F536C3C00851908 /* Italian */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Italian; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C95D1E4F0F536C4300851908 /* Italian */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Italian; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C9640D8005D5F28200FCE93E /* French */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = French; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C989F7CE072BE95C0050B4FF /* German */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = German; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C989F7D0072BE95C0050B4FF /* German */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = German; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2F5568B92179256F00652D06 /* FrenchGUI.strings */,
+				2F5568B62179255A00652D06 /* SpanishGUI.strings */,
+				2F5568AF2179253800652D06 /* GermanGUI.strings */,
+				2F5568C02179258100652D06 /* ItalianGUI.strings */,
 				C95D1E430F536BC000851908 /* MNMWindow.nib */,
 				C956BF2B05E8C099002D425F /* Localizable.strings */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -284,6 +290,7 @@
 		C900A91A05588FB000809D76 /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				2F5568AC2178C44D00652D06 /* Magic-Number-Machine.pdf */,
 				C93A20C40624459300F3A43C /* key_shortcuts.png */,
 				C900A91B05588FB000809D76 /* expression_tree.png */,
 				C900A91C05588FB000809D76 /* Magic_Number_Machine_Buttons.html */,
@@ -357,8 +364,8 @@
 				Italian,
 				Base,
 				de,
-				fr,
 				es,
+				fr,
 				it,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Magic Number Machine XCode */;
@@ -375,16 +382,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C900A92205588FB000809D76 /* expression_tree.png in Resources */,
-				C900A92305588FB000809D76 /* Magic_Number_Machine_Buttons.html in Resources */,
-				C900A92405588FB000809D76 /* Magic_Number_Machine_Help.html in Resources */,
-				C900A92505588FB000809D76 /* Magic_Number_Machine_Key_Features.html in Resources */,
-				C900A92605588FB000809D76 /* Magic_Number_Machine_RAQ.html in Resources */,
-				C900A92705588FB000809D76 /* Magic_Number_Machine_Source_Code.html in Resources */,
-				C900A92805588FB000809D76 /* top_level_design.png in Resources */,
+				2F5568B32179253800652D06 /* GermanGUI.strings in Resources */,
 				C900A92A05588FC400809D76 /* Icon.icns in Resources */,
+				2F5568AD2178C44D00652D06 /* Magic-Number-Machine.pdf in Resources */,
 				C956BF2D05E8C099002D425F /* Localizable.strings in Resources */,
-				C93A20C50624459300F3A43C /* key_shortcuts.png in Resources */,
+				2F5568BE2179256F00652D06 /* FrenchGUI.strings in Resources */,
+				2F5568B82179255A00652D06 /* SpanishGUI.strings in Resources */,
+				2F5568C42179258100652D06 /* ItalianGUI.strings in Resources */,
 				2F6947931B1771FC0012C173 /* Media.xcassets in Resources */,
 				C95D1E450F536BC000851908 /* MNMWindow.nib in Resources */,
 			);
@@ -431,22 +435,54 @@
 			isa = PBXVariantGroup;
 			children = (
 				089C165DFE840E0CC02AAC07 /* English */,
-				C9640D8005D5F28200FCE93E /* French */,
-				C989F7CE072BE95C0050B4FF /* German */,
-				C93BBCCF072FDBEA005E4AAD /* Spanish */,
 				C95D1E4F0F536C4300851908 /* Italian */,
+				2F5568B22179253800652D06 /* de */,
+				2F5568BB2179256F00652D06 /* fr */,
+				2F5568C32179258100652D06 /* it */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2F5568AF2179253800652D06 /* GermanGUI.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F5568B02179253800652D06 /* de */,
+			);
+			name = GermanGUI.strings;
+			sourceTree = "<group>";
+		};
+		2F5568B62179255A00652D06 /* SpanishGUI.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F5568B72179255A00652D06 /* es */,
+			);
+			name = SpanishGUI.strings;
+			sourceTree = "<group>";
+		};
+		2F5568B92179256F00652D06 /* FrenchGUI.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F5568BA2179256F00652D06 /* fr */,
+			);
+			name = FrenchGUI.strings;
+			sourceTree = "<group>";
+		};
+		2F5568C02179258100652D06 /* ItalianGUI.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F5568C12179258100652D06 /* it */,
+			);
+			name = ItalianGUI.strings;
 			sourceTree = "<group>";
 		};
 		C956BF2B05E8C099002D425F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C956BF2C05E8C099002D425F /* Spanish */,
-				C956BF2E05E8C0DB002D425F /* French */,
 				C956BF2F05E8C0FF002D425F /* English */,
-				C989F7D0072BE95C0050B4FF /* German */,
-				C95D1E4E0F536C3C00851908 /* Italian */,
+				2F5568B12179253800652D06 /* de */,
+				2F5568B52179255A00652D06 /* es */,
+				2F5568BD2179256F00652D06 /* fr */,
+				2F5568C22179258100652D06 /* it */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -455,10 +491,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				475F2C72217272C000D8EB2E /* Base */,
-				2FFE8D3221750F320007FF5C /* de */,
-				2F2F67A621761E4E00B7BAAE /* fr */,
-				2FFFC40221763B5E0033F70D /* es */,
-				2F20D70C21765746001C6643 /* it */,
+				2F5568AE2179253800652D06 /* de */,
+				2F5568B42179255A00652D06 /* es */,
+				2F5568BC2179256F00652D06 /* fr */,
+				2F5568BF2179258100652D06 /* it */,
 			);
 			name = MNMWindow.nib;
 			sourceTree = "<group>";

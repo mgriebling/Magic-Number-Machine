@@ -879,13 +879,13 @@ CA
                                         <action selector="preOpPressed:" target="678" id="2909"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌥v) Nth Root" tag="30" id="2910">
+                                <button toolTip="(⌥v) Nth Root" id="2910">
                                     <rect key="frame" x="197" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="x_y" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2911">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="AppleSymbols"/>
-                                        <string key="keyEquivalent">~</string>
+                                        <string key="keyEquivalent">V</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="binaryOpPressed:" target="678" id="2939"/>
@@ -903,13 +903,14 @@ CA
                                         <action selector="preOpPressed:" target="678" id="1720"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(l) Natural Logarithm" tag="19" id="2928">
+                                <button toolTip="(l) Natural Logarithm" id="2928">
                                     <rect key="frame" x="197" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="log" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" inset="2" id="2931">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">g</string>
+                                        <string key="keyEquivalent">l</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="preOpPressed:" target="678" id="2932"/>
@@ -921,7 +922,8 @@ CA
                                     <buttonCell key="cell" type="square" title="10ˣ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="24" inset="2" id="2930">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">^</string>
+                                        <string key="keyEquivalent">z</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="preOpPressed:" target="678" id="2933"/>
@@ -1005,14 +1007,13 @@ CA
                                 <button toolTip="(⌘T) Change Trig. Mode" id="1692">
                                     <rect key="frame" x="1" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" title="Rad" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="2764">
+                                    <buttonCell key="cell" type="square" title="Rnd" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="2764">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">t</string>
-                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                        <string key="keyEquivalent">r</string>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="trigModePressed:" target="678" id="1703"/>
+                                        <action selector="preOpPressed:" target="678" id="8Qn-0b-xkT"/>
                                     </connections>
                                 </button>
                                 <button toolTip="(⌥w) raise to the next number" tag="94" id="1693">
@@ -1021,7 +1022,7 @@ CA
                                     <buttonCell key="cell" type="square" title="xʸ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="94" inset="2" id="2765">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">y</string>
+                                        <string key="keyEquivalent">W</string>
                                     </buttonCell>
                                     <connections>
                                         <action selector="binaryOpPressed:" target="678" id="1716"/>
@@ -1127,15 +1128,16 @@ IA
                                     </connections>
                                 </button>
                                 <button toolTip="(m) Round the number" tag="18" id="2934">
-                                    <rect key="frame" x="147" y="198" width="52" height="40"/>
+                                    <rect key="frame" x="148" y="198" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" title="Rnd" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="2935">
+                                    <buttonCell key="cell" type="square" title="Rad" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="2935">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue-Light"/>
-                                        <string key="keyEquivalent">h</string>
+                                        <string key="keyEquivalent">t</string>
+                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <connections>
-                                        <action selector="preOpPressed:" target="678" id="2938"/>
+                                        <action selector="trigModePressed:" target="678" id="qcb-Mr-G18"/>
                                     </connections>
                                 </button>
                                 <button toolTip="(k) Real Part" tag="13" id="1658">

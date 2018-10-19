@@ -164,9 +164,12 @@
 				case squaredOp:
 					[value multiplyBy:value];
 					break;
-				case cubedOp:
-					[value raiseToIntPower:3];
+                case cubedOp: {
+                    BigCFloat *newValue = (BigCFloat*)[value duplicate];
+					[value multiplyBy:value];
+                    [value multiplyBy:newValue];
 					break;
+                }
 				case factorialOp:
 					[value factorial];
 					break;

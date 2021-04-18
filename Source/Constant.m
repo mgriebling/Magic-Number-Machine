@@ -71,7 +71,7 @@
 {
 	[super encodeWithCoder:coder];
 
-	[coder encodeInt:constant forKey:@"MEConstant"];
+	[coder encodeInt:(int)constant forKey:@"MEConstant"];
 	[coder encodeObject:value forKey:@"MEValue"];
 }
 
@@ -117,7 +117,7 @@
 {
 	// Behave as though we already have a child and spawn off another node
 	[self binaryOpPressed:'.'];
-	[[manager getInputPoint] constantPressed:newConstant];
+	[[manager getInputPoint] constantPressed:(int)newConstant];
 }
 
 //

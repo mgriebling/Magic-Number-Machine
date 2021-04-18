@@ -25,7 +25,7 @@
 //
 - (void)flagsChanged:(NSEvent*)theEvent
 {
-	unsigned int newFlags = [theEvent modifierFlags];
+    NSEventModifierFlags newFlags = [theEvent modifierFlags];
 	
 //	[dataManager optionIsPressed:(newFlags & NSAlternateKeyMask) != 0];
 	if ((newFlags & NSShiftKeyMask) != 0) {

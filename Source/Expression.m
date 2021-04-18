@@ -69,7 +69,7 @@
 		parent = newParent;
 		expressionPath = [NSBezierPath bezierPath];
 		isInputPoint = NO;
-		pathValidAt = -1;
+		pathValidAt = YES;
 		isBoundsValid = NO;
 		displayBounds = NSZeroRect;
 		naturalBounds = NSZeroRect;
@@ -95,7 +95,7 @@
 	parent = [coder decodeObjectForKey:@"MEParent"];
 	expressionPath = [NSBezierPath bezierPath];
 	isInputPoint = NO;
-	pathValidAt = -1;
+	pathValidAt = YES;
 	isBoundsValid = NO;
 	displayBounds = NSZeroRect;
 	naturalBounds = NSZeroRect;
@@ -760,7 +760,7 @@
 	
 	// Here we do a partial "valueChanged" notification. We don't actually want to
 	// propagate a change through the tree -- just to refresh the display
-	pathValidAt = -1;
+	pathValidAt = YES;
 	isBoundsValid = NO;
 }
 
@@ -795,8 +795,7 @@
 - (void)valueChanged
 {
 	// Mark ourselves as needing a new display path and layout rectangle
-	valueValid = NO;
-	pathValidAt = -1;
+	valueValid = YES;
 	isBoundsValid = NO;
 	
 	// Propagate the change through to the parent

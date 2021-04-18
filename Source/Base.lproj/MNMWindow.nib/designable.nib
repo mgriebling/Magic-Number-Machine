@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -202,14 +202,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="611" height="454"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" id="1312">
+                    <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="1312">
                         <rect key="frame" x="0.0" y="236" width="612" height="219"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="pvs-CR-Vh0">
                             <rect key="frame" x="1" y="1" width="610" height="217"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <customView id="617" customClass="ExpressionDisplay">
+                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="617" customClass="ExpressionDisplay">
                                     <rect key="frame" x="0.0" y="0.0" width="610" height="217"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <connections>
@@ -227,14 +227,14 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <box boxType="secondary" borderType="bezel" title="Title" titlePosition="noTitle" id="1341">
+                    <box fixedFrame="YES" boxType="secondary" borderType="bezel" title="Title" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="1341">
                         <rect key="frame" x="385" y="-4" width="232" height="241"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <view key="contentView" id="dLr-o0-2Hu">
                             <rect key="frame" x="3" y="3" width="226" height="235"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button tag="4" id="212">
+                                <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="212">
                                     <rect key="frame" x="3" y="79" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="4" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="4" inset="2" id="2775">
@@ -246,7 +246,7 @@
                                         <action selector="digitPressed:" target="678" id="806"/>
                                     </connections>
                                 </button>
-                                <button tag="2" id="196">
+                                <button fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="196">
                                     <rect key="frame" x="47" y="40" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="2" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2771">
@@ -258,7 +258,7 @@
                                         <action selector="digitPressed:" target="678" id="804"/>
                                     </connections>
                                 </button>
-                                <button tag="3" id="268">
+                                <button fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="268">
                                     <rect key="frame" x="91" y="40" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="3" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2784">
@@ -270,7 +270,7 @@
                                         <action selector="digitPressed:" target="678" id="805"/>
                                     </connections>
                                 </button>
-                                <button tag="42" id="239">
+                                <button fixedFrame="YES" tag="42" translatesAutoresizingMaskIntoConstraints="NO" id="239">
                                     <rect key="frame" x="135" y="79" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="×" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="42" inset="2" id="2779">
@@ -282,7 +282,7 @@
                                         <action selector="binaryOpPressed:" target="678" id="836"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(Return) Display result." id="292">
+                                <button toolTip="(Return) Display result." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="292">
                                     <rect key="frame" x="135" y="1" width="88" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="=" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2786">
@@ -296,7 +296,7 @@ DQ
                                         <action selector="equalsPressed:" target="678" id="833"/>
                                     </connections>
                                 </button>
-                                <button tag="14" id="290">
+                                <button fixedFrame="YES" tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="290">
                                     <rect key="frame" x="47" y="196" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="E" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="14" inset="2" id="2785">
@@ -308,7 +308,7 @@ DQ
                                         <action selector="digitPressed:" target="678" id="816"/>
                                     </connections>
                                 </button>
-                                <button tag="1" id="204">
+                                <button fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="204">
                                     <rect key="frame" x="3" y="40" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="1" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2774">
@@ -320,7 +320,7 @@ DQ
                                         <action selector="digitPressed:" target="678" id="803"/>
                                     </connections>
                                 </button>
-                                <button tag="13" id="197">
+                                <button fixedFrame="YES" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="197">
                                     <rect key="frame" x="3" y="196" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="D" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="13" inset="2" id="2772">
@@ -332,7 +332,7 @@ DQ
                                         <action selector="digitPressed:" target="678" id="815"/>
                                     </connections>
                                 </button>
-                                <button tag="43" id="251">
+                                <button fixedFrame="YES" tag="43" translatesAutoresizingMaskIntoConstraints="NO" id="251">
                                     <rect key="frame" x="179" y="40" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="43" inset="2" id="2780">
@@ -344,7 +344,7 @@ DQ
                                         <action selector="binaryOpPressed:" target="678" id="834"/>
                                     </connections>
                                 </button>
-                                <button tag="12" id="293">
+                                <button fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="293">
                                     <rect key="frame" x="91" y="157" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="C" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="12" inset="2" id="2787">
@@ -356,7 +356,7 @@ DQ
                                         <action selector="digitPressed:" target="678" id="814"/>
                                     </connections>
                                 </button>
-                                <button tag="45" id="198">
+                                <button fixedFrame="YES" tag="45" translatesAutoresizingMaskIntoConstraints="NO" id="198">
                                     <rect key="frame" x="135" y="40" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="–" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="45" inset="2" id="2773">
@@ -368,7 +368,7 @@ DQ
                                         <action selector="binaryOpPressed:" target="678" id="835"/>
                                     </connections>
                                 </button>
-                                <button id="297">
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="297">
                                     <rect key="frame" x="3" y="1" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="0" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2788">
@@ -380,7 +380,7 @@ DQ
                                         <action selector="digitPressed:" target="678" id="801"/>
                                     </connections>
                                 </button>
-                                <button tag="47" id="262">
+                                <button fixedFrame="YES" tag="47" translatesAutoresizingMaskIntoConstraints="NO" id="262">
                                     <rect key="frame" x="135" y="118" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="÷" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="47" inset="2" id="2782">
@@ -392,7 +392,7 @@ DQ
                                         <action selector="binaryOpPressed:" target="678" id="837"/>
                                     </connections>
                                 </button>
-                                <button tag="15" id="215">
+                                <button fixedFrame="YES" tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="215">
                                     <rect key="frame" x="91" y="196" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="F" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="15" inset="2" id="2776">
@@ -404,7 +404,7 @@ DQ
                                         <action selector="digitPressed:" target="678" id="817"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(Esc) Clear the current number" id="235">
+                                <button toolTip="(Esc) Clear the current number" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="235">
                                     <rect key="frame" x="179" y="157" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="C" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2778">
@@ -418,7 +418,7 @@ Gw
                                         <action selector="clearPressed:" target="678" id="831"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(clear) Clears the whole expression" tag="1234" id="252">
+                                <button toolTip="(clear) Clears the whole expression" fixedFrame="YES" tag="1234" translatesAutoresizingMaskIntoConstraints="NO" id="252">
                                     <rect key="frame" x="178" y="196" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="AC" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2781">
@@ -430,7 +430,7 @@ Gw
                                         <action selector="allClearPressed:" target="678" id="830"/>
                                     </connections>
                                 </button>
-                                <button tag="6" id="304">
+                                <button fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="304">
                                     <rect key="frame" x="91" y="79" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="6" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="6" inset="2" id="2789">
@@ -442,7 +442,7 @@ Gw
                                         <action selector="digitPressed:" target="678" id="808"/>
                                     </connections>
                                 </button>
-                                <button tag="11" id="305">
+                                <button fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="305">
                                     <rect key="frame" x="47" y="157" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="B" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="11" inset="2" id="2790">
@@ -454,7 +454,7 @@ Gw
                                         <action selector="digitPressed:" target="678" id="813"/>
                                     </connections>
                                 </button>
-                                <button tag="8" id="307">
+                                <button fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="307">
                                     <rect key="frame" x="47" y="118" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="8" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="8" inset="2" id="2792">
@@ -466,7 +466,7 @@ Gw
                                         <action selector="digitPressed:" target="678" id="810"/>
                                     </connections>
                                 </button>
-                                <button tag="9" id="308">
+                                <button fixedFrame="YES" tag="9" translatesAutoresizingMaskIntoConstraints="NO" id="308">
                                     <rect key="frame" x="91" y="118" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="9" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="9" inset="2" id="2793">
@@ -478,7 +478,7 @@ Gw
                                         <action selector="digitPressed:" target="678" id="811"/>
                                     </connections>
                                 </button>
-                                <button tag="10" id="309">
+                                <button fixedFrame="YES" tag="10" translatesAutoresizingMaskIntoConstraints="NO" id="309">
                                     <rect key="frame" x="3" y="157" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="10" inset="2" id="2794">
@@ -490,7 +490,7 @@ Gw
                                         <action selector="digitPressed:" target="678" id="812"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(x) Append scientific-notation-style exponent" tag="101" id="311">
+                                <button toolTip="(x) Append scientific-notation-style exponent" fixedFrame="YES" tag="101" translatesAutoresizingMaskIntoConstraints="NO" id="311">
                                     <rect key="frame" x="91" y="1" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="EE" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="101" inset="2" id="2795">
@@ -502,7 +502,7 @@ Gw
                                         <action selector="expPressed:" target="678" id="828"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌘-) Change the sign" tag="45" id="313">
+                                <button toolTip="(⌘-) Change the sign" fixedFrame="YES" tag="45" translatesAutoresizingMaskIntoConstraints="NO" id="313">
                                     <rect key="frame" x="179" y="79" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="⁺⁄₋" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="45" inset="2" id="2796">
@@ -515,7 +515,7 @@ Gw
                                         <action selector="digitPressed:" target="678" id="821"/>
                                     </connections>
                                 </button>
-                                <button toolTip="i - The square root of minus 1" tag="1" id="314">
+                                <button toolTip="i - The square root of minus 1" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="314">
                                     <rect key="frame" x="135" y="196" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="i" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2797">
@@ -527,9 +527,9 @@ Gw
                                         <action selector="valuePressed:" target="678" id="1371"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(Delete) Delete one digit or part of the expression" tag="8" id="315">
+                                <button toolTip="(Delete) Delete one digit or part of the expression" fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="315">
                                     <rect key="frame" x="179" y="118" width="45" height="40"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="DEL" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="8" inset="2" id="2798">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="19" name="HelveticaNeue-Light"/>
@@ -541,7 +541,7 @@ CA
                                         <action selector="delPressed:" target="678" id="832"/>
                                     </connections>
                                 </button>
-                                <button tag="7" id="306">
+                                <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="306">
                                     <rect key="frame" x="3" y="118" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="7" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="7" inset="2" id="2791">
@@ -553,7 +553,7 @@ CA
                                         <action selector="digitPressed:" target="678" id="809"/>
                                     </connections>
                                 </button>
-                                <button tag="5" id="229">
+                                <button fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="229">
                                     <rect key="frame" x="47" y="79" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="5" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="5" inset="2" id="2777">
@@ -565,7 +565,7 @@ CA
                                         <action selector="digitPressed:" target="678" id="807"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(.) Fractional Point" tag="46" id="265">
+                                <button toolTip="(.) Fractional Point" fixedFrame="YES" tag="46" translatesAutoresizingMaskIntoConstraints="NO" id="265">
                                     <rect key="frame" x="47" y="1" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="•" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="46" inset="2" id="2783">
@@ -577,7 +577,7 @@ CA
                                         <action selector="userPointPressed:" target="678" id="856"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(p) Pi" id="789">
+                                <button toolTip="(p) Pi" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="789">
                                     <rect key="frame" x="135" y="157" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="π" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2799">
@@ -593,18 +593,18 @@ CA
                         </view>
                         <font key="titleFont" metaFont="system"/>
                     </box>
-                    <customView id="1338" customClass="BlankingView">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1338" customClass="BlankingView">
                         <rect key="frame" x="-4" y="-1" width="99" height="235"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <box title="Box" titlePosition="noTitle" id="1479">
+                            <box fixedFrame="YES" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="1479">
                                 <rect key="frame" x="-3" y="-4" width="116" height="246"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" id="fzj-Zi-k2p">
                                     <rect key="frame" x="3" y="3" width="110" height="240"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button toolTip="(⌘Y) Open the History Drawer" id="1478">
+                                        <button toolTip="(⌘Y) Open the History Drawer" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1478">
                                             <rect key="frame" x="5" y="198" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <buttonCell key="cell" type="square" title="History" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2805">
@@ -617,7 +617,7 @@ CA
                                                 <action selector="toggleDrawer:" target="693" id="1485"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="(⌘R) Opens the Radix Drawer" tag="1" id="1477">
+                                        <button toolTip="(⌘R) Opens the Radix Drawer" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="1477">
                                             <rect key="frame" x="5" y="120" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <buttonCell key="cell" type="square" title="Radix" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2804">
@@ -630,7 +630,7 @@ CA
                                                 <action selector="toggleDrawer:" target="693" id="1487"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="(⌘2) Opens the 2D Data Drawer" tag="3" id="1481">
+                                        <button toolTip="(⌘2) Opens the 2D Data Drawer" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="1481">
                                             <rect key="frame" x="5" y="42" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <buttonCell key="cell" type="square" title="Data 2D" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2807">
@@ -643,7 +643,7 @@ CA
                                                 <action selector="toggleDrawer:" target="693" id="1489"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="(⌘1) Opens the Data Drawer" tag="2" id="1482">
+                                        <button toolTip="(⌘1) Opens the Data Drawer" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="1482">
                                             <rect key="frame" x="5" y="81" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <buttonCell key="cell" type="square" title="Data" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2808">
@@ -656,7 +656,7 @@ CA
                                                 <action selector="toggleDrawer:" target="693" id="1488"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="(⌘N) Opens the Constants Drawer" tag="5" id="1475">
+                                        <button toolTip="(⌘N) Opens the Constants Drawer" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="1475">
                                             <rect key="frame" x="5" y="159" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <buttonCell key="cell" type="square" title="Constants" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="5" inset="2" id="2803">
@@ -669,7 +669,7 @@ CA
                                                 <action selector="toggleDrawer:" target="693" id="1486"/>
                                             </connections>
                                         </button>
-                                        <button toolTip="(⌘3) Opens the Array Data Drawer" tag="4" id="1480">
+                                        <button toolTip="(⌘3) Opens the Array Data Drawer" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="1480">
                                             <rect key="frame" x="5" y="3" width="90" height="40"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <buttonCell key="cell" type="square" title="Array Data" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="4" inset="2" id="2806">
@@ -687,41 +687,41 @@ CA
                             </box>
                         </subviews>
                     </customView>
-                    <textField verticalHuggingPriority="750" id="1383">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1383">
                         <rect key="frame" x="231" y="437" width="148" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Radix: 10" id="2802">
-                            <font key="font" metaFont="smallSystem"/>
+                            <font key="font" metaFont="message" size="11"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="1379">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1379">
                         <rect key="frame" x="71" y="437" width="106" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Precision: 12 Digits" id="2800">
-                            <font key="font" metaFont="smallSystem"/>
+                            <font key="font" metaFont="message" size="11"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" red="1" green="0.98823528999999999" blue="0.98823528999999999" alpha="1" colorSpace="calibratedRGB"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="1380">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1380">
                         <rect key="frame" x="507" y="437" width="99" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Degrees" id="2801">
-                            <font key="font" metaFont="smallSystem"/>
+                            <font key="font" metaFont="message" size="11"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <box boxType="secondary" borderType="bezel" title="Title" titlePosition="noTitle" id="1339">
+                    <box fixedFrame="YES" boxType="secondary" borderType="bezel" title="Title" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="1339">
                         <rect key="frame" x="89" y="-6" width="305" height="243"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <view key="contentView" id="76V-2g-kWJ">
                             <rect key="frame" x="3" y="3" width="299" height="237"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button toolTip="Right Parenthesis" tag="1" id="1655">
+                                <button toolTip="Right Parenthesis" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="1655">
                                     <rect key="frame" x="246" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title=")" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2727">
@@ -733,7 +733,7 @@ CA
                                         <action selector="bracketPressed:" target="678" id="1723"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(r) Complex magnitude" tag="15" id="1657">
+                                <button toolTip="(r) Complex magnitude" fixedFrame="YES" tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="1657">
                                     <rect key="frame" x="50" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="abs" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="15" inset="2" id="2729">
@@ -745,7 +745,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="1706"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(k) Real Part" tag="14" id="2919">
+                                <button toolTip="(k) Real Part" fixedFrame="YES" tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="2919">
                                     <rect key="frame" x="148" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Im" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="13" inset="2" id="2920">
@@ -757,7 +757,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="2921"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(n) Permutations" tag="112" id="1662">
+                                <button toolTip="(n) Permutations" fixedFrame="YES" tag="112" translatesAutoresizingMaskIntoConstraints="NO" id="1662">
                                     <rect key="frame" x="99" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="nPr" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="112" inset="2" id="2734">
@@ -769,7 +769,7 @@ CA
                                         <action selector="binaryOpPressed:" target="678" id="1714"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(n) Permutations" tag="99" id="2916">
+                                <button toolTip="(n) Permutations" fixedFrame="YES" tag="99" translatesAutoresizingMaskIntoConstraints="NO" id="2916">
                                     <rect key="frame" x="99" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="nCr" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="112" inset="2" id="2917">
@@ -781,7 +781,7 @@ CA
                                         <action selector="binaryOpPressed:" target="678" id="2918"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(l) Natural Logarithm" tag="20" id="1664">
+                                <button toolTip="(l) Natural Logarithm" fixedFrame="YES" tag="20" translatesAutoresizingMaskIntoConstraints="NO" id="1664">
                                     <rect key="frame" x="197" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="ln" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" inset="2" id="2736">
@@ -793,7 +793,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="1719"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(g) shift the exponent left" tag="-1" id="1668">
+                                <button toolTip="(g) shift the exponent left" fixedFrame="YES" tag="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1668">
                                     <rect key="frame" x="50" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="&lt;3" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2740">
@@ -805,7 +805,7 @@ CA
                                         <action selector="exponentShiftPressed:" target="678" id="1717"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(g) shift the exponent left" tag="1" id="2913">
+                                <button toolTip="(g) shift the exponent left" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="2913">
                                     <rect key="frame" x="50" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="&gt;3" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2914">
@@ -817,7 +817,7 @@ CA
                                         <action selector="exponentShiftPressed:" target="678" id="2915"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(q) Factorial" tag="26" id="1669">
+                                <button toolTip="(q) Factorial" fixedFrame="YES" tag="26" translatesAutoresizingMaskIntoConstraints="NO" id="1669">
                                     <rect key="frame" x="1" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x!" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="26" inset="2" id="2741">
@@ -829,7 +829,7 @@ CA
                                         <action selector="postOpPressed:" target="678" id="1710"/>
                                     </connections>
                                 </button>
-                                <button toolTip="Left Parenthesis" id="1672">
+                                <button toolTip="Left Parenthesis" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1672">
                                     <rect key="frame" x="197" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="(" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2744">
@@ -841,7 +841,7 @@ CA
                                         <action selector="bracketPressed:" target="678" id="1722"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌥o) Hyperbolic Cosine" tag="8" id="1674">
+                                <button toolTip="(⌥o) Hyperbolic Cosine" fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="1674">
                                     <rect key="frame" x="99" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="cosh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2746">
@@ -854,7 +854,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="1711"/>
                                     </connections>
                                 </button>
-                                <button identifier="squareRoot" toolTip="(v) Square Root" tag="21" id="1679">
+                                <button identifier="squareRoot" toolTip="(v) Square Root" fixedFrame="YES" tag="21" translatesAutoresizingMaskIntoConstraints="NO" id="1679">
                                     <rect key="frame" x="197" y="198" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="2_x" imagePosition="overlaps" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2751">
@@ -866,7 +866,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="1708"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌘v) Cube Root" tag="29" id="2907">
+                                <button toolTip="(⌘v) Cube Root" fixedFrame="YES" tag="29" translatesAutoresizingMaskIntoConstraints="NO" id="2907">
                                     <rect key="frame" x="197" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="3_x" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2908">
@@ -879,7 +879,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="2909"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌥v) Nth Root" id="2910">
+                                <button toolTip="(⌥v) Nth Root" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2910">
                                     <rect key="frame" x="197" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="x_y" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="2911">
@@ -891,7 +891,7 @@ CA
                                         <action selector="binaryOpPressed:" target="678" id="2939"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(z) e, raised to the next number" tag="24" id="1680">
+                                <button toolTip="(z) e, raised to the next number" fixedFrame="YES" tag="24" translatesAutoresizingMaskIntoConstraints="NO" id="1680">
                                     <rect key="frame" x="246" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="eˣ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="24" inset="2" id="2752">
@@ -903,7 +903,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="1720"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(l) Natural Logarithm" id="2928">
+                                <button toolTip="(l) Natural Logarithm" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2928">
                                     <rect key="frame" x="197" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="log" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" inset="2" id="2931">
@@ -916,7 +916,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="2932"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(z) 10, raised to the next number" tag="23" id="2929">
+                                <button toolTip="(z) 10, raised to the next number" fixedFrame="YES" tag="23" translatesAutoresizingMaskIntoConstraints="NO" id="2929">
                                     <rect key="frame" x="246" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="10ˣ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="24" inset="2" id="2930">
@@ -929,7 +929,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="2933"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(w) square the current number" tag="25" id="1683">
+                                <button toolTip="(w) square the current number" fixedFrame="YES" tag="25" translatesAutoresizingMaskIntoConstraints="NO" id="1683">
                                     <rect key="frame" x="246" y="198" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x²" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="25" inset="2" id="2755">
@@ -941,7 +941,7 @@ CA
                                         <action selector="postOpPressed:" target="678" id="1712"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(w) square the current number" tag="27" id="2925">
+                                <button toolTip="(w) square the current number" fixedFrame="YES" tag="27" translatesAutoresizingMaskIntoConstraints="NO" id="2925">
                                     <rect key="frame" x="148" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="25" imageScaling="proportionallyDown" inset="2" id="2926">
@@ -953,7 +953,7 @@ CA
                                         <action selector="postOpPressed:" target="678" id="2927"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(w) cube the current number" tag="28" id="2904">
+                                <button toolTip="(w) cube the current number" fixedFrame="YES" tag="28" translatesAutoresizingMaskIntoConstraints="NO" id="2904">
                                     <rect key="frame" x="246" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="x³" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="25" inset="2" id="2905">
@@ -966,7 +966,7 @@ CA
                                         <action selector="postOpPressed:" target="678" id="2906"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌘D) Display Precision" id="1684">
+                                <button toolTip="(⌘D) Display Precision" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1684">
                                     <rect key="frame" x="99" y="198" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Disp" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2756">
@@ -979,7 +979,7 @@ CA
                                         <action selector="precisionPressed:" target="678" id="1704"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⎇) Second function" id="2922">
+                                <button toolTip="(⎇) Second function" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2922">
                                     <rect key="frame" x="1" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="2nd" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2923">
@@ -991,7 +991,7 @@ CA
                                         <action selector="shiftPressed:" target="678" id="2937"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌥t) Hyperboic Tangent" tag="9" id="1687">
+                                <button toolTip="(⌥t) Hyperboic Tangent" fixedFrame="YES" tag="9" translatesAutoresizingMaskIntoConstraints="NO" id="1687">
                                     <rect key="frame" x="148" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="tanh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2759">
@@ -1004,7 +1004,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="1715"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌘T) Change Trig. Mode" id="1692">
+                                <button toolTip="(⌘T) Change Trig. Mode" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1692">
                                     <rect key="frame" x="1" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Rnd" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="2764">
@@ -1016,7 +1016,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="8Qn-0b-xkT"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌥w) raise to the next number" tag="94" id="1693">
+                                <button toolTip="(⌥w) raise to the next number" fixedFrame="YES" tag="94" translatesAutoresizingMaskIntoConstraints="NO" id="1693">
                                     <rect key="frame" x="246" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="xʸ" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="94" inset="2" id="2765">
@@ -1028,7 +1028,7 @@ CA
                                         <action selector="binaryOpPressed:" target="678" id="1716"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌥s) Hyperbolic Sine" tag="7" id="1697">
+                                <button toolTip="(⌥s) Hyperbolic Sine" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="1697">
                                     <rect key="frame" x="50" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="sinh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2769">
@@ -1041,7 +1041,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="1707"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(o) Cosine" tag="2" id="2895">
+                                <button toolTip="(o) Cosine" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="2895">
                                     <rect key="frame" x="99" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="cos" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="2900">
@@ -1053,7 +1053,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="2901"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(t) Tangent" tag="3" id="2896">
+                                <button toolTip="(t) Tangent" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="2896">
                                     <rect key="frame" x="148" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="tan" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="2899">
@@ -1065,7 +1065,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="2902"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(s) Sine" tag="1" id="2897">
+                                <button toolTip="(s) Sine" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="2897">
                                     <rect key="frame" x="50" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="sin" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2898">
@@ -1077,7 +1077,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="2903"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(j) binary OR" tag="111" id="1673">
+                                <button toolTip="(j) binary OR" fixedFrame="YES" tag="111" translatesAutoresizingMaskIntoConstraints="NO" id="1673">
                                     <rect key="frame" x="1" y="120" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="or" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="111" inset="2" id="2745">
@@ -1089,7 +1089,7 @@ CA
                                         <action selector="binaryOpPressed:" target="678" id="1709"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(h) binary AND" tag="97" id="1691">
+                                <button toolTip="(h) binary AND" fixedFrame="YES" tag="97" translatesAutoresizingMaskIntoConstraints="NO" id="1691">
                                     <rect key="frame" x="1" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="and" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="97" inset="2" id="2763">
@@ -1101,7 +1101,7 @@ CA
                                         <action selector="binaryOpPressed:" target="678" id="1713"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(space) Adds the result to the Data" tag="40" id="1681">
+                                <button toolTip="(space) Adds the result to the Data" fixedFrame="YES" tag="40" translatesAutoresizingMaskIntoConstraints="NO" id="1681">
                                     <rect key="frame" x="1" y="198" width="99" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Add Data" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="40" inset="2" id="2753">
@@ -1115,7 +1115,7 @@ IA
                                         <action selector="addData:" target="797" id="1721"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(m) Modulo -- not percent" tag="37" id="1652">
+                                <button toolTip="(m) Modulo -- not percent" fixedFrame="YES" tag="37" translatesAutoresizingMaskIntoConstraints="NO" id="1652">
                                     <rect key="frame" x="99" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="mod" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="2724">
@@ -1127,7 +1127,7 @@ IA
                                         <action selector="binaryOpPressed:" target="678" id="1718"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(m) Round the number" tag="18" id="2934">
+                                <button toolTip="(m) Round the number" fixedFrame="YES" tag="18" translatesAutoresizingMaskIntoConstraints="NO" id="2934">
                                     <rect key="frame" x="148" y="198" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Rad" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="2935">
@@ -1140,7 +1140,7 @@ IA
                                         <action selector="trigModePressed:" target="678" id="qcb-Mr-G18"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(k) Real Part" tag="13" id="1658">
+                                <button toolTip="(k) Real Part" fixedFrame="YES" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="1658">
                                     <rect key="frame" x="148" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Re" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="13" inset="2" id="2730">
@@ -1163,7 +1163,7 @@ IA
                 <outlet property="delegate" destination="797" id="1457"/>
                 <outlet property="initialFirstResponder" destination="617" id="1810"/>
             </connections>
-            <point key="canvasLocation" x="243" y="632"/>
+            <point key="canvasLocation" x="285" y="745"/>
         </window>
         <customObject id="678" userLabel="InputManager" customClass="InputManager">
             <connections>
@@ -1210,7 +1210,7 @@ IA
             <rect key="frame" x="0.0" y="0.0" width="216" height="480"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <button verticalHuggingPriority="750" id="1408">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1408">
                     <rect key="frame" x="14" y="-3" width="188" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Clear History" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2809">
@@ -1221,7 +1221,7 @@ IA
                         <action selector="clearHistory:" target="797" id="1409"/>
                     </connections>
                 </button>
-                <scrollView horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="690">
+                <scrollView fixedFrame="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="690">
                     <rect key="frame" x="0.0" y="28" width="216" height="452"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="Hwk-H4-fD1">
@@ -1230,14 +1230,13 @@ IA
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="60" headerView="2863" id="689">
                                 <rect key="frame" x="0.0" y="0.0" width="214" height="434"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn editable="NO" width="194.7080078125" minWidth="107.70800018310547" maxWidth="1000" id="692">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Expression History">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
@@ -1309,7 +1308,7 @@ IA
             <rect key="frame" x="0.0" y="0.0" width="216" height="480"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <scrollView horizontalLineScroll="15" horizontalPageScroll="10" verticalLineScroll="15" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="705">
+                <scrollView fixedFrame="YES" horizontalLineScroll="15" horizontalPageScroll="10" verticalLineScroll="15" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="705">
                     <rect key="frame" x="0.0" y="0.0" width="216" height="480"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="bpw-fz-ApG">
@@ -1318,19 +1317,18 @@ IA
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="13" headerView="2866" id="703">
                                 <rect key="frame" x="0.0" y="0.0" width="214" height="462"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn identifier="0" editable="NO" width="40" minWidth="40" maxWidth="1000" id="706">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Radix">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="center" id="2848">
-                                            <font key="font" metaFont="smallSystem"/>
+                                            <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </textFieldCell>
@@ -1338,12 +1336,11 @@ IA
                                     </tableColumn>
                                     <tableColumn identifier="1" editable="NO" width="95.7919921875" minWidth="78.392997741699219" maxWidth="1000" id="704">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Number Base">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" id="2847">
-                                            <font key="font" metaFont="smallSystem"/>
+                                            <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </textFieldCell>
@@ -1351,12 +1348,11 @@ IA
                                     </tableColumn>
                                     <tableColumn identifier="2" editable="NO" width="52.66400146484375" minWidth="33.66400146484375" maxWidth="1000" id="947">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="# Bits">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" drawsBackground="YES" id="2849">
-                                            <font key="font" metaFont="smallSystem"/>
+                                            <font key="font" metaFont="message" size="11"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -1402,7 +1398,7 @@ IA
             <rect key="frame" x="0.0" y="0.0" width="216" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" id="855">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="855">
                     <rect key="frame" x="5" y="133" width="112" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Clear Value" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2813">
@@ -1413,7 +1409,7 @@ IA
                         <action selector="clearDataValue:" target="693" id="1437"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" id="853">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="853">
                     <rect key="frame" x="110" y="133" width="100" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Clear All" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2812">
@@ -1424,7 +1420,7 @@ IA
                         <action selector="clearAllDataValues:" target="693" id="1438"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" id="852">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="852">
                     <rect key="frame" x="5" y="158" width="205" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Copy Value to Display" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2811">
@@ -1435,7 +1431,7 @@ IA
                         <action selector="copyDataValueToDisplay:" target="693" id="1436"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" id="850">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="850">
                     <rect key="frame" x="5" y="0.0" width="205" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Apply Function" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2810">
@@ -1446,7 +1442,7 @@ IA
                         <action selector="applyDataFunction:" target="693" id="1439"/>
                     </connections>
                 </button>
-                <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="725">
+                <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="725">
                     <rect key="frame" x="0.0" y="35" width="216" height="97"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" id="pBU-nm-zv8">
@@ -1455,14 +1451,13 @@ IA
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2872" id="726">
                                 <rect key="frame" x="0.0" y="0.0" width="214" height="79"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn editable="NO" width="211" minWidth="40" maxWidth="1000" id="727">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Apply Function to Data Values">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
@@ -1493,7 +1488,7 @@ IA
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
-                <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="711">
+                <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="711">
                     <rect key="frame" x="0.0" y="192" width="216" height="288"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="Ycv-5X-pK5">
@@ -1502,14 +1497,13 @@ IA
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2869" id="712">
                                 <rect key="frame" x="0.0" y="0.0" width="214" height="270"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn editable="NO" width="211.2080078125" minWidth="107.70800018310547" maxWidth="1000" id="709">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Data Values">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
@@ -1558,7 +1552,7 @@ IA
             <rect key="frame" x="0.0" y="0.0" width="260" height="480"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <button verticalHuggingPriority="750" id="1321">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1321">
                     <rect key="frame" x="5" y="145" width="127" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Clear Row" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2816">
@@ -1569,7 +1563,7 @@ IA
                         <action selector="clearData2DValue:" target="693" id="1433"/>
                     </connections>
                 </button>
-                <scrollView horizontalLineScroll="14" horizontalPageScroll="10" verticalLineScroll="14" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="1317">
+                <scrollView fixedFrame="YES" horizontalLineScroll="14" horizontalPageScroll="10" verticalLineScroll="14" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1317">
                     <rect key="frame" x="0.0" y="36" width="260" height="107"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" id="h0T-ly-V40">
@@ -1578,19 +1572,18 @@ IA
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="12" headerView="2878" id="1314">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="89"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn width="255" minWidth="40" maxWidth="1000" id="1316">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Apply Function to Data Values">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" id="2854">
-                                            <font key="font" metaFont="label"/>
+                                            <font key="font" metaFont="system" size="10"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </textFieldCell>
@@ -1616,7 +1609,7 @@ IA
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
-                <button verticalHuggingPriority="750" id="1315">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1315">
                     <rect key="frame" x="5" y="1" width="249" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Apply Function" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2815">
@@ -1627,7 +1620,7 @@ IA
                         <action selector="applyData2DFunction:" target="693" id="1435"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" id="1313">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1313">
                     <rect key="frame" x="126" y="145" width="128" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Clear All" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2814">
@@ -1638,7 +1631,7 @@ IA
                         <action selector="clearAllData2DValues:" target="693" id="1434"/>
                     </connections>
                 </button>
-                <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="742">
+                <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="742">
                     <rect key="frame" x="0.0" y="181" width="260" height="299"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="6IO-nd-pgf">
@@ -1654,7 +1647,6 @@ IA
                                 <tableColumns>
                                     <tableColumn identifier="0" editable="NO" width="126" minWidth="10" maxWidth="1000" id="746">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="X Values">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
@@ -1666,7 +1658,6 @@ IA
                                     </tableColumn>
                                     <tableColumn identifier="1" editable="NO" width="111.34199523925781" minWidth="53.341999053955078" maxWidth="1000" id="747">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Y Values">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
@@ -1714,7 +1705,7 @@ IA
             <rect key="frame" x="0.0" y="0.0" width="260" height="480"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <button verticalHuggingPriority="750" id="1329">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1329">
                     <rect key="frame" x="5" y="117" width="131" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Clear Row" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2821">
@@ -1725,7 +1716,7 @@ IA
                         <action selector="clearArrayValue:" target="693" id="1441"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" id="1327">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1327">
                     <rect key="frame" x="5" y="0.0" width="250" height="32"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Apply Function" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2820">
@@ -1736,7 +1727,7 @@ IA
                         <action selector="applyArrayDataFunction:" target="693" id="1443"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" id="1326">
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1326">
                     <rect key="frame" x="131" y="117" width="124" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                     <buttonCell key="cell" type="push" title="Clear All" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2819">
@@ -1747,28 +1738,27 @@ IA
                         <action selector="clearAllArrayDataValues:" target="693" id="1442"/>
                     </connections>
                 </button>
-                <scrollView horizontalLineScroll="15" horizontalPageScroll="10" verticalLineScroll="15" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="1322">
+                <scrollView fixedFrame="YES" horizontalLineScroll="15" horizontalPageScroll="10" verticalLineScroll="15" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1322">
                     <rect key="frame" x="0.0" y="34" width="260" height="81"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" id="xC8-l2-JHf">
                         <rect key="frame" x="1" y="0.0" width="258" height="80"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="13" headerView="2884" id="1330">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="63"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn editable="NO" width="239" minWidth="40" maxWidth="1000" id="1324">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Apply Function to Data Values">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" id="2858">
-                                            <font key="font" metaFont="label"/>
+                                            <font key="font" metaFont="system" size="10"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </textFieldCell>
@@ -1794,7 +1784,7 @@ IA
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
                 </scrollView>
-                <textField verticalHuggingPriority="750" id="771">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="771">
                     <rect key="frame" x="46" y="454" width="68" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Columns:" id="2818">
@@ -1803,7 +1793,7 @@ IA
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" id="770">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="770">
                     <rect key="frame" x="123" y="452" width="86" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="3" drawsBackground="YES" id="2817">
@@ -1822,12 +1812,12 @@ IA
                         <action selector="arrayColumnsChanged:" target="693" id="1430"/>
                     </connections>
                 </textField>
-                <scrollView horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="757">
+                <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="757">
                     <rect key="frame" x="0.0" y="152" width="260" height="294"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="UIe-IC-5Sw">
                         <rect key="frame" x="1" y="0.0" width="258" height="293"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2881" id="752">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="276"/>
@@ -1838,12 +1828,11 @@ IA
                                 <tableColumns>
                                     <tableColumn identifier="0" width="81" minWidth="10" maxWidth="1000" id="1446">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="1">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" drawsBackground="YES" id="2855">
-                                            <font key="font" metaFont="cellTitle"/>
+                                            <font key="font" metaFont="label" size="12"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -1851,12 +1840,11 @@ IA
                                     </tableColumn>
                                     <tableColumn identifier="1" width="79.955001831054688" minWidth="10.954999923706055" maxWidth="1000" id="1447">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="2">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" drawsBackground="YES" id="2856">
-                                            <font key="font" metaFont="cellTitle"/>
+                                            <font key="font" metaFont="label" size="12"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -1864,12 +1852,11 @@ IA
                                     </tableColumn>
                                     <tableColumn identifier="2" width="73" minWidth="4" maxWidth="1000" id="1448">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="3">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" drawsBackground="YES" id="2857">
-                                            <font key="font" metaFont="cellTitle"/>
+                                            <font key="font" metaFont="label" size="12"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -1899,6 +1886,7 @@ IA
             <connections>
                 <outlet property="dataManager" destination="797" id="924"/>
             </connections>
+            <point key="canvasLocation" x="-253" y="668"/>
         </customView>
         <drawer preferredEdge="minX" trailingOffset="15" id="772" userLabel="ConstantsDrawer">
             <size key="contentSize" width="260" height="308"/>
@@ -1913,7 +1901,7 @@ IA
             <rect key="frame" x="0.0" y="0.0" width="260" height="480"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <scrollView horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="779">
+                <scrollView fixedFrame="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="779">
                     <rect key="frame" x="0.0" y="0.0" width="260" height="480"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="j66-jM-7td">
@@ -1922,19 +1910,18 @@ IA
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="15" headerView="2887" id="780">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="462"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <size key="intercellSpacing" width="3" height="2"/>
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
                                     <tableColumn width="238.53900146484375" minWidth="61.53900146484375" maxWidth="1000" id="784">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Constants">
-                                            <font key="font" metaFont="smallSystem"/>
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" id="2859">
-                                            <font key="font" metaFont="label"/>
+                                            <font key="font" metaFont="system" size="10"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </textFieldCell>
@@ -1999,7 +1986,7 @@ IA
                 <rect key="frame" x="0.0" y="0.0" width="298" height="107"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" id="859">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="859">
                         <rect key="frame" x="234" y="68" width="44" height="22"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="3" drawsBackground="YES" id="2822">
@@ -2015,7 +2002,7 @@ IA
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="866">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="866">
                         <rect key="frame" x="17" y="68" width="212" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Fixed Number of Decimal Places:" id="2823">
@@ -2024,9 +2011,9 @@ IA
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" id="867">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="867">
                         <rect key="frame" x="200" y="20" width="84" height="32"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2824">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -2038,7 +2025,7 @@ DQ
                             <action selector="precisionOk:" target="678" id="917"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="868">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="868">
                         <rect key="frame" x="116" y="20" width="84" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2825">
@@ -2054,7 +2041,7 @@ Gw
                     </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="38" y="609"/>
+            <point key="canvasLocation" x="-96" y="436"/>
         </window>
         <window title="Scientific Notation" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="884" userLabel="SciSettings" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES"/>
@@ -2065,7 +2052,7 @@ Gw
                 <rect key="frame" x="0.0" y="0.0" width="298" height="107"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" id="888">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="888">
                         <rect key="frame" x="234" y="68" width="44" height="22"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="3" drawsBackground="YES" id="2829">
@@ -2081,7 +2068,7 @@ Gw
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="886">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="886">
                         <rect key="frame" x="17" y="68" width="212" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Number of significant digits:" id="2827">
@@ -2090,7 +2077,7 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" id="887">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="887">
                         <rect key="frame" x="200" y="20" width="84" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2828">
@@ -2104,7 +2091,7 @@ DQ
                             <action selector="precisionOk:" target="678" id="915"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="885">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="885">
                         <rect key="frame" x="116" y="20" width="84" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2826">
@@ -2131,7 +2118,7 @@ Gw
                 <rect key="frame" x="0.0" y="0.0" width="298" height="107"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField verticalHuggingPriority="750" id="893">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="893">
                         <rect key="frame" x="234" y="68" width="44" height="22"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" title="12" drawsBackground="YES" id="2830">
@@ -2147,7 +2134,7 @@ Gw
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="896">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="896">
                         <rect key="frame" x="17" y="68" width="212" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Number of digits to display:" id="2833">
@@ -2156,7 +2143,7 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" id="894">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="894">
                         <rect key="frame" x="200" y="20" width="84" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2831">
@@ -2170,7 +2157,7 @@ DQ
                             <action selector="precisionOk:" target="678" id="913"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="895">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="895">
                         <rect key="frame" x="116" y="20" width="84" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2832">
@@ -2203,7 +2190,7 @@ Gw
                 <rect key="frame" x="0.0" y="0.0" width="318" height="231"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button id="1764">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1764">
                         <rect key="frame" x="18" y="170" width="199" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Use thousands separator" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="2834">
@@ -2211,7 +2198,7 @@ Gw
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                     </button>
-                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="1766">
+                    <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1766">
                         <rect key="frame" x="18" y="58" width="96" height="58"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2238,7 +2225,7 @@ Gw
                             </column>
                         </cells>
                     </matrix>
-                    <textField verticalHuggingPriority="750" id="1771">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1771">
                         <rect key="frame" x="17" y="122" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Default display:" id="2835">
@@ -2247,7 +2234,7 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="1772">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1772">
                         <rect key="frame" x="17" y="194" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Grouping:" id="2836">
@@ -2256,7 +2243,7 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button verticalHuggingPriority="750" id="1774">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1774">
                         <rect key="frame" x="14" y="12" width="78" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="2837">
@@ -2270,7 +2257,7 @@ DQ
                             <action selector="commitPreferences:" target="678" id="1806"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="1775">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1775">
                         <rect key="frame" x="92" y="12" width="78" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2838">
@@ -2284,7 +2271,7 @@ Gw
                             <action selector="cancelPreferences:" target="678" id="1807"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" id="1781">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1781">
                         <rect key="frame" x="125" y="97" width="42" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="2839">
@@ -2295,12 +2282,12 @@ Gw
                                 <decimal key="minimum" value="3"/>
                                 <real key="maximum" value="50"/>
                             </numberFormatter>
-                            <font key="font" metaFont="smallSystem"/>
+                            <font key="font" metaFont="message" size="11"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="1782">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1782">
                         <rect key="frame" x="125" y="77" width="42" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="2840">
@@ -2311,12 +2298,12 @@ Gw
                                 <decimal key="minimum" value="1"/>
                                 <decimal key="maximum" value="20"/>
                             </numberFormatter>
-                            <font key="font" metaFont="smallSystem"/>
+                            <font key="font" metaFont="message" size="11"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="1783">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1783">
                         <rect key="frame" x="125" y="57" width="42" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="2841">
@@ -2327,12 +2314,12 @@ Gw
                                 <decimal key="minimum" value="0"/>
                                 <decimal key="maximum" value="20"/>
                             </numberFormatter>
-                            <font key="font" metaFont="smallSystem"/>
+                            <font key="font" metaFont="message" size="11"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="1787">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1787">
                         <rect key="frame" x="181" y="99" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="digits" id="2842">
@@ -2341,7 +2328,7 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="1788">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1788">
                         <rect key="frame" x="181" y="79" width="120" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="significant figures" id="2843">
@@ -2350,7 +2337,7 @@ Gw
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="1789">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1789">
                         <rect key="frame" x="181" y="57" width="114" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="fractional places" id="2844">
@@ -2365,8 +2352,8 @@ Gw
         </window>
     </objects>
     <resources>
-        <image name="2_x" width="40" height="30"/>
-        <image name="3_x" width="40" height="30"/>
-        <image name="x_y" width="40" height="30"/>
+        <image name="2_x" width="80" height="60"/>
+        <image name="3_x" width="80" height="60"/>
+        <image name="x_y" width="80" height="60"/>
     </resources>
 </document>

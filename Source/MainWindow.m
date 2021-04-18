@@ -22,7 +22,8 @@
 	
 	// just need to make the title bar transparent and the window vibrate - Mike
 	self.titlebarAppearsTransparent = YES;
-	self.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantLight];
+//	self.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantLight];
+//    self.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantDark];
 //	self.window.styleMask = self.window.styleMask | NSFullSizeContentViewWindowMask;
 //	self.window.titleVisibility = NSWindowTitleHiddenWhenActive;
 //	self.window.titlebarAppearsTransparent = YES;
@@ -36,10 +37,10 @@
 //
 - (void)flagsChanged:(NSEvent*)theEvent
 {
-	unsigned int newFlags = [theEvent modifierFlags];
+    NSEventModifierFlags newFlags = theEvent.modifierFlags;
 	
 //	[dataManager optionIsPressed:(newFlags & NSAlternateKeyMask) != 0];
-	if ((newFlags & NSShiftKeyMask) != 0) {
+    if ((newFlags & NSShiftKeyMask) != 0) {
 		[dataManager shiftIsPressed];
 	}
 
@@ -49,7 +50,7 @@
 - (BOOL)performKeyEquivalent:(NSEvent *)theEvent
 {
 	NSEvent *alteredEvent;
-	unsigned int modifiers = [theEvent modifierFlags];
+    NSEventModifierFlags modifiers = [theEvent modifierFlags];
 	NSString *chars = [theEvent characters];
 	NSString *charsWithout = [[theEvent charactersIgnoringModifiers] lowercaseString];
 	BOOL needNewEvent = NO;

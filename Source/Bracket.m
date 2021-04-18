@@ -93,7 +93,7 @@
 		return;
 	}
 	closed = YES;
-	pathValidAt = -1;
+	pathValidAt = YES;
 	[self inputPoint];
 	[self valueChanged];
 }

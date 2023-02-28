@@ -54,7 +54,7 @@
 				[item addObject:[decoder decodeObjectForKey:[NSString stringWithFormat:@"Index[%d]", i]]];
 				[array addObject:item];
 			}
-			size--;
+			//size--;
 		}
 	}
 	return self;

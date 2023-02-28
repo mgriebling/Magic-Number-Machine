@@ -676,6 +676,7 @@
 }
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
+    
 }
 - (void)applicationDidUnhide:(NSNotification *)aNotification
 {

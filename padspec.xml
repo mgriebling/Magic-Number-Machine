@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>3.01</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>EdPAD by HexCat, http://www.hexcat.com</MASTER_PAD_EDITOR>
+    <MASTER_PAD_INFO>This is Portable Application Description, http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <Company_Info>
+    <Company_Name>Matt Gallagher</Company_Name>
+    <Address_1/>
+    <Address_2/>
+    <City_Town>Melbourne</City_Town>
+    <State_Province/>
+    <Zip_Postal_Code/>
+    <Country>Australia</Country>
+    <Company_WebSite_URL>http://cocoawithlove.com</Company_WebSite_URL>
+    <Contact_Info>
+      <Author_First_Name>Matt</Author_First_Name>
+      <Author_Last_Name>Gallagher</Author_Last_Name>
+      <Author_Email>mattxg@gmail.com</Author_Email>
+      <Contact_First_Name>Matt</Contact_First_Name>
+      <Contact_Last_Name>Gallagher</Contact_Last_Name>
+      <Contact_Email>mattxg@gmail.com</Contact_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>mattxg@gmail.com</Sales_Email>
+      <Support_Email>mattxg@gmail.com</Support_Email>
+      <General_Email>mattxg@gmail.com</General_Email>
+      <Sales_Phone/>
+      <Support_Phone/>
+      <General_Phone/>
+      <Fax_Phone/>
+    </Support_Info>
+  </Company_Info>
+  <Program_Info>
+    <Program_Name>Magic Number Machine</Program_Name>
+    <Program_Version>1.0.24</Program_Version>
+    <Program_Release_Month>04</Program_Release_Month>
+    <Program_Release_Day>07</Program_Release_Day>
+    <Program_Release_Year>2008</Program_Release_Year>
+    <Program_Cost_Dollars/>
+    <Program_Cost_Other_Code/>
+    <Program_Cost_Other/>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Release_Status>Minor Update</Program_Release_Status>
+    <Program_Install_Support>No Install Support</Program_Install_Support>
+    <Program_OS_Support>Mac OS X 10.4,Mac OS X 10.5</Program_OS_Support>
+    <Program_Language>English,French,German,Spanish</Program_Language>
+    <File_Info>
+      <File_Size_Bytes>1590238</File_Size_Bytes>
+      <File_Size_K>1553</File_Size_K>
+      <File_Size_MB>1.517</File_Size_MB>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>n</Has_Expire_Info>
+      <Expire_Count/>
+      <Expire_Based_On/>
+      <Expire_Other_Info/>
+      <Expire_Month/>
+      <Expire_Day/>
+      <Expire_Year/>
+    </Expire_Info>
+    <Program_Change_Info>For locales that use comma as the decimal point, this will now work. Keyboard shortcuts have changed significantly to avoid conflicts in different language locales. Fixed tooltips in all languages. Any division by zero now correctly returns &quot;Not a number&quot; instead of &quot;0&quot;.</Program_Change_Info>
+    <Program_Category_Class>Business::Calculators &amp; Converters</Program_Category_Class>
+    <Program_Specific_Category/>
+    <Program_System_Requirements>Mac OS X 10.4 or greater.</Program_System_Requirements>
+  </Program_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>calculator, mathematics, linear, regression, complex, hexadecimal</Keywords>
+      <Char_Desc_45>A full expression-view scientific calculator.</Char_Desc_45>
+      <Char_Desc_80>A full expression-view scientific calculator supporting complex numbers.</Char_Desc_80>
+      <Char_Desc_250>A free, full-featured, graphically laid out, high-precision, scientific calculator for Mac OS X 10.4 or later. Full source-code is included with the distribution.</Char_Desc_250>
+      <Char_Desc_450>A free, full-featured, graphically laid out, high-precision, scientific calculator for Mac OS X 10.4 or later. Full source-code is included with the distribution. Ideal if you need to enter large expressions or have accurate precision. &quot;Data&quot; drawers allow an easy way to generate statistical data, linear regression and gaussian elimination. Extensive support of complex numbers and hexadecimal numbers.</Char_Desc_450>
+      <Char_Desc_2000/>
+    </English>
+  </Program_Descriptions>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>http://magicnumbermachine.googlepages.com</Application_Info_URL>
+      <Application_Order_URL/>
+      <Application_Screenshot_URL>http://lh6.google.co.uk/mattxg/R_lb9-IhSBI/AAAAAAAAAJs/UwuaNJPUirA/mnm-large.png</Application_Screenshot_URL>
+      <Application_Icon_URL>http://lh3.google.co.uk/mattxg/R_lb-OIhSCI/AAAAAAAAAJ0/u_bLkaTO0GA/mnm-icon.png</Application_Icon_URL>
+      <Application_XML_File_URL>http://magicnumbermachine.googlepages.com/padspec.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>http://magicnumbermachine.googlecode.com/files/magicnumbermachine_1.0.24.dmg</Primary_Download_URL>
+      <Secondary_Download_URL>http://home.people.net.au/%7Emattg/magicnumbermachine.dmg</Secondary_Download_URL>
+      <Additional_Download_URL_1/>
+      <Additional_Download_URL_2/>
+    </Download_URLs>
+  </Web_Info>
+  <Permissions>
+    <Distribution_Permissions>May be distributed freely in original DMG file.</Distribution_Permissions>
+    <EULA>Magic Number Machine is freeware. You may use it and not pay any money (hooray for that). All source code, program and help files are ©2003-2008 Matt Gallagher. All rights reserved. I retain ownership of the code but grant a non-exclusive license to its use, reproduction and modification subject to the condition that any distribution of the code or any modification of the code to include the attribution: Parts ©2003-2008 Matt Gallagher.</EULA>
+  </Permissions>
+</XML_DIZ_INFO>

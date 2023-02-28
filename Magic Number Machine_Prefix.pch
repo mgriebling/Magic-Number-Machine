@@ -1,0 +1,13 @@
+// ##############################################################
+// Magic Number Machine_Prefix.h
+//
+// Prefix header for all source files of the 'Magic Number Machine' target in the
+// 'Magic Number Machine' project
+//
+// Created by Matt Gallagher on Mon Apr 21 2003.
+// Copyright (c) 2003 Matt Gallagher. All rights reserved.
+// ##############################################################
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

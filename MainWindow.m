@@ -36,10 +36,10 @@
 //
 - (void)flagsChanged:(NSEvent*)theEvent
 {
-	unsigned int newFlags = [theEvent modifierFlags];
+	NSEventModifierFlags newFlags = [theEvent modifierFlags];
 	
 //	[dataManager optionIsPressed:(newFlags & NSAlternateKeyMask) != 0];
-	if ((newFlags & NSShiftKeyMask) != 0) {
+    if ((newFlags & NSEventModifierFlagShift) != 0) {
 		[dataManager shiftIsPressed];
 	}
 
@@ -49,20 +49,20 @@
 - (BOOL)performKeyEquivalent:(NSEvent *)theEvent
 {
 	NSEvent *alteredEvent;
-	unsigned int modifiers = [theEvent modifierFlags];
+    NSEventModifierFlags modifiers = [theEvent modifierFlags];
 	NSString *chars = [theEvent characters];
 	NSString *charsWithout = [[theEvent charactersIgnoringModifiers] lowercaseString];
 	BOOL needNewEvent = NO;
 	
-	if ([theEvent type] == NSKeyUp)
+    if ([theEvent type] == NSEventTypeKeyUp)
 	{
 		return false;
 	}
 	
 	// Handle the window close shortcut (which is not associated with any UI
 	// element).
-	if ((modifiers & NSCommandKeyMask) &&
-		!(modifiers & (NSShiftKeyMask | NSAlternateKeyMask | NSControlKeyMask)) &&
+    if ((modifiers & NSEventModifierFlagCommand) &&
+        !(modifiers & (NSEventModifierFlagShift | NSEventModifierFlagOption | NSEventModifierFlagControl)) &&
 		[charsWithout isEqualTo:@"w"])
 	{
 		[self performClose:self];
@@ -82,9 +82,9 @@
 	
 	// Strip the shift key and alternate key so that Shft and Opt buttons
 	// work in conjunction with other buttons.
-	if (modifiers & (NSShiftKeyMask | NSAlternateKeyMask))
+    if (modifiers & (NSEventModifierFlagShift | NSEventModifierFlagOption))
 	{
-		modifiers &= ~(NSShiftKeyMask | NSAlternateKeyMask);
+        modifiers &= ~(NSEventModifierFlagShift | NSEventModifierFlagOption);
 		needNewEvent = YES;
 	}
 	
@@ -105,14 +105,14 @@
 	}
 	
 	// Let "PageUp" key make the window floatin
-	else if ([theEvent keyCode] == 116 && [theEvent type] == NSKeyDown)
+    else if ([theEvent keyCode] == 116 && [theEvent type] == NSEventTypeKeyDown)
 	{
 		[self setLevel:NSFloatingWindowLevel];
 		needNewEvent = YES;
 	}
 
 	// Let "PageDown" key make the window normal again
-	else if ([theEvent keyCode] == 121 && [theEvent type] == NSKeyDown)
+    else if ([theEvent keyCode] == 121 && [theEvent type] == NSEventTypeKeyDown)
 	{
 		[self setLevel:NSNormalWindowLevel];
 		needNewEvent = YES;
@@ -127,7 +127,7 @@
 			modifierFlags:modifiers
 			timestamp:[theEvent timestamp]
 			windowNumber:[theEvent windowNumber]
-			context:[theEvent context]
+			context:nil
 			characters:chars
 			charactersIgnoringModifiers:charsWithout
 			isARepeat:[theEvent isARepeat]

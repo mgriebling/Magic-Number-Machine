@@ -351,7 +351,6 @@
 		if(pasteData != nil)
 		{
 			BigCFloat		*pasteValue;
-			
 			pasteValue = [NSKeyedUnarchiver unarchiveObjectWithData:pasteData];
 			[dataManager ensureInputWithValue:NO];
 			inputPoint = [dataManager getInputPoint];

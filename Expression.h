@@ -54,7 +54,7 @@
 	NSRect			childNaturalBounds;
 	NSRect			childDisplayBounds;
 	BOOL			isInputPoint;
-	BOOL			pathValidAt;
+	int 			pathValidAt;
 	BOOL			isBoundsValid;
 	BOOL			valueValid;
 }

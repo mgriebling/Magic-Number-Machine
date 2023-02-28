@@ -141,7 +141,7 @@ static NSArray *constantsDataRows = nil;
 + (NSFont *)getDisplayFontWithSize:(CGFloat)size {
 	NSFont *font = [NSFont fontWithName:@"HelveticaNeue-Light" size:size];
 	if (font == nil) font = [NSFont labelFontOfSize:size];
-//	NSLog(@"Found font = %@", font);
+	// NSLog(@"Found font = %@", font);
 	return font;
 }
 
@@ -179,6 +179,7 @@ static NSArray *constantsDataRows = nil;
 	for (j = 0; j < numGlyphs; j++) {
 		glyphs[j] = [layoutManager glyphAtIndex:j];
 	}
+//    [path appendBezierPathWithCGGlyphs:glyphs count:[text length] inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]];
 	[path
 		appendBezierPathWithGlyphs:glyphs
 		count:[text length]

@@ -145,7 +145,8 @@
 	NSError *error;
 	[fileManager createDirectoryAtURL:file withIntermediateDirectories:YES attributes:nil error:&error];
 	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
-	NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData];
+//    NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData requiringSecureCoding:NO error:nil];
+	 NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData];
     [fileData writeToURL:file atomically:YES];
 //    [fileData writeToURL:file error:&error];
 //    if (error) {
@@ -161,6 +162,7 @@
 	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
 	NSData *fileData = [NSData dataWithContentsOfURL:file];
 	if (fileData) {
+//        historyData = [NSKeyedUnarchiver unarchivedObjectsOfClass:History.class fromData:fileData error:nil];
 		historyData = [NSKeyedUnarchiver unarchiveObjectWithData:fileData];
 	}
 	return historyData;
@@ -357,7 +359,7 @@
 	//
 	// Updated for new interfaces - Mike
 	[savePanel beginSheetModalForWindow:[expressionDisplay window] completionHandler:^(NSInteger result) {
-		if (result == NSFileHandlingPanelOKButton) {
+        if (result == NSModalResponseOK) {
 			NSURL *filename = [savePanel URL];
 			if (filename.pathExtension.length == 0) { filename = [filename URLByAppendingPathExtension:@"pdf"]; }
 			[pdfData writeToURL:filename atomically:YES];

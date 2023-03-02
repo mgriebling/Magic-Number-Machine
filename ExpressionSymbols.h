@@ -74,9 +74,12 @@ typedef NS_ENUM(NSInteger, ConstType) {
 
 @interface ExpressionSymbols : NSObject
 
++ (CGFloat) size;
 + (NSBezierPath *)getSymbolForString:(NSString *)string;
 
++ (NSFont *)getKeyFontWithSize:(CGFloat)size;
 + (NSFont *)getDisplayFontWithSize:(CGFloat)size;
++ (NSFont *)getDisplayFont;
 
 + (NSBezierPath *)makeSymbolForConstant:(enum ConstType)constant;
 + (BigCFloat *)getValueForConstant:(enum ConstType)constant;

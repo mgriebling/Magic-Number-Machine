@@ -58,16 +58,16 @@
 	[path transformUsingAffineTransform:transform];
 	
     // draws the equation path
-	[NSColor.textColor setFill];
+	[NSColor.labelColor setFill];
 	[path fill];
     
     // Draws the small history number
-    NSDictionary *attributes = [NSDictionary dictionaryWithObject:NSColor.textColor forKey:NSForegroundColorAttributeName];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObject:NSColor.labelColor forKey:NSForegroundColorAttributeName];
 	numberString = [NSString stringWithFormat:@"%d.", [contents[2] intValue]];
     [numberString drawAtPoint:NSMakePoint(cellFrame.origin.x + 2.0, cellFrame.origin.y) withAttributes:attributes];
 	
     // Draws the separator line
-    [NSColor.textColor setStroke];
+    [NSColor.labelColor setStroke];
 	[line moveToPoint:NSMakePoint(cellFrame.origin.x + 2.0, cellFrame.origin.y + cellFrame.size.height)];
 	[line lineToPoint:NSMakePoint(cellFrame.origin.x + cellFrame.size.width - 2.0, cellFrame.origin.y + cellFrame.size.height)];
 	[line stroke];

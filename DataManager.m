@@ -147,7 +147,7 @@
 	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
 //    NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData requiringSecureCoding:NO error:nil];
     NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData];
-    printf("Saving history data. Number of items: %ld", historyData.count);
+//    printf("Saving history data. Number of items: %ld", historyData.count);
     [fileData writeToURL:file atomically:YES];
 //    [fileData writeToURL:file error:&error];
 //    if (error) {
@@ -419,8 +419,14 @@
 	[self updatePrecisionDisplay];	// dennis
 	[self updateTrigModeDisplay];	// dennis
 	
-	reciprocalButton.attributedTitle = [self toFormattedString:@"x^-1"];
-	secondButton.attributedTitle = [self toFormattedString:@"2^nd"];
+    // force shifted keys to be updated
+    shiftIsActive = !shiftIsActive;   // this is undone in shiftIsPressed
+    [self shiftIsPressed];
+ 
+//	reciprocalButton.attributedTitle = [self toFormattedString:@"x^-1"];
+//    reciprocalButton.needsDisplay = true;
+//	secondButton.attributedTitle = [self toFormattedString:@"2^nd"];
+//    secondButton.needsDisplay = true;
 }
 
 //
@@ -821,7 +827,9 @@
 	// In 10.3, I started noticing a button update problem on startup. This is to try to fix that.
 	[[self window] makeKeyAndOrderFront:self];
 	[[self window] display];
-	
+    shiftIsActive = !shiftIsActive;
+    [self shiftIsPressed];
+
 	// Sanity check to ensure window is well-sized and visible (although this should be
 	// enforced in the NIB file also).
 	NSRect windowRect = [[self window] frame];
@@ -861,7 +869,7 @@
 		location.length = string.length - subLocation.location;
 		location.location = subLocation.location;
 		number = @-1;
-		baseOffset = @0;
+		baseOffset = @8;
 	}
 	if (superLocation.length > 0) {
 		location.length = string.length - superLocation.location;
@@ -874,8 +882,8 @@
     [result setAlignment:NSTextAlignmentCenter range:full];   //kCTTextAlignmentCenter range:full];
 	[result addAttribute:NSKernAttributeName value:@-0.5 range:full];
 	[result addAttribute:NSBaselineOffsetAttributeName value:baseOffset range:full];
-	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getDisplayFontWithSize:16] range:full];
-	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getDisplayFontWithSize:12] range:location];
+	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getKeyFontWithSize:16] range:full];
+	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getKeyFontWithSize:12] range:location];
 	[result addAttribute:NSSuperscriptAttributeName value:number range:location];
 	return result;
 }
@@ -889,9 +897,16 @@
 {
 	shiftIsActive = !shiftIsActive;
 	
-	// Relabel keys that are double-duty
+	// Relabel keys that are double-duty or altered from the nib file
+    secondButton.attributedTitle = [self toFormattedString:@"2^nd"];
+    reciprocalButton.attributedTitle = [self toFormattedString:@"x^-1"];
+ //   cubeRootButton.image = [NSImage imageNamed:@"squareroot"];
+ //   anyRootButton.image = [NSImage imageNamed:@"squareroot"];
+    expToXButton.attributedTitle = [self toFormattedString:@"e^x"];
+    xToYButton.attributedTitle = [self toFormattedString:@"x^y"];
+    
 	if (shiftIsActive) {
-		sinButton.attributedTitle = [self toFormattedString:@" sin^-1"];
+		sinButton.attributedTitle = [self toFormattedString:@"sin^-1"];
 		cosButton.attributedTitle = [self toFormattedString:@"cos^-1"];
 		tanButton.attributedTitle = [self toFormattedString:@"tan^-1"];
 		sinhButton.attributedTitle = [self toFormattedString:@"sinh^-1"];

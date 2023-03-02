@@ -53,8 +53,12 @@
 	__weak IBOutlet NSButton *sinButton;
 	__weak IBOutlet NSButton *reciprocalButton;	
 	__weak IBOutlet NSButton *secondButton;
-	
-	unsigned int				defaultDigits;
+    __weak IBOutlet NSButton *cubeRootButton;
+    __weak IBOutlet NSButton *anyRootButton;
+    __weak IBOutlet NSButton *expToXButton;
+    __weak IBOutlet NSButton *xToYButton;
+    
+    unsigned int				defaultDigits;
 	unsigned int				defaultSignificant;
 	unsigned int				defaultFixed;
 	unsigned int				defaultDisplayType;

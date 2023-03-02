@@ -26,7 +26,7 @@
 //	self.window.styleMask = self.window.styleMask | NSFullSizeContentViewWindowMask;
 //	self.window.titleVisibility = NSWindowTitleHiddenWhenActive;
 //	self.window.titlebarAppearsTransparent = YES;
-//	self.movableByWindowBackground = YES;
+	self.movableByWindowBackground = YES;
 }
 
 //
@@ -112,7 +112,7 @@
 	}
 
 	// Let "PageDown" key make the window normal again
-    else if ([theEvent keyCode] == 121 && [theEvent type] == NSEventTypeKeyDown)
+    else if ([theEvent keyCode] == 121 && [theEvent type] ==  NSEventTypeKeyDown)
 	{
 		[self setLevel:NSNormalWindowLevel];
 		needNewEvent = YES;

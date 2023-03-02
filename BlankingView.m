@@ -25,7 +25,7 @@
 //
 - (BOOL)isOpaque
 {
-	return YES;
+    return YES;
 }
 
 //

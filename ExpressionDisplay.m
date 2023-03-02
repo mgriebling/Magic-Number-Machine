@@ -20,7 +20,7 @@
 // compiling of the result with the expression.
 //
 
-#define DEFAULT_HEIGHT (100)		// default expression height -- shouldn't be hard-coded
+#define DEFAULT_HEIGHT (219)		// default expression height -- shouldn't be hard-coded
 
 @implementation ExpressionDisplay
 
@@ -98,16 +98,17 @@ NSBezierPath* GetResultPath(Expression* expression)
 //
 - (void)drawRect:(NSRect)rect
 {
-	NSBezierPath 	*background;
+//	NSBezierPath 	*background;
 	
 	[NSColor.secondaryLabelColor set];
 	
 	// Clear the background
 	if (caretPath)
 	{
-		background = [NSBezierPath bezierPathWithRect:rect];
-		[[NSColor textBackgroundColor] set];
-		[background fill];
+        // No background drawing for transparency support
+//		background = [NSBezierPath bezierPathWithRect:rect];
+//		[[NSColor textBackgroundColor] set];
+//		[background fill];
 	}
 
 	if (updateBlocked)
@@ -127,7 +128,7 @@ NSBezierPath* GetResultPath(Expression* expression)
 	}
 	else if (![expressionPath isEmpty])
 	{
-		[[NSColor grayColor] set];
+		[[NSColor labelColor] set];
 		[caretPath stroke];
 	}
 }
@@ -325,7 +326,7 @@ NSBezierPath* GetResultPath(Expression* expression)
 - (void)setFrame:(NSRect)frameRect
 {
 	NSRect  resultBounds = NSZeroRect;
-    double  heightScale = frameRect.size.height / frameRect.size.height;   // _frame.size.height;
+    double  heightScale = frameRect.size.height / super.frame.size.height;   // _frame.size.height;
 	
 	// We don't want this call to setFrame to actually do any rendering
 	updateBlocked = true;

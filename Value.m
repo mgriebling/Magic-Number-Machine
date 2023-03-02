@@ -579,12 +579,13 @@
 	int				numGlyphs;
 	NSGlyph			*glyphs;
 	int				i;
+    CGFloat         size = [ExpressionSymbols size];
 
 	[text addLayoutManager:layoutManager];
 	[text setAttributedString:
 	 [[NSAttributedString alloc]
 	  initWithString:exponent
-	  attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:12]}
+	  attributes:@{NSFontAttributeName: [ExpressionSymbols getDisplayFontWithSize:size/2]}
 	  ]
 	 ];
 	numGlyphs = (int)[layoutManager numberOfGlyphs];
@@ -595,13 +596,13 @@
 		{
 			glyphs[i] = [layoutManager glyphAtIndex:i];
 		}
-		[expressionPath relativeMoveToPoint:NSMakePoint(-10, 8.5)];
+		[expressionPath relativeMoveToPoint:NSMakePoint(-size/2, size/3)];
 		[expressionPath
 		 appendBezierPathWithGlyphs:glyphs
 		 count:numGlyphs
 		 inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
 		 ];
-		[expressionPath relativeMoveToPoint:NSMakePoint(0, -8.5)];
+		[expressionPath relativeMoveToPoint:NSMakePoint(0, -size/3)];
 		free(glyphs);
 	}
 }
@@ -627,6 +628,7 @@
 	int						extraZeros;
 	BOOL					showReal = NO;
 	BOOL					thousands = NO;
+    CGFloat                 size = [ExpressionSymbols size];
 	
 	
 	// Get the parameters we will need for drawing
@@ -789,12 +791,12 @@
 		if (thousands)
 			mantissa = [self insertThousands:mantissa];
 		
-		[self appendString:mantissa withSize:24];
+		[self appendString:mantissa withSize:size];
 		
 		if ((hasExponent && fillLimit == NO) || [exponent length] > 0)
 		{
 			// Write the x10 in nice little text
-			[self appendString:@"×10" withSize:8.5];
+			[self appendString:@"×10" withSize:size/3];
 	
 			// Get the text representation of the exponent value
 			[self appendExponent:exponent];
@@ -845,19 +847,19 @@
 		
 		if (thousands) imaginary = [self insertThousands:imaginary];
 
-		[self appendString:imaginary withSize:24];
+		[self appendString:imaginary withSize:size];
 		
 		if ((hasImaginaryExponent && fillLimit == NO) || [imExponent length] > 0)
 		{
 			// Write the x10 in nice little text
-			[self appendString:@"×10" withSize:8.5];
+			[self appendString:@"×10" withSize:size/3];
 
 			// Get the text representation of the exponent value
 			[self appendExponent:imExponent];
 		}
 
 		// And finally... actually draw the "i"
-		[self appendString:@"i" withSize:24];
+		[self appendString:@"i" withSize:size];
 	}
 }
 

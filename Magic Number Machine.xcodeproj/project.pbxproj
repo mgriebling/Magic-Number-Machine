@@ -15,6 +15,7 @@
 		2F6947931B1771FC0012C173 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6947921B1771FC0012C173 /* Media.xcassets */; };
 		2F6947991B17B60A0012C173 /* History.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6947971B17B60A0012C173 /* History.h */; };
 		2F69479A1B17B60A0012C173 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6947981B17B60A0012C173 /* History.m */; };
+		4757942D29AFAA5E0055DEB4 /* ColoredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4757942C29AFAA5E0055DEB4 /* ColoredButton.swift */; };
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -71,6 +72,7 @@
 		32CA4F630368D1EE00C91783 /* Magic Number Machine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine_Prefix.pch"; sourceTree = "<group>"; };
 		475793F229AE3E360055DEB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		475793F329AE3E360055DEB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4757942C29AFAA5E0055DEB4 /* ColoredButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredButton.swift; sourceTree = "<group>"; };
 		475F2C72217272C000D8EB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				C900A8B405588E2E00809D76 /* HistoryCell.h */,
 				C900A8B605588E2E00809D76 /* BlankingView.h */,
 				C900A8B705588E2E00809D76 /* BlankingView.m */,
+				4757942C29AFAA5E0055DEB4 /* ColoredButton.swift */,
 				C900A8B805588E2E00809D76 /* DrawerView.h */,
 				C900A8B905588E2E00809D76 /* DrawerView.m */,
 				C900A8BA05588E2E00809D76 /* ExpressionDisplay.h */,
@@ -417,6 +420,7 @@
 				C900A8E005588E6700809D76 /* Constant.m in Sources */,
 				C900A8E205588E6700809D76 /* Expression.m in Sources */,
 				C900A8EB05588E7200809D76 /* BigFloat.m in Sources */,
+				4757942D29AFAA5E0055DEB4 /* ColoredButton.swift in Sources */,
 				C900A8ED05588E7200809D76 /* BigCFloat.m in Sources */,
 				C900A8F805588EA300809D76 /* CallBack.m in Sources */,
 				C900A8F905588EA300809D76 /* ExpressionSymbols.m in Sources */,
@@ -535,6 +539,7 @@
 				SECTORDER_FLAGS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -579,6 +584,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",
@@ -622,6 +628,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wmost",
 					"-Wno-four-char-constants",

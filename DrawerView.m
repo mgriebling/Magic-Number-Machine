@@ -18,6 +18,10 @@
 
 @implementation DrawerView
 
+- (BOOL)allowsVibrancy {
+    return YES;
+}
+
 //
 // flagsChanged
 //

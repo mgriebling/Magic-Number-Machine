@@ -44,7 +44,7 @@ enum
 	multiplyOp = 42,	// '*'
 	plusOp = 43,		// '+'
 	minusOp = 45,		// '-'
-	impMultOp = 46,		// '.' (implicit multiplication)
+	impMultOp = 46,		// '∙' (implicit multiplication)
 	divisionOp = 47,	// '/'
 	powerOp = 94,
 	andOp = 97,			// 'a'

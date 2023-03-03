@@ -395,7 +395,7 @@
 	if ([sender clickedRow] == -1) return;
 	
 	NSArray *item = [dataManager.history getItemAtIndex:[sender clickedRow]];
-	pasteExpression = [NSKeyedUnarchiver unarchiveObjectWithData:item[0]];
+	pasteExpression = [NSKeyedUnarchiver unarchivedObjectOfClass:History.class fromData:item[0] error:nil];
 	[dataManager ensureInputWithValue:NO];
 //	inputPoint = [dataManager getInputPoint];
 //	[inputPoint bracketPressed];

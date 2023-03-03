@@ -19,7 +19,6 @@
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		C900A87805588DFA00809D76 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A87205588DFA00809D76 /* DataManager.m */; };
 		C900A87A05588DFA00809D76 /* InputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A87405588DFA00809D76 /* InputManager.m */; };
 		C900A87B05588DFA00809D76 /* DrawerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A87505588DFA00809D76 /* DrawerManager.m */; };
@@ -139,7 +138,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +333,8 @@
 			dependencies = (
 			);
 			name = "Magic Number Machine";
+			packageProductDependencies = (
+			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Magic Number Machine XCode";
 			productReference = 8D1107320486CEB800E47090 /* Magic Number Machine.app */;
@@ -368,6 +368,8 @@
 				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Magic Number Machine XCode */;
+			packageReferences = (
+			);
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -530,7 +532,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspirations.magicnumbermachine;
@@ -576,7 +578,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspirations.magicnumbermachine;
@@ -620,7 +622,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.inspirations.magicnumbermachine;

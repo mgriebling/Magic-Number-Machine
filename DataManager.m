@@ -145,8 +145,8 @@
 	NSError *error;
 	[fileManager createDirectoryAtURL:file withIntermediateDirectories:YES attributes:nil error:&error];
 	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
-//    NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData requiringSecureCoding:NO error:nil];
-    NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData];
+    NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData requiringSecureCoding:NO error:nil];
+//    NSData *fileData = [NSKeyedArchiver archivedDataWithRootObject:historyData];
 //    printf("Saving history data. Number of items: %ld", historyData.count);
     [fileData writeToURL:file atomically:YES];
 //    [fileData writeToURL:file error:&error];
@@ -163,8 +163,8 @@
 	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
 	NSData *fileData = [NSData dataWithContentsOfURL:file];
 	if (fileData) {
-//        historyData = [NSKeyedUnarchiver unarchivedObjectsOfClass:History.class fromData:fileData error:nil];
-		historyData = [NSKeyedUnarchiver unarchiveTopLevelObjectWithData:fileData error:nil];
+        historyData = [NSKeyedUnarchiver unarchivedObjectOfClass:History.class fromData:fileData error:nil];
+//		historyData = [NSKeyedUnarchiver unarchiveTopLevelObjectWithData:fileData error:nil];
 	}
 	return historyData;
 }
@@ -517,7 +517,7 @@
 	// Append the current expression to the history
 	if ([currentExpression child] != nil)
 	{
-		[historyArray addItem:[NSKeyedArchiver archivedDataWithRootObject:[currentExpression child]]
+		[historyArray addItem:[NSKeyedArchiver archivedDataWithRootObject:[currentExpression child] requiringSecureCoding:NO error:nil]
 			   withBezierPath:[expressionDisplay expressionPathFlipped]];
 		[self setHistoryData:historyArray];   // save the data to user preferences
 		[drawerManager updateHistory];

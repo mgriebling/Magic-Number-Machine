@@ -173,7 +173,7 @@
 	NSString		*stringValue;
 
 	expression = [[dataManager getCurrentExpression] child];
-	data = [NSKeyedArchiver archivedDataWithRootObject:expression];
+	data = [NSKeyedArchiver archivedDataWithRootObject:expression requiringSecureCoding:NO error:nil];
 	
 	pasteBoard = [NSPasteboard generalPasteboard];
 	[pasteBoard declareTypes:@[@"MNMExpression", @"NSStringPboardType"] owner:self];
@@ -203,7 +203,7 @@
 	Value			*result;
 
 	value = [[dataManager getCurrentExpression] getValue];
-	data = [NSKeyedArchiver archivedDataWithRootObject:value];
+	data = [NSKeyedArchiver archivedDataWithRootObject:value requiringSecureCoding:NO error:nil];
 	
 	pasteBoard = [NSPasteboard generalPasteboard];
 	[pasteBoard declareTypes:@[@"BigCFloat", @"NSStringPboardType"] owner:self];
@@ -335,7 +335,7 @@
 		{
 			Expression	*pasteExpression;
 			
-			pasteExpression = [NSKeyedUnarchiver unarchiveObjectWithData:pasteData];
+			pasteExpression = [NSKeyedUnarchiver unarchivedObjectOfClass:Expression.class fromData:pasteData error:nil];
 			[dataManager ensureInputWithValue:NO];
 			inputPoint = [dataManager getInputPoint];
 //			[inputPoint bracketPressed];						// Mike: why do we need brackets?
@@ -351,7 +351,7 @@
 		if(pasteData != nil)
 		{
 			BigCFloat		*pasteValue;
-			pasteValue = [NSKeyedUnarchiver unarchiveObjectWithData:pasteData];
+			pasteValue = [NSKeyedUnarchiver unarchivedObjectOfClass:BigCFloat.class fromData:pasteData error:nil];
 			[dataManager ensureInputWithValue:NO];
 			inputPoint = [dataManager getInputPoint];
 			[inputPoint valueInserted:pasteValue];

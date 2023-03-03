@@ -301,7 +301,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="×" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="42" inset="2" id="2779">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="20" name="HelveticaNeue"/>
+                                        <font key="font" size="25" name="HelveticaNeue"/>
                                         <string key="keyEquivalent">*</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
@@ -321,7 +321,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="=" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="2786">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="20" name="HelveticaNeue"/>
+                                        <font key="font" size="25" name="HelveticaNeue"/>
                                         <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -403,7 +403,7 @@ DQ
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="43" inset="2" id="2780">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="20" name="HelveticaNeue"/>
+                                        <font key="font" size="25" name="HelveticaNeue"/>
                                         <string key="keyEquivalent">+</string>
                                     </buttonCell>
                                     <color key="bezelColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -444,7 +444,7 @@ DQ
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="–" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="45" inset="2" id="2773">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="20" name="HelveticaNeue"/>
+                                        <font key="font" size="25" name="HelveticaNeue"/>
                                         <string key="keyEquivalent">-</string>
                                     </buttonCell>
                                     <color key="bezelColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -485,7 +485,7 @@ DQ
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="÷" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="47" inset="2" id="2782">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="20" name="HelveticaNeue"/>
+                                        <font key="font" size="25" name="HelveticaNeue"/>
                                         <string key="keyEquivalent">/</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
@@ -687,7 +687,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="plus.slash.minus" catalog="system" imagePosition="overlaps" alignment="center" borderStyle="border" tag="45" inset="2" id="2796">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="20" name="HelveticaNeue"/>
+                                        <font key="font" size="25" name="HelveticaNeue"/>
                                         <string key="keyEquivalent">-</string>
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
@@ -728,7 +728,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="⌫" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="8" inset="2" id="2798">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="20" name="HelveticaNeue"/>
+                                        <font key="font" size="22" name="HelveticaNeue"/>
                                         <string key="keyEquivalent" base64-UTF8="YES">
 CA
 </string>
@@ -791,7 +791,7 @@ CA
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     <buttonCell key="cell" type="square" title="." bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="46" inset="2" id="2783">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" size="24" name="HelveticaNeue"/>
+                                        <font key="font" size="25" name="HelveticaNeue"/>
                                         <string key="keyEquivalent">.</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
@@ -1305,13 +1305,13 @@ CA
                                         <action selector="preOpPressed:" target="678" id="1715"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⌘T) Change Trig. Mode" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1692" customClass="ColoredButton" customModule="Magic_Number_Machine" customModuleProvider="target">
+                                <button toolTip="(⌘T) Change Trig. Mode" fixedFrame="YES" tag="18" translatesAutoresizingMaskIntoConstraints="NO" id="1692" customClass="ColoredButton" customModule="Magic_Number_Machine" customModuleProvider="target">
                                     <rect key="frame" x="1" y="3" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Rnd" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="2764">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="HelveticaNeue"/>
-                                        <string key="keyEquivalent">r</string>
+                                        <string key="keyEquivalent">m</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
@@ -1346,7 +1346,7 @@ CA
                                     </connections>
                                 </button>
                                 <button toolTip="(⌥s) Hyperbolic Sine" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="1697" customClass="ColoredButton" customModule="Magic_Number_Machine" customModuleProvider="target">
-                                    <rect key="frame" x="50" y="3" width="50" height="40"/>
+                                    <rect key="frame" x="50" y="4" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="sinh" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="2769">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1509,7 +1509,7 @@ IA
                                         <action selector="binaryOpPressed:" target="678" id="1718"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(m) Round the number" fixedFrame="YES" tag="18" translatesAutoresizingMaskIntoConstraints="NO" id="2934" customClass="ColoredButton" customModule="Magic_Number_Machine" customModuleProvider="target">
+                                <button toolTip="(m) Round the number" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2934" customClass="ColoredButton" customModule="Magic_Number_Machine" customModuleProvider="target">
                                     <rect key="frame" x="148" y="198" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" title="Rad" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="2935">
@@ -1878,7 +1878,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="bpw-fz-ApG">
                         <rect key="frame" x="1" y="1" width="235" height="478"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="16" headerView="2866" id="703">
                                 <rect key="frame" x="0.0" y="0.0" width="235" height="461"/>
@@ -2013,7 +2013,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="pBU-nm-zv8">
                         <rect key="frame" x="1" y="1" width="214" height="95"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2872" id="726">
                                 <rect key="frame" x="0.0" y="0.0" width="214" height="78"/>
@@ -2060,7 +2060,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="Ycv-5X-pK5">
                         <rect key="frame" x="1" y="1" width="214" height="286"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2869" id="712">
                                 <rect key="frame" x="0.0" y="0.0" width="214" height="269"/>
@@ -2137,7 +2137,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="h0T-ly-V40">
                         <rect key="frame" x="1" y="1" width="258" height="105"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="12" headerView="2878" id="1314">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="88"/>
@@ -2206,7 +2206,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="6IO-nd-pgf">
                         <rect key="frame" x="1" y="1" width="258" height="297"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2875" id="744">
                                 <rect key="frame" x="0.0" y="0.0" width="273" height="280"/>
@@ -2315,7 +2315,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="xC8-l2-JHf">
                         <rect key="frame" x="1" y="1" width="258" height="79"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="13" headerView="2884" id="1330">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="62"/>
@@ -2390,7 +2390,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="UIe-IC-5Sw">
                         <rect key="frame" x="1" y="1" width="258" height="292"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2881" id="752">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="275"/>
@@ -2480,7 +2480,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="j66-jM-7td">
                         <rect key="frame" x="1" y="1" width="309" height="481"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="20" headerView="2887" id="780">
                                 <rect key="frame" x="0.0" y="0.0" width="309" height="464"/>
@@ -2929,21 +2929,89 @@ Gw
             </view>
             <point key="canvasLocation" x="779" y="111"/>
         </window>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" id="3FH-gE-vgP" userLabel="HistoryWindow" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES" HUD="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="239" width="240" height="439"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
+            <view key="contentView" id="wKB-om-hvg">
+                <rect key="frame" x="0.0" y="0.0" width="240" height="439"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView fixedFrame="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qo4-9I-Juq">
+                        <rect key="frame" x="-1" y="39" width="242" height="404"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" drawsBackground="NO" id="Uq4-gm-uvr">
+                            <rect key="frame" x="1" y="1" width="240" height="402"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" selectionHighlightStyle="sourceList" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="60" id="1h1-3k-ta7">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="402"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <size key="intercellSpacing" width="3" height="2"/>
+                                    <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                    <tableColumns>
+                                        <tableColumn editable="NO" width="208" minWidth="107.70800018310547" maxWidth="1000" id="wbm-KZ-goz">
+                                            <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Expression History">
+                                                <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableHeaderCell>
+                                            <textFieldCell key="dataCell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" alignment="left" id="QJT-UY-0Ed">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </textFieldCell>
+                                            <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                        </tableColumn>
+                                    </tableColumns>
+                                    <connections>
+                                        <action selector="historySelected:" target="693" id="Dal-DQ-c4I"/>
+                                        <outlet property="dataSource" destination="693" id="hp3-3O-d8g"/>
+                                    </connections>
+                                </tableView>
+                            </subviews>
+                            <nil key="backgroundColor"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="SB9-t3-URi">
+                            <rect key="frame" x="-100" y="-100" width="233" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="yyL-0D-Syg">
+                            <rect key="frame" x="225" y="1" width="16" height="402"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uGL-NJ-1VX">
+                        <rect key="frame" x="11" y="1" width="217" height="32"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Clear History" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="Bp3-Wx-eel">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="clearHistory:" target="797" id="ghW-AB-FLS"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="-249" y="1125"/>
+        </window>
     </objects>
     <resources>
         <image name="plus.slash.minus" catalog="system" width="16" height="14"/>
         <image name="x.squareroot" catalog="system" width="17" height="14"/>
         <namedColor name="DarkGray">
-            <color red="0.15098040997982026" green="0.15098040997982026" blue="0.15098040997982026" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.15099999308586121" green="0.15099999308586121" blue="0.15099999308586121" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="MyBlue">
-            <color red="0.063256040215492249" green="0.05530833825469017" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.063000001013278961" green="0.054999999701976776" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MyGray">
-            <color red="0.27906556129455568" green="0.27906556129455568" blue="0.27906556129455568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.27900001406669617" green="0.27900001406669617" blue="0.27900001406669617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MyOrange">
-            <color red="0.88817865848541255" green="0.52483631372451778" blue="0.0011034913361072513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8880000114440918" green="0.52499997615814209" blue="0.0010000000474974513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

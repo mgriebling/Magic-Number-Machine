@@ -546,7 +546,7 @@
 	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
 	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
 	int				numGlyphs;
-	NSGlyph			*glyphs;
+	CGGlyph			*glyphs;
 	int				i;
 	
 	[text addLayoutManager:layoutManager];
@@ -559,13 +559,13 @@
 	numGlyphs = (int)[layoutManager numberOfGlyphs];
 	if (numGlyphs > 0)
 	{
-		glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
+		glyphs = (CGGlyph *)malloc(sizeof(CGGlyph) * numGlyphs);
 		for (i = 0; i < numGlyphs; i++)
 		{
-			glyphs[i] = [layoutManager glyphAtIndex:i];
+			glyphs[i] = [layoutManager CGGlyphAtIndex:i];
 		}
 		[expressionPath
-		 appendBezierPathWithGlyphs:glyphs
+		 appendBezierPathWithCGGlyphs:glyphs
 		 count:numGlyphs
 		 inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
 		 ];
@@ -577,7 +577,7 @@
 	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
 	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
 	int				numGlyphs;
-	NSGlyph			*glyphs;
+	CGGlyph			*glyphs;
 	int				i;
     CGFloat         size = [ExpressionSymbols size];
 
@@ -591,14 +591,14 @@
 	numGlyphs = (int)[layoutManager numberOfGlyphs];
 	if (numGlyphs > 0)
 	{
-		glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
+		glyphs = (CGGlyph *)malloc(sizeof(CGGlyph) * numGlyphs);
 		for (i = 0; i < numGlyphs; i++)
 		{
-			glyphs[i] = [layoutManager glyphAtIndex:i];
+			glyphs[i] = [layoutManager CGGlyphAtIndex:i];
 		}
 		[expressionPath relativeMoveToPoint:NSMakePoint(-size/2, size/3)];
 		[expressionPath
-		 appendBezierPathWithGlyphs:glyphs
+		 appendBezierPathWithCGGlyphs:glyphs
 		 count:numGlyphs
 		 inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
 		 ];

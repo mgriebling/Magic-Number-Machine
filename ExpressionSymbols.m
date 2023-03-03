@@ -175,7 +175,7 @@ static NSArray *constantsDataRows = nil;
 	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
 	NSTextStorage	*text = [[NSTextStorage alloc] initWithString:@""];
 	NSBezierPath	*path = [NSBezierPath bezierPath];
-	NSGlyph			*glyphs;
+	CGGlyph			*glyphs;
 	int				j;
 	int				numGlyphs;
 	CGFloat			offsety = superscript;
@@ -188,13 +188,13 @@ static NSArray *constantsDataRows = nil;
 	[text setAttributedString: [[NSAttributedString alloc] initWithString:symbol attributes:@{NSFontAttributeName:font}]];
 	[path moveToPoint:NSMakePoint(offsetx, offsety)];
 	numGlyphs = (int)[layoutManager numberOfGlyphs];
-	glyphs = (NSGlyph *)malloc(sizeof(NSGlyph) * numGlyphs);
+	glyphs = (CGGlyph *)malloc(sizeof(CGGlyph) * numGlyphs);
 	for (j = 0; j < numGlyphs; j++) {
-		glyphs[j] = [layoutManager glyphAtIndex:j];
+		glyphs[j] = [layoutManager CGGlyphAtIndex:j];
 	}
 //    [path appendBezierPathWithCGGlyphs:glyphs count:[text length] inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]];
 	[path
-		appendBezierPathWithGlyphs:glyphs
+		appendBezierPathWithCGGlyphs:glyphs
 		count:[text length]
 		inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]
 	 ];

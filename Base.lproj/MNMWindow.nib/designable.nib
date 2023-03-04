@@ -1793,7 +1793,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="Hwk-H4-fD1">
                         <rect key="frame" x="1" y="1" width="214" height="445"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" selectionHighlightStyle="sourceList" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="60" id="689">
                                 <rect key="frame" x="0.0" y="0.0" width="214" height="445"/>
@@ -2969,7 +2969,7 @@ Gw
             <color red="0.15099999308586121" green="0.15099999308586121" blue="0.15099999308586121" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="MyBlue">
-            <color red="0.063000001013278961" green="0.054999999701976776" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.063000001013278961" green="0.054999999701976776" blue="0.24707293510437012" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="MyGray">
             <color red="0.27900001406669617" green="0.27900001406669617" blue="0.27900001406669617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

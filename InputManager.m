@@ -331,11 +331,11 @@
 	if ([pasteBoardTypes containsObject:@"MNMExpression"])
 	{
 		pasteData = [pasteBoard dataForType:@"MNMExpression"];
-		if(pasteData != nil)
+		if (pasteData != nil)
 		{
 			Expression	*pasteExpression;
-			
-			pasteExpression = [NSKeyedUnarchiver unarchivedObjectOfClass:Expression.class fromData:pasteData error:nil];
+            pasteExpression = [NSKeyedUnarchiver unarchiveObjectWithData:pasteData];
+//			pasteExpression = [NSKeyedUnarchiver unarchivedObjectOfClass:Expression.class fromData:pasteData error:nil];
 			[dataManager ensureInputWithValue:NO];
 			inputPoint = [dataManager getInputPoint];
 //			[inputPoint bracketPressed];						// Mike: why do we need brackets?
@@ -351,7 +351,8 @@
 		if(pasteData != nil)
 		{
 			BigCFloat		*pasteValue;
-			pasteValue = [NSKeyedUnarchiver unarchivedObjectOfClass:BigCFloat.class fromData:pasteData error:nil];
+//			pasteValue = [NSKeyedUnarchiver unarchivedObjectOfClass:BigCFloat.class fromData:pasteData error:nil];
+            pasteValue = [NSKeyedUnarchiver unarchiveObjectWithData:pasteData];
 			[dataManager ensureInputWithValue:NO];
 			inputPoint = [dataManager getInputPoint];
 			[inputPoint valueInserted:pasteValue];

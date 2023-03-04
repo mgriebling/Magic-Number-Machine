@@ -163,8 +163,8 @@
 	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
 	NSData *fileData = [NSData dataWithContentsOfURL:file];
 	if (fileData) {
-        historyData = [NSKeyedUnarchiver unarchivedObjectOfClass:History.class fromData:fileData error:nil];
-//		historyData = [NSKeyedUnarchiver unarchiveTopLevelObjectWithData:fileData error:nil];
+//        historyData = [NSKeyedUnarchiver unarchivedObjectOfClass:History.class fromData:fileData error:nil];
+		historyData = [NSKeyedUnarchiver unarchiveTopLevelObjectWithData:fileData error:nil];
 	}
 	return historyData;
 }

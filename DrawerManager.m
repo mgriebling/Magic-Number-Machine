@@ -43,7 +43,7 @@
 	self = [super init];
 	if (self)
 	{
-		activeDrawer = nil;
+//		activeDrawer = nil;
 		numArrayColumns = 3;
 		
 		historyCell = [[HistoryCell alloc] init];
@@ -632,65 +632,71 @@
 //
 - (IBAction)toggleDrawer:(id)sender
 {
-	BOOL	close = NO;
-	
-	if (activeDrawer != nil)
-	{
-		[activeDrawer close];
-	}
+//	BOOL	close = NO;
+//
+//	if (activeDrawer != nil)
+//	{
+//		[activeDrawer close];
+//	}
 	
 	switch([sender tag])
 	{
 	case 0:
-		if (activeDrawer != nil && [activeDrawer isEqualTo:historyDrawer])
-			close = YES;
-		else
-			activeDrawer = historyDrawer;
+            [drawerTabView selectTabViewItemWithIdentifier:@"History"];
+//		if (activeDrawer != nil && [activeDrawer isEqualTo:historyDrawer])
+//			close = YES;
+//		else
+//			activeDrawer = historyDrawer;
 		break;
 	case 1:
-		if (activeDrawer != nil && [activeDrawer isEqualTo:radixDrawer])
-			close = YES;
-		else
-			activeDrawer = radixDrawer;
+            [drawerTabView selectTabViewItemWithIdentifier:@"Radix"];
+//		if (activeDrawer != nil && [activeDrawer isEqualTo:radixDrawer])
+//			close = YES;
+//		else
+//			activeDrawer = radixDrawer;
 		break;
 	case 2:
-		if (activeDrawer != nil && [activeDrawer isEqualTo:dataDrawer])
-			close = YES;
-		else
-			activeDrawer = dataDrawer;
+            [drawerTabView selectTabViewItemWithIdentifier:@"Data"];
+//		if (activeDrawer != nil && [activeDrawer isEqualTo:dataDrawer])
+//			close = YES;
+//		else
+//			activeDrawer = dataDrawer;
 		break;
 	case 3:
-		if (activeDrawer != nil && [activeDrawer isEqualTo:data2DDrawer])
-			close = YES;
-		else
-			activeDrawer = data2DDrawer;
+            [drawerTabView selectTabViewItemWithIdentifier:@"Data 2D"];
+//		if (activeDrawer != nil && [activeDrawer isEqualTo:data2DDrawer])
+//			close = YES;
+//		else
+//			activeDrawer = data2DDrawer;
 		break;
 	case 4:
-		if (activeDrawer != nil && [activeDrawer isEqualTo:arrayDataDrawer])
-			close = YES;
-		else
-			activeDrawer = arrayDataDrawer;
+            [drawerTabView selectTabViewItemWithIdentifier:@"Data Array"];
+//		if (activeDrawer != nil && [activeDrawer isEqualTo:arrayDataDrawer])
+//			close = YES;
+//		else
+//			activeDrawer = arrayDataDrawer;
 		break;
 	case 5:
-		if (activeDrawer != nil && [activeDrawer isEqualTo:constantsDrawer])
-			close = YES;
-		else
-			activeDrawer = constantsDrawer;
+            [drawerTabView selectTabViewItemWithIdentifier:@"Constants"];
+//		if (activeDrawer != nil && [activeDrawer isEqualTo:constantsDrawer])
+//			close = YES;
+//		else
+//			activeDrawer = constantsDrawer;
 		break;
 	}
 	
-	if (close)
-	{
-		if ([activeDrawer state] != NSDrawerClosingState)
-			[activeDrawer openOnEdge:NSMinXEdge];
-		else
-			activeDrawer = nil;
-	}
-	else
-	{
-		[activeDrawer setMinContentSize:NSMakeSize(260, 200)];
-		[activeDrawer openOnEdge:NSMinXEdge];
-	}
+//	if (close)
+//	{
+//		if ([activeDrawer state] != NSDrawerClosingState)
+//			[activeDrawer openOnEdge:NSMinXEdge];
+//		else
+//			activeDrawer = nil;
+//	}
+//	else
+//	{
+//		[activeDrawer setMinContentSize:NSMakeSize(260, 200)];
+//		[activeDrawer openOnEdge:NSMinXEdge];
+//	}
 }
 
 //

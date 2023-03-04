@@ -47,7 +47,9 @@
 	IBOutlet id				radixDrawer;
 	IBOutlet NSTableView	*radixTableView;
 	
-	NSDrawer				*activeDrawer;
+    __weak IBOutlet NSTabView *drawerTabView;
+    
+    // NSDrawer				*activeDrawer;
 	NSArray					*radixDataRows;
 	NSArray					*arrayDataFunctionRows;
 	NSArray					*dataFunctionRows;

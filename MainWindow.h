@@ -18,7 +18,8 @@
 //
 @interface MainWindow : NSWindow
 {
-	IBOutlet DataManager *dataManager;
+    __weak IBOutlet NSPanel *drawerWindow;
+    IBOutlet DataManager *dataManager;
 }
 - (void)flagsChanged:(NSEvent*)theEvent;
 

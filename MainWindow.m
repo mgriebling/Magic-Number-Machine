@@ -27,6 +27,11 @@
 //	self.window.titleVisibility = NSWindowTitleHiddenWhenActive;
 //	self.window.titlebarAppearsTransparent = YES;
 	self.movableByWindowBackground = YES;
+    
+    if (drawerWindow) {
+        // causes the drawer window to "stick" to the main window
+        [self addChildWindow:drawerWindow ordered:NSWindowAbove];
+    }
 }
 
 //

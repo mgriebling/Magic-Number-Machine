@@ -16,6 +16,7 @@
 		2F6947991B17B60A0012C173 /* History.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6947971B17B60A0012C173 /* History.h */; };
 		2F69479A1B17B60A0012C173 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6947981B17B60A0012C173 /* History.m */; };
 		4757942D29AFAA5E0055DEB4 /* ColoredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4757942C29AFAA5E0055DEB4 /* ColoredButton.swift */; };
+		475DA31C29B4A664002DB3FF /* Magic_Number_Machine_Buttons.html in Resources */ = {isa = PBXBuildFile; fileRef = C900A91C05588FB000809D76 /* Magic_Number_Machine_Buttons.html */; };
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -383,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				475DA31C29B4A664002DB3FF /* Magic_Number_Machine_Buttons.html in Resources */,
 				2F5568B32179253800652D06 /* GermanGUI.strings in Resources */,
 				C900A92A05588FC400809D76 /* Icon.icns in Resources */,
 				2F5568AD2178C44D00652D06 /* Magic-Number-Machine.pdf in Resources */,

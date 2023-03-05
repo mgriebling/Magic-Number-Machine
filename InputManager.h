@@ -87,6 +87,8 @@
 - (IBAction)valuePressed:(id)sender;
 - (void)showKeyboardShortcuts:(id)sender;
 
+- (IBAction)showHelp:(id)sender;
+
 @property (NS_NONATOMIC_IOSONLY, readonly) BOOL acceptsFirstResponder;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification;
 - (void)setControlsForRadix:(short)radix;

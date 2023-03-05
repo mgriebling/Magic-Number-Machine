@@ -193,8 +193,7 @@
 			opPath = [ExpressionSymbols sqrtPath];
 			break;
 		case cbrtOp:
-			opPath = [ExpressionSymbols sqrtPath];
-			[opPath appendBezierPath:[ExpressionSymbols nRootPath:3]];
+			opPath = [ExpressionSymbols nRootPath:3];
 			break;
 		case sigmaOp:
 			opPath = [ExpressionSymbols sigmaPath];
@@ -530,7 +529,7 @@
 				];
 				[overLine closePath];
 				[expressionPath appendBezierPath:overLine];
-				if (op == cbrtOp) [expressionPath appendBezierPath:[ExpressionSymbols nRootPath:3]];
+				// if (op == cbrtOp) [expressionPath appendBezierPath:[ExpressionSymbols nRootPath:3]];
 			}
 
 			[expressionPath appendBezierPath:childPath];

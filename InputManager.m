@@ -334,7 +334,10 @@
 		if (pasteData != nil)
 		{
 			Expression	*pasteExpression;
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
             pasteExpression = [NSKeyedUnarchiver unarchiveObjectWithData:pasteData];
+#pragma GCC diagnostic pop
 //			pasteExpression = [NSKeyedUnarchiver unarchivedObjectOfClass:Expression.class fromData:pasteData error:nil];
 			[dataManager ensureInputWithValue:NO];
 			inputPoint = [dataManager getInputPoint];
@@ -352,7 +355,10 @@
 		{
 			BigCFloat		*pasteValue;
 //			pasteValue = [NSKeyedUnarchiver unarchivedObjectOfClass:BigCFloat.class fromData:pasteData error:nil];
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
             pasteValue = [NSKeyedUnarchiver unarchiveObjectWithData:pasteData];
+#pragma GCC diagnostic pop
 			[dataManager ensureInputWithValue:NO];
 			inputPoint = [dataManager getInputPoint];
 			[inputPoint valueInserted:pasteValue];
@@ -716,6 +722,20 @@
 - (id)window
 {
 	return [dataManager window];
+}
+
+//
+// Help main menu:
+//
+// Invoked from the help menu.
+//
+- (IBAction)showHelp:(id)sender
+{
+    NSString *path =
+        [[NSBundle mainBundle]
+            pathForResource:@"Magic-Number-Machine"
+            ofType:@"pdf"];
+    [[NSWorkspace sharedWorkspace] openFile:path];
 }
 
 //

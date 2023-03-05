@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "3_x.png",
+      "filename" : "10x.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -17,8 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }

@@ -155,8 +155,11 @@ NSBezierPath* GetResultPath(Expression* expression)
 		[self setNeedsDisplayInRect:[resultPath bounds]];
 	[self setNeedsDisplayInRect:[caretPath bounds]];
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 	// Lock the focus so that the bezier paths all work correctly
 	[self lockFocus];
+#pragma GCC diagnostic pop
 	
 	// Get the expression that this window displays
 	displayExpression = [dataManager getCurrentExpression];
@@ -212,8 +215,11 @@ NSBezierPath* GetResultPath(Expression* expression)
 	if (![resultPath isEmpty])
 		resultBounds = [resultPath bounds];
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 	// Corresponding unlock to lock at the start of this function
 	[self unlockFocus];
+#pragma GCC diagnostic pop
 	
 	[self setNeedsDisplayInRect:expressionBounds];
 	[self setNeedsDisplayInRect:resultBounds];

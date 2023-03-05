@@ -155,6 +155,8 @@
 //    }
 }
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 - (History *)getHistoryDataFromPref {
 	History *historyData = [[History alloc] init];
 	NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -168,6 +170,7 @@
 	}
 	return historyData;
 }
+#pragma GCC diagnostic pop
 
 - (void)setDefaultTrigMode:(int)mode
 {
@@ -898,12 +901,12 @@
 	shiftIsActive = !shiftIsActive;
 	
 	// Relabel keys that are double-duty or altered from the nib file
-    secondButton.attributedTitle = [self toFormattedString:@"2^nd"];
-    reciprocalButton.attributedTitle = [self toFormattedString:@"x^-1"];
+//    secondButton.attributedTitle = [self toFormattedString:@"2^nd"];
+//    reciprocalButton.attributedTitle = [self toFormattedString:@"x^-1"];
  //   cubeRootButton.image = [NSImage imageNamed:@"squareroot"];
  //   anyRootButton.image = [NSImage imageNamed:@"squareroot"];
-    expToXButton.attributedTitle = [self toFormattedString:@"e^x"];
-    xToYButton.attributedTitle = [self toFormattedString:@"x^y"];
+//    expToXButton.attributedTitle = [self toFormattedString:@"e^x"];
+//    xToYButton.attributedTitle = [self toFormattedString:@"x^y"];
     
 	if (shiftIsActive) {
 		sinButton.attributedTitle = [self toFormattedString:@"sin^-1"];
@@ -912,7 +915,7 @@
 		sinhButton.attributedTitle = [self toFormattedString:@"sinh^-1"];
 		coshButton.attributedTitle = [self toFormattedString:@"cosh^-1"];
 		tanhButton.attributedTitle = [self toFormattedString:@"tanh^-1"];
-		tenToXButton.attributedTitle = [self toFormattedString:@"2^x"];
+        tenToXButton.image = [NSImage imageNamed:@"2tox"];
 		logButton.attributedTitle = [self toFormattedString:@"log_2"];
 		shift3Left.title = @"xor";
 		shift3Right.title = @"not";
@@ -924,7 +927,7 @@
 		sinhButton.title = @"sinh";
 		coshButton.title = @"cosh";
 		tanhButton.title = @"tanh";
-		tenToXButton.attributedTitle = [self toFormattedString:@"10^x"];
+        tenToXButton.image = [NSImage imageNamed:@"10tox"];
 		logButton.title = @"log";
 		shift3Left.title = @"<3";
 		shift3Right.title = @">3";

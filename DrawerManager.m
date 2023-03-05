@@ -382,6 +382,8 @@
 	[dataManager valueChanged];
 }
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 //
 // historySelected
 //
@@ -406,6 +408,7 @@
 //	[inputPoint closeBracketPressed];
 	[dataManager valueChanged];
 }
+#pragma GCC diagnostic pop
 
 //
 // numberOfArrayColumns

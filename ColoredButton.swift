@@ -26,16 +26,16 @@ class ColoredButton: NSButton {
 //        let attributedString = NSAttributedString(string: title,
 //                                                  attributes: [NSAttributedString.Key.foregroundColor: foreColor])
 //        self.attributedTitle = attributedString
-        let titleParagraphStyle = NSMutableParagraphStyle()
-        titleParagraphStyle.alignment = alignment
-
-        let attributes: [NSAttributedString.Key : Any] = [.foregroundColor: foreColor, .paragraphStyle: titleParagraphStyle]
-        if !self.attributedTitle.attributeKeys.isEmpty {
-            var mutableAttributes = self.attributedTitle.mutableArrayValue(forKey: NSAttributedString.Key.foregroundColor.rawValue)
-            // mutableAttributes[NSAttributedString.Key.foregroundColor] = foreColor
-        } else {
-            self.attributedTitle = NSAttributedString(string: self.title, attributes: attributes)
-        }
+//        let titleParagraphStyle = NSMutableParagraphStyle()
+//        titleParagraphStyle.alignment = alignment
+//
+//        let attributes: [NSAttributedString.Key : Any] = [.foregroundColor: foreColor, .paragraphStyle: titleParagraphStyle]
+//        if !self.attributedTitle.attributeKeys.isEmpty {
+//            var mutableAttributes = self.attributedTitle.mutableArrayValue(forKey: NSAttributedString.Key.foregroundColor.rawValue)
+//            // mutableAttributes[NSAttributedString.Key.foregroundColor] = foreColor
+//        } else {
+//            self.attributedTitle = NSAttributedString(string: self.title, attributes: attributes)
+//        }
     }
     
     override func updateLayer() {

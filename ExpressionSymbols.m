@@ -18,8 +18,6 @@
 static NSMutableDictionary *symbols = nil;
 static NSArray *constantsDataRows = nil;
 
-+ (CGFloat) size { return 40; }
-
 //
 // initialize
 //
@@ -105,7 +103,7 @@ static NSArray *constantsDataRows = nil;
 		location.length = tabLocation.location - location.location - 1;
 	}
 	NSMutableAttributedString *result = [[NSMutableAttributedString alloc] initWithString:string];
-	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getDisplayFontWithSize:[ExpressionSymbols size]/4] range:location];
+	[result addAttribute:NSFontAttributeName value:[ExpressionSymbols getDisplayFontWithSize:9] range:location];
 	[result addAttribute:NSSuperscriptAttributeName value:@-1 range:location];
 	return result;
 }
@@ -119,7 +117,7 @@ static NSArray *constantsDataRows = nil;
 		path = [ExpressionSymbols makeSymbolForString:constantStrings[0] usingSuperscript:0 withOffset:0];
 		if (constantStrings.count > 1) {
 			CGFloat offset = path.bounds.size.width;
-			[path appendBezierPath:[ExpressionSymbols makeSymbolForString:constantStrings[1] usingSuperscript:-[ExpressionSymbols size]/3 withOffset:offset]];
+			[path appendBezierPath:[ExpressionSymbols makeSymbolForString:constantStrings[1] usingSuperscript:-8 withOffset:offset]];
 		}
 		symbols[constantName] = path;
 	} else {
@@ -143,33 +141,14 @@ static NSArray *constantsDataRows = nil;
 + (NSFont *)getDisplayFontWithSize:(CGFloat)size {
 	NSFont *font = [NSFont fontWithName:@"HelveticaNeue-Light" size:size];
 	if (font == nil) font = [NSFont labelFontOfSize:size];
-	// NSLog(@"Found font = %@", font);
 	return font;
 }
 
 + (NSFont *)getKeyFontWithSize:(CGFloat)size {
     NSFont *font = [NSFont fontWithName:@"HelveticaNeue" size:size];
     if (font == nil) font = [NSFont labelFontOfSize:size];
-    // NSLog(@"Found font = %@", font);
     return font;
 }
-
-+ (NSFont *)getDisplayFont {
-    return [ExpressionSymbols getDisplayFontWithSize:[ExpressionSymbols size]];
-}
-
-// This one is for iOS
-//func appendString(string: String, withSize size: CGFloat) {
-//	var unichars = [UniChar](string.utf16)
-//	var glyphs = [CGGlyph](count: unichars.count, repeatedValue: 0)
-//	let font = CTFontCreateWithName("HelveticaNeue", size, nil)
-//	let gotGlyphs = CTFontGetGlyphsForCharacters(font, &unichars, &glyphs, unichars.count)
-//	if gotGlyphs {
-//		let cgpath = CTFontCreatePathForGlyph(font, glyphs[0], nil)
-//		let path = UIBezierPath(CGPath: cgpath)
-//		println(path)
-//	}
-//}
 
 + (NSBezierPath *)makeSymbolForString:(NSString *)symbol usingSuperscript:(NSInteger)superscript withOffset:(CGFloat)offsetx {
 	NSLayoutManager	*layoutManager = [[NSLayoutManager alloc] init];
@@ -178,8 +157,8 @@ static NSArray *constantsDataRows = nil;
 	CGGlyph			*glyphs;
 	int				j;
 	int				numGlyphs;
-	CGFloat			offsety = superscript;
-    CGFloat         size = superscript == 0 ? [ExpressionSymbols size] : 2 * [ExpressionSymbols size] / 3;
+    CGFloat			offsety = superscript;
+    CGFloat         size = superscript == 0 ? 24 : 16;
 	
 	// Use a layout manager to get the glyphs for the string
 	// Create a text storage area for the string
@@ -192,7 +171,6 @@ static NSArray *constantsDataRows = nil;
 	for (j = 0; j < numGlyphs; j++) {
 		glyphs[j] = [layoutManager CGGlyphAtIndex:j];
 	}
-//    [path appendBezierPathWithCGGlyphs:glyphs count:[text length] inFont:[text attribute:NSFontAttributeName atIndex:0 effectiveRange:NULL]];
 	[path
 		appendBezierPathWithCGGlyphs:glyphs
 		count:[text length]
@@ -438,8 +416,9 @@ static NSArray *constantsDataRows = nil;
 + (NSBezierPath *)nRootPath:(NSUInteger)n
 {
 	NSString *root = [NSString stringWithFormat:@"%lu", (unsigned long)n];
-	NSBezierPath *path = [ExpressionSymbols makeSymbolForString:root usingSuperscript:9 withOffset:0];
-    [path appendBezierPath:[ExpressionSymbols sqrtPath]];
+    NSBezierPath *path = [ExpressionSymbols sqrtPath];
+    NSBezierPath *rootn = [ExpressionSymbols makeSymbolForString:root usingSuperscript:6 withOffset:0];
+    [path appendBezierPath:rootn];
 	return path;
 }
 
@@ -570,7 +549,7 @@ static NSArray *constantsDataRows = nil;
 //
 + (NSBezierPath *)squarePath
 {
-	return [ExpressionSymbols getSymbolForString:@"2" withSuperscript:[ExpressionSymbols size]/3];
+	return [ExpressionSymbols getSymbolForString:@"2" withSuperscript:12];
 }
 
 //
@@ -580,7 +559,7 @@ static NSArray *constantsDataRows = nil;
 //
 + (NSBezierPath *)sub2Path
 {
-	return [ExpressionSymbols getSymbolForString:@"2" withSuperscript:-[ExpressionSymbols size]/3];
+	return [ExpressionSymbols getSymbolForString:@"2" withSuperscript:-12];
 }
 
 //
@@ -590,7 +569,7 @@ static NSArray *constantsDataRows = nil;
 //
 + (NSBezierPath *)cubedPath
 {
-	return [ExpressionSymbols getSymbolForString:@"3" withSuperscript:[ExpressionSymbols size]/3];
+	return [ExpressionSymbols getSymbolForString:@"3" withSuperscript:12];
 }
 
 //
@@ -600,7 +579,7 @@ static NSArray *constantsDataRows = nil;
 //
 + (NSBezierPath *)inversePath
 {
-	return [ExpressionSymbols getSymbolForString:@"-1" withSuperscript:[ExpressionSymbols size]/3];
+	return [ExpressionSymbols getSymbolForString:@"-1" withSuperscript:12];
 }
 
 @end

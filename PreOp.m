@@ -499,13 +499,13 @@
 			[transform translateXBy:boundsRect.origin.x + boundsRect.size.width yBy:0];
 			[childPath transformUsingAffineTransform:transform];
 			
-			if (op == sqrtOp || op == cbrtOp || op == rootOp)
+			if (op == sqrtOp || op == cbrtOp)
 			{
 				NSBezierPath *overLine = [NSBezierPath bezierPath];
 				NSRect		 childBounds = [childPath bounds];
 				
 				transform = [NSAffineTransform transform];
-				[transform translateXBy:0.0 yBy:childBounds.origin.y - 0.5 * boundsRect.origin.y];
+				[transform translateXBy:0.0 yBy:childBounds.origin.y - 0.8 * boundsRect.origin.y];
 				[transform
 					scaleXBy:1.0
 					yBy:(childBounds.size.height / boundsRect.size.height) * 1.25
@@ -523,7 +523,7 @@
 				[overLine relativeLineToPoint:
 					NSMakePoint(childBounds.size.width + 5.0, 0)
 				];
-				[overLine relativeLineToPoint:NSMakePoint(0, -1.5)];
+				[overLine relativeLineToPoint:NSMakePoint(-0.5, -1.5)];
 				[overLine relativeLineToPoint:
 					NSMakePoint(-(childBounds.size.width + 5.0), 0)
 				];

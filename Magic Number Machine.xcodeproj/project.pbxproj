@@ -17,6 +17,15 @@
 		2F69479A1B17B60A0012C173 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6947981B17B60A0012C173 /* History.m */; };
 		4757942D29AFAA5E0055DEB4 /* ColoredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4757942C29AFAA5E0055DEB4 /* ColoredButton.swift */; };
 		475DA31C29B4A664002DB3FF /* Magic_Number_Machine_Buttons.html in Resources */ = {isa = PBXBuildFile; fileRef = C900A91C05588FB000809D76 /* Magic_Number_Machine_Buttons.html */; };
+		475DA32E29B528EF002DB3FF /* 2nd.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32529B528EE002DB3FF /* 2nd.svg */; };
+		475DA32F29B528EF002DB3FF /* 10x.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32629B528EE002DB3FF /* 10x.svg */; };
+		475DA33029B528EF002DB3FF /* reciprocal.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32729B528EE002DB3FF /* reciprocal.svg */; };
+		475DA33129B528EF002DB3FF /* xcubed.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32829B528EE002DB3FF /* xcubed.svg */; };
+		475DA33229B528EF002DB3FF /* xsquared.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32929B528EE002DB3FF /* xsquared.svg */; };
+		475DA33329B528EF002DB3FF /* etox.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32A29B528EE002DB3FF /* etox.svg */; };
+		475DA33429B528EF002DB3FF /* xtoy.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32B29B528EF002DB3FF /* xtoy.svg */; };
+		475DA33529B528EF002DB3FF /* CubeRoot.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32C29B528EF002DB3FF /* CubeRoot.svg */; };
+		475DA33629B528EF002DB3FF /* 2x.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32D29B528EF002DB3FF /* 2x.svg */; };
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -73,6 +82,15 @@
 		475793F229AE3E360055DEB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		475793F329AE3E360055DEB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4757942C29AFAA5E0055DEB4 /* ColoredButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredButton.swift; sourceTree = "<group>"; };
+		475DA32529B528EE002DB3FF /* 2nd.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 2nd.svg; sourceTree = "<group>"; };
+		475DA32629B528EE002DB3FF /* 10x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 10x.svg; sourceTree = "<group>"; };
+		475DA32729B528EE002DB3FF /* reciprocal.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = reciprocal.svg; sourceTree = "<group>"; };
+		475DA32829B528EE002DB3FF /* xcubed.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xcubed.svg; sourceTree = "<group>"; };
+		475DA32929B528EE002DB3FF /* xsquared.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xsquared.svg; sourceTree = "<group>"; };
+		475DA32A29B528EE002DB3FF /* etox.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = etox.svg; sourceTree = "<group>"; };
+		475DA32B29B528EF002DB3FF /* xtoy.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xtoy.svg; sourceTree = "<group>"; };
+		475DA32C29B528EF002DB3FF /* CubeRoot.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CubeRoot.svg; sourceTree = "<group>"; };
+		475DA32D29B528EF002DB3FF /* 2x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 2x.svg; sourceTree = "<group>"; };
 		475F2C72217272C000D8EB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
@@ -180,6 +198,7 @@
 				47B96FD71B13372E0064FEEB /* README.md */,
 				C900A87005588DBC00809D76 /* BigFloat Classes */,
 				C900A86D05588DB000809D76 /* Expression Classes */,
+				475DA32429B528CC002DB3FF /* Graphics */,
 				C900A86A05588DA000809D76 /* View Classes */,
 				080E96DDFE201D6D7F000001 /* Control Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -235,6 +254,22 @@
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		475DA32429B528CC002DB3FF /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				475DA32529B528EE002DB3FF /* 2nd.svg */,
+				475DA32D29B528EF002DB3FF /* 2x.svg */,
+				475DA32629B528EE002DB3FF /* 10x.svg */,
+				475DA32C29B528EF002DB3FF /* CubeRoot.svg */,
+				475DA32A29B528EE002DB3FF /* etox.svg */,
+				475DA32729B528EE002DB3FF /* reciprocal.svg */,
+				475DA32829B528EE002DB3FF /* xcubed.svg */,
+				475DA32929B528EE002DB3FF /* xsquared.svg */,
+				475DA32B29B528EF002DB3FF /* xtoy.svg */,
+			);
+			path = Graphics;
 			sourceTree = "<group>";
 		};
 		C900A86A05588DA000809D76 /* View Classes */ = {
@@ -365,7 +400,6 @@
 				es,
 				fr,
 				it,
-				ja,
 				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Magic Number Machine XCode */;
@@ -385,15 +419,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				475DA31C29B4A664002DB3FF /* Magic_Number_Machine_Buttons.html in Resources */,
+				475DA33629B528EF002DB3FF /* 2x.svg in Resources */,
 				2F5568B32179253800652D06 /* GermanGUI.strings in Resources */,
 				C900A92A05588FC400809D76 /* Icon.icns in Resources */,
+				475DA33429B528EF002DB3FF /* xtoy.svg in Resources */,
+				475DA32E29B528EF002DB3FF /* 2nd.svg in Resources */,
 				2F5568AD2178C44D00652D06 /* Magic-Number-Machine.pdf in Resources */,
 				C956BF2D05E8C099002D425F /* Localizable.strings in Resources */,
+				475DA33329B528EF002DB3FF /* etox.svg in Resources */,
+				475DA33229B528EF002DB3FF /* xsquared.svg in Resources */,
+				475DA32F29B528EF002DB3FF /* 10x.svg in Resources */,
 				2F5568BE2179256F00652D06 /* FrenchGUI.strings in Resources */,
 				2F5568B82179255A00652D06 /* SpanishGUI.strings in Resources */,
+				475DA33029B528EF002DB3FF /* reciprocal.svg in Resources */,
 				2F5568C42179258100652D06 /* ItalianGUI.strings in Resources */,
 				2F6947931B1771FC0012C173 /* Media.xcassets in Resources */,
+				475DA33529B528EF002DB3FF /* CubeRoot.svg in Resources */,
 				C95D1E450F536BC000851908 /* MNMWindow.nib in Resources */,
+				475DA33129B528EF002DB3FF /* xcubed.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@
 // compiling of the result with the expression.
 //
 
-#define DEFAULT_HEIGHT (219)		// default expression height -- shouldn't be hard-coded
+#define DEFAULT_HEIGHT (104)		// default expression height -- shouldn't be hard-coded
 
 @implementation ExpressionDisplay
 

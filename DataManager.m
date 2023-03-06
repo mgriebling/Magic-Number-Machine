@@ -909,6 +909,7 @@
 //    xToYButton.attributedTitle = [self toFormattedString:@"x^y"];
     
 	if (shiftIsActive) {
+        secondButton.state = NSControlStateValueOn;
 		sinButton.attributedTitle = [self toFormattedString:@"sin^-1"];
 		cosButton.attributedTitle = [self toFormattedString:@"cos^-1"];
 		tanButton.attributedTitle = [self toFormattedString:@"tan^-1"];
@@ -921,6 +922,7 @@
 		shift3Right.title = @"not";
 		modButton.title = @"arg";
 	} else {
+        secondButton.state = NSControlStateValueOff;
 		sinButton.title = @"sin";
 		cosButton.title = @"cos";
 		tanButton.title = @"tan";

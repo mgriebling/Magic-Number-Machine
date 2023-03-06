@@ -137,48 +137,49 @@
 	else boundsRect = NSZeroRect;
 	
 	switch (op)
-	{
-		case '-':
-			opPath = [ExpressionSymbols minusPath];
-			break;
-		case '+':
-			opPath = [ExpressionSymbols plusPath];
-			break;
-		case '*':
-			opPath = [ExpressionSymbols multiplyPath];
-			break;
-		case '%':
-			opPath = [ExpressionSymbols modPath];
-			break;
-		case 'p':
-			opPath = [ExpressionSymbols nprPath];
-			break;
-		case 'c':
-			opPath = [ExpressionSymbols ncrPath];
-			break;
-		case 'a':
-			opPath = [ExpressionSymbols andPath];
-			break;
-		case 'o':
-			opPath = [ExpressionSymbols orPath];
-			break;
-		case 'x':
-			opPath = [ExpressionSymbols xorPath];
-			break;
-		case '.':
-			opPath = [ExpressionSymbols dotPath];
-			break;
-		case '^':
-			return;
-		case rootOp:
-//			if (leftChild != nil)
-//				lvalue = [leftChild getValue];
-//			else
-//				lvalue = [BigCFloat bigFloatWithInt:2 radix:[manager getRadix]];
-//			NSUInteger root = lvalue.realPart.doubleValue;
-			opPath = [ExpressionSymbols sqrtPath];
-//			[opPath appendBezierPath:[ExpressionSymbols nRootPath:root]];
-			break;
+    {
+        case '-':
+            opPath = [ExpressionSymbols minusPath];
+            break;
+        case '+':
+            opPath = [ExpressionSymbols plusPath];
+            break;
+        case '*':
+            opPath = [ExpressionSymbols multiplyPath];
+            break;
+        case '%':
+            opPath = [ExpressionSymbols modPath];
+            break;
+        case 'p':
+            opPath = [ExpressionSymbols nprPath];
+            break;
+        case 'c':
+            opPath = [ExpressionSymbols ncrPath];
+            break;
+        case 'a':
+            opPath = [ExpressionSymbols andPath];
+            break;
+        case 'o':
+            opPath = [ExpressionSymbols orPath];
+            break;
+        case 'x':
+            opPath = [ExpressionSymbols xorPath];
+            break;
+        case '.':
+            opPath = [ExpressionSymbols dotPath];
+            break;
+        case '^':
+            return;
+        case rootOp:
+            return;
+//            if (leftChild != nil)
+//                lvalue = [leftChild getValue];
+//            else
+//                lvalue = [BigCFloat bigFloatWithInt:2 radix:[manager getRadix]];
+//            NSUInteger root = lvalue.realPart.doubleValue;
+            //			opPath = [ExpressionSymbols sqrtPath];
+//            [opPath appendBezierPath:[ExpressionSymbols nRootPath:2.5]];
+//			break;
 		default:
 			opPath = nil;
 			break;
@@ -763,9 +764,49 @@
 				
 				[expressionPath appendBezierPath:rightChildPath];
 			}
-		}
-		else
-		{
+        }
+        else if (op == rootOp)
+        {
+            NSInteger root = 2;
+            
+            if (leftChild != nil) {
+                root = leftChild.value.realPart.doubleValue;
+            }
+            [expressionPath appendBezierPath:[ExpressionSymbols nRootPath:root]];
+            [self appendOpToPath:expressionPath atLevel:level];
+            
+            if (child != nil) {
+                NSAffineTransform *transform = [NSAffineTransform transform];
+                NSBezierPath *overLine  = [NSBezierPath bezierPath];
+                NSRect       boundsRect = [expressionPath bounds];
+           
+                rightChildPath = [child pathAtLevel:level];
+                NSRect childBounds = [rightChildPath bounds];
+                
+                [transform translateXBy:boundsRect.origin.x + boundsRect.size.width yBy:0];
+                [rightChildPath transformUsingAffineTransform:transform];
+                
+                transform = [NSAffineTransform transform];
+                [transform translateXBy:0.0 yBy:childBounds.origin.y - 0.8 * boundsRect.origin.y];
+                [transform scaleXBy:1.0 yBy:(childBounds.size.height / boundsRect.size.height) * 1.25];
+                [expressionPath transformUsingAffineTransform:transform];
+                boundsRect = [expressionPath bounds];
+                
+                [overLine moveToPoint:
+                    NSMakePoint
+                    (boundsRect.origin.x + boundsRect.size.width,
+                     boundsRect.origin.y + boundsRect.size.height)
+                ];
+                [overLine relativeLineToPoint: NSMakePoint(childBounds.size.width + 5.0, 0) ];
+                [overLine relativeLineToPoint:NSMakePoint(-0.5, -1.5)];
+                [overLine relativeLineToPoint: NSMakePoint(-(childBounds.size.width + 5.0), 0)];
+                [overLine closePath];
+                [expressionPath appendBezierPath:overLine];
+                [expressionPath appendBezierPath:rightChildPath];
+            }
+        }
+        else
+        {
 			if (leftChild != nil)
 			{
 				leftChildPath = [leftChild pathAtLevel:level];

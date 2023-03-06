@@ -637,10 +637,13 @@
 {
 //	BOOL	close = NO;
 //
-//	if (activeDrawer != nil)
+//    NSTabViewItem* activeDrawer = [drawerTabView selectedTabViewItem];
 //	{
 //		[activeDrawer close];
 //	}
+    
+    // open the tab view window if it was closed
+
 	
 	switch([sender tag])
 	{

@@ -609,7 +609,6 @@
 - (IBAction)shiftPressed:(id)sender
 {
 	[dataManager shiftIsPressed];	// toggle the shift flag
-
 }
 
 //

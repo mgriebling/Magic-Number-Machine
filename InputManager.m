@@ -308,7 +308,7 @@
 	// occurred, so that we can set the button highlight without it getting mucked
 	// up as the stack unwinds.
 //	[CallBack callBack:dataManager method:^id(id param) {
-//		[dataManager optionToggled];
+//        [self->dataManager optionToggled];
 //		return nil;
 //	}];
 //	[CallBack callBack:dataManager method:@selector(optionToggled)];

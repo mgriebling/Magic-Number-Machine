@@ -57,6 +57,9 @@
     __weak IBOutlet NSButton *anyRootButton;
     __weak IBOutlet NSButton *expToXButton;
     __weak IBOutlet NSButton *xToYButton;
+    __weak IBOutlet NSButton *factorialButton;
+    __weak IBOutlet NSButton *addDataButton;
+    __weak IBOutlet NSButton *dispButton;
     
     unsigned int				defaultDigits;
 	unsigned int				defaultSignificant;
@@ -69,15 +72,16 @@
 	BOOL						fillLimit;
 	unsigned int				fixedPlaces;
 	BOOL						shiftIsActive;
-//	BOOL						optionIsDown;
+	BOOL						optionIsDown;
+    BOOL                        shiftIsDown;
 	BOOL						equalsPressed;
 	int							complement;
 	int							lengthLimitSave;
 	int							fixedPlacesSave;
 	int							fillLimitSave;
 	BFTrigMode					trigMode;
-//	BOOL						shiftEnabledByToggle;
-//	BOOL						optionEnabledByToggle;
+	BOOL						shiftEnabledByToggle;
+	BOOL						optionEnabledByToggle;
 	BOOL						thousandsSeparator;
 		
 	History						*historyArray;
@@ -113,13 +117,13 @@
 @property (NS_NONATOMIC_IOSONLY, getter=getTrigMode, readonly) int trigMode;
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) History *history;
 - (void)lengthLimit:(unsigned int)limit fillLimit:(BOOL)fill fixedPlaces:(unsigned int)places;
-//- (void)optionIsPressed:(BOOL)isPressed;
-//- (void)optionToggled;
+- (void)optionIsPressed:(BOOL)isPressed;
+- (void)optionToggled;
 - (void)setInputAtPoint:(NSPoint)point;
 - (void)setRadix:(short)newRadix useComplement:(int)useComplement;
 - (void)setStartupState;
 - (void)shiftIsPressed;
-// - (void)shiftToggled;
+- (void)shiftToggled;
 - (void)shiftResult:(BOOL)left;
 - (void)trigModePressedWithButton:(NSButton *)button;
 - (void)valueChanged;

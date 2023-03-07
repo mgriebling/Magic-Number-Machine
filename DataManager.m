@@ -155,8 +155,7 @@
 //    }
 }
 
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 - (History *)getHistoryDataFromPref {
 	History *historyData = [[History alloc] init];
 	NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -165,12 +164,15 @@
 	file = [file URLByAppendingPathComponent:@"historyData.bin" isDirectory:NO];
 	NSData *fileData = [NSData dataWithContentsOfURL:file];
 	if (fileData) {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 //        historyData = [NSKeyedUnarchiver unarchivedObjectOfClass:History.class fromData:fileData error:nil];
 		historyData = [NSKeyedUnarchiver unarchiveTopLevelObjectWithData:fileData error:nil];
+#pragma GCC diagnostic pop
 	}
 	return historyData;
 }
-#pragma GCC diagnostic pop
+
 
 - (void)setDefaultTrigMode:(int)mode
 {
@@ -194,10 +196,10 @@
 	if (self)
 	{
 		// Constants & states
-//		shiftIsDown           = NO;
-//		optionIsDown          = NO;
-//		shiftEnabledByToggle  = NO;
-//		optionEnabledByToggle = NO;
+		shiftIsDown           = NO;
+		optionIsDown          = NO;
+		shiftEnabledByToggle  = NO;
+		optionEnabledByToggle = NO;
 		equalsPressed         = NO;
 		maximumLength         = 50;
 		lengthLimitSave       = 0;
@@ -382,16 +384,18 @@
 - (IBAction)addData:(id)sender
 {
 	BigCFloat	*numberCopy;
-	
+    NSButton    *button = sender;
+    NSString    *title = button.title;
+    
 	if (!equalsPressed) [self equalsPressed];
 	
 	numberCopy = [[currentExpression getValue] copy];
 	
-	if (self.getShift && !self.getOption)
+	if ([title isEqual:@"Add 2D"]) // && !self.getOption)
 	{
 		[drawerManager addData2D:numberCopy];
 	}
-	else if (self.getOption && !self.getShift)
+	else if ([title isEqual:@"Add Array"])
 	{
 		[drawerManager addArrayData:numberCopy];
 	}
@@ -614,8 +618,8 @@
 //
 - (BOOL)getOption
 {
-	BOOL option = NO; // [shiftOption isSelectedForSegment:1];
-	return option;
+	//BOOL option = self // [shiftOption isSelectedForSegment:1];
+    return optionIsDown;
 }
 
 //
@@ -710,13 +714,18 @@
 - (void)optionIsPressed:(BOOL)isPressed
 {
 	// No longer needed - Mike
-//	if (optionIsDown != isPressed)
-//	{
-//		optionIsDown = isPressed;
+    if (!optionIsDown && isPressed) {
+		optionIsDown = isPressed;
+        addDataButton.title = @"Add Array";
+        dispButton.title = @"Fixed";
 //		[optionButton highlight:optionIsDown];
-//	}
-//	
-//	optionEnabledByToggle = NO;
+    } else if (optionIsDown && isPressed) {
+        addDataButton.title =  @"Add Data";
+        dispButton.title = @"Disp";
+        optionIsDown = NO;
+    }
+
+	optionEnabledByToggle = NO;
 }
 
 //
@@ -728,8 +737,8 @@
 {
 	// No longer needed - Mike
 //	optionIsDown = !optionIsDown;
-//	[optionButton highlight:optionIsDown];
-//	
+////	[optionButton highlight:optionIsDown];
+//
 //	if (optionIsDown)
 //		optionEnabledByToggle = YES;
 }
@@ -899,28 +908,22 @@
 - (void)shiftIsPressed
 {
 	shiftIsActive = !shiftIsActive;
-	
-	// Relabel keys that are double-duty or altered from the nib file
-//    secondButton.attributedTitle = [self toFormattedString:@"2^nd"];
-//    reciprocalButton.attributedTitle = [self toFormattedString:@"x^-1"];
- //   cubeRootButton.image = [NSImage imageNamed:@"squareroot"];
- //   anyRootButton.image = [NSImage imageNamed:@"squareroot"];
-//    expToXButton.attributedTitle = [self toFormattedString:@"e^x"];
-//    xToYButton.attributedTitle = [self toFormattedString:@"x^y"];
-    
 	if (shiftIsActive) {
         secondButton.state = NSControlStateValueOn;
-		sinButton.attributedTitle = [self toFormattedString:@"sin^-1"];
-		cosButton.attributedTitle = [self toFormattedString:@"cos^-1"];
-		tanButton.attributedTitle = [self toFormattedString:@"tan^-1"];
-		sinhButton.attributedTitle = [self toFormattedString:@"sinh^-1"];
-		coshButton.attributedTitle = [self toFormattedString:@"cosh^-1"];
-		tanhButton.attributedTitle = [self toFormattedString:@"tanh^-1"];
+		sinButton. title = @"sin⁻¹";     // attributedTitle = [self toFormattedString:@"sin^-1"];
+		cosButton. title = @"cos⁻¹";     // attributedTitle = [self toFormattedString:@"cos^-1"];
+		tanButton. title = @"tan⁻¹";     // attributedTitle = [self toFormattedString:@"tan^-1"];
+		sinhButton.title = @"sinh⁻¹";     // attributedTitle = [self toFormattedString:@"sinh^-1"];
+		coshButton.title = @"cosh⁻¹";     // attributedTitle = [self toFormattedString:@"cosh^-1"];
+		tanhButton.title = @"tanh⁻¹";     // attributedTitle = [self toFormattedString:@"tanh^-1"];
         tenToXButton.image = [NSImage imageNamed:@"2tox"];
-		logButton.attributedTitle = [self toFormattedString:@"log_2"];
+        logButton.title = @"log₂";   // [self toFormattedString:@"log_2"];
 		shift3Left.title = @"xor";
 		shift3Right.title = @"not";
 		modButton.title = @"arg";
+        factorialButton.title = @"∑x";
+        addDataButton.title = @"Add 2D";
+        dispButton.title = @"Sci";
 	} else {
         secondButton.state = NSControlStateValueOff;
 		sinButton.title = @"sin";
@@ -934,6 +937,9 @@
 		shift3Left.title = @"<3";
 		shift3Right.title = @">3";
 		modButton.title = @"mod";
+        factorialButton.title = @"x!";
+        addDataButton.title = @"Add Data";
+        dispButton.title = @"Disp";
 	}
 }
 

@@ -43,7 +43,7 @@
 {
 	NSEventModifierFlags newFlags = [theEvent modifierFlags];
 	
-//	[dataManager optionIsPressed:(newFlags & NSAlternateKeyMask) != 0];
+    [dataManager optionIsPressed:(newFlags & NSEventModifierFlagOption) != 0];
     if ((newFlags & NSEventModifierFlagShift) != 0) {
 		[dataManager shiftIsPressed];
 	}

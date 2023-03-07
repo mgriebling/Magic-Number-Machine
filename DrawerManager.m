@@ -16,6 +16,8 @@
 
 #import "NSObject+NSPerformSelector.h"
 
+@class MainWindow;
+
 //
 // About the DrawerManager
 //
@@ -637,13 +639,17 @@
 {
 //	BOOL	close = NO;
 //
-//    NSTabViewItem* activeDrawer = [drawerTabView selectedTabViewItem];
+    NSTabViewItem* activeDrawer = [drawerTabView selectedTabViewItem];
+    NSTabView* tab = [activeDrawer tabView];
+    NSPanel* panel = (NSPanel *)[tab window];
 //	{
 //		[activeDrawer close];
 //	}
     
     // open the tab view window if it was closed
-
+    if (panel != nil && !panel.isVisible) {
+        [panel makeKeyAndOrderFront:self];
+    }
 	
 	switch([sender tag])
 	{

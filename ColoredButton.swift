@@ -14,11 +14,13 @@ class ColoredButton: NSButton {
     
     func configure() {
       //  self.appearance = NSAppearance(named: .vibrantDark)
-        let highlightColor: NSColor = bgColor.highlight(withLevel: 0.5)!
-        if !isHighlighted {
+        let highlightColor: NSColor = bgColor.highlight(withLevel: 0.8)!
+        if !isHighlighted  {
             self.layer?.backgroundColor = bgColor.cgColor
         } else {
             self.layer?.backgroundColor = highlightColor.cgColor
+//        } else {
+//            self.layer?.backgroundColor = bgColor.highlight(withLevel: -0.5)!.cgColor
         }
         self.layer?.borderColor = NSColor.black.cgColor
         self.layer?.borderWidth = 1
@@ -41,13 +43,20 @@ class ColoredButton: NSButton {
     override func updateLayer() {
         configure()
     }
-    
+
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        configure()
+//        let highlightColor: NSColor = bgColor.highlight(withLevel: 0.8)!
+//        if !isHighlighted  {
+//            self.layer?.backgroundColor = bgColor.cgColor
+//        } else {
+//            self.layer?.backgroundColor = highlightColor.cgColor
+////        } else {
+////            self.layer?.backgroundColor = bgColor.highlight(withLevel: -0.5)!.cgColor
+//        }
     }
     
-    override var allowsVibrancy: Bool { true }
+//    override var allowsVibrancy: Bool { true }
     
     override func awakeFromNib() {
         configure()

@@ -15,7 +15,6 @@
 		2F6947931B1771FC0012C173 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6947921B1771FC0012C173 /* Media.xcassets */; };
 		2F6947991B17B60A0012C173 /* History.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6947971B17B60A0012C173 /* History.h */; };
 		2F69479A1B17B60A0012C173 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6947981B17B60A0012C173 /* History.m */; };
-		4757942D29AFAA5E0055DEB4 /* ColoredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4757942C29AFAA5E0055DEB4 /* ColoredButton.swift */; };
 		475DA31C29B4A664002DB3FF /* Magic_Number_Machine_Buttons.html in Resources */ = {isa = PBXBuildFile; fileRef = C900A91C05588FB000809D76 /* Magic_Number_Machine_Buttons.html */; };
 		475DA32E29B528EF002DB3FF /* 2nd.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32529B528EE002DB3FF /* 2nd.svg */; };
 		475DA32F29B528EF002DB3FF /* 10x.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32629B528EE002DB3FF /* 10x.svg */; };
@@ -28,6 +27,8 @@
 		475DA33629B528EF002DB3FF /* 2x.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32D29B528EF002DB3FF /* 2x.svg */; };
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
+		47D8742329B694E100F94CEE /* SYFlatButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 47D8742129B694E100F94CEE /* SYFlatButton.h */; };
+		47D8742429B694E100F94CEE /* SYFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D8742229B694E100F94CEE /* SYFlatButton.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		C900A87805588DFA00809D76 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A87205588DFA00809D76 /* DataManager.m */; };
 		C900A87A05588DFA00809D76 /* InputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A87405588DFA00809D76 /* InputManager.m */; };
@@ -81,7 +82,6 @@
 		32CA4F630368D1EE00C91783 /* Magic Number Machine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine_Prefix.pch"; sourceTree = "<group>"; };
 		475793F229AE3E360055DEB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		475793F329AE3E360055DEB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4757942C29AFAA5E0055DEB4 /* ColoredButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredButton.swift; sourceTree = "<group>"; };
 		475DA32529B528EE002DB3FF /* 2nd.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 2nd.svg; sourceTree = "<group>"; };
 		475DA32629B528EE002DB3FF /* 10x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 10x.svg; sourceTree = "<group>"; };
 		475DA32729B528EE002DB3FF /* reciprocal.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = reciprocal.svg; sourceTree = "<group>"; };
@@ -95,6 +95,8 @@
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
 		47B96FD71B13372E0064FEEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		47D8742129B694E100F94CEE /* SYFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYFlatButton.h; sourceTree = "<group>"; };
+		47D8742229B694E100F94CEE /* SYFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYFlatButton.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Magic Number Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic Number Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C900A87105588DFA00809D76 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputManager.h; sourceTree = "<group>"; };
@@ -212,6 +214,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				47D8742129B694E100F94CEE /* SYFlatButton.h */,
+				47D8742229B694E100F94CEE /* SYFlatButton.m */,
 				C900A8EF05588EA300809D76 /* CallBack.h */,
 				C900A8F005588EA300809D76 /* CallBack.m */,
 				C900A8F205588EA300809D76 /* DataFunctions.h */,
@@ -281,7 +285,6 @@
 				C900A8B405588E2E00809D76 /* HistoryCell.h */,
 				C900A8B605588E2E00809D76 /* BlankingView.h */,
 				C900A8B705588E2E00809D76 /* BlankingView.m */,
-				4757942C29AFAA5E0055DEB4 /* ColoredButton.swift */,
 				C900A8B805588E2E00809D76 /* DrawerView.h */,
 				C900A8B905588E2E00809D76 /* DrawerView.m */,
 				C900A8BA05588E2E00809D76 /* ExpressionDisplay.h */,
@@ -348,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */,
+				47D8742329B694E100F94CEE /* SYFlatButton.h in Headers */,
 				2F6947991B17B60A0012C173 /* History.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +456,7 @@
 				C900A87A05588DFA00809D76 /* InputManager.m in Sources */,
 				C900A87B05588DFA00809D76 /* DrawerManager.m in Sources */,
 				C900A8BD05588E2E00809D76 /* HistoryCell.m in Sources */,
+				47D8742429B694E100F94CEE /* SYFlatButton.m in Sources */,
 				C900A8BF05588E2E00809D76 /* MainWindow.m in Sources */,
 				C900A8C105588E2E00809D76 /* BlankingView.m in Sources */,
 				C900A8C305588E2E00809D76 /* DrawerView.m in Sources */,
@@ -467,7 +472,6 @@
 				C900A8E005588E6700809D76 /* Constant.m in Sources */,
 				C900A8E205588E6700809D76 /* Expression.m in Sources */,
 				C900A8EB05588E7200809D76 /* BigFloat.m in Sources */,
-				4757942D29AFAA5E0055DEB4 /* ColoredButton.swift in Sources */,
 				C900A8ED05588E7200809D76 /* BigCFloat.m in Sources */,
 				C900A8F805588EA300809D76 /* CallBack.m in Sources */,
 				C900A8F905588EA300809D76 /* ExpressionSymbols.m in Sources */,

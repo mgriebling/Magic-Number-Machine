@@ -22,7 +22,7 @@
 	
 	// just need to make the title bar transparent and the window vibrate - Mike
 	self.titlebarAppearsTransparent = YES;
-	self.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantLight];
+//	self.appearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantLight];
 //	self.window.styleMask = self.window.styleMask | NSFullSizeContentViewWindowMask;
 //	self.window.titleVisibility = NSWindowTitleHiddenWhenActive;
 //	self.window.titlebarAppearsTransparent = YES;

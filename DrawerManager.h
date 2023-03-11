@@ -48,6 +48,7 @@
 	IBOutlet NSTableView	*radixTableView;
 	
     __weak IBOutlet NSTabView *drawerTabView;
+    __weak IBOutlet NSButton *addDataButton;
     
     // NSDrawer				*activeDrawer;
 	NSArray					*radixDataRows;

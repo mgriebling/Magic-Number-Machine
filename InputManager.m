@@ -13,6 +13,7 @@
 #import "OpEnumerations.h"
 #import "BigCFloat.h"
 #import "Value.h"
+#import "SYFlatButton.h"
 
 //
 // About the InputManager
@@ -35,8 +36,6 @@
 //
 - (IBAction)allClearPressed:(id)sender
 {
-    BigFloat* x = [BigFloat bigFloatWithDouble:10.5 radix:10];
-    NSString* s = [x toString];
 	[dataManager clearExpression];
 }
 
@@ -691,6 +690,11 @@
 	[mainWindow makeKeyAndOrderFront:self];
 }
 
+- (void)enable:(SYFlatButton *)b enable:(BOOL) enable {
+    [b setEnabled: enable];
+    b.titleNormalColor = enable ? NSColor.labelColor : NSColor.grayColor;
+}
+
 //
 // setControlsForRadix
 //
@@ -699,20 +703,34 @@
 // Simplified and cleaned up to work for any radix 2 - 16
 - (void)setControlsForRadix:(short)radix
 {
-	[twoButton	 setEnabled:radix > 2];
-	[threeButton setEnabled:radix > 3];
-	[fourButton  setEnabled:radix > 4];
-	[fiveButton  setEnabled:radix > 5];
-	[sixButton   setEnabled:radix > 6];
-	[sevenButton setEnabled:radix > 7];
-	[eightButton setEnabled:radix > 8];
-	[nineButton  setEnabled:radix > 9];
-	[aButton	 setEnabled:radix > 10];
-	[bButton	 setEnabled:radix > 11];
-	[cButton	 setEnabled:radix > 12];
-	[dButton	 setEnabled:radix > 13];
-	[eButton	 setEnabled:radix > 14];
-	[fButton	 setEnabled:radix > 15];
+    [self enable:twoButton enable:radix > 2];
+    [self enable:threeButton enable:radix > 3];
+    [self enable:fourButton  enable:radix > 4];
+    [self enable:fiveButton  enable:radix > 5];
+    [self enable:sixButton   enable:radix > 6];
+    [self enable:sevenButton enable:radix > 7];
+    [self enable:eightButton enable:radix > 8];
+    [self enable:nineButton  enable:radix > 9];
+    [self enable:aButton     enable:radix > 10];
+    [self enable:bButton     enable:radix > 11];
+    [self enable:cButton     enable:radix > 12];
+    [self enable:dButton     enable:radix > 13];
+    [self enable:eButton     enable:radix > 14];
+    [self enable:fButton     enable:radix > 15];
+//	[twoButton	 setEnabled:radix > 2];
+//	[threeButton setEnabled:radix > 3];
+//	[fourButton  setEnabled:radix > 4];
+//	[fiveButton  setEnabled:radix > 5];
+//	[sixButton   setEnabled:radix > 6];
+//	[sevenButton setEnabled:radix > 7];
+//	[eightButton setEnabled:radix > 8];
+//	[nineButton  setEnabled:radix > 9];
+//	[aButton	 setEnabled:radix > 10];
+//	[bButton	 setEnabled:radix > 11];
+//	[cButton	 setEnabled:radix > 12];
+//    [dButton	 setEnabled:radix > 13];
+//	[eButton	 setEnabled:radix > 14];
+//	[fButton	 setEnabled:radix > 15];
 }
 
 //
@@ -732,10 +750,7 @@
 //
 - (IBAction)showHelp:(id)sender
 {
-    NSString *path =
-        [[NSBundle mainBundle]
-            pathForResource:@"Magic-Number-Machine"
-            ofType:@"pdf"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Magic-Number-Machine" ofType:@"pdf"];
     [[NSWorkspace sharedWorkspace] openFile:path];
 }
 
@@ -746,10 +761,7 @@
 //
 - (void)showKeyboardShortcuts:(id)sender
 {
-	NSString *path =
-		[[NSBundle mainBundle]
-			pathForResource:@"Magic_Number_Machine_Buttons"
-			ofType:@"html"];
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"Magic_Number_Machine_Buttons" ofType:@"html"];
 	[[NSWorkspace sharedWorkspace] openFile:path];
 }
 

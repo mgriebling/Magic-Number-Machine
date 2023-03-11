@@ -630,85 +630,43 @@
 }
 
 //
-// toggleDrawer
-//
 // When the user presses a drawer button, we need to retract any open drawers and open
 // the selected one (or toggle the selected one if it is already open).
 //
 - (IBAction)toggleDrawer:(id)sender
 {
-//	BOOL	close = NO;
-//
     NSTabViewItem* activeDrawer = [drawerTabView selectedTabViewItem];
     NSTabView* tab = [activeDrawer tabView];
     NSPanel* panel = (NSPanel *)[tab window];
-//	{
-//		[activeDrawer close];
-//	}
-    
+
     // open the tab view window if it was closed
     if (panel != nil && !panel.isVisible) {
         [panel makeKeyAndOrderFront:self];
     }
 	
-	switch([sender tag])
-	{
-	case 0:
+    switch([sender tag]) {
+        case 0:
             [drawerTabView selectTabViewItemWithIdentifier:@"History"];
-//		if (activeDrawer != nil && [activeDrawer isEqualTo:historyDrawer])
-//			close = YES;
-//		else
-//			activeDrawer = historyDrawer;
-		break;
-	case 1:
+            break;
+        case 1:
             [drawerTabView selectTabViewItemWithIdentifier:@"Radix"];
-//		if (activeDrawer != nil && [activeDrawer isEqualTo:radixDrawer])
-//			close = YES;
-//		else
-//			activeDrawer = radixDrawer;
-		break;
-	case 2:
+            break;
+        case 2:
             [drawerTabView selectTabViewItemWithIdentifier:@"Data"];
-//		if (activeDrawer != nil && [activeDrawer isEqualTo:dataDrawer])
-//			close = YES;
-//		else
-//			activeDrawer = dataDrawer;
-		break;
-	case 3:
+            addDataButton.title = @"Add Data";
+            break;
+        case 3:
             [drawerTabView selectTabViewItemWithIdentifier:@"Data 2D"];
-//		if (activeDrawer != nil && [activeDrawer isEqualTo:data2DDrawer])
-//			close = YES;
-//		else
-//			activeDrawer = data2DDrawer;
-		break;
-	case 4:
+            addDataButton.title = @"Add 2D";
+            break;
+        case 4:
             [drawerTabView selectTabViewItemWithIdentifier:@"Data Array"];
-//		if (activeDrawer != nil && [activeDrawer isEqualTo:arrayDataDrawer])
-//			close = YES;
-//		else
-//			activeDrawer = arrayDataDrawer;
-		break;
-	case 5:
+            addDataButton.title = @"Add Array";
+            break;
+        case 5:
             [drawerTabView selectTabViewItemWithIdentifier:@"Constants"];
-//		if (activeDrawer != nil && [activeDrawer isEqualTo:constantsDrawer])
-//			close = YES;
-//		else
-//			activeDrawer = constantsDrawer;
-		break;
-	}
-	
-//	if (close)
-//	{
-//		if ([activeDrawer state] != NSDrawerClosingState)
-//			[activeDrawer openOnEdge:NSMinXEdge];
-//		else
-//			activeDrawer = nil;
-//	}
-//	else
-//	{
-//		[activeDrawer setMinContentSize:NSMakeSize(260, 200)];
-//		[activeDrawer openOnEdge:NSMinXEdge];
-//	}
+            break;
+    }
 }
 
 //

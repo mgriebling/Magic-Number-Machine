@@ -429,11 +429,6 @@
     // force shifted keys to be updated
     shiftIsActive = !shiftIsActive;   // this is undone in shiftIsPressed
     [self shiftIsPressed];
- 
-//	reciprocalButton.attributedTitle = [self toFormattedString:@"x^-1"];
-//    reciprocalButton.needsDisplay = true;
-//	secondButton.attributedTitle = [self toFormattedString:@"2^nd"];
-//    secondButton.needsDisplay = true;
 }
 
 //
@@ -714,16 +709,16 @@
 - (void)optionIsPressed:(BOOL)isPressed
 {
 	// No longer needed - Mike
-    if (!optionIsDown && isPressed) {
-		optionIsDown = isPressed;
-        addDataButton.title = @"Add Array";
-        dispButton.title = @"Fixed";
-//		[optionButton highlight:optionIsDown];
-    } else if (optionIsDown && isPressed) {
-        addDataButton.title =  @"Add Data";
-        dispButton.title = @"Disp";
-        optionIsDown = NO;
-    }
+//    if (!optionIsDown && isPressed) {
+//		optionIsDown = isPressed;
+//        addDataButton.title = @"Add Array";
+//        dispButton.title = @"Fixed";
+////		[optionButton highlight:optionIsDown];
+//    } else if (optionIsDown && isPressed) {
+//        addDataButton.title =  @"Add Data";
+//        dispButton.title = @"Disp";
+//        optionIsDown = NO;
+//    }
 
 	optionEnabledByToggle = NO;
 }
@@ -834,7 +829,6 @@
 	[drawerManager setStartupState];
 	[inputManager setControlsForRadix:radix];
 	[inputManager setNextResponder:[self window]];
-	// dennis // [inputManager setDefaultsForThousands:thousandsSeparator digits:defaultDigits significant:defaultSignificant fixed:defaultFixed display:(int)defaultDisplayType];
 	
 	// In 10.3, I started noticing a button update problem on startup. This is to try to fix that.
 	[[self window] makeKeyAndOrderFront:self];
@@ -917,12 +911,11 @@
 		coshButton.title = @"cosh⁻¹";     // attributedTitle = [self toFormattedString:@"cosh^-1"];
 		tanhButton.title = @"tanh⁻¹";     // attributedTitle = [self toFormattedString:@"tanh^-1"];
         tenToXButton.image = [NSImage imageNamed:@"2tox"];
-        logButton.title = @"log₂";   // [self toFormattedString:@"log_2"];
+        logButton.title = @"log₂"; 
 		shift3Left.title = @"xor";
 		shift3Right.title = @"not";
 		modButton.title = @"arg";
         factorialButton.title = @"∑x";
-        addDataButton.title = @"Add 2D";
         dispButton.title = @"Sci";
 	} else {
         secondButton.state = NSControlStateValueOff;
@@ -938,7 +931,6 @@
 		shift3Right.title = @">3";
 		modButton.title = @"mod";
         factorialButton.title = @"x!";
-        addDataButton.title = @"Add Data";
         dispButton.title = @"Disp";
 	}
 }

@@ -63,7 +63,7 @@
     self.layer.masksToBounds = YES;
     self.layer.delegate = self;
     self.layer.backgroundColor = [NSColor redColor].CGColor;
-    self.alphaValue = self.isEnabled ? 1.0 : 0.5;
+    self.alphaValue = self.isEnabled ? 1.0 : 0.5;  // not working?
 }
 
 - (void)setupImageLayer {

@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @class DataManager;
+@class SYFlatButton;
 
 //
 // About the InputManager
@@ -44,20 +45,20 @@
 	__weak IBOutlet id 		preferencesPanel;
 	
 	// All the little buttons that get disabled
-	__weak IBOutlet id	twoButton;
-	__weak IBOutlet id	threeButton;
-	__weak IBOutlet id	fourButton;
-	__weak IBOutlet id	fiveButton;
-	__weak IBOutlet id	sixButton;
-	__weak IBOutlet id	sevenButton;
-	__weak IBOutlet id	eightButton;
-	__weak IBOutlet id	nineButton;
-	__weak IBOutlet id	aButton;
-	__weak IBOutlet id	bButton;
-	__weak IBOutlet id	cButton;
-	__weak IBOutlet id	dButton;
-	__weak IBOutlet id	eButton;
-	__weak IBOutlet id	fButton;
+	__weak IBOutlet SYFlatButton *twoButton;
+	__weak IBOutlet SYFlatButton *threeButton;
+	__weak IBOutlet SYFlatButton *fourButton;
+	__weak IBOutlet SYFlatButton *fiveButton;
+	__weak IBOutlet SYFlatButton *sixButton;
+	__weak IBOutlet SYFlatButton *sevenButton;
+	__weak IBOutlet SYFlatButton *eightButton;
+	__weak IBOutlet SYFlatButton *nineButton;
+	__weak IBOutlet SYFlatButton *aButton;
+	__weak IBOutlet SYFlatButton *bButton;
+	__weak IBOutlet SYFlatButton *cButton;
+	__weak IBOutlet SYFlatButton *dButton;
+	__weak IBOutlet SYFlatButton *eButton;
+	__weak IBOutlet SYFlatButton *fButton;
 }
 - (IBAction)allClearPressed:(id)sender;
 - (IBAction)binaryOpPressed:(id)sender;

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2F5568AD2178C44D00652D06 /* Magic-Number-Machine.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2F5568AC2178C44D00652D06 /* Magic-Number-Machine.pdf */; };
-		2F5568B32179253800652D06 /* GermanGUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F5568AF2179253800652D06 /* GermanGUI.strings */; };
 		2F5568B82179255A00652D06 /* SpanishGUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F5568B62179255A00652D06 /* SpanishGUI.strings */; };
 		2F5568BE2179256F00652D06 /* FrenchGUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F5568B92179256F00652D06 /* FrenchGUI.strings */; };
 		2F5568C42179258100652D06 /* ItalianGUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F5568C02179258100652D06 /* ItalianGUI.strings */; };
@@ -60,10 +59,6 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F5568AC2178C44D00652D06 /* Magic-Number-Machine.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Magic-Number-Machine.pdf"; sourceTree = "<group>"; };
-		2F5568AE2179253800652D06 /* de */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = de; path = de.lproj/MNMWindow.nib; sourceTree = "<group>"; };
-		2F5568B02179253800652D06 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/GermanGUI.strings; sourceTree = "<group>"; };
-		2F5568B12179253800652D06 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2F5568B22179253800652D06 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F5568B42179255A00652D06 /* es */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = es; path = es.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		2F5568B52179255A00652D06 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2F5568B72179255A00652D06 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/SpanishGUI.strings; sourceTree = "<group>"; };
@@ -97,6 +92,9 @@
 		47B96FD71B13372E0064FEEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		47D8742129B694E100F94CEE /* SYFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYFlatButton.h; sourceTree = "<group>"; };
 		47D8742229B694E100F94CEE /* SYFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYFlatButton.m; sourceTree = "<group>"; };
+		47D8742529B7884200F94CEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MNMWindow.strings; sourceTree = "<group>"; };
+		47D8742629B7884200F94CEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		47D8742729B7884200F94CEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Magic Number Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic Number Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C900A87105588DFA00809D76 /* InputManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputManager.h; sourceTree = "<group>"; };
@@ -239,7 +237,6 @@
 			children = (
 				2F5568B92179256F00652D06 /* FrenchGUI.strings */,
 				2F5568B62179255A00652D06 /* SpanishGUI.strings */,
-				2F5568AF2179253800652D06 /* GermanGUI.strings */,
 				2F5568C02179258100652D06 /* ItalianGUI.strings */,
 				C95D1E430F536BC000851908 /* MNMWindow.nib */,
 				C956BF2B05E8C099002D425F /* Localizable.strings */,
@@ -400,11 +397,11 @@
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				Base,
-				de,
 				es,
 				fr,
 				it,
 				en,
+				de,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Magic Number Machine XCode */;
 			packageReferences = (
@@ -424,7 +421,6 @@
 			files = (
 				475DA31C29B4A664002DB3FF /* Magic_Number_Machine_Buttons.html in Resources */,
 				475DA33629B528EF002DB3FF /* 2x.svg in Resources */,
-				2F5568B32179253800652D06 /* GermanGUI.strings in Resources */,
 				C900A92A05588FC400809D76 /* Icon.icns in Resources */,
 				475DA33429B528EF002DB3FF /* xtoy.svg in Resources */,
 				475DA32E29B528EF002DB3FF /* 2nd.svg in Resources */,
@@ -486,20 +482,12 @@
 			isa = PBXVariantGroup;
 			children = (
 				C95D1E4F0F536C4300851908 /* Italian */,
-				2F5568B22179253800652D06 /* de */,
 				2F5568BB2179256F00652D06 /* fr */,
 				2F5568C32179258100652D06 /* it */,
 				475793F229AE3E360055DEB4 /* en */,
+				47D8742729B7884200F94CEE /* de */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2F5568AF2179253800652D06 /* GermanGUI.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F5568B02179253800652D06 /* de */,
-			);
-			name = GermanGUI.strings;
 			sourceTree = "<group>";
 		};
 		2F5568B62179255A00652D06 /* SpanishGUI.strings */ = {
@@ -529,11 +517,11 @@
 		C956BF2B05E8C099002D425F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2F5568B12179253800652D06 /* de */,
 				2F5568B52179255A00652D06 /* es */,
 				2F5568BD2179256F00652D06 /* fr */,
 				2F5568C22179258100652D06 /* it */,
 				475793F329AE3E360055DEB4 /* en */,
+				47D8742629B7884200F94CEE /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -542,10 +530,10 @@
 			isa = PBXVariantGroup;
 			children = (
 				475F2C72217272C000D8EB2E /* Base */,
-				2F5568AE2179253800652D06 /* de */,
 				2F5568B42179255A00652D06 /* es */,
 				2F5568BC2179256F00652D06 /* fr */,
 				2F5568BF2179258100652D06 /* it */,
+				47D8742529B7884200F94CEE /* de */,
 			);
 			name = MNMWindow.nib;
 			sourceTree = "<group>";
@@ -609,13 +597,13 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 6389FT2N69;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Magic Number Machine_Prefix.pch";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
@@ -654,12 +642,15 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
+				"DEBUG_INFORMATION_FORMAT[sdk=*]" = "";
 				DEVELOPMENT_TEAM = 6389FT2N69;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Magic Number Machine_Prefix.pch";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
@@ -679,6 +670,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Magic Number Machine-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -715,7 +707,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -790,7 +782,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

@@ -1,6 +1,6 @@
 /* Localized versions of Info.plist keys */
 
 CFBundleName = "Magic Number Machine";
-CFBundleShortVersionString = "Magic Number Machine V1.3.0";
-CFBundleGetInfoString = "Magic Number Machine version 1.3.0, Copyright 2003-2018 Matt Gallagher \n& Mike Griebling.";
-NSHumanReadableCopyright = "Copyright 2003-2018 Matt Gallagher \n& Mike Griebling.";
+CFBundleShortVersionString = "Magic Number Machine V2.0.0";
+CFBundleGetInfoString = "Magic Number Machine version 2.0.0, Copyright 2003-2023 Matt Gallagher \n& Computer Inspirations.";
+NSHumanReadableCopyright = "Copyright 2003-2023 Matt Gallagher \n& Computer Inspirations.";

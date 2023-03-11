@@ -35,6 +35,8 @@
 //
 - (IBAction)allClearPressed:(id)sender
 {
+    BigFloat* x = [BigFloat bigFloatWithDouble:10.5 radix:10];
+    NSString* s = [x toString];
 	[dataManager clearExpression];
 }
 

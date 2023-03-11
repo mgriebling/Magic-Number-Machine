@@ -244,12 +244,6 @@
                                         <string key="keyEquivalent">4</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -283,12 +277,6 @@
                                         <string key="keyEquivalent">2</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -322,12 +310,6 @@
                                         <string key="keyEquivalent">3</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -361,12 +343,6 @@
                                         <string key="keyEquivalent">*</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyOrange"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -402,12 +378,6 @@ DQ
 </string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyOrange"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -441,12 +411,6 @@ DQ
                                         <string key="keyEquivalent">e</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -480,12 +444,6 @@ DQ
                                         <string key="keyEquivalent">1</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -519,12 +477,6 @@ DQ
                                         <string key="keyEquivalent">d</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -559,12 +511,6 @@ DQ
                                     </buttonCell>
                                     <color key="bezelColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyOrange"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -598,12 +544,6 @@ DQ
                                         <string key="keyEquivalent">c</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -638,12 +578,6 @@ DQ
                                     </buttonCell>
                                     <color key="bezelColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyOrange"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -677,12 +611,6 @@ DQ
                                         <string key="keyEquivalent">0</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -716,12 +644,6 @@ DQ
                                         <string key="keyEquivalent">/</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyOrange"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -755,12 +677,6 @@ DQ
                                         <string key="keyEquivalent">f</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -796,12 +712,6 @@ Gw
 </string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
                                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -835,12 +745,6 @@ Gw
                                         <string key="keyEquivalent"></string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="systemRedColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -889,12 +793,6 @@ Gw
                                         <string key="keyEquivalent">6</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -928,12 +826,6 @@ Gw
                                         <string key="keyEquivalent">b</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -967,12 +859,6 @@ Gw
                                         <string key="keyEquivalent">8</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -1006,12 +892,6 @@ Gw
                                         <string key="keyEquivalent">9</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -1045,12 +925,6 @@ Gw
                                         <string key="keyEquivalent">a</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -1084,12 +958,6 @@ Gw
                                         <string key="keyEquivalent">x</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -1124,12 +992,6 @@ Gw
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyOrange"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -1166,12 +1028,6 @@ Gw
                                         <string key="keyEquivalent">i</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
                                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1207,12 +1063,6 @@ CA
 </string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyOrange"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -1247,12 +1097,6 @@ CA
                                     </buttonCell>
                                     <color key="bezelColor" name="MyGray"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -1286,12 +1130,6 @@ CA
                                         <string key="keyEquivalent">5</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -1325,12 +1163,6 @@ CA
                                         <string key="keyEquivalent">.</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="MyGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                             <real key="value" value="1"/>
@@ -1364,12 +1196,6 @@ CA
                                         <string key="keyEquivalent">p</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                         <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
                                             <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1414,12 +1240,6 @@ CA
                                         <string key="keyEquivalent">)</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1453,12 +1273,6 @@ CA
                                         <string key="keyEquivalent">r</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1492,12 +1306,6 @@ CA
                                         <string key="keyEquivalent">j</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1531,12 +1339,6 @@ CA
                                         <string key="keyEquivalent">n</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1570,12 +1372,6 @@ CA
                                         <string key="keyEquivalent">?</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1609,12 +1405,6 @@ CA
                                         <string key="keyEquivalent">l</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1648,12 +1438,6 @@ CA
                                         <string key="keyEquivalent">&lt;</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1687,12 +1471,6 @@ CA
                                         <string key="keyEquivalent">&gt;</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1726,12 +1504,6 @@ CA
                                         <string key="keyEquivalent">!</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1765,12 +1537,6 @@ CA
                                         <string key="keyEquivalent">(</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1805,12 +1571,6 @@ CA
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1844,12 +1604,6 @@ CA
                                         <string key="keyEquivalent">v</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1887,12 +1641,6 @@ CA
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1929,12 +1677,6 @@ CA
                                         <string key="keyEquivalent">V</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -1971,12 +1713,6 @@ CA
                                         <string key="keyEquivalent">z</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2014,12 +1750,6 @@ CA
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2054,12 +1784,6 @@ CA
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2096,12 +1820,6 @@ CA
                                         <string key="keyEquivalent">w</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2138,12 +1856,6 @@ CA
                                         <string key="keyEquivalent">:</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2181,12 +1893,6 @@ CA
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2224,12 +1930,6 @@ CA
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2263,12 +1963,6 @@ CA
                                         <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2317,12 +2011,6 @@ CA
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2356,12 +2044,6 @@ CA
                                         <string key="keyEquivalent">m</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2395,12 +2077,6 @@ CA
                                         <string key="keyEquivalent">W</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2438,12 +2114,6 @@ CA
                                         <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2477,12 +2147,6 @@ CA
                                         <string key="keyEquivalent">o</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2516,12 +2180,6 @@ CA
                                         <string key="keyEquivalent">t</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2556,12 +2214,6 @@ CA
                                     </buttonCell>
                                     <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2595,12 +2247,6 @@ CA
                                         <string key="keyEquivalent">|</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2634,12 +2280,6 @@ CA
                                         <string key="keyEquivalent">&amp;</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2675,12 +2315,6 @@ IA
 </string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2714,12 +2348,6 @@ IA
                                         <string key="keyEquivalent">m</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2754,12 +2382,6 @@ IA
                                         <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2793,12 +2415,6 @@ IA
                                         <string key="keyEquivalent">k</string>
                                     </buttonCell>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                            <color key="value" name="DarkGray"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                             <color key="value" name="DarkGray"/>
                                         </userDefinedRuntimeAttribute>
@@ -2848,12 +2464,6 @@ IA
                                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                             </buttonCell>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                    <color key="value" name="MyBlue"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                                    <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                                     <color key="value" name="MyBlue"/>
@@ -2888,12 +2498,6 @@ IA
                                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                             </buttonCell>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                    <color key="value" name="MyBlue"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                                    <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                                     <color key="value" name="MyBlue"/>
@@ -2928,12 +2532,6 @@ IA
                                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                             </buttonCell>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                    <color key="value" name="MyBlue"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                                    <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                                     <color key="value" name="MyBlue"/>
@@ -2968,12 +2566,6 @@ IA
                                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                             </buttonCell>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                    <color key="value" name="MyBlue"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                                    <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                                     <color key="value" name="MyBlue"/>
@@ -3008,12 +2600,6 @@ IA
                                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                             </buttonCell>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                    <color key="value" name="MyBlue"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                                    <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                                     <color key="value" name="MyBlue"/>
@@ -3048,12 +2634,6 @@ IA
                                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                             </buttonCell>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
-                                                    <color key="value" name="MyBlue"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="foreColor">
-                                                    <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
                                                     <color key="value" name="MyBlue"/>
@@ -3300,7 +2880,7 @@ IA
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                     </tableColumn>
-                                    <tableColumn identifier="2" editable="NO" width="33.66400146484375" minWidth="33.66400146484375" maxWidth="1000" id="947">
+                                    <tableColumn identifier="2" editable="NO" width="34" minWidth="33.66400146484375" maxWidth="1000" id="947">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="# Bits">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -3869,7 +3449,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="j66-jM-7td">
                         <rect key="frame" x="1" y="1" width="309" height="481"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="20" headerView="2887" id="780">
                                 <rect key="frame" x="0.0" y="0.0" width="309" height="464"/>
@@ -4468,7 +4048,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <clipView key="contentView" drawsBackground="NO" id="7tT-Bs-RhP">
                                                 <rect key="frame" x="1" y="1" width="263" height="501"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="16" headerView="Pov-Ay-Wy6" id="YHp-G8-04v">
                                                         <rect key="frame" x="0.0" y="0.0" width="263" height="473"/>
@@ -5114,16 +4694,16 @@ Gw
     </objects>
     <resources>
         <image name="10tox" width="35" height="35"/>
-        <image name="2nd" width="50" height="50"/>
+        <image name="2nd" width="30" height="30"/>
         <image name="cbrt" width="30" height="30"/>
-        <image name="etox" width="50" height="50"/>
+        <image name="etox" width="35" height="35"/>
         <image name="nroot" width="30" height="30"/>
         <image name="plus_minus" width="25" height="25"/>
-        <image name="reciprocal" width="50" height="50"/>
+        <image name="reciprocal" width="30" height="30"/>
         <image name="sqrt" width="30" height="30"/>
-        <image name="xcubed" width="50" height="50"/>
-        <image name="xsquared" width="50" height="50"/>
-        <image name="xtoy" width="50" height="50"/>
+        <image name="xcubed" width="35" height="35"/>
+        <image name="xsquared" width="35" height="35"/>
+        <image name="xtoy" width="35" height="35"/>
         <namedColor name="DarkGray">
             <color red="0.15099999308586121" green="0.15099999308586121" blue="0.15099999308586121" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

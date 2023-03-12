@@ -915,35 +915,39 @@
 {
 	shiftIsActive = !shiftIsActive;
 	if (shiftIsActive) {
-        secondButton.state = NSControlStateValueOn;
-		sinButton. title = @"sin⁻¹";     // attributedTitle = [self toFormattedString:@"sin^-1"];
-		cosButton. title = @"cos⁻¹";     // attributedTitle = [self toFormattedString:@"cos^-1"];
-		tanButton. title = @"tan⁻¹";     // attributedTitle = [self toFormattedString:@"tan^-1"];
-		sinhButton.title = @"sinh⁻¹";     // attributedTitle = [self toFormattedString:@"sinh^-1"];
-		coshButton.title = @"cosh⁻¹";     // attributedTitle = [self toFormattedString:@"cosh^-1"];
-		tanhButton.title = @"tanh⁻¹";     // attributedTitle = [self toFormattedString:@"tanh^-1"];
-        tenToXButton.image = [NSImage imageNamed:@"2tox"];
-        logButton.title = @"log₂"; 
-		shift3Left.title = @"xor";
-		shift3Right.title = @"not";
-		modButton.title = @"arg";
-        factorialButton.title = @"∑x";
-        dispButton.title = @"Sci";
+        [mainKeys setHidden:true];
+        [alternateKeys setHidden:false];
+//        secondButton.state = NSControlStateValueOn;
+//		sinButton. title = @"sin⁻¹";     // attributedTitle = [self toFormattedString:@"sin^-1"];
+//		cosButton. title = @"cos⁻¹";     // attributedTitle = [self toFormattedString:@"cos^-1"];
+//		tanButton. title = @"tan⁻¹";     // attributedTitle = [self toFormattedString:@"tan^-1"];
+//		sinhButton.title = @"sinh⁻¹";     // attributedTitle = [self toFormattedString:@"sinh^-1"];
+//		coshButton.title = @"cosh⁻¹";     // attributedTitle = [self toFormattedString:@"cosh^-1"];
+//		tanhButton.title = @"tanh⁻¹";     // attributedTitle = [self toFormattedString:@"tanh^-1"];
+//        tenToXButton.image = [NSImage imageNamed:@"2tox"];
+//        logButton.title = @"log₂";
+//		shift3Left.title = @"xor";
+//		shift3Right.title = @"not";
+//		modButton.title = @"arg";
+//        factorialButton.title = @"∑x";
+//        dispButton.title = @"Sci";
 	} else {
-        secondButton.state = NSControlStateValueOff;
-		sinButton.title = @"sin";
-		cosButton.title = @"cos";
-		tanButton.title = @"tan";
-		sinhButton.title = @"sinh";
-		coshButton.title = @"cosh";
-		tanhButton.title = @"tanh";
-        tenToXButton.image = [NSImage imageNamed:@"10tox"];
-		logButton.title = @"log";
-		shift3Left.title = @"<3";
-		shift3Right.title = @">3";
-		modButton.title = @"mod";
-        factorialButton.title = @"x!";
-        dispButton.title = @"Disp";
+        [mainKeys setHidden:false];
+        [alternateKeys setHidden:true];
+//        secondButton.state = NSControlStateValueOff;
+//		sinButton.title = @"sin";
+//		cosButton.title = @"cos";
+//		tanButton.title = @"tan";
+//		sinhButton.title = @"sinh";
+//		coshButton.title = @"cosh";
+//		tanhButton.title = @"tanh";
+//        tenToXButton.image = [NSImage imageNamed:@"10tox"];
+//		logButton.title = @"log";
+//		shift3Left.title = @"<3";
+//		shift3Right.title = @">3";
+//		modButton.title = @"mod";
+//        factorialButton.title = @"x!";
+//        dispButton.title = @"Disp";
 	}
 }
 

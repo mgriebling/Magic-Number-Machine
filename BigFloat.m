@@ -3758,69 +3758,171 @@ BF_NormaliseNumbers
 //
 - (void)andWith: (BigFloat*)num usingComplement:(int)complement
 {
-	int				digit;
-	int				index;
-	unsigned long	offset;
-	unsigned long	otherValues[BF_num_values];
-	int				old_radix;
-	BigFloat		*otherNum;
-	
-	if (!bf_is_valid)
-		return;
+    // Note: 0 - applies OR, 1 - applies AND, 2 - applies XOR
+    [self logicUsing:1 with:complement num:num];
+//	int				digit;
+//	int				index;
+//	unsigned long	offset;
+//	unsigned long	otherValues[BF_num_values];
+//	int				old_radix;
+//	BigFloat		*otherNum;
+//
+//	if (!bf_is_valid)
+//		return;
+//
+//	if (![num isValid])
+//	{
+//		bf_is_valid = NO;
+//		return;
+//	}
+//
+//	[self preComplement:complement withNumber:self];
+//	[self preComplement:complement withNumber:num];
+//
+//	otherNum = [num copy];
+//
+//	// Convert to a radix that is a power of 2
+//	old_radix = bf_radix;
+//	if (bf_radix != 2 && bf_radix != 4 && bf_radix != 8 && bf_radix != 16 && bf_radix != 32)
+//	{
+//		// Convert to the largest possible binary compatible radix
+//		[self convertToRadix: 32];
+//	}
+//	[otherNum convertToRadix: bf_radix];
+//	BF_CopyValues(otherNum->bf_array, otherValues);
+//
+//	// look for the first digit
+//	digit = BF_num_values * bf_value_precision - 1;
+//	index = digit / bf_value_precision;
+//	offset = pow(bf_radix, digit % bf_value_precision);
+//	while (offset != 0 && bf_array[index] / offset == 0 && otherValues[index] / offset == 0 && digit >= 0)
+//	{
+//		digit--;
+//		index = digit / bf_value_precision;
+//		offset = pow(bf_radix, digit % bf_value_precision);
+//	}
+//
+//	// apply a binary AND to each digit
+//	while (offset != 0 && digit >= 0)
+//	{
+//		unsigned long this_digit;
+//		unsigned long that_digit;
+//
+//		this_digit = (bf_array[index] / offset) % bf_radix;
+//		that_digit = (otherValues[index] / offset) % bf_radix;
+//		bf_array[index] -= this_digit * offset;
+//		this_digit = (this_digit & that_digit) % bf_radix;
+//		bf_array[index] += this_digit * offset;
+//
+//		digit--;
+//		index = digit / bf_value_precision;
+//		offset = pow(bf_radix, digit % bf_value_precision);
+//	}
+//
+//	// Restore the radix
+//	[self convertToRadix: old_radix];
+//
+//	[self postComplement:complement];
+}
 
-	if (![num isValid])
-	{
-		bf_is_valid = NO;
-		return;
-	}
+//
+// receiver = receiver & num
+//
+- (void)nandWith: (BigFloat*)num usingComplement:(int)complement
+{
+    [self andWith:num usingComplement:complement];
+    [self bitnotWithComplement:complement];
+}
 
-	[self preComplement:complement withNumber:self];
-	[self preComplement:complement withNumber:num];
-	
-	otherNum = [num copy];
-	
-	// Convert to a radix that is a power of 2
-	old_radix = bf_radix;
-	if (bf_radix != 2 && bf_radix != 4 && bf_radix != 8 && bf_radix != 16 && bf_radix != 32)
-	{
-		// Convert to the largest possible binary compatible radix
-		[self convertToRadix: 32];
-	}
-	[otherNum convertToRadix: bf_radix];
-	BF_CopyValues(otherNum->bf_array, otherValues);
-	
-	// look for the first digit
-	digit = BF_num_values * bf_value_precision - 1;
-	index = digit / bf_value_precision;
-	offset = pow(bf_radix, digit % bf_value_precision);
-	while (offset != 0 && bf_array[index] / offset == 0 && otherValues[index] / offset == 0 && digit >= 0)
-	{
-		digit--;
-		index = digit / bf_value_precision;
-		offset = pow(bf_radix, digit % bf_value_precision);
-	}
-	
-	// apply a binary AND to each digit
-	while (offset != 0 && digit >= 0)
-	{
-		unsigned long this_digit;
-		unsigned long that_digit;
-		
-		this_digit = (bf_array[index] / offset) % bf_radix;
-		that_digit = (otherValues[index] / offset) % bf_radix;
-		bf_array[index] -= this_digit * offset;
-		this_digit = (this_digit & that_digit) % bf_radix;
-		bf_array[index] += this_digit * offset;
-		
-		digit--;
-		index = digit / bf_value_precision;
-		offset = pow(bf_radix, digit % bf_value_precision);
-	}
-	
-	// Restore the radix
-	[self convertToRadix: old_radix];
-	
-	[self postComplement:complement];
+//
+// receiver = receiver & num
+//
+- (void)norWith: (BigFloat*)num usingComplement:(int)complement
+{
+    [self orWith:num usingComplement:complement];
+    [self bitnotWithComplement:complement];
+}
+
+//
+// receiver = receiver & num
+//
+- (void)xnorWith: (BigFloat*)num usingComplement:(int)complement
+{
+    [self xorWith:num usingComplement:complement];
+    [self bitnotWithComplement:complement];
+}
+
+- (void)logicUsing:(int)func with:(int)complement num:(BigFloat *)num {
+    int                    digit;
+    int                    index;
+    unsigned long    offset;
+    unsigned long    otherValues[BF_num_values];
+    int                    old_radix;
+    BigFloat            *otherNum;
+    
+    if (!bf_is_valid)
+        return;
+    
+    if (![num isValid])
+    {
+        bf_is_valid = NO;
+        return;
+    }
+    
+    [self preComplement:complement withNumber:self];
+    [self preComplement:complement withNumber:num];
+    
+    otherNum = [num copy];
+    
+    // Convert to a radix that is a power of 2
+    old_radix = bf_radix;
+    if (bf_radix != 2 && bf_radix != 4 && bf_radix != 8 && bf_radix != 16 && bf_radix != 32)
+    {
+        // Convert to the largest possible binary compatible radix
+        [self convertToRadix: 32];
+    }
+    [otherNum convertToRadix: bf_radix];
+    BF_CopyValues(otherNum->bf_array, otherValues);
+    
+    // look for the first digit
+    digit = BF_num_values * bf_value_precision - 1;
+    index = digit / bf_value_precision;
+    offset = pow(bf_radix, digit % bf_value_precision);
+    while (offset != 0 && bf_array[index] / offset == 0 && otherValues[index] / offset == 0 && digit >= 0)
+    {
+        digit--;
+        index = digit / bf_value_precision;
+        offset = pow(bf_radix, digit % bf_value_precision);
+    }
+    
+    // apply a binary OR to each digit
+    while (offset != 0 && digit >= 0)
+    {
+        unsigned long this_digit;
+        unsigned long that_digit;
+        
+        this_digit = (bf_array[index] / offset) % bf_radix;
+        that_digit = (otherValues[index] / offset) % bf_radix;
+        bf_array[index] -= this_digit * offset;
+        switch (func) {
+            case 0: this_digit = (this_digit | that_digit) % bf_radix; break;
+            case 1: this_digit = (this_digit & that_digit) % bf_radix; break;
+            case 2: this_digit = (this_digit ^ that_digit) % bf_radix; break;
+        }
+        
+        bf_array[index] += this_digit * offset;
+        
+        digit--;
+        index = digit / bf_value_precision;
+        offset = pow(bf_radix, digit % bf_value_precision);
+    }
+    
+    // Restore the radix
+    if (old_radix != bf_radix)
+        [self convertToRadix: old_radix];
+
+    
+    [self postComplement:complement];
 }
 
 //
@@ -3830,71 +3932,8 @@ BF_NormaliseNumbers
 //
 - (void)orWith: (BigFloat*)num usingComplement:(int)complement
 {
-	int					digit;
-	int					index;
-	unsigned long	offset;
-	unsigned long	otherValues[BF_num_values];
-	int					old_radix;
-	BigFloat			*otherNum;
-	
-	if (!bf_is_valid)
-		return;
-
-	if (![num isValid])
-	{
-		bf_is_valid = NO;
-		return;
-	}
-
-	[self preComplement:complement withNumber:self];
-	[self preComplement:complement withNumber:num];
-	
-	otherNum = [num copy];
-	
-	// Convert to a radix that is a power of 2
-	old_radix = bf_radix;
-	if (bf_radix != 2 && bf_radix != 4 && bf_radix != 8 && bf_radix != 16 && bf_radix != 32)
-	{
-		// Convert to the largest possible binary compatible radix
-		[self convertToRadix: 32];
-	}
-	[otherNum convertToRadix: bf_radix];
-	BF_CopyValues(otherNum->bf_array, otherValues);
-	
-	// look for the first digit
-	digit = BF_num_values * bf_value_precision - 1;
-	index = digit / bf_value_precision;
-	offset = pow(bf_radix, digit % bf_value_precision);
-	while (offset != 0 && bf_array[index] / offset == 0 && otherValues[index] / offset == 0 && digit >= 0)
-	{
-		digit--;
-		index = digit / bf_value_precision;
-		offset = pow(bf_radix, digit % bf_value_precision);
-	}
-	
-	// apply a binary OR to each digit
-	while (offset != 0 && digit >= 0)
-	{
-		unsigned long this_digit;
-		unsigned long that_digit;
-		
-		this_digit = (bf_array[index] / offset) % bf_radix;
-		that_digit = (otherValues[index] / offset) % bf_radix;
-		bf_array[index] -= this_digit * offset;
-		this_digit = (this_digit | that_digit) % bf_radix;
-		bf_array[index] += this_digit * offset;
-		
-		digit--;
-		index = digit / bf_value_precision;
-		offset = pow(bf_radix, digit % bf_value_precision);
-	}
-	
-	// Restore the radix
-	if (old_radix != bf_radix)
-		[self convertToRadix: old_radix];
-
-	
-	[self postComplement:complement];
+    // Note: 0 - applies OR, 1 - applies AND, 2 - applies XOR
+    [self logicUsing:0 with:complement num:num];
 }
 
 //
@@ -3904,71 +3943,73 @@ BF_NormaliseNumbers
 //
 - (void)xorWith: (BigFloat*)num usingComplement:(int)complement
 {
-	int					digit;
-	int					index;
-	unsigned long	offset;
-	unsigned long	otherValues[BF_num_values];
-	int					old_radix;
-	BigFloat			*otherNum;
-	
-	if (!bf_is_valid)
-		return;
-
-	if (![num isValid])
-	{
-		bf_is_valid = NO;
-		return;
-	}
-
-	[self preComplement:complement withNumber:self];
-	[self preComplement:complement withNumber:num];
-
-	otherNum = [num copy];
-	
-	// Convert to a radix that is a power of 2
-	old_radix = bf_radix;
-	if (bf_radix != 2 && bf_radix != 4 && bf_radix != 8 && bf_radix != 16 && bf_radix != 32)
-	{
-		// Convert to the largest possible binary compatible radix
-		[self convertToRadix: 32];
-	}
-	[otherNum convertToRadix: bf_radix];
-	BF_CopyValues(otherNum->bf_array, otherValues);
-	
-	// look for the first digit
-	digit = BF_num_values * bf_value_precision - 1;
-	
-	index = digit / bf_value_precision;
-	offset = pow(bf_radix, digit % bf_value_precision);
-	while (offset != 0 && bf_array[index] / offset == 0 && otherValues[index] / offset == 0 && digit >= 0)
-	{
-		digit--;
-		index = digit / bf_value_precision;
-		offset = pow(bf_radix, digit % bf_value_precision);
-	}
-	
-	// apply a binary XOR to each digit
-	while (offset != 0 && digit >= 0)
-	{
-		unsigned long this_digit;
-		unsigned long that_digit;
-		
-		this_digit = (bf_array[index] / offset) % bf_radix;
-		that_digit = (otherValues[index] / offset) % bf_radix;
-		bf_array[index] -= this_digit * offset;
-		this_digit = (this_digit ^ that_digit) % bf_radix;
-		bf_array[index] += this_digit * offset;
-		
-		digit--;
-		index = digit / bf_value_precision;
-		offset = pow(bf_radix, digit % bf_value_precision);
-	}
-	
-	// Restore the radix
-	if (old_radix != bf_radix)
-		[self convertToRadix: old_radix];
-
-	[self postComplement:complement];
+    // Note: 0 - applies OR, 1 - applies AND, 2 - applies XOR
+    [self logicUsing:2 with:complement num:num];
+//	int					digit;
+//	int					index;
+//	unsigned long	offset;
+//	unsigned long	otherValues[BF_num_values];
+//	int					old_radix;
+//	BigFloat			*otherNum;
+//
+//	if (!bf_is_valid)
+//		return;
+//
+//	if (![num isValid])
+//	{
+//		bf_is_valid = NO;
+//		return;
+//	}
+//
+//	[self preComplement:complement withNumber:self];
+//	[self preComplement:complement withNumber:num];
+//
+//	otherNum = [num copy];
+//
+//	// Convert to a radix that is a power of 2
+//	old_radix = bf_radix;
+//	if (bf_radix != 2 && bf_radix != 4 && bf_radix != 8 && bf_radix != 16 && bf_radix != 32)
+//	{
+//		// Convert to the largest possible binary compatible radix
+//		[self convertToRadix: 32];
+//	}
+//	[otherNum convertToRadix: bf_radix];
+//	BF_CopyValues(otherNum->bf_array, otherValues);
+//
+//	// look for the first digit
+//	digit = BF_num_values * bf_value_precision - 1;
+//
+//	index = digit / bf_value_precision;
+//	offset = pow(bf_radix, digit % bf_value_precision);
+//	while (offset != 0 && bf_array[index] / offset == 0 && otherValues[index] / offset == 0 && digit >= 0)
+//	{
+//		digit--;
+//		index = digit / bf_value_precision;
+//		offset = pow(bf_radix, digit % bf_value_precision);
+//	}
+//
+//	// apply a binary XOR to each digit
+//	while (offset != 0 && digit >= 0)
+//	{
+//		unsigned long this_digit;
+//		unsigned long that_digit;
+//
+//		this_digit = (bf_array[index] / offset) % bf_radix;
+//		that_digit = (otherValues[index] / offset) % bf_radix;
+//		bf_array[index] -= this_digit * offset;
+//		this_digit = (this_digit ^ that_digit) % bf_radix;
+//		bf_array[index] += this_digit * offset;
+//
+//		digit--;
+//		index = digit / bf_value_precision;
+//		offset = pow(bf_radix, digit % bf_value_precision);
+//	}
+//
+//	// Restore the radix
+//	if (old_radix != bf_radix)
+//		[self convertToRadix: old_radix];
+//
+//	[self postComplement:complement];
 }
 
 
@@ -4367,7 +4408,7 @@ BF_NormaliseNumbers
 		
 		complementNumber = [[BigFloat alloc] initWithMantissa:complementBits exponent:0 isNegative:0 radix:bf_radix userPointAt:0];
 		mantissaNumber = [complementNumber copy];
-		BF_CopyValues(mantissaNumber->bf_array, values);
+		BF_AssignValues(mantissaNumber->bf_array, values);
 		
 		carryBits = 0;
 		while

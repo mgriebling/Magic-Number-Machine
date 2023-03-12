@@ -349,6 +349,30 @@ static NSArray *constantsDataRows = nil;
 }
 
 //
+// Returns the relevant bezier path.
+//
++ (NSBezierPath *)nandPath
+{
+    return [ExpressionSymbols getSymbolForString:@"nand"];
+}
+
+//
+// Returns the relevant bezier path.
+//
++ (NSBezierPath *)norPath
+{
+    return [ExpressionSymbols getSymbolForString:@"nor"];
+}
+
+//
+// Returns the relevant bezier path.
+//
++ (NSBezierPath *)xnorPath
+{
+    return [ExpressionSymbols getSymbolForString:@"xnor"];
+}
+
+//
 // notPath
 //
 // Returns the relevant bezier path.

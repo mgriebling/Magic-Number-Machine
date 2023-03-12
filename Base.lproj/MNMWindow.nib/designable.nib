@@ -228,6 +228,1227 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <box hidden="YES" fixedFrame="YES" borderType="none" title="Title" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="biJ-Or-ip7" userLabel="Alt Central Pad">
+                        <rect key="frame" x="92" y="-6" width="305" height="241"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <view key="contentView" id="eDt-mr-UYU">
+                            <rect key="frame" x="0.0" y="0.0" width="305" height="241"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <button toolTip="Right Parenthesis" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="agO-YW-PzI" customClass="SYFlatButton">
+                                    <rect key="frame" x="246" y="3" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title=")" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="RfP-qU-ueP">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">)</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="bracketPressed:" target="678" id="CcJ-Sw-YuC"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(r) Complex magnitude" fixedFrame="YES" tag="16" translatesAutoresizingMaskIntoConstraints="NO" id="vQ3-xQ-dMm" customClass="SYFlatButton">
+                                    <rect key="frame" x="50" y="159" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="arg" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="15" inset="2" id="65W-DZ-NFq">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">r</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="cVF-1v-27R"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(k) Imaginary Part" fixedFrame="YES" tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="SxU-1I-bF8" customClass="SYFlatButton">
+                                    <rect key="frame" x="148" y="120" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="Im" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="13" inset="2" id="OOa-LE-NzD">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">j</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="kSi-EZ-SIE"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(n) Permutations" fixedFrame="YES" tag="112" translatesAutoresizingMaskIntoConstraints="NO" id="AIm-12-VCS" customClass="SYFlatButton">
+                                    <rect key="frame" x="99" y="81" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="nPr" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="112" inset="2" id="VBE-js-gzR">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">n</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="binaryOpPressed:" target="678" id="jXr-MN-Dp1"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(Option-n) Combinations" fixedFrame="YES" tag="99" translatesAutoresizingMaskIntoConstraints="NO" id="4cW-bd-K1U" customClass="SYFlatButton">
+                                    <rect key="frame" x="99" y="120" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="nCr" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="112" inset="2" id="7uE-MM-0wX">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">n</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="binaryOpPressed:" target="678" id="vra-ll-JbT"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(l) Natural Logarithm" fixedFrame="YES" tag="20" translatesAutoresizingMaskIntoConstraints="NO" id="LcQ-ua-i22" customClass="SYFlatButton">
+                                    <rect key="frame" x="197" y="81" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="ln" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" imageScaling="proportionallyUpOrDown" inset="2" id="yWa-dE-W2I">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">l</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="Z7L-aD-cty"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(&lt;) shift the exponent left" fixedFrame="YES" tag="98" translatesAutoresizingMaskIntoConstraints="NO" id="tUV-IX-YkO" userLabel="nand" customClass="SYFlatButton">
+                                    <rect key="frame" x="50" y="81" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="nand" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="1HH-Om-JIL">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">&lt;</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="exponentShiftPressed:" target="678" id="wNd-7v-9d2"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(&gt;) shift the exponent right" fixedFrame="YES" tag="100" translatesAutoresizingMaskIntoConstraints="NO" id="kg8-f1-Thp" customClass="SYFlatButton">
+                                    <rect key="frame" x="50" y="120" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="nor" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="m1p-SF-cn8">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">&gt;</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="exponentShiftPressed:" target="678" id="Lcb-hw-5jo"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(q) Factorial" fixedFrame="YES" tag="26" translatesAutoresizingMaskIntoConstraints="NO" id="OoT-Cd-EUJ" userLabel="sumx" customClass="SYFlatButton">
+                                    <rect key="frame" x="1" y="42" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="∑x" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="26" inset="2" id="bru-KM-uup">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">!</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="postOpPressed:" target="678" id="MsS-rE-Ic9"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="Left Parenthesis" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Swl-UJ-jMZ" customClass="SYFlatButton">
+                                    <rect key="frame" x="197" y="3" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="(" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="X2T-V9-R1w">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">(</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="bracketPressed:" target="678" id="92H-OW-dxv"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(⌥o) Hyperbolic Cosine" fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="mrz-pg-cCE" userLabel="acosh" customClass="SYFlatButton">
+                                    <rect key="frame" x="99" y="3" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="cosh⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="ZRK-kP-T8z">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">o</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="gfZ-yW-GeE"/>
+                                    </connections>
+                                </button>
+                                <button identifier="squareRoot" toolTip="(v) Square Root" fixedFrame="YES" tag="21" translatesAutoresizingMaskIntoConstraints="NO" id="Yin-By-vpu" userLabel="sqrt" customClass="SYFlatButton">
+                                    <rect key="frame" x="197" y="198" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="sqrt" imagePosition="only" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="566-5h-50c">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">v</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="b7H-I4-IRd"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(⌘v) Cube Root" fixedFrame="YES" tag="29" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HC0-m3-Y4z" userLabel="cbrt" customClass="SYFlatButton">
+                                    <rect key="frame" x="197" y="159" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="cbrt" imagePosition="overlaps" alignment="center" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="gHe-Hk-j5e">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">v</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="fNZ-gr-PPv"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(⌥v) Nth Root" fixedFrame="YES" tag="30" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3G5-LN-wzg" userLabel="nroot" customClass="SYFlatButton">
+                                    <rect key="frame" x="197" y="120" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="nroot" imagePosition="overlaps" borderStyle="border" tag="21" imageScaling="proportionallyDown" inset="2" id="Bao-K5-erl">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">V</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="binaryOpPressed:" target="678" id="oRA-2V-bMH"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(z) e, raised to the next number" fixedFrame="YES" tag="24" translatesAutoresizingMaskIntoConstraints="NO" id="kgF-Qu-hRh" userLabel="etox" customClass="SYFlatButton">
+                                    <rect key="frame" x="246" y="81" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="etox" imagePosition="only" alignment="center" borderStyle="border" tag="24" imageScaling="proportionallyDown" inset="2" id="TkN-tj-QUS">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">z</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="gvl-aJ-xF8"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(l) Natural Logarithm" fixedFrame="YES" tag="32" translatesAutoresizingMaskIntoConstraints="NO" id="ZTk-aD-Dey" userLabel="log2" customClass="SYFlatButton">
+                                    <rect key="frame" x="197" y="42" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="log₂" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="20" inset="2" id="yPo-Lk-d9a">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">l</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="UHV-3B-jbg"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(z) 10, raised to the next number" fixedFrame="YES" tag="31" translatesAutoresizingMaskIntoConstraints="NO" id="fn2-DF-xs5" userLabel="2tox" customClass="SYFlatButton">
+                                    <rect key="frame" x="246" y="42" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="2tox" imagePosition="only" alignment="center" borderStyle="border" tag="24" imageScaling="proportionallyDown" inset="2" id="0of-kt-zpf">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">z</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="ffV-KG-gDK"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(w) square the current number" fixedFrame="YES" tag="25" translatesAutoresizingMaskIntoConstraints="NO" id="fPq-fY-V7u" userLabel="x²" customClass="SYFlatButton">
+                                    <rect key="frame" x="246" y="198" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="xsquared" imagePosition="only" alignment="center" borderStyle="border" tag="25" imageScaling="proportionallyDown" inset="2" id="iR4-v0-GXq">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">w</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="postOpPressed:" target="678" id="ovS-x1-tfH"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(w) reciprocal of the current number" fixedFrame="YES" tag="27" translatesAutoresizingMaskIntoConstraints="NO" id="pdF-eW-3P5" userLabel="reciprocal" customClass="SYFlatButton">
+                                    <rect key="frame" x="148" y="159" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="reciprocal" imagePosition="overlaps" alignment="center" borderStyle="border" tag="25" imageScaling="proportionallyDown" inset="2" id="adM-Oq-xRE">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">:</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="postOpPressed:" target="678" id="7z8-rP-u5b"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(w) cube the current number" fixedFrame="YES" tag="28" translatesAutoresizingMaskIntoConstraints="NO" id="ogH-Ag-v7I" userLabel="xcubed" customClass="SYFlatButton">
+                                    <rect key="frame" x="246" y="159" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="xcubed" imagePosition="only" alignment="center" borderStyle="border" tag="25" imageScaling="proportionallyDown" inset="2" id="Kry-xQ-NSS">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">w</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="postOpPressed:" target="678" id="7jL-iR-iQF"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(⌘D) Display Precision" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j8w-bT-bU0" customClass="SYFlatButton">
+                                    <rect key="frame" x="99" y="198" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="Disp" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" inset="2" id="eYe-2a-BHU">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">d</string>
+                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="precisionPressed:" target="678" id="TM0-Pl-N2x"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(⎇) Second function" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kYU-oY-ma5" userLabel="2nd On" customClass="SYFlatButton">
+                                    <rect key="frame" x="1" y="159" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="2nd" imagePosition="only" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HzH-AA-xVn">
+                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageHighlightColor">
+                                            <color key="value" name="MyOrange"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="onAnimateDuration">
+                                            <real key="value" value="0.25"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="offAnimateDuration">
+                                            <real key="value" value="0.25"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="NO"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="shiftPressed:" target="678" id="Uqe-yv-d29"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(⌥t) Hyperboic Tangent" fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="fRh-WB-LCX" userLabel="atanh" customClass="SYFlatButton">
+                                    <rect key="frame" x="148" y="3" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="tanh⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="Crh-49-XGh">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">t</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="vC1-tv-2k6"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(m) Truncate the number" fixedFrame="YES" tag="18" translatesAutoresizingMaskIntoConstraints="NO" id="mgo-8d-kyZ" customClass="SYFlatButton">
+                                    <rect key="frame" x="1" y="3" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="Int" bezelStyle="shadowlessSquare" alignment="center" lineBreakMode="truncatingTail" borderStyle="border" inset="2" id="8lL-Bj-p1Q">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">m</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="AEB-qF-Rdj"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(y) raise to the next number" fixedFrame="YES" tag="94" translatesAutoresizingMaskIntoConstraints="NO" id="tI1-0E-7J5" userLabel="xtoy" customClass="SYFlatButton">
+                                    <rect key="frame" x="246" y="120" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="xtoy" imagePosition="only" alignment="center" borderStyle="border" tag="94" imageScaling="proportionallyDown" inset="2" id="PgK-Uj-7PN">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">y</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="imageNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="binaryOpPressed:" target="678" id="tGp-MJ-Ui4"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(⌥s) Hyperbolic Sine" fixedFrame="YES" tag="10" translatesAutoresizingMaskIntoConstraints="NO" id="u9R-2v-N8R" userLabel="asinh" customClass="SYFlatButton">
+                                    <rect key="frame" x="50" y="3" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="sinh⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="5vT-LD-zWl">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">s</string>
+                                        <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="Pob-zZ-RPP"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(o) Cosine" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="QPK-P7-jVB" userLabel="acos" customClass="SYFlatButton">
+                                    <rect key="frame" x="99" y="42" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="cos⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="2" inset="2" id="I2x-kG-KH0">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">o</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="ECk-NI-XHm"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(t) Tangent" fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="Rut-5Y-YCC" userLabel="atan" customClass="SYFlatButton">
+                                    <rect key="frame" x="148" y="42" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="tan⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="3" inset="2" id="Fon-VE-qO1">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">t</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="zfm-i5-DFE"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(s) Sine" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="yuP-F3-PuS" userLabel="asin" customClass="SYFlatButton">
+                                    <rect key="frame" x="50" y="42" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="sin⁻¹" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="1" inset="2" id="Q88-On-JeG">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">s</string>
+                                    </buttonCell>
+                                    <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="TYh-P2-01z"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(j) binary OR" fixedFrame="YES" tag="120" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-Zx-v4W" userLabel="xor" customClass="SYFlatButton">
+                                    <rect key="frame" x="1" y="120" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="xor" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="111" inset="2" id="Z3Y-bh-3ZH">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">j</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="binaryOpPressed:" target="678" id="uHo-5c-mgu"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(h) binary AND" fixedFrame="YES" tag="101" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-8R-CYw" userLabel="xnor" customClass="SYFlatButton">
+                                    <rect key="frame" x="1" y="81" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="xnor" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" toolTip="(h) Binary AND" tag="97" inset="2" id="tI7-ZJ-mtz">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">h</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="binaryOpPressed:" target="678" id="Ft0-LN-RM9"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(space) Adds the result to the Data" fixedFrame="YES" tag="40" translatesAutoresizingMaskIntoConstraints="NO" id="Wl8-YQ-Ahu" customClass="SYFlatButton">
+                                    <rect key="frame" x="1" y="198" width="99" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="Add Data" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="40" inset="2" id="o5S-XI-jbm">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent" base64-UTF8="YES">
+IA
+</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="addData:" target="797" id="0jE-xy-7IT"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(m) Modulo—not percent" fixedFrame="YES" tag="17" translatesAutoresizingMaskIntoConstraints="NO" id="AM1-m1-ya5" customClass="SYFlatButton">
+                                    <rect key="frame" x="99" y="159" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="not" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="uuq-fW-Mn7">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">m</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="binaryOpPressed:" target="678" id="v11-Sf-5GP"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(⌘T) Change Trig. Mode" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsI-Xu-yh7" customClass="SYFlatButton">
+                                    <rect key="frame" x="148" y="198" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="Rad" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="37" inset="2" id="Yhm-iJ-2nk">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">t</string>
+                                        <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="trigModePressed:" target="678" id="uKR-OF-oCS"/>
+                                    </connections>
+                                </button>
+                                <button toolTip="(k) Real Part" fixedFrame="YES" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="egR-pg-HBT" customClass="SYFlatButton">
+                                    <rect key="frame" x="148" y="81" width="50" height="40"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <buttonCell key="cell" type="square" title="Re" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" tag="13" inset="2" id="HZX-TX-v8r">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" size="16" name="SFProText-Regular"/>
+                                        <string key="keyEquivalent">k</string>
+                                    </buttonCell>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundNormalColor">
+                                            <color key="value" name="DarkGray"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderNormalColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderHighlightColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleNormalColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightColor">
+                                            <color key="value" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="preOpPressed:" target="678" id="p9J-q3-2Ww"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </view>
+                        <font key="titleFont" metaFont="system"/>
+                    </box>
                     <box fixedFrame="YES" borderType="none" title="Title" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="1341" userLabel="Right Pad">
                         <rect key="frame" x="385" y="-4" width="232" height="241"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -1790,7 +3011,7 @@ CA
                                         <action selector="preOpPressed:" target="678" id="2932"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(z) 10, raised to the next number" fixedFrame="YES" tag="23" translatesAutoresizingMaskIntoConstraints="NO" id="2929" customClass="SYFlatButton">
+                                <button toolTip="(z) 10, raised to the next number" fixedFrame="YES" tag="23" translatesAutoresizingMaskIntoConstraints="NO" id="2929" userLabel="10tox" customClass="SYFlatButton">
                                     <rect key="frame" x="246" y="42" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="10tox" imagePosition="only" alignment="center" borderStyle="border" tag="24" imageScaling="proportionallyDown" inset="2" id="2930">
@@ -1970,11 +3191,11 @@ CA
                                         <action selector="precisionPressed:" target="678" id="1704"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(⎇) Second function" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2922" customClass="SYFlatButton">
+                                <button toolTip="(⎇) Second function" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2922" userLabel="2nd" customClass="SYFlatButton">
                                     <rect key="frame" x="1" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="2nd" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2923">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                        <behavior key="behavior" lightByContents="YES"/>
                                         <font key="font" size="16" name="SFProText-Regular"/>
                                         <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
                                     </buttonCell>
@@ -2012,6 +3233,7 @@ CA
                                         <userDefinedRuntimeAttribute type="number" keyPath="offAnimateDuration">
                                             <real key="value" value="0.25"/>
                                         </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="momentary" value="YES"/>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="shiftPressed:" target="678" id="2937"/>
@@ -2683,14 +3905,14 @@ IA
             </view>
             <toolbar key="toolbar" implicitIdentifier="0BDAD487-6AF7-49F1-974D-4BEE167B225A" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="labelOnly" sizeMode="regular" id="Klt-To-2HC">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="DA9FAF92-E4AE-4E67-A504-14A28FF84699" label="Custom View" paletteLabel="Custom View" id="RLG-Pi-Sjf">
+                    <toolbarItem implicitItemIdentifier="DA9FAF92-E4AE-4E67-A504-14A28FF84699" label="Custom View" paletteLabel="Custom View" id="RLG-Pi-Sjf" userLabel="Precision">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="130" height="14"/>
+                        <size key="minSize" width="80" height="14"/>
                         <size key="maxSize" width="200" height="14"/>
                         <textField key="view" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" id="1379">
                             <rect key="frame" x="0.0" y="14" width="130" height="14"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Precision: 12 Digits" usesSingleLineMode="YES" id="2800">
+                            <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingHead" sendsActionOnEndEditing="YES" alignment="left" title="Precision: 12 Digits" usesSingleLineMode="YES" id="2800">
                                 <font key="font" metaFont="smallSystem"/>
                                 <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2698,21 +3920,21 @@ IA
                         </textField>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="s6w-XR-cNo"/>
-                    <toolbarItem implicitItemIdentifier="BC809F21-272E-40D5-AD46-36387FEA69D8" label="Custom View" paletteLabel="Custom View" id="I2g-dc-092">
+                    <toolbarItem implicitItemIdentifier="BC809F21-272E-40D5-AD46-36387FEA69D8" label="Custom View" paletteLabel="Custom View" id="I2g-dc-092" userLabel="Radix">
                         <nil key="toolTip"/>
                         <size key="minSize" width="91" height="14"/>
                         <size key="maxSize" width="200" height="14"/>
                         <textField key="view" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" id="1383">
                             <rect key="frame" x="0.0" y="14" width="91" height="14"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
-                            <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Radix: 10" usesSingleLineMode="YES" id="2802">
+                            <textFieldCell key="cell" controlSize="small" lineBreakMode="truncatingHead" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Radix: 10" usesSingleLineMode="YES" id="2802">
                                 <font key="font" metaFont="smallSystem"/>
                                 <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="08296EBD-6A55-4B54-BC69-0BB149B856EE" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="0Ne-lZ-jDV">
+                    <toolbarItem implicitItemIdentifier="08296EBD-6A55-4B54-BC69-0BB149B856EE" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="0Ne-lZ-jDV" userLabel="Angle Measure">
                         <nil key="toolTip"/>
                         <textField key="view" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" textCompletion="NO" id="1380">
                             <rect key="frame" x="10" y="14" width="57" height="14"/>
@@ -3543,6 +4765,7 @@ IA
         <customObject id="797" userLabel="DataManager" customClass="DataManager">
             <connections>
                 <outlet property="addDataButton" destination="1681" id="Lje-aV-pKI"/>
+                <outlet property="alternateKeys" destination="biJ-Or-ip7" id="zSA-6p-R9h"/>
                 <outlet property="anyRootButton" destination="2910" id="4xw-7G-jz7"/>
                 <outlet property="cosButton" destination="2895" id="Ak3-Hh-sgQ"/>
                 <outlet property="coshButton" destination="1674" id="uP4-zR-isA"/>
@@ -3554,6 +4777,7 @@ IA
                 <outlet property="factorialButton" destination="1669" id="QKI-fv-xJh"/>
                 <outlet property="inputManager" destination="678" id="945"/>
                 <outlet property="logButton" destination="2928" id="TNf-mq-mZA"/>
+                <outlet property="mainKeys" destination="1339" id="pQc-rN-AE8"/>
                 <outlet property="modButton" destination="1652" id="ChS-BN-eiK"/>
                 <outlet property="precisionDisplay" destination="1379" id="1381"/>
                 <outlet property="radixDisplay" destination="1383" id="1384"/>
@@ -4739,6 +5963,7 @@ Gw
     <resources>
         <image name="10tox" width="35" height="35"/>
         <image name="2nd" width="30" height="30"/>
+        <image name="2tox" width="35" height="35"/>
         <image name="cbrt" width="30" height="30"/>
         <image name="etox" width="35" height="35"/>
         <image name="nroot" width="30" height="30"/>

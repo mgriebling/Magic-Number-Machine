@@ -1694,6 +1694,32 @@
 }
 
 //
+// nandWith
+//
+// Wrapper that adds complex number support around the base class
+//
+- (void)nandWith:(BigFloat*)num usingComplement:(int)complement
+{
+    if (!bf_is_valid)
+    {
+        return;
+    }
+    
+    if ([num isKindOfClass:[BigCFloat class]])
+    {
+        BigCFloat *cnum = (BigCFloat*)num;
+        
+        [super nandWith:cnum usingComplement:complement];
+        [bcf_imaginary nandWith:cnum->bcf_imaginary usingComplement:complement];
+        return;
+    }
+    
+    [self abs];
+    [super nandWith:num usingComplement:complement];
+}
+
+
+//
 // orWith
 //
 // Wrapper that adds complex number support around the base class
@@ -1716,6 +1742,52 @@
     
     [self abs];
     [super orWith:num usingComplement:complement];
+}
+
+//
+// Wrapper that adds complex number support around the base class
+//
+- (void)norWith:(BigFloat*)num usingComplement:(int)complement
+{
+    if (!bf_is_valid)
+    {
+        return;
+    }
+    
+    if ([num isKindOfClass:[BigCFloat class]])
+    {
+        BigCFloat *cnum = (BigCFloat*)num;
+        
+        [super norWith:cnum usingComplement:complement];
+        [bcf_imaginary norWith:cnum->bcf_imaginary usingComplement:complement];
+        return;
+    }
+    
+    [self abs];
+    [super norWith:num usingComplement:complement];
+}
+
+//
+// Wrapper that adds complex number support around the base class
+//
+- (void)xnorWith:(BigFloat*)num usingComplement:(int)complement
+{
+    if (!bf_is_valid)
+    {
+        return;
+    }
+    
+    if ([num isKindOfClass:[BigCFloat class]])
+    {
+        BigCFloat *cnum = (BigCFloat*)num;
+        
+        [super xnorWith:cnum usingComplement:complement];
+        [bcf_imaginary xnorWith:cnum->bcf_imaginary usingComplement:complement];
+        return;
+    }
+    
+    [self abs];
+    [super xnorWith:num usingComplement:complement];
 }
 
 //

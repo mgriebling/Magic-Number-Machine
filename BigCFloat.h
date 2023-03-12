@@ -104,6 +104,9 @@
 - (void)andWith:(BigFloat*)num usingComplement:(int)complement;
 - (void)orWith:(BigFloat*)num usingComplement:(int)complement;
 - (void)xorWith:(BigFloat*)num usingComplement:(int)complement;
+- (void)nandWith:(BigFloat*)num usingComplement:(int)complement;
+- (void)norWith:(BigFloat*)num usingComplement:(int)complement;
+- (void)xnorWith:(BigFloat*)num usingComplement:(int)complement;
 
 // Accessor Functions
 @property (nonatomic, readonly, copy) NSString *imaginaryMantissaString;

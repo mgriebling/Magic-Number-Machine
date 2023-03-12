@@ -165,6 +165,15 @@
         case 'x':
             opPath = [ExpressionSymbols xorPath];
             break;
+        case nandOp:
+            opPath = [ExpressionSymbols nandPath];
+            break;
+        case norOp:
+            opPath = [ExpressionSymbols norPath];
+            break;
+        case xnorOp:
+            opPath = [ExpressionSymbols xnorPath];
+            break;
         case '.':
             opPath = [ExpressionSymbols dotPath];
             break;
@@ -497,6 +506,15 @@
 		case 'x':
 			resultString = [resultString stringByAppendingString:@" xor "];
 			break;
+        case nandOp:
+            resultString = [resultString stringByAppendingString:@" nand "];
+            break;
+        case norOp:
+            resultString = [resultString stringByAppendingString:@" nor "];
+            break;
+        case xnorOp:
+            resultString = [resultString stringByAppendingString:@" xnor "];
+            break;
 		case '.':
 			resultString = [resultString stringByAppendingString:@" x "];
 			break;
@@ -574,6 +592,15 @@
 			case 'x':
 				[value xorWith:rightChildValue usingComplement:[manager getComplement]];
 				break;
+            case nandOp:
+                [value nandWith:rightChildValue usingComplement:[manager getComplement]];
+                break;
+            case norOp:
+                [value norWith:rightChildValue usingComplement:[manager getComplement]];
+                break;
+            case xnorOp:
+                [value xnorWith:rightChildValue usingComplement:[manager getComplement]];
+                break;
 			case rootOp:
 				[value inverse];
 				[rightChildValue raiseToPower:value];

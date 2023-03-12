@@ -103,6 +103,9 @@ typedef NS_ENUM(NSInteger, ConstType) {
 + (NSBezierPath *)andPath;
 + (NSBezierPath *)orPath;
 + (NSBezierPath *)xorPath;
++ (NSBezierPath *)nandPath;
++ (NSBezierPath *)norPath;
++ (NSBezierPath *)xnorPath;
 + (NSBezierPath *)notPath;
 + (NSBezierPath *)rndPath;
 + (NSBezierPath *)logPath;

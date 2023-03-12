@@ -48,6 +48,9 @@ enum
 	divisionOp = 47,	// '/'
 	powerOp = 94,
 	andOp = 97,			// 'a'
+    nandOp = 98,
+    norOp = 100,
+    xnorOp = 101,
 	ncrOp = 99,			// 'c'
 	orOp = 111,			// 'o'
 	nprOp = 112,		// 'p'

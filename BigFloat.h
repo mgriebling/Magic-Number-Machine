@@ -138,6 +138,9 @@ typedef NS_ENUM(unsigned int, BFTrigMode)
 - (void)andWith:(BigFloat*)num usingComplement:(int)complement;
 - (void)orWith:(BigFloat*)num usingComplement:(int)complement;
 - (void)xorWith:(BigFloat*)num usingComplement:(int)complement;
+- (void)nandWith:(BigFloat*)num usingComplement:(int)complement;
+- (void)norWith:(BigFloat*)num usingComplement:(int)complement;
+- (void)xnorWith:(BigFloat*)num usingComplement:(int)complement;
 
 // Conversion Functions
 @property (nonatomic, readonly) double doubleValue;

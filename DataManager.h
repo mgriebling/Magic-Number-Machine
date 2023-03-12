@@ -61,6 +61,9 @@
     __weak IBOutlet NSButton *addDataButton;
     __weak IBOutlet NSButton *dispButton;
     
+    __weak IBOutlet NSBox *alternateKeys;
+    __weak IBOutlet NSBox *mainKeys;
+    
     unsigned int				defaultDigits;
 	unsigned int				defaultSignificant;
 	unsigned int				defaultFixed;

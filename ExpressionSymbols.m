@@ -365,7 +365,7 @@ static NSArray *constantsDataRows = nil;
 //
 + (NSBezierPath *)rndPath
 {
-	return [ExpressionSymbols getSymbolForString:@"Rnd"];
+	return [ExpressionSymbols getSymbolForString:@"Int"];
 }
 
 //
@@ -385,7 +385,7 @@ static NSArray *constantsDataRows = nil;
 //
 + (NSBezierPath *)log2Path
 {
-	return [ExpressionSymbols getSymbolForString:@"log"];
+	return [ExpressionSymbols getSymbolForString:@"log₂"];
 }
 
 //

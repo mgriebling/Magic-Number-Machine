@@ -271,9 +271,21 @@
 
 - (void)updateRadixDisplay
 {
-	NSString *format = [[NSBundle bundleForClass:[self class]] localizedStringForKey:@"Radix: %d" value:nil table:nil];
-	NSString *radixString = [NSString localizedStringWithFormat:format, radix];
-	[radixDisplay setStringValue:radixString];
+    switch (radix)
+    {
+        case 2:
+            [radixDisplay setStringValue:NSLocalizedString(@"Radix: Binary", description: "Base 2 radix display")];
+            break;
+        case 8:
+            [radixDisplay setStringValue:NSLocalizedString(@"Radix: Octal", description: "Base 8 radix display")];
+            break;
+        case 10:
+            [radixDisplay setStringValue:NSLocalizedString(@"Radix: Decimal", description: "Base 10 radix display")];
+            break;
+        case 16:
+            [radixDisplay setStringValue:NSLocalizedString(@"Radix: Hexadecimal", description: "Base 16 radix display")];
+            break;
+    }
 }
 
 - (void)updatePrecisionDisplay

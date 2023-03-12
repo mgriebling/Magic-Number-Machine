@@ -717,20 +717,6 @@
     [self enable:dButton     enable:radix > 13];
     [self enable:eButton     enable:radix > 14];
     [self enable:fButton     enable:radix > 15];
-//	[twoButton	 setEnabled:radix > 2];
-//	[threeButton setEnabled:radix > 3];
-//	[fourButton  setEnabled:radix > 4];
-//	[fiveButton  setEnabled:radix > 5];
-//	[sixButton   setEnabled:radix > 6];
-//	[sevenButton setEnabled:radix > 7];
-//	[eightButton setEnabled:radix > 8];
-//	[nineButton  setEnabled:radix > 9];
-//	[aButton	 setEnabled:radix > 10];
-//	[bButton	 setEnabled:radix > 11];
-//	[cButton	 setEnabled:radix > 12];
-//    [dButton	 setEnabled:radix > 13];
-//	[eButton	 setEnabled:radix > 14];
-//	[fButton	 setEnabled:radix > 15];
 }
 
 //

@@ -43,7 +43,8 @@
 	__weak IBOutlet id 		defaultFixed;
 	__weak IBOutlet id 		thousandsSeparator;
 	__weak IBOutlet id 		preferencesPanel;
-	
+    __weak IBOutlet NSButton *fractionSeparator;
+    
 	// All the little buttons that get disabled
 	__weak IBOutlet SYFlatButton *twoButton;
 	__weak IBOutlet SYFlatButton *threeButton;

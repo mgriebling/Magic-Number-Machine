@@ -86,6 +86,7 @@
 	BOOL						shiftEnabledByToggle;
 	BOOL						optionEnabledByToggle;
 	BOOL						thousandsSeparator;
+    BOOL                        fractionSeparator;
 		
 	History						*historyArray;
 	NSMutableArray				*dataArray;
@@ -152,7 +153,9 @@
 - (void)setDefaultFixed:(int)fixed;
 @property (NS_NONATOMIC_IOSONLY, getter=getDefaultFixedFromPref, readonly) int defaultFixedFromPref;
 - (void)setDefaultThousandsSeparator:(BOOL)isUsed;
-@property (NS_NONATOMIC_IOSONLY, getter=getDefaultThousandsSeparatorFromPref, readonly) BOOL defaultThousandsSeparatorFromPref;
+@property (NS_NONATOMIC_IOSONLY, getter=getDefaultThousandsSeparatorFromPref, readonly) BOOL defaultFractionSeparatorFromPref;
+- (void)setDefaultFractionSeparator:(BOOL)isUsed;
+@property (NS_NONATOMIC_IOSONLY, getter=getDefaultFractionSeparatorFromPref, readonly) BOOL defaultThousandsSeparatorFromPref;
 - (void)setDefaultTrigMode:(int)mode;
 @property (NS_NONATOMIC_IOSONLY, getter=getDefaultTrigModeFromPref, readonly) BFTrigMode defaultTrigModeFromPref;
 
@@ -164,7 +167,7 @@
 - (void)updateTrigModeDisplay;
 - (void)updateExpressionDisplay;
 
-- (void)saveDefaultsForThousands:(BOOL)separator digits:(int)digits significant:(int)significant fixed:(int)fixed display:(int)display;
+- (void)saveDefaultsForThousands:(BOOL)separator fractions:(BOOL)fracSeparator digits:(int)digits significant:(int)significant fixed:(int)fixed display:(int)display;
 
 
 @end

@@ -3895,7 +3895,7 @@ BF_NormaliseNumbers
         offset = pow(bf_radix, digit % bf_value_precision);
     }
     
-    // apply a binary OR to each digit
+    // apply a binary logic `func` to each digit
     while (offset != 0 && digit >= 0)
     {
         unsigned long this_digit;
@@ -3920,13 +3920,10 @@ BF_NormaliseNumbers
     // Restore the radix
     if (old_radix != bf_radix)
         [self convertToRadix: old_radix];
-
     
     [self postComplement:complement];
 }
 
-//
-// orWith
 //
 // receiver = receiver | num
 //
@@ -3936,8 +3933,6 @@ BF_NormaliseNumbers
     [self logicUsing:0 with:complement num:num];
 }
 
-//
-// xorWith
 //
 // receiver = receiver ^ num
 //
@@ -4016,8 +4011,6 @@ BF_NormaliseNumbers
 #pragma mark
 #pragma mark ##### Accessor Functions #####
 
-//
-// doubleValue
 //
 // Returns the approximate value of the receiver as a double
 //

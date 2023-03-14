@@ -46,7 +46,14 @@
 	IBOutlet id				inputManager;
 	IBOutlet id				radixDrawer;
 	IBOutlet NSTableView	*radixTableView;
-	
+    
+    __weak IBOutlet NSToolbar *toolbarData2D;
+    __weak IBOutlet NSToolbar *toolbarDataArray;
+    __weak IBOutlet NSToolbar *toolbarConstants;
+    __weak IBOutlet NSToolbar *toolbarRadix;
+    __weak IBOutlet NSToolbar *toolbarHistory;
+    __weak IBOutlet NSToolbar *toolbarData;
+    
     __weak IBOutlet NSTabView *drawerTabView;
     __weak IBOutlet NSButton *addDataButton;
     

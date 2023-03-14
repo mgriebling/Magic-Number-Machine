@@ -151,7 +151,8 @@
 		return;
 	}
 	
-	[dataManager saveDefaultsForThousands:[thousandsSeparator intValue] != 0 
+	[dataManager saveDefaultsForThousands:[thousandsSeparator intValue] != 0
+                                fractions:[fractionSeparator intValue] != 0
 								   digits:[defaultDigits intValue] 
 							  significant:[defaultSignificant intValue] 
 									fixed:[defaultFixed intValue] 

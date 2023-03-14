@@ -647,26 +647,35 @@
     switch([sender tag]) {
         case 0:
             [drawerTabView selectTabViewItemWithIdentifier:@"History"];
+            [panel setToolbar:toolbarHistory];
             break;
         case 1:
             [drawerTabView selectTabViewItemWithIdentifier:@"Radix"];
+            [panel setToolbar:toolbarRadix];
             break;
         case 2:
             [drawerTabView selectTabViewItemWithIdentifier:@"Data"];
             addDataButton.title = @"Add Data";
+            [panel setToolbar:toolbarData];
             break;
         case 3:
             [drawerTabView selectTabViewItemWithIdentifier:@"Data 2D"];
             addDataButton.title = @"Add 2D";
+            [panel setToolbar:toolbarData2D];
             break;
         case 4:
             [drawerTabView selectTabViewItemWithIdentifier:@"Data Array"];
             addDataButton.title = @"Add Array";
+            [panel setToolbar:toolbarDataArray];
             break;
         case 5:
             [drawerTabView selectTabViewItemWithIdentifier:@"Constants"];
+            [panel setToolbar:toolbarConstants];
             break;
     }
+    // [deleteAllBarItem e = flag;
+    // [deleteAllBarItem setEnabled:flag];
+    // deleteAllBarItem.enabled = flag;
 }
 
 //

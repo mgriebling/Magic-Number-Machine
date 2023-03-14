@@ -14,6 +14,7 @@
 #import "ExpressionSymbols.h"
 #import "Value.h"
 #import "History.h"
+#import "SYFlatButton.h"
 
 //
 // About the DataManager
@@ -137,6 +138,17 @@
 	return [[NSUserDefaults standardUserDefaults] boolForKey:@"useThousandsSeparator"];
 }
 
+- (void)setDefaultFractionSeparator:(BOOL)isUsed
+{
+    fractionSeparator = isUsed;
+    [[NSUserDefaults standardUserDefaults] setBool:isUsed forKey:@"useFractionSeparator"];
+}
+
+- (BOOL)getDefaultFractionSeparatorFromPref
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"useFractionSeparator"];
+}
+
 - (void)setHistoryData:(History *)historyData
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -210,6 +222,7 @@
 		radix                 = [self getDefaultRadixFromPref];
 		complement            = [self getDefaultComplementFromPref];
 		thousandsSeparator    = [self getDefaultThousandsSeparatorFromPref];
+        fractionSeparator     = [self getDefaultFractionSeparatorFromPref];
 		defaultDigits         = [self getDefaultDigitsFromPref];
 		defaultSignificant    = [self getDefaultSignificantFromPref];
 		defaultFixed          = [self getDefaultFixedFromPref];
@@ -238,13 +251,15 @@
 //
 // This is called when the preference is committed
 //
-- (void)saveDefaultsForThousands:(BOOL)separator 
+- (void)saveDefaultsForThousands:(BOOL)separator
+                       fractions:(BOOL)fracSeparator
 						  digits:(int)digits 
 					 significant:(int)significant 
 						   fixed:(int)fixed 
 						 display:(int)displayType
 {
 	[self setDefaultThousandsSeparator:separator];
+    [self setDefaultFractionSeparator:fracSeparator];
 	[self setDefaultDigits:digits];
 	[self setDefaultSignificant:significant];
 	[self setDefaultFixed:fixed];
@@ -311,10 +326,16 @@
 	}
 }
 
+- (void)enable:(NSButton *)button enable:(BOOL) enable {
+    SYFlatButton *b = (SYFlatButton *)button;
+    [b setEnabled: enable];
+    b.titleNormalColor = enable ? NSColor.labelColor : NSColor.grayColor;
+}
+
 - (void)updateExponentLeftShift
 {
-	[shift3Left setEnabled:(shiftIsActive || (fixedPlaces == 0 && complement == 0))];
-	[shift3Right setEnabled:(shiftIsActive || (fixedPlaces == 0 && complement == 0))];
+    [self enable:shift3Left enable:(shiftIsActive || (fixedPlaces == 0 && complement == 0))];
+    [self enable:shift3Right enable:(shiftIsActive || (fixedPlaces == 0 && complement == 0))];
 }
 
 - (NSString *)getTrigStringForMode:(BFTrigMode)mode {

@@ -603,7 +603,8 @@ static NSArray *constantsDataRows = nil;
 //
 + (NSBezierPath *)inversePath
 {
-	return [ExpressionSymbols getSymbolForString:@"-1" withSuperscript:12];
+	return [ExpressionSymbols getSymbolForString:@"−1" withSuperscript:12];
+//    return [ExpressionSymbols getSymbolForString:@"-1" withSuperscript:12];
 }
 
 @end

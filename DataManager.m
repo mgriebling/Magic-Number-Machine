@@ -14,7 +14,7 @@
 #import "ExpressionSymbols.h"
 #import "Value.h"
 #import "History.h"
-#import "SYFlatButton.h"
+// #import "SYFlatButton.h"
 
 //
 // About the DataManager
@@ -327,9 +327,9 @@
 }
 
 - (void)enable:(NSButton *)button enable:(BOOL) enable {
-    SYFlatButton *b = (SYFlatButton *)button;
-    [b setEnabled: enable];
-    b.titleNormalColor = enable ? NSColor.labelColor : NSColor.grayColor;
+    //SYFlatButton *b = (SYFlatButton *)button;
+    [button setEnabled: enable];
+    //b.titleNormalColor = enable ? NSColor.labelColor : NSColor.grayColor;
 }
 
 - (void)updateExponentLeftShift

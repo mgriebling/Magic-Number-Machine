@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @class DataManager;
-@class SYFlatButton;
+// @class SYFlatButton;
 
 //
 // About the InputManager
@@ -46,20 +46,20 @@
     __weak IBOutlet NSButton *fractionSeparator;
     
 	// All the little buttons that get disabled
-	__weak IBOutlet SYFlatButton *twoButton;
-	__weak IBOutlet SYFlatButton *threeButton;
-	__weak IBOutlet SYFlatButton *fourButton;
-	__weak IBOutlet SYFlatButton *fiveButton;
-	__weak IBOutlet SYFlatButton *sixButton;
-	__weak IBOutlet SYFlatButton *sevenButton;
-	__weak IBOutlet SYFlatButton *eightButton;
-	__weak IBOutlet SYFlatButton *nineButton;
-	__weak IBOutlet SYFlatButton *aButton;
-	__weak IBOutlet SYFlatButton *bButton;
-	__weak IBOutlet SYFlatButton *cButton;
-	__weak IBOutlet SYFlatButton *dButton;
-	__weak IBOutlet SYFlatButton *eButton;
-	__weak IBOutlet SYFlatButton *fButton;
+	__weak IBOutlet NSButton *twoButton;
+	__weak IBOutlet NSButton *threeButton;
+	__weak IBOutlet NSButton *fourButton;
+	__weak IBOutlet NSButton *fiveButton;
+	__weak IBOutlet NSButton *sixButton;
+	__weak IBOutlet NSButton *sevenButton;
+	__weak IBOutlet NSButton *eightButton;
+	__weak IBOutlet NSButton *nineButton;
+	__weak IBOutlet NSButton *aButton;
+	__weak IBOutlet NSButton *bButton;
+	__weak IBOutlet NSButton *cButton;
+	__weak IBOutlet NSButton *dButton;
+	__weak IBOutlet NSButton *eButton;
+	__weak IBOutlet NSButton *fButton;
 }
 - (IBAction)allClearPressed:(id)sender;
 - (IBAction)binaryOpPressed:(id)sender;

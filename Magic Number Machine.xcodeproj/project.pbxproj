@@ -26,8 +26,6 @@
 		475DA33629B528EF002DB3FF /* 2x.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32D29B528EF002DB3FF /* 2x.svg */; };
 		47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */; };
 		47B96FD61B11E0EE0064FEEB /* NSObject+NSPerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */; };
-		47D8742329B694E100F94CEE /* SYFlatButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 47D8742129B694E100F94CEE /* SYFlatButton.h */; };
-		47D8742429B694E100F94CEE /* SYFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D8742229B694E100F94CEE /* SYFlatButton.m */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		C900A87805588DFA00809D76 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A87205588DFA00809D76 /* DataManager.m */; };
 		C900A87A05588DFA00809D76 /* InputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A87405588DFA00809D76 /* InputManager.m */; };
@@ -90,8 +88,6 @@
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
 		47B96FD71B13372E0064FEEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		47D8742129B694E100F94CEE /* SYFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYFlatButton.h; sourceTree = "<group>"; };
-		47D8742229B694E100F94CEE /* SYFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYFlatButton.m; sourceTree = "<group>"; };
 		47D8742529B7884200F94CEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MNMWindow.strings; sourceTree = "<group>"; };
 		47D8742629B7884200F94CEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47D8742729B7884200F94CEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -212,8 +208,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				47D8742129B694E100F94CEE /* SYFlatButton.h */,
-				47D8742229B694E100F94CEE /* SYFlatButton.m */,
 				C900A8EF05588EA300809D76 /* CallBack.h */,
 				C900A8F005588EA300809D76 /* CallBack.m */,
 				C900A8F205588EA300809D76 /* DataFunctions.h */,
@@ -348,7 +342,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B96FD51B11E0EE0064FEEB /* NSObject+NSPerformSelector.h in Headers */,
-				47D8742329B694E100F94CEE /* SYFlatButton.h in Headers */,
 				2F6947991B17B60A0012C173 /* History.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,7 +445,6 @@
 				C900A87A05588DFA00809D76 /* InputManager.m in Sources */,
 				C900A87B05588DFA00809D76 /* DrawerManager.m in Sources */,
 				C900A8BD05588E2E00809D76 /* HistoryCell.m in Sources */,
-				47D8742429B694E100F94CEE /* SYFlatButton.m in Sources */,
 				C900A8BF05588E2E00809D76 /* MainWindow.m in Sources */,
 				C900A8C105588E2E00809D76 /* BlankingView.m in Sources */,
 				C900A8C305588E2E00809D76 /* DrawerView.m in Sources */,

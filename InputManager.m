@@ -13,7 +13,7 @@
 #import "OpEnumerations.h"
 #import "BigCFloat.h"
 #import "Value.h"
-#import "SYFlatButton.h"
+// #import "SYFlatButton.h"
 
 //
 // About the InputManager
@@ -691,9 +691,9 @@
 	[mainWindow makeKeyAndOrderFront:self];
 }
 
-- (void)enable:(SYFlatButton *)b enable:(BOOL) enable {
+- (void)enable:(NSButton *)b enable:(BOOL) enable {
     [b setEnabled: enable];
-    b.titleNormalColor = enable ? NSColor.labelColor : NSColor.grayColor;
+    // b.titleNormalColor = enable ? NSColor.labelColor : NSColor.grayColor;
 }
 
 //
@@ -704,7 +704,7 @@
 // Simplified and cleaned up to work for any radix 2 - 16
 - (void)setControlsForRadix:(short)radix
 {
-    [self enable:twoButton enable:radix > 2];
+    [self enable:twoButton   enable:radix > 2];
     [self enable:threeButton enable:radix > 3];
     [self enable:fourButton  enable:radix > 4];
     [self enable:fiveButton  enable:radix > 5];

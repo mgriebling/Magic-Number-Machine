@@ -1230,7 +1230,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="Hwk-H4-fD1">
                         <rect key="frame" x="1" y="1" width="214" height="450"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="60" headerView="2863" id="689">
                                 <rect key="frame" x="0.0" y="0.0" width="214" height="433"/>
@@ -1267,7 +1267,7 @@ IA
                         <rect key="frame" x="199" y="18" width="16" height="433"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <tableHeaderView key="headerView" id="2863">
+                    <tableHeaderView key="headerView" wantsLayer="YES" id="2863">
                         <rect key="frame" x="0.0" y="0.0" width="214" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
@@ -1276,6 +1276,7 @@ IA
             <connections>
                 <outlet property="dataManager" destination="797" id="927"/>
             </connections>
+            <point key="canvasLocation" x="-128" y="-581"/>
         </customView>
         <customObject id="693" userLabel="DrawerManager" customClass="DrawerManager">
             <connections>
@@ -1460,7 +1461,7 @@ IA
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn editable="NO" width="202" minWidth="40" maxWidth="1000" id="727">
+                                    <tableColumn editable="NO" width="173" minWidth="40" maxWidth="1000" id="727">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Aplicar función a los datos">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1506,7 +1507,7 @@ IA
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn editable="NO" width="202" minWidth="107.70800018310547" maxWidth="1000" id="709">
+                                    <tableColumn editable="NO" width="173" minWidth="107.70800018310547" maxWidth="1000" id="709">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Datos de la tabla">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1581,7 +1582,7 @@ IA
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="246" minWidth="40" maxWidth="1000" id="1316">
+                                    <tableColumn width="217" minWidth="40" maxWidth="1000" id="1316">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Aplicar función a los datos">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
@@ -1747,7 +1748,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" id="xC8-l2-JHf">
                         <rect key="frame" x="1" y="1" width="258" height="79"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="13" headerView="2884" id="1330">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="62"/>
@@ -1783,7 +1784,7 @@ IA
                         <rect key="frame" x="243" y="18" width="16" height="62"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <tableHeaderView key="headerView" id="2884">
+                    <tableHeaderView key="headerView" wantsLayer="YES" id="2884">
                         <rect key="frame" x="0.0" y="0.0" width="258" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
@@ -1821,7 +1822,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" id="UIe-IC-5Sw">
                         <rect key="frame" x="1" y="1" width="258" height="292"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2881" id="752">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="275"/>
@@ -1881,7 +1882,7 @@ IA
                         <rect key="frame" x="243" y="18" width="16" height="275"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <tableHeaderView key="headerView" id="2881">
+                    <tableHeaderView key="headerView" wantsLayer="YES" id="2881">
                         <rect key="frame" x="0.0" y="0.0" width="258" height="17"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tableHeaderView>
@@ -1890,6 +1891,7 @@ IA
             <connections>
                 <outlet property="dataManager" destination="797" id="924"/>
             </connections>
+            <point key="canvasLocation" x="26" y="-36"/>
         </customView>
         <drawer preferredEdge="minX" trailingOffset="15" id="772" userLabel="ConstantsDrawer">
             <size key="contentSize" width="260" height="308"/>

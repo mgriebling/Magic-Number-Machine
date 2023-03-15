@@ -267,7 +267,7 @@
 {
 	Expression *inputPoint;
 	
-	if (dataManager.shift) {
+	if ([dataManager getShift] == 0) {
 		[dataManager ensureInputWithValue:YES];
 		inputPoint = [dataManager getInputPoint];
 		if (sender.tag < 0) {
@@ -536,7 +536,8 @@
 - (IBAction)preferences:(id)sender
 {
 	// dennis:
-	[self setDefaultsForThousands: [dataManager getDefaultThousandsSeparatorFromPref] 
+	[self setDefaultsForThousands: [dataManager getDefaultThousandsSeparatorFromPref]
+                        fractions: [dataManager getDefaultFractionSeparatorFromPref]
 						   digits: [dataManager getDefaultDigitsFromPref] 
 					  significant: [dataManager getDefaultSignificantFromPref] 
 							fixed: [dataManager getDefaultFixedFromPref] 
@@ -594,9 +595,10 @@
 //
 // Default states for panels.
 //
-- (void)setDefaultsForThousands:(BOOL)thousands digits:(int)digits significant:(int)significant fixed:(int)fixed display:(int)display
+- (void)setDefaultsForThousands:(BOOL)thousands fractions:(BOOL) fractions digits:(int)digits significant:(int)significant fixed:(int)fixed display:(int)display
 {
 	[thousandsSeparator setIntValue:thousands ? 1 : 0];
+    [fractionSeparator setIntValue:fractions ? 1 : 0];
 	[defaultDigits setIntValue:digits];
 	[defaultSignificant setIntValue:significant];
 	[defaultFixed setIntValue:fixed];

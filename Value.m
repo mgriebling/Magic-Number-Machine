@@ -300,6 +300,7 @@
 	NSString				*imaginary;
 	NSString				*imExponent;
 	NSString				*resultString = @"";
+    NSString                *dp = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
 	unsigned int			lengthLimit;
 	BOOL					fillLimit;
 	BOOL					radixChanged = NO;
@@ -308,11 +309,13 @@
 	int						extraZeros;
 	BOOL					showReal = NO;
 	BOOL					thousands = NO;
+    BOOL                    fractionSep = NO;
 	
 	// Get the parameters we will need for drawing
 	if (manager != nil)
 	{
 		thousands = [manager getThousandsSeparator];
+        fractionSep = [manager getFractionSeparator];
 		lengthLimit = [manager getLengthLimit];
 		fillLimit = [manager getFillLimit];
 		fixedPlaces = [manager getFixedPlaces];
@@ -390,7 +393,7 @@
 		if ([imaginary length] > 0)
 		{
 			hasImaginary = YES;
-			splitString = [imaginary componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+			splitString = [imaginary componentsSeparatedByString:dp];
 			if ([splitString count] < 2)
 			{
 				imaginaryPointState = -1;
@@ -444,18 +447,18 @@
 		// Append/Prepend certain bits to the real mantissa string
 		if (userPointState == 0 && fillLimit == NO)
 		{
-			mantissa = [mantissa stringByAppendingString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+			mantissa = [mantissa stringByAppendingString:dp];
 		}
 		else if (userPointState != -1 && fillLimit == NO && postPoint > 0)
 		{
-			splitString = [mantissa componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+			splitString = [mantissa componentsSeparatedByString:dp];
 			if ([splitString count] > 1)
 			{
 				extraZeros = postPoint - (int)[(NSString*)splitString[1] length];
 			}
 			else
 			{
-				mantissa = [mantissa stringByAppendingString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+				mantissa = [mantissa stringByAppendingString:dp];
 				extraZeros = postPoint;
 			}
 			while (extraZeros > 0)
@@ -472,8 +475,8 @@
 			}
 		}
 		
-		if (thousands)
-			mantissa = [self insertThousands:mantissa];
+        if (thousands) mantissa = [self insertThousands:mantissa];
+        if (fractionSep) mantissa = [self insertFractions:mantissa];
 
 		resultString = [resultString stringByAppendingString:mantissa];
 	
@@ -488,18 +491,18 @@
 		// Get the text representation of the exponent value
 		if (imaginaryPointState == 0 && fillLimit == NO)
 		{
-			imaginary = [imaginary stringByAppendingString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+			imaginary = [imaginary stringByAppendingString:dp];
 		}
 		else if (imaginaryPointState == 1 && fillLimit == NO && postImaginaryPoint > 0)
 		{
-			splitString = [imaginary componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+			splitString = [imaginary componentsSeparatedByString:dp];
 			if ([splitString count] > 1)
 			{
 				extraZeros = postImaginaryPoint - (int)[(NSString*)splitString[1] length];
 			}
 			else
 			{
-				imaginary = [imaginary stringByAppendingString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+				imaginary = [imaginary stringByAppendingString:dp];
 				extraZeros = postImaginaryPoint;
 			}
 			while (extraZeros > 0)
@@ -527,6 +530,7 @@
 		}
 
 		if (thousands) imaginary = [self insertThousands:imaginary];
+        if (fractionSep) imaginary = [self insertFractions:imaginary];
 
 		resultString = [resultString stringByAppendingString:mantissa];
 
@@ -619,6 +623,7 @@
 	NSString				*exponent;
 	NSString				*imaginary;
 	NSString				*imExponent;
+    NSString                *dp = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
 	unsigned int			lengthLimit;
 	BOOL					fillLimit;
 	BOOL					radixChanged = NO;
@@ -627,6 +632,7 @@
 	int						extraZeros;
 	BOOL					showReal = NO;
 	BOOL					thousands = NO;
+    BOOL                    fractionSep = NO;
 	
 	// Get the parameters we will need for drawing
 	if (manager != nil)
@@ -635,6 +641,7 @@
 		fillLimit = [manager getFillLimit];
 		fixedPlaces = [manager getFixedPlaces];
 		thousands = [manager getThousandsSeparator];
+        fractionSep = [manager getFractionSeparator];
 		
 		if ([manager getRadix] != [value radix])
 		{
@@ -672,7 +679,7 @@
 	// the update
 	if (radixChanged)
 	{
-		splitString = [mantissa componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+		splitString = [mantissa componentsSeparatedByString:dp];
 		if ([splitString count] < 2)
 		{
 			userPointState = -1;
@@ -704,7 +711,7 @@
 		if ([imaginary length] > 0)
 		{
 			hasImaginary = YES;
-			splitString = [imaginary componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+			splitString = [imaginary componentsSeparatedByString:dp];
 			if ([splitString count] < 2)
 			{
 				imaginaryPointState = -1;
@@ -757,18 +764,18 @@
 		// Append/Prepend certain bits to the real mantissa string
 		if (userPointState == 0 && fillLimit == NO)
 		{
-			mantissa = [mantissa stringByAppendingString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+			mantissa = [mantissa stringByAppendingString:dp];
 		}
 		else if (userPointState != -1 && fillLimit == NO && postPoint > 0)
 		{
-			splitString = [mantissa componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+			splitString = [mantissa componentsSeparatedByString:dp];
 			if ([splitString count] > 1)
 			{
 				extraZeros = postPoint - (int)[(NSString*)splitString[1] length];
 			}
 			else
 			{
-				mantissa = [mantissa stringByAppendingString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+				mantissa = [mantissa stringByAppendingString:dp];
 				extraZeros = postPoint;
 			}
 			while (extraZeros > 0)
@@ -785,8 +792,8 @@
 			}
 		}
 		
-		if (thousands)
-			mantissa = [self insertThousands:mantissa];
+        if (thousands) mantissa = [self insertThousands:mantissa];
+        if (fractionSep) mantissa = [self insertFractions:mantissa];
 		
 		[self appendString:mantissa withSize:24];
 		
@@ -804,18 +811,18 @@
 		// Get the text representation of the exponent value
 		if (imaginaryPointState == 0 && fillLimit == NO)
 		{
-			imaginary = [imaginary stringByAppendingString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+			imaginary = [imaginary stringByAppendingString:dp];
 		}
 		else if (imaginaryPointState == 1 && fillLimit == NO && postImaginaryPoint > 0)
 		{
-			splitString = [imaginary componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+			splitString = [imaginary componentsSeparatedByString:dp];
 			if ([splitString count] > 1)
 			{
 				extraZeros = postImaginaryPoint - (int)[(NSString*)splitString[1] length];
 			}
 			else
 			{
-				imaginary = [imaginary stringByAppendingString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+				imaginary = [imaginary stringByAppendingString:dp];
 				extraZeros = postImaginaryPoint;
 			}
 			while (extraZeros > 0)
@@ -842,7 +849,8 @@
 			imaginary = [@"+" stringByAppendingString:imaginary];
 		}
 		
-		if (thousands) imaginary = [self insertThousands:imaginary];
+        if (thousands) imaginary = [self insertThousands:imaginary];
+        if (fractionSep) imaginary = [self insertFractions:imaginary];
 
 		[self appendString:imaginary withSize:24];
 		
@@ -955,12 +963,59 @@
 	}
 }
 
+- (NSString *)insertFractions:(NSString *)mantissa
+{
+    int point;
+    int distance;
+    NSString *separator;
+    NSString *dp = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
+    NSMutableString *mutable;
+    int firstChar;
+    
+    if ([mantissa length] == 0)
+        return mantissa;
+    
+    firstChar = [mantissa characterAtIndex:0];
+    
+    // Return immediately if not a valid mantissa (ie "Not a number")
+    if ((firstChar < '-' || firstChar > '9') && firstChar != '-' && firstChar != '+')
+        return mantissa;
+    
+    switch([value radix])
+    {
+        case 2: distance = 8; separator = @" "; break;
+        case 8: distance = 3; separator = @" "; break;
+        case 16: distance = 4; separator = @" "; break;
+        default: // includes 10
+            distance = 3;
+            separator = @" ";
+            break;
+    }
+    NSRange range = [mantissa rangeOfString:dp];
+    point = (int)range.location+1;
+    if (range.location == NSNotFound) return mantissa;
+    if (point < mantissa.length) {
+        point += distance;
+        mutable = [NSMutableString stringWithString:mantissa];
+        while (point < mutable.length)
+        {
+            [mutable insertString:separator atIndex:point];
+            point += distance + 1;
+        }
+        
+        mantissa = [NSString stringWithString:mutable];
+    }
+    
+    return mantissa;
+}
+
 - (NSString *)insertThousands:(NSString *)mantissa
 {
 	int point;
 	int distance;
 	int leftEdge;
 	NSString *separator;
+    NSString *dp = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
 	NSMutableString *mutable;
 	int firstChar;
 	
@@ -990,7 +1045,7 @@
 			separator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
 			break;
 	}
-	NSRange range = [mantissa rangeOfString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+	NSRange range = [mantissa rangeOfString:dp];
 	point = (int)range.location;
 	if (range.location == NSNotFound) point = (int)[mantissa length];
 	if (point >= 1 + distance)

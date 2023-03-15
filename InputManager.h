@@ -82,7 +82,7 @@
 - (IBAction)precisionPressed:(id)sender;
 - (IBAction)preferences:(id)sender;
 - (IBAction)preOpPressed:(id)sender;
-- (void)setDefaultsForThousands:(BOOL)thousands digits:(int)digits significant:(int)significant fixed:(int)fixed display:(int)display;
+- (void)setDefaultsForThousands:(BOOL)thousands fractions:(BOOL)fractions digits:(int)digits significant:(int)significant fixed:(int)fixed display:(int)display;
 - (IBAction)shiftPressed:(id)sender;
 - (IBAction)trigModePressed:(id)sender;
 - (IBAction)userPointPressed:(id)sender;

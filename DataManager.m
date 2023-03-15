@@ -50,6 +50,7 @@
 	factoryDefaults[@"defaultSignificant"]	  = @3;
 	factoryDefaults[@"defaultFixed"]		  = @3;
 	factoryDefaults[@"useThousandsSeparator"] = @NO;
+    factoryDefaults[@"useFractionSeparator"]  = @NO;
 
 	factoryDefaults[@"defaultTrigMode"] = @((int)BF_degrees);
 	
@@ -671,13 +672,19 @@
 }
 
 //
-// getThousandsSeparator
-//
 // Returns whether to separate digits in groups.
 //
 - (BOOL)getThousandsSeparator
 {
 	return thousandsSeparator;
+}
+
+//
+// Returns whether to separate digits in groups.
+//
+- (BOOL)getFractionSeparator
+{
+    return fractionSeparator;
 }
 
 //

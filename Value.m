@@ -271,19 +271,19 @@
 //
 - (void)exponentPressed
 {
-	if (hasImaginary)
-	{
-		hasImaginaryExponent = YES;
-		if (imaginaryPointState == 0)
-			imaginaryPointState = -1;
-	}
-	else
-	{
-		hasExponent = YES;
-		if (userPointState == 0)
-			userPointState = -1;
-	}
-	[self valueChanged];
+    if (hasImaginary)
+    {
+        hasImaginaryExponent = YES;
+        if (imaginaryPointState == 0)
+            imaginaryPointState = -1;
+    }
+    else
+    {
+        hasExponent = YES;
+        if (userPointState == 0)
+            userPointState = -1;
+    }
+    [self valueChanged];
 }
 
 //
@@ -356,7 +356,7 @@
 	// the update
 	if (radixChanged)
 	{
-		splitString = [mantissa componentsSeparatedByString:[[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator]];
+		splitString = [mantissa componentsSeparatedByString:dp];
 		if ([splitString count] < 2)
 		{
 			userPointState = -1;
@@ -382,14 +382,8 @@
 					userPointState = -1;
 			}
 		}
-		if ([exponent length] > 0)
-		{
-			hasExponent = YES;
-		}
-		else
-		{
-			hasExponent = NO;
-		}
+        hasExponent = [exponent length] > 0;
+
 		if ([imaginary length] > 0)
 		{
 			hasImaginary = YES;
@@ -419,14 +413,8 @@
 						imaginaryPointState = -1;
 				}
 			}
-			if ([imExponent length] > 0)
-			{
-				hasImaginaryExponent = YES;
-			}
-			else
-			{
-				hasImaginaryExponent = NO;
-			}
+            hasImaginaryExponent = [imExponent length] > 0;
+
 		}
 		else
 		{
@@ -966,39 +954,27 @@
 - (NSString *)insertFractions:(NSString *)mantissa
 {
     int point;
-    int distance;
-    NSString *separator;
+    int distance = 3;
+    NSString *separator = @" ";
     NSString *dp = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
     NSMutableString *mutable;
     int firstChar;
     
-    if ([mantissa length] == 0)
-        return mantissa;
+    if ([mantissa length] == 0) return mantissa;
     
     firstChar = [mantissa characterAtIndex:0];
     
     // Return immediately if not a valid mantissa (ie "Not a number")
     if ((firstChar < '-' || firstChar > '9') && firstChar != '-' && firstChar != '+')
         return mantissa;
-    
-    switch([value radix])
-    {
-        case 2: distance = 8; separator = @" "; break;
-        case 8: distance = 3; separator = @" "; break;
-        case 16: distance = 4; separator = @" "; break;
-        default: // includes 10
-            distance = 3;
-            separator = @" ";
-            break;
-    }
+
     NSRange range = [mantissa rangeOfString:dp];
-    point = (int)range.location+1;
+    point = (int)range.location;
     if (range.location == NSNotFound) return mantissa;
     if (point < mantissa.length) {
-        point += distance;
+        point += distance + 1;
         mutable = [NSMutableString stringWithString:mantissa];
-        while (point < mutable.length)
-        {
+        while (point < mutable.length) {
             [mutable insertString:separator atIndex:point];
             point += distance + 1;
         }
@@ -1014,7 +990,7 @@
 	int point;
 	int distance;
 	int leftEdge;
-	NSString *separator;
+	NSString *separator = @" ";
     NSString *dp = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
 	NSMutableString *mutable;
 	int firstChar;
@@ -1025,21 +1001,14 @@
 	firstChar = [mantissa characterAtIndex:0];
 	
 	// Return immediately if not a valid mantissa (ie "Not a number")
-	if
-	(
-		(firstChar < '-' || firstChar > '9')
-		&&
-		firstChar != '-'
-		&&
-		firstChar != '+'
-	)
-		return mantissa;
+    if ((firstChar < '-' || firstChar > '9') && firstChar != '-' && firstChar != '+')
+        return mantissa;
 	
 	switch([value radix])
 	{
-		case 2: distance = 8; separator = @" "; break;
-		case 8: distance = 3; separator = @" "; break;
-		case 16: distance = 4; separator = @" "; break;
+		case 2: distance = 8; break;
+		case 8: distance = 3; break;
+		case 16: distance = 4; break;
 		default: // includes 10
 			distance = 3;
 			separator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];

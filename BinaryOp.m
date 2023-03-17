@@ -498,10 +498,10 @@
 			resultString = [resultString stringByAppendingString:@" ncr "];
 			break;
 		case 'a':
-			resultString = [resultString stringByAppendingString:@" and "];
+			resultString = [resultString stringByAppendingString:@" & "];
 			break;
 		case 'o':
-			resultString = [resultString stringByAppendingString:@" or "];
+			resultString = [resultString stringByAppendingString:@" | "];
 			break;
 		case 'x':
 			resultString = [resultString stringByAppendingString:@" xor "];

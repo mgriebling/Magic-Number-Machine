@@ -181,14 +181,6 @@
             return;
         case rootOp:
             return;
-//            if (leftChild != nil)
-//                lvalue = [leftChild getValue];
-//            else
-//                lvalue = [BigCFloat bigFloatWithInt:2 radix:[manager getRadix]];
-//            NSUInteger root = lvalue.realPart.doubleValue;
-            //			opPath = [ExpressionSymbols sqrtPath];
-//            [opPath appendBezierPath:[ExpressionSymbols nRootPath:2.5]];
-//			break;
 		default:
 			opPath = nil;
 			break;
@@ -795,11 +787,13 @@
         else if (op == rootOp)
         {
             NSInteger root = 2;
+            NSBezierPath *rootBase = [NSBezierPath bezierPath];
             
             if (leftChild != nil) {
                 root = leftChild.value.realPart.doubleValue;
             }
-            [expressionPath appendBezierPath:[ExpressionSymbols nRootPath:root]];
+            if (root != 2) rootBase = [ExpressionSymbols nRootPath:root];
+            [expressionPath appendBezierPath:[ExpressionSymbols sqrtPath]];
             [self appendOpToPath:expressionPath atLevel:level];
             
             if (child != nil) {
@@ -831,6 +825,7 @@
                 [expressionPath appendBezierPath:overLine];
                 [expressionPath appendBezierPath:rightChildPath];
             }
+            [expressionPath appendBezierPath:rootBase];
         }
         else
         {

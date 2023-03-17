@@ -193,7 +193,8 @@
 			opPath = [ExpressionSymbols sqrtPath];
 			break;
 		case cbrtOp:
-			opPath = [ExpressionSymbols nRootPath:3];
+			opPath = [ExpressionSymbols sqrtPath];
+            // [opPath appendBezierPath:[ExpressionSymbols sqrtPath]];
 			break;
 		case sigmaOp:
 			opPath = [ExpressionSymbols sigmaPath];
@@ -470,6 +471,7 @@
 	if (pathValidAt != level)
 	{
 		NSBezierPath *childPath = [NSBezierPath bezierPath];
+        NSBezierPath *cubeDigit = [ExpressionSymbols nRootPath:3];
 
 		expressionPath = [NSBezierPath bezierPath];
 
@@ -504,6 +506,7 @@
 				NSBezierPath *overLine = [NSBezierPath bezierPath];
 				NSRect		 childBounds = [childPath bounds];
 				
+                // expressionPath = 
 				transform = [NSAffineTransform transform];
 				[transform translateXBy:0.0 yBy:childBounds.origin.y - 0.8 * boundsRect.origin.y];
 				[transform
@@ -529,11 +532,11 @@
 				];
 				[overLine closePath];
 				[expressionPath appendBezierPath:overLine];
-				// if (op == cbrtOp) [expressionPath appendBezierPath:[ExpressionSymbols nRootPath:3]];
+				
 			}
-
 			[expressionPath appendBezierPath:childPath];
 		}
+        if (op == cbrtOp) [expressionPath appendBezierPath:cubeDigit];
 		
 		if (![expressionPath isEmpty])
 			naturalBounds = [expressionPath bounds];

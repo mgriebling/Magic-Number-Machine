@@ -440,9 +440,9 @@ static NSArray *constantsDataRows = nil;
 + (NSBezierPath *)nRootPath:(NSUInteger)n
 {
 	NSString *root = [NSString stringWithFormat:@"%lu", (unsigned long)n];
-    NSBezierPath *path = [ExpressionSymbols sqrtPath];
-    NSBezierPath *rootn = [ExpressionSymbols makeSymbolForString:root usingSuperscript:6 withOffset:0];
-    [path appendBezierPath:rootn];
+    // NSBezierPath *path = [NSBezierPath init]; // [ExpressionSymbols sqrtPath];
+    NSBezierPath *path = [ExpressionSymbols makeSymbolForString:root usingSuperscript:10 withOffset:0];
+    // [path appendBezierPath:rootn];
 	return path;
 }
 

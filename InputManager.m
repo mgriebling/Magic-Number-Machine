@@ -739,8 +739,9 @@
 //
 - (IBAction)showHelp:(id)sender
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Magic-Number-Machine" ofType:@"pdf"];
-    [[NSWorkspace sharedWorkspace] openFile:path];
+    NSURL *path = [[NSBundle mainBundle] URLForResource:@"Magic-Number-Machine" withExtension:@"pdf"];
+//    NSURL *path = [[NSBundle mainBundle] urlForResource:@"Magic-Number-Machine" ofType:@"pdf"];
+    [[NSWorkspace sharedWorkspace] openURL:path];
 }
 
 //
@@ -750,8 +751,9 @@
 //
 - (void)showKeyboardShortcuts:(id)sender
 {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"Magic_Number_Machine_Buttons" ofType:@"html"];
-	[[NSWorkspace sharedWorkspace] openFile:path];
+//	NSString *path = [[NSBundle mainBundle] pathForResource:@"Magic_Number_Machine_Buttons" ofType:@"html"];
+    NSURL *path = [[NSBundle mainBundle] URLForResource:@"Magic_Number_Machine_Buttons" withExtension:@"html"];
+	[[NSWorkspace sharedWorkspace] openURL:path];
 }
 
 @end

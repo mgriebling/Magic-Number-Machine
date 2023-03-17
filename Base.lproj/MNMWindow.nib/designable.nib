@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -183,9 +182,6 @@
                             </menuItem>
                             <menuItem title="Show Keyboard Shortcuts" id="2161">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="showKeyboardShortcuts:" target="678" id="2162"/>
-                                </connections>
                             </menuItem>
                         </items>
                     </menu>
@@ -518,7 +514,7 @@
                                 <button toolTip="(⎇) Second function" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kYU-oY-ma5" userLabel="2nd On">
                                     <rect key="frame" x="1" y="159" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Active2nd" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="HzH-AA-xVn">
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Active2nd" imagePosition="only" alignment="center" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="HzH-AA-xVn">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="SFProText-Regular"/>
                                         <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
@@ -637,7 +633,7 @@
                                 <button toolTip="(h) binary XNOR" fixedFrame="YES" tag="101" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-8R-CYw" userLabel="xnor">
                                     <rect key="frame" x="1" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" title="xnor" bezelStyle="shadowlessSquare" image="DarkGrayButton" imagePosition="overlaps" alignment="center" toolTip="(h) Binary AND" tag="97" imageScaling="proportionallyUpOrDown" inset="2" id="tI7-ZJ-mtz">
+                                    <buttonCell key="cell" type="square" title="xnor" bezelStyle="shadowlessSquare" image="DarkGrayButton" imagePosition="overlaps" alignment="center" tag="97" imageScaling="proportionallyUpOrDown" inset="2" id="tI7-ZJ-mtz">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="SFProText-Regular"/>
                                     </buttonCell>
@@ -754,7 +750,7 @@ IA
                                 <button fixedFrame="YES" tag="42" translatesAutoresizingMaskIntoConstraints="NO" id="239">
                                     <rect key="frame" x="141" y="79" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                    <buttonCell key="cell" type="square" title="×" bezelStyle="shadowlessSquare" image="OrangeButton" imagePosition="overlaps" alignment="center" tag="42" imageScaling="proportionallyUpOrDown" inset="2" id="2779">
+                                    <buttonCell key="cell" type="square" title="×" bezelStyle="shadowlessSquare" alignment="center" tag="42" imageScaling="proportionallyUpOrDown" inset="2" id="2779">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="20" name="SFProText-Regular"/>
                                         <string key="keyEquivalent">*</string>
@@ -764,16 +760,17 @@ IA
                                         <action selector="binaryOpPressed:" target="678" id="836"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(Return) Display result." fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="292">
+                                <button toolTip="(Return) Display result." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="292">
                                     <rect key="frame" x="142" y="1" width="88" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                    <buttonCell key="cell" type="square" title="=" bezelStyle="shadowlessSquare" image="OrangeWideButton" imagePosition="overlaps" alignment="center" inset="2" id="2786">
+                                    <buttonCell key="cell" type="square" title="=" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="2786">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="20" name="SFProText-Regular"/>
                                         <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
                                     </buttonCell>
+                                    <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <connections>
                                         <action selector="equalsPressed:" target="678" id="833"/>
                                     </connections>
@@ -820,7 +817,7 @@ DQ
                                 <button fixedFrame="YES" tag="43" translatesAutoresizingMaskIntoConstraints="NO" id="251">
                                     <rect key="frame" x="185" y="40" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                    <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" image="OrangeButton" imagePosition="overlaps" alignment="center" tag="43" imageScaling="proportionallyUpOrDown" inset="2" id="2780">
+                                    <buttonCell key="cell" type="square" title="+" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" tag="43" imageScaling="proportionallyUpOrDown" inset="2" id="2780">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="20" name="SFProText-Regular"/>
                                         <string key="keyEquivalent">+</string>
@@ -847,7 +844,7 @@ DQ
                                 <button fixedFrame="YES" tag="45" translatesAutoresizingMaskIntoConstraints="NO" id="198">
                                     <rect key="frame" x="141" y="40" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                    <buttonCell key="cell" type="square" title="–" bezelStyle="shadowlessSquare" image="OrangeButton" imagePosition="overlaps" alignment="center" tag="45" imageScaling="proportionallyUpOrDown" inset="2" id="2773">
+                                    <buttonCell key="cell" type="square" title="–" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" tag="45" imageScaling="proportionallyUpOrDown" inset="2" id="2773">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="20" name="SFProText-Regular"/>
                                         <string key="keyEquivalent">-</string>
@@ -874,7 +871,7 @@ DQ
                                 <button fixedFrame="YES" tag="47" translatesAutoresizingMaskIntoConstraints="NO" id="262">
                                     <rect key="frame" x="141" y="118" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                    <buttonCell key="cell" type="square" title="÷" bezelStyle="shadowlessSquare" image="OrangeButton" imagePosition="overlaps" alignment="center" tag="47" imageScaling="proportionallyUpOrDown" inset="2" id="2782">
+                                    <buttonCell key="cell" type="square" title="÷" bezelStyle="shadowlessSquare" alignment="center" tag="47" imageScaling="proportionallyUpOrDown" inset="2" id="2782">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="20" name="SFProText-Regular"/>
                                         <string key="keyEquivalent">/</string>
@@ -1009,7 +1006,7 @@ CA
                                 <button toolTip="(⌘-) Change the sign" fixedFrame="YES" tag="45" translatesAutoresizingMaskIntoConstraints="NO" id="313" userLabel="+/-">
                                     <rect key="frame" x="185" y="79" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="PlusMinusButton" imagePosition="only" alignment="center" tag="45" imageScaling="proportionallyUpOrDown" inset="2" id="2796">
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" tag="45" imageScaling="proportionallyUpOrDown" inset="2" id="2796">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="20" name="SFProText-Regular"/>
                                         <string key="keyEquivalent">-</string>
@@ -1036,7 +1033,7 @@ CA
                                 <button toolTip="(Delete) Delete one digit or part of the expression" fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="315">
                                     <rect key="frame" x="185" y="118" width="45" height="40"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                    <buttonCell key="cell" type="square" title="⌫" bezelStyle="shadowlessSquare" image="OrangeButton" imagePosition="overlaps" alignment="center" tag="8" imageScaling="proportionallyUpOrDown" inset="2" id="2798">
+                                    <buttonCell key="cell" type="square" title="⌫" bezelStyle="shadowlessSquare" alignment="center" tag="8" imageScaling="proportionallyUpOrDown" inset="2" id="2798">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="20" name="SFProText-Regular"/>
                                         <string key="keyEquivalent" base64-UTF8="YES">
@@ -1056,7 +1053,6 @@ CA
                                         <font key="font" size="20" name="SFProText-Regular"/>
                                         <string key="keyEquivalent">7</string>
                                     </buttonCell>
-                                    <color key="bezelColor" name="MyGray"/>
                                     <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <connections>
                                         <action selector="digitPressed:" target="678" id="809"/>
@@ -1511,10 +1507,10 @@ CA
                                         <action selector="binaryOpPressed:" target="678" id="1709"/>
                                     </connections>
                                 </button>
-                                <button toolTip="(h) binary AND" fixedFrame="YES" tag="97" translatesAutoresizingMaskIntoConstraints="NO" id="1691">
+                                <button toolTip="(h) Binary AND" fixedFrame="YES" tag="97" translatesAutoresizingMaskIntoConstraints="NO" id="1691">
                                     <rect key="frame" x="1" y="81" width="50" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <buttonCell key="cell" type="square" title="and" bezelStyle="shadowlessSquare" image="DarkGrayButton" imagePosition="overlaps" alignment="center" toolTip="(h) Binary AND" tag="97" inset="2" id="2763">
+                                    <buttonCell key="cell" type="square" title="and" bezelStyle="shadowlessSquare" image="DarkGrayButton" imagePosition="overlaps" alignment="center" tag="97" inset="2" id="2763">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="16" name="SFProText-Regular"/>
                                         <string key="keyEquivalent">h</string>
@@ -1896,7 +1892,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="bpw-fz-ApG">
                         <rect key="frame" x="1" y="1" width="235" height="478"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="16" headerView="2866" id="703">
                                 <rect key="frame" x="0.0" y="0.0" width="235" height="461"/>
@@ -2022,7 +2018,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="pBU-nm-zv8">
                         <rect key="frame" x="1" y="1" width="214" height="95"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2872" id="726">
                                 <rect key="frame" x="0.0" y="0.0" width="214" height="78"/>
@@ -2069,7 +2065,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="Ycv-5X-pK5">
                         <rect key="frame" x="1" y="1" width="214" height="286"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2869" id="712">
                                 <rect key="frame" x="0.0" y="0.0" width="214" height="269"/>
@@ -2146,7 +2142,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="h0T-ly-V40">
                         <rect key="frame" x="1" y="1" width="258" height="105"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="12" headerView="2878" id="1314">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="88"/>
@@ -2215,7 +2211,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="6IO-nd-pgf">
                         <rect key="frame" x="1" y="1" width="258" height="314"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2875" id="744">
                                 <rect key="frame" x="0.0" y="0.0" width="273" height="297"/>
@@ -2271,7 +2267,7 @@ IA
             <connections>
                 <outlet property="dataManager" destination="797" id="925"/>
             </connections>
-            <point key="canvasLocation" x="-546" y="1119"/>
+            <point key="canvasLocation" x="-391" y="1098"/>
         </customView>
         <drawer preferredEdge="minX" trailingOffset="15" id="751" userLabel="ArrayDrawer">
             <size key="contentSize" width="260" height="308"/>
@@ -2302,7 +2298,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="xC8-l2-JHf">
                         <rect key="frame" x="1" y="1" width="258" height="79"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="13" headerView="2884" id="1330">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="62"/>
@@ -2349,7 +2345,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="UIe-IC-5Sw">
                         <rect key="frame" x="1" y="1" width="258" height="292"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="2881" id="752">
                                 <rect key="frame" x="0.0" y="0.0" width="258" height="275"/>
@@ -2489,7 +2485,7 @@ IA
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <clipView key="contentView" drawsBackground="NO" id="j66-jM-7td">
                         <rect key="frame" x="1" y="1" width="309" height="481"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="20" headerView="2887" id="780">
                                 <rect key="frame" x="0.0" y="0.0" width="309" height="464"/>
@@ -2540,34 +2536,16 @@ IA
         </customView>
         <customObject id="797" userLabel="DataManager" customClass="DataManager">
             <connections>
-                <outlet property="addDataButton" destination="1681" id="Lje-aV-pKI"/>
                 <outlet property="alternateKeys" destination="biJ-Or-ip7" id="zSA-6p-R9h"/>
-                <outlet property="anyRootButton" destination="2910" id="4xw-7G-jz7"/>
-                <outlet property="cosButton" destination="2895" id="Ak3-Hh-sgQ"/>
-                <outlet property="coshButton" destination="1674" id="uP4-zR-isA"/>
-                <outlet property="cubeRootButton" destination="2907" id="1n9-Ci-Vap"/>
-                <outlet property="dispButton" destination="1684" id="Agr-BM-6AD"/>
                 <outlet property="drawerManager" destination="693" id="921"/>
-                <outlet property="expToXButton" destination="1680" id="tIo-9b-u3D"/>
                 <outlet property="expressionDisplay" destination="617" id="798"/>
-                <outlet property="factorialButton" destination="1669" id="QKI-fv-xJh"/>
                 <outlet property="inputManager" destination="678" id="945"/>
-                <outlet property="logButton" destination="2928" id="TNf-mq-mZA"/>
                 <outlet property="mainKeys" destination="1339" id="pQc-rN-AE8"/>
-                <outlet property="modButton" destination="1652" id="ChS-BN-eiK"/>
                 <outlet property="precisionDisplay" destination="1379" id="1381"/>
                 <outlet property="radixDisplay" destination="1383" id="1384"/>
-                <outlet property="reciprocalButton" destination="2925" id="K3H-Yk-6t7"/>
-                <outlet property="secondButton" destination="2922" id="s2p-vb-ePL"/>
                 <outlet property="shift3Left" destination="1668" id="num-fr-tpW"/>
                 <outlet property="shift3Right" destination="2913" id="21B-ca-DRi"/>
-                <outlet property="sinButton" destination="2897" id="jNl-qB-Ggz"/>
-                <outlet property="sinhButton" destination="1697" id="3uc-aq-Sc8"/>
-                <outlet property="tanButton" destination="2896" id="D7L-xN-16p"/>
-                <outlet property="tanhButton" destination="1687" id="wsV-Om-ct9"/>
-                <outlet property="tenToXButton" destination="2929" id="0Nb-E7-hWp"/>
                 <outlet property="trigModeDisplay" destination="1380" id="1382"/>
-                <outlet property="xToYButton" destination="1693" id="Jmu-I1-hiu"/>
             </connections>
         </customObject>
         <window title="Fixed Precision" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="857" userLabel="FixSettings" customClass="NSPanel">
@@ -2971,14 +2949,14 @@ Gw
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <scrollView fixedFrame="YES" horizontalLineScroll="62" horizontalPageScroll="10" verticalLineScroll="62" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAV-r9-g5u">
-                                            <rect key="frame" x="2" y="-1" width="301" height="491"/>
+                                            <rect key="frame" x="2" y="12" width="301" height="478"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <clipView key="contentView" drawsBackground="NO" id="DUD-B9-b41">
-                                                <rect key="frame" x="1" y="1" width="299" height="489"/>
+                                                <rect key="frame" x="1" y="1" width="299" height="476"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="60" id="lxk-No-YEa">
-                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="489"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="476"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -3010,7 +2988,7 @@ Gw
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="N5o-eA-wx8">
-                                                <rect key="frame" x="284" y="1" width="16" height="489"/>
+                                                <rect key="frame" x="284" y="1" width="16" height="476"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
@@ -3027,7 +3005,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <clipView key="contentView" drawsBackground="NO" id="Ftf-Aa-n5m">
                                                 <rect key="frame" x="1" y="1" width="306" height="477"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="20" id="A1q-I2-a97">
                                                         <rect key="frame" x="0.0" y="0.0" width="306" height="477"/>
@@ -3417,7 +3395,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                             <clipView key="contentView" drawsBackground="NO" id="rRK-PA-Saq">
                                                 <rect key="frame" x="1" y="1" width="300" height="294"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" headerView="Ewt-Zc-lNB" id="aqg-z4-IfN">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="266"/>
@@ -3488,7 +3466,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <clipView key="contentView" drawsBackground="NO" id="e4V-Ri-PXe">
                                                 <rect key="frame" x="1" y="1" width="301" height="162"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" tableStyle="sourceList" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="13" headerView="bQz-Ho-RD9" id="NCo-hH-KWz">
                                                         <rect key="frame" x="0.0" y="0.0" width="301" height="134"/>
@@ -3545,7 +3523,7 @@ Gw
                         </connections>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="ssH-VB-5gr"/>
-                    <toolbarItem implicitItemIdentifier="AF052D39-65DF-4D7E-A846-B2D61D6CF937" explicitItemIdentifier="Label" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="twA-Qw-Pm5">
+                    <toolbarItem implicitItemIdentifier="AF052D39-65DF-4D7E-A846-B2D61D6CF937" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="twA-Qw-Pm5">
                         <nil key="toolTip"/>
                         <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ZhX-XP-I2Z">
                             <rect key="frame" x="12" y="14" width="52" height="16"/>
@@ -3571,24 +3549,24 @@ Gw
         </window>
         <toolbar implicitIdentifier="186F3D56-1801-4482-BF03-E97281EB91B4" centeredItem="MeD-d0-GTk" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="deT-Vd-Qrz" userLabel="ToolbarData2D">
             <allowedToolbarItems>
-                <toolbarItem implicitItemIdentifier="5428AF07-C2BA-4873-B0FF-42B1E98C1D83" explicitItemIdentifier="Delete All" label="Delete All" paletteLabel="Delete All" toolTip="Deletes all items" tag="-1" image="trash" catalog="system" bordered="YES" sizingBehavior="auto" id="0Lc-I7-nZ0">
+                <toolbarItem implicitItemIdentifier="5428AF07-C2BA-4873-B0FF-42B1E98C1D83" label="Delete All" paletteLabel="Delete All" toolTip="Deletes all items" tag="-1" image="trash" catalog="system" bordered="YES" sizingBehavior="auto" id="0Lc-I7-nZ0">
                     <connections>
                         <action selector="clearAllData2DValues:" target="693" id="NlM-6e-azZ"/>
                     </connections>
                 </toolbarItem>
-                <toolbarItem implicitItemIdentifier="AC7ECD57-30F2-4B0A-8401-BE0EBE0AC196" explicitItemIdentifier="Clear Selected" label="Clear Selected" paletteLabel="Clear Selected" toolTip="Clears the selected item" tag="-1" image="minus.circle" catalog="system" bordered="YES" sizingBehavior="auto" id="STt-JE-ySS">
+                <toolbarItem implicitItemIdentifier="AC7ECD57-30F2-4B0A-8401-BE0EBE0AC196" label="Clear Selected" paletteLabel="Clear Selected" toolTip="Clears the selected item" tag="-1" image="minus.circle" catalog="system" bordered="YES" sizingBehavior="auto" id="STt-JE-ySS">
                     <connections>
                         <action selector="clearData2DValue:" target="693" id="fal-Ck-wBc"/>
                     </connections>
                 </toolbarItem>
-                <toolbarItem implicitItemIdentifier="55D06825-176A-4172-BCEF-02F68D57CC2B" explicitItemIdentifier="Copy" label="Copy" paletteLabel="Copy" toolTip="Copies item to the display" tag="-1" image="rectangle.portrait.and.arrow.forward" catalog="system" bordered="YES" sizingBehavior="auto" id="ici-g9-eER"/>
+                <toolbarItem implicitItemIdentifier="55D06825-176A-4172-BCEF-02F68D57CC2B" label="Copy" paletteLabel="Copy" toolTip="Copies item to the display" tag="-1" image="rectangle.portrait.and.arrow.right" bordered="YES" sizingBehavior="auto" id="ici-g9-eER"/>
                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="cVB-w9-nR1"/>
-                <toolbarItem implicitItemIdentifier="5698F956-68B2-49EE-BEBF-7AC33A4D8403" explicitItemIdentifier="Apply Func" label="Apply Func" paletteLabel="Apply Func" tag="-1" image="function" catalog="system" bordered="YES" sizingBehavior="auto" id="VDa-I2-3HL">
+                <toolbarItem implicitItemIdentifier="5698F956-68B2-49EE-BEBF-7AC33A4D8403" label="Apply Func" paletteLabel="Apply Func" tag="-1" image="function" catalog="system" bordered="YES" sizingBehavior="auto" id="VDa-I2-3HL">
                     <connections>
                         <action selector="applyData2DFunction:" target="693" id="2lV-eo-Sg4"/>
                     </connections>
                 </toolbarItem>
-                <toolbarItem implicitItemIdentifier="9C9B1F41-C0F3-4F4E-90B0-E6394938CDD2" explicitItemIdentifier="Label" label="Data Title" paletteLabel="Data Title" sizingBehavior="auto" id="MeD-d0-GTk">
+                <toolbarItem implicitItemIdentifier="9C9B1F41-C0F3-4F4E-90B0-E6394938CDD2" label="Data Title" paletteLabel="Data Title" sizingBehavior="auto" id="MeD-d0-GTk">
                     <nil key="toolTip"/>
                     <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Brj-nt-olY">
                         <rect key="frame" x="1" y="14" width="57" height="16"/>
@@ -3609,28 +3587,28 @@ Gw
                 <toolbarItem reference="STt-JE-ySS"/>
                 <toolbarItem reference="0Lc-I7-nZ0"/>
             </defaultToolbarItems>
-            <point key="canvasLocation" x="-1130" y="167"/>
+            <point key="canvasLocation" x="-1167" y="83"/>
         </toolbar>
         <toolbar implicitIdentifier="186F3D56-1801-4482-BF03-E97281EB91B4" centeredItem="U15-k6-rQi" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="PdJ-us-3xw" userLabel="ToolbarDataArray">
             <allowedToolbarItems>
-                <toolbarItem implicitItemIdentifier="5428AF07-C2BA-4873-B0FF-42B1E98C1D83" explicitItemIdentifier="Delete All" label="Delete All" paletteLabel="Delete All" toolTip="Deletes all items" tag="-1" image="trash" catalog="system" bordered="YES" sizingBehavior="auto" id="wvj-8K-dql">
+                <toolbarItem implicitItemIdentifier="5428AF07-C2BA-4873-B0FF-42B1E98C1D83" label="Delete All" paletteLabel="Delete All" toolTip="Deletes all items" tag="-1" image="trash" catalog="system" bordered="YES" sizingBehavior="auto" id="wvj-8K-dql">
                     <connections>
                         <action selector="clearAllArrayDataValues:" target="693" id="BJt-Tj-zkv"/>
                     </connections>
                 </toolbarItem>
-                <toolbarItem implicitItemIdentifier="AC7ECD57-30F2-4B0A-8401-BE0EBE0AC196" explicitItemIdentifier="Clear Selected" label="Clear Selected" paletteLabel="Clear Selected" toolTip="Clears the selected item" tag="-1" image="minus.circle" catalog="system" bordered="YES" sizingBehavior="auto" id="8CV-2e-9kC">
+                <toolbarItem implicitItemIdentifier="AC7ECD57-30F2-4B0A-8401-BE0EBE0AC196" label="Clear Selected" paletteLabel="Clear Selected" toolTip="Clears the selected item" tag="-1" image="minus.circle" catalog="system" bordered="YES" sizingBehavior="auto" id="8CV-2e-9kC">
                     <connections>
                         <action selector="clearArrayValue:" target="693" id="1Om-oO-yKp"/>
                     </connections>
                 </toolbarItem>
-                <toolbarItem implicitItemIdentifier="55D06825-176A-4172-BCEF-02F68D57CC2B" explicitItemIdentifier="Copy" label="Copy" paletteLabel="Copy" toolTip="Copies item to the display" tag="-1" image="rectangle.portrait.and.arrow.forward" catalog="system" bordered="YES" sizingBehavior="auto" id="9cf-ay-JVK"/>
+                <toolbarItem implicitItemIdentifier="55D06825-176A-4172-BCEF-02F68D57CC2B" label="Copy" paletteLabel="Copy" toolTip="Copies item to the display" tag="-1" image="rectangle.portrait.and.arrow.right" catalog="system" bordered="YES" sizingBehavior="auto" id="9cf-ay-JVK"/>
                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="KZ7-kT-qcY"/>
                 <toolbarItem implicitItemIdentifier="5698F956-68B2-49EE-BEBF-7AC33A4D8403" explicitItemIdentifier="Apply Func" label="Apply Func" paletteLabel="Apply Func" tag="-1" image="function" catalog="system" bordered="YES" sizingBehavior="auto" id="vvB-Iy-4YH">
                     <connections>
                         <action selector="applyArrayDataFunction:" target="693" id="mlU-AR-SxE"/>
                     </connections>
                 </toolbarItem>
-                <toolbarItem implicitItemIdentifier="8FFFAAC3-C81D-4BEE-9144-47F11532182B" explicitItemIdentifier="Label" label="Data Title" paletteLabel="Data Title" sizingBehavior="auto" id="U15-k6-rQi">
+                <toolbarItem implicitItemIdentifier="8FFFAAC3-C81D-4BEE-9144-47F11532182B" label="Data Title" paletteLabel="Data Title" sizingBehavior="auto" id="U15-k6-rQi">
                     <nil key="toolTip"/>
                     <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="M7l-Ac-6vT">
                         <rect key="frame" x="0.0" y="14" width="73" height="16"/>
@@ -3650,12 +3628,12 @@ Gw
                 <toolbarItem reference="8CV-2e-9kC"/>
                 <toolbarItem reference="wvj-8K-dql"/>
             </defaultToolbarItems>
-            <point key="canvasLocation" x="-1283" y="482"/>
+            <point key="canvasLocation" x="-1167" y="453"/>
         </toolbar>
-        <toolbar implicitIdentifier="186F3D56-1801-4482-BF03-E97281EB91B4" explicitIdentifier="Empty" centeredItem="Sn0-yi-8Tb" autosavesConfiguration="NO" displayMode="labelOnly" sizeMode="regular" id="Z89-TU-dMr" userLabel="ToolbarConstants">
+        <toolbar implicitIdentifier="186F3D56-1801-4482-BF03-E97281EB91B4" centeredItem="Sn0-yi-8Tb" autosavesConfiguration="NO" displayMode="labelOnly" sizeMode="regular" id="Z89-TU-dMr" userLabel="ToolbarConstants">
             <allowedToolbarItems>
                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="efl-gN-sgf"/>
-                <toolbarItem implicitItemIdentifier="E084F714-BB49-4E33-A5A5-499113C52EAD" explicitItemIdentifier="Label" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="Sn0-yi-8Tb">
+                <toolbarItem implicitItemIdentifier="E084F714-BB49-4E33-A5A5-499113C52EAD" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="Sn0-yi-8Tb">
                     <nil key="toolTip"/>
                     <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="t2q-GZ-fmr">
                         <rect key="frame" x="5" y="14" width="66" height="16"/>
@@ -3678,7 +3656,7 @@ Gw
         <toolbar implicitIdentifier="94C1F879-A66B-4676-BA94-24D8BCE28026" explicitIdentifier="Empty" centeredItem="hcc-ur-EYw" autosavesConfiguration="NO" displayMode="labelOnly" sizeMode="regular" id="bcn-MI-B7G" userLabel="ToolbarRadix">
             <allowedToolbarItems>
                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="7RV-yh-uDq"/>
-                <toolbarItem implicitItemIdentifier="E084F714-BB49-4E33-A5A5-499113C52EAD" explicitItemIdentifier="Label" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="hcc-ur-EYw">
+                <toolbarItem implicitItemIdentifier="E084F714-BB49-4E33-A5A5-499113C52EAD" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="hcc-ur-EYw">
                     <nil key="toolTip"/>
                     <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="u6L-tt-Avf">
                         <rect key="frame" x="12" y="14" width="52" height="16"/>
@@ -3700,7 +3678,7 @@ Gw
         </toolbar>
         <toolbar implicitIdentifier="1100C352-2A13-421D-9340-6DB9A5FCEE63" centeredItem="xi3-Q2-ib7" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="Qng-1r-KR6" userLabel="ToolbarHistory">
             <allowedToolbarItems>
-                <toolbarItem implicitItemIdentifier="5428AF07-C2BA-4873-B0FF-42B1E98C1D83" explicitItemIdentifier="Delete All" label="Delete All" paletteLabel="Delete All" toolTip="Deletes all items" tag="-1" image="trash" catalog="system" bordered="YES" sizingBehavior="auto" id="3uh-ex-STr">
+                <toolbarItem implicitItemIdentifier="5428AF07-C2BA-4873-B0FF-42B1E98C1D83" label="Delete All" paletteLabel="Delete All" toolTip="Deletes all items" tag="-1" image="trash" catalog="system" bordered="YES" sizingBehavior="auto" id="3uh-ex-STr">
                     <connections>
                         <action selector="clearHistory:" target="797" id="TDb-qS-uXT"/>
                     </connections>
@@ -3731,7 +3709,7 @@ Gw
         </toolbar>
         <toolbar implicitIdentifier="916F2C68-C175-4AE1-845D-12AEB54CE1D7" centeredItem="9IS-xK-312" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="rk7-1e-T4Y" userLabel="ToolbarData">
             <allowedToolbarItems>
-                <toolbarItem implicitItemIdentifier="5428AF07-C2BA-4873-B0FF-42B1E98C1D83" explicitItemIdentifier="Delete All" label="Delete All" paletteLabel="Delete All" toolTip="Deletes all items" tag="-1" image="trash" catalog="system" bordered="YES" sizingBehavior="auto" id="TMc-YM-P31">
+                <toolbarItem implicitItemIdentifier="5428AF07-C2BA-4873-B0FF-42B1E98C1D83" label="Delete All" paletteLabel="Delete All" toolTip="Deletes all items" tag="-1" image="trash" catalog="system" bordered="YES" sizingBehavior="auto" id="TMc-YM-P31">
                     <connections>
                         <action selector="clearAllDataValues:" target="693" id="7i0-Yw-YoF"/>
                     </connections>
@@ -3741,12 +3719,12 @@ Gw
                         <action selector="clearDataValue:" target="693" id="xMr-8u-q4s"/>
                     </connections>
                 </toolbarItem>
-                <toolbarItem implicitItemIdentifier="55D06825-176A-4172-BCEF-02F68D57CC2B" explicitItemIdentifier="Copy" label="Copy" paletteLabel="Copy" toolTip="Copies item to the display" tag="-1" image="rectangle.portrait.and.arrow.forward" catalog="system" bordered="YES" sizingBehavior="auto" id="BsT-0v-acC">
+                <toolbarItem implicitItemIdentifier="55D06825-176A-4172-BCEF-02F68D57CC2B" explicitItemIdentifier="Copy" label="Copy" paletteLabel="Copy" toolTip="Copies item to the display" tag="-1" image="rectangle.portrait.and.arrow.right" bordered="YES" sizingBehavior="auto" id="BsT-0v-acC">
                     <connections>
                         <action selector="copyDataValueToDisplay:" target="693" id="INE-mX-HQN"/>
                     </connections>
                 </toolbarItem>
-                <toolbarItem implicitItemIdentifier="506843BF-9848-4AF4-90E4-8D75BA4B5575" explicitItemIdentifier="Label" label="Data Title" paletteLabel="Data Title" sizingBehavior="auto" id="9IS-xK-312">
+                <toolbarItem implicitItemIdentifier="506843BF-9848-4AF4-90E4-8D75BA4B5575" label="Data Title" paletteLabel="Data Title" sizingBehavior="auto" id="9IS-xK-312">
                     <nil key="toolTip"/>
                     <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="hhP-u8-CbV">
                         <rect key="frame" x="11" y="14" width="37" height="16"/>
@@ -3758,7 +3736,7 @@ Gw
                         </textFieldCell>
                     </textField>
                 </toolbarItem>
-                <toolbarItem implicitItemIdentifier="5698F956-68B2-49EE-BEBF-7AC33A4D8403" explicitItemIdentifier="Apply Func" label="Apply Func" paletteLabel="Apply Func" toolTip="Apply Selected Data Function" tag="-1" image="function" catalog="system" bordered="YES" sizingBehavior="auto" id="78c-gG-si0">
+                <toolbarItem implicitItemIdentifier="5698F956-68B2-49EE-BEBF-7AC33A4D8403" label="Apply Func" paletteLabel="Apply Func" toolTip="Apply Selected Data Function" tag="-1" image="function" catalog="system" bordered="YES" sizingBehavior="auto" id="78c-gG-si0">
                     <connections>
                         <action selector="applyDataFunction:" target="693" id="dy2-A6-3Lg"/>
                     </connections>
@@ -3785,16 +3763,11 @@ Gw
         <image name="GrayButton" width="450" height="400"/>
         <image name="LargeBlueButton" width="900" height="400"/>
         <image name="LargeDarkButton" width="990" height="400"/>
-        <image name="OrangeButton" width="45" height="40"/>
-        <image name="OrangeWideButton" width="880" height="400"/>
-        <image name="PlusMinusButton" width="45" height="40"/>
         <image name="function" catalog="system" width="20" height="12"/>
         <image name="minus.circle" catalog="system" width="15" height="15"/>
         <image name="reciprocal" width="30" height="30"/>
-        <image name="rectangle.portrait.and.arrow.forward" catalog="system" width="18" height="16"/>
+        <image name="rectangle.portrait.and.arrow.right" width="15.52079963684082" height="14.573100090026855"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="18" height="16"/>
         <image name="trash" catalog="system" width="15" height="17"/>
-        <namedColor name="MyGray">
-            <color red="0.27900001406669617" green="0.27900001406669617" blue="0.27900001406669617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

@@ -8,14 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-//
-// About the HistoryCell
-//
-// The history table contains history cells. The history cells display expressions.
-// This custom cell allows them to do so.
-//
-// There is only one cell for the entire table and it gets reused.
-//
+///
+/// The history table contains history cells. The history cells display expressions.
+/// This custom cell allows them to do so.
+///
+/// There is only one cell for the entire table and it gets reused.
+///
 @interface HistoryCell : NSCell
 {
 }

@@ -5,7 +5,7 @@ From the original author [Matt Gallagher](http://projectswithlove.com/magicnumbe
 
 Machine Number Machine is a graphically displayed, high-precision, scientific calculator featuring:
 
-* **25 digits of precision.**
+* **25 (now 50) digits of precision.**
 Using the "Disp" button you can increase the precision up to 25 digits or apply scientific notation or fixed precision.
 
 * **Full expression view, graphically laid out.**

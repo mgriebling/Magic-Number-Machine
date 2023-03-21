@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "mnmengine",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mgriebling/MNMEngine.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d25a67c98d881958cb6d29116bea190b1d76c387"
+      }
+    }
+  ],
+  "version" : 2
+}

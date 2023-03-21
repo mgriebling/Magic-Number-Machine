@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		2F6947931B1771FC0012C173 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6947921B1771FC0012C173 /* Media.xcassets */; };
 		2F6947991B17B60A0012C173 /* History.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F6947971B17B60A0012C173 /* History.h */; };
 		2F69479A1B17B60A0012C173 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6947981B17B60A0012C173 /* History.m */; };
+		475D192A29C9C61400911946 /* MNMEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 475D192929C9C61400911946 /* MNMEngine */; };
 		475DA31C29B4A664002DB3FF /* Magic_Number_Machine_Buttons.html in Resources */ = {isa = PBXBuildFile; fileRef = C900A91C05588FB000809D76 /* Magic_Number_Machine_Buttons.html */; };
 		475DA32E29B528EF002DB3FF /* 2nd.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32529B528EE002DB3FF /* 2nd.svg */; };
 		475DA32F29B528EF002DB3FF /* 10x.svg in Resources */ = {isa = PBXBuildFile; fileRef = 475DA32629B528EE002DB3FF /* 10x.svg */; };
@@ -43,8 +44,6 @@
 		C900A8DE05588E6700809D76 /* Bracket.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8CE05588E6700809D76 /* Bracket.m */; };
 		C900A8E005588E6700809D76 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8D005588E6700809D76 /* Constant.m */; };
 		C900A8E205588E6700809D76 /* Expression.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8D205588E6700809D76 /* Expression.m */; };
-		C900A8EB05588E7200809D76 /* BigFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8E705588E7200809D76 /* BigFloat.m */; };
-		C900A8ED05588E7200809D76 /* BigCFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8E905588E7200809D76 /* BigCFloat.m */; };
 		C900A8F805588EA300809D76 /* CallBack.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8F005588EA300809D76 /* CallBack.m */; };
 		C900A8F905588EA300809D76 /* ExpressionSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8F105588EA300809D76 /* ExpressionSymbols.m */; };
 		C900A8FB05588EA300809D76 /* DataFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C900A8F305588EA300809D76 /* DataFunctions.m */; };
@@ -75,6 +74,8 @@
 		32CA4F630368D1EE00C91783 /* Magic Number Machine_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Magic Number Machine_Prefix.pch"; sourceTree = "<group>"; };
 		475793F229AE3E360055DEB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		475793F329AE3E360055DEB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		475D192B29C9C7D200911946 /* de */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = de; path = de.lproj/MNMWindow.nib; sourceTree = "<group>"; };
+		475D192C29C9C7D200911946 /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		475DA32529B528EE002DB3FF /* 2nd.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 2nd.svg; sourceTree = "<group>"; };
 		475DA32629B528EE002DB3FF /* 10x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 10x.svg; sourceTree = "<group>"; };
 		475DA32729B528EE002DB3FF /* reciprocal.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = reciprocal.svg; sourceTree = "<group>"; };
@@ -84,11 +85,9 @@
 		475DA32B29B528EF002DB3FF /* xtoy.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = xtoy.svg; sourceTree = "<group>"; };
 		475DA32C29B528EF002DB3FF /* CubeRoot.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CubeRoot.svg; sourceTree = "<group>"; };
 		475DA32D29B528EF002DB3FF /* 2x.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 2x.svg; sourceTree = "<group>"; };
-		475F2C72217272C000D8EB2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Base; path = Base.lproj/MNMWindow.nib; sourceTree = "<group>"; };
 		47B96FD31B11E0EE0064FEEB /* NSObject+NSPerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSPerformSelector.h"; sourceTree = "<group>"; };
 		47B96FD41B11E0EE0064FEEB /* NSObject+NSPerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSPerformSelector.m"; sourceTree = "<group>"; };
 		47B96FD71B13372E0064FEEB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		47D8742529B7884200F94CEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MNMWindow.strings; sourceTree = "<group>"; };
 		47D8742629B7884200F94CEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		47D8742729B7884200F94CEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				475D192A29C9C61400911946 /* MNMEngine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +364,7 @@
 			);
 			name = "Magic Number Machine";
 			packageProductDependencies = (
+				475D192929C9C61400911946 /* MNMEngine */,
 			);
 			productInstallPath = "$(HOME)/Applications";
 			productName = "Magic Number Machine XCode";
@@ -389,7 +390,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				Base,
 				es,
 				fr,
 				it,
@@ -398,6 +398,7 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Magic Number Machine XCode */;
 			packageReferences = (
+				475D192829C9C61400911946 /* XCRemoteSwiftPackageReference "MNMEngine" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -459,8 +460,6 @@
 				C900A8DE05588E6700809D76 /* Bracket.m in Sources */,
 				C900A8E005588E6700809D76 /* Constant.m in Sources */,
 				C900A8E205588E6700809D76 /* Expression.m in Sources */,
-				C900A8EB05588E7200809D76 /* BigFloat.m in Sources */,
-				C900A8ED05588E7200809D76 /* BigCFloat.m in Sources */,
 				C900A8F805588EA300809D76 /* CallBack.m in Sources */,
 				C900A8F905588EA300809D76 /* ExpressionSymbols.m in Sources */,
 				C900A8FB05588EA300809D76 /* DataFunctions.m in Sources */,
@@ -521,11 +520,11 @@
 		C95D1E430F536BC000851908 /* MNMWindow.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				475F2C72217272C000D8EB2E /* Base */,
 				2F5568B42179255A00652D06 /* es */,
 				2F5568BC2179256F00652D06 /* fr */,
 				2F5568BF2179258100652D06 /* it */,
-				47D8742529B7884200F94CEE /* de */,
+				475D192B29C9C7D200911946 /* de */,
+				475D192C29C9C7D200911946 /* en */,
 			);
 			name = MNMWindow.nib;
 			sourceTree = "<group>";
@@ -559,7 +558,10 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "";
@@ -605,7 +607,10 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "";
@@ -652,7 +657,10 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INSTALL_PATH = "$(HOME)/Applications";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				OTHER_CFLAGS = "";
@@ -810,6 +818,25 @@
 			defaultConfigurationName = Default;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		475D192829C9C61400911946 /* XCRemoteSwiftPackageReference "MNMEngine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mgriebling/MNMEngine.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		475D192929C9C61400911946 /* MNMEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 475D192829C9C61400911946 /* XCRemoteSwiftPackageReference "MNMEngine" */;
+			productName = MNMEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
 }

@@ -40,8 +40,26 @@
 	__weak IBOutlet NSTextField		*radixDisplay;			// Displays hex, decimal, etc
 	
 	// All the little buttons that get updated
+    __weak IBOutlet NSButton *modButton;
+    __weak IBOutlet NSButton *tenToXButton;
+    __weak IBOutlet NSButton *logButton;
 	__weak IBOutlet NSButton *shift3Left;
 	__weak IBOutlet NSButton *shift3Right;
+    __weak IBOutlet NSButton *tanhButton;
+    __weak IBOutlet NSButton *coshButton;
+    __weak IBOutlet NSButton *sinhButton;
+    __weak IBOutlet NSButton *tanButton;
+    __weak IBOutlet NSButton *cosButton;
+    __weak IBOutlet NSButton *sinButton;
+    __weak IBOutlet NSButton *reciprocalButton;
+    __weak IBOutlet NSButton *secondButton;
+    __weak IBOutlet NSButton *cubeRootButton;
+    __weak IBOutlet NSButton *anyRootButton;
+    __weak IBOutlet NSButton *expToXButton;
+    __weak IBOutlet NSButton *xToYButton;
+    __weak IBOutlet NSButton *factorialButton;
+    __weak IBOutlet NSButton *addDataButton;
+    __weak IBOutlet NSButton *dispButton;
     
     __weak IBOutlet NSBox *alternateKeys;
     __weak IBOutlet NSBox *mainKeys;
